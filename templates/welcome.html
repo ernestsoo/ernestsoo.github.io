@@ -1,0 +1,1089 @@
+
+            
+        <!--- Script for Detecting Scrolling up and Down -->
+        <script>
+
+
+            // To detect 
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    FormNext();
+                }
+            });
+            // alert($(window).width());
+            
+            // setTimeout(function(){alert(window.formstat);},5000);
+            // alert('I AM HERE');
+
+            var gender = false;
+            var male = false;
+            var female = false;
+
+            
+
+            function mouseOutMale()
+            {
+                if (!male)
+                {
+                    $(".gender-male").css("background","transparent");
+                    changeMaleWhite();
+                }
+
+            }
+
+            function mouseOutFemale()
+            {
+                if(!female)
+                {
+                    $(".gender-female").css("background","transparent");
+                    changeFemaleWhite();
+                }
+            }   
+
+            function clickMale()
+            {
+
+                if (male==false)
+                {
+                    $(".gender-female").css("background","transparent");
+                    changeFemaleWhite();
+                    $(".gender-male").css("background","white");
+                    changeMaleBlack();
+                }
+                else
+                {
+                    $(".gender-male").css("background","transparent");
+                    changeMaleWhite();
+
+
+                }
+
+
+                if(gender == false)
+                {
+                    gender=true;
+                    male=true;
+
+                }
+                else if(gender==true && female== true)
+                {
+                    female=false;
+                    male=true;
+                }
+
+                else if(gender==true && male == true)
+                {
+                    gender=false;
+                    male=false;
+
+                }
+
+
+               
+           
+              
+
+            }
+
+            function clickFemale()
+            {
+
+
+
+                if (female==false)
+                {
+                    $(".gender-male").css("background","transparent");
+                    changeMaleWhite();
+                    $(".gender-female").css("background","white");
+                    changeFemaleBlack();
+                }
+                else
+                {
+                    $(".gender-female").css("background","transparent");
+                    changeFemaleWhite();
+
+
+                }
+
+                if(gender == false)
+                {
+                    gender=true;
+                    female=true;
+
+                }
+                else if(gender==true && male== true)
+                {
+                    male=false;
+                    female=true;
+                }
+                else if(gender==true && female == true)
+                {
+                    gender=false;
+                    female=false;
+
+                }
+
+
+
+            }
+            
+            function changeFemaleBlack()
+            {
+                $(".fa-female").css("color","black");
+            }
+
+            function changeFemaleWhite()
+            {
+                $(".fa-female").css("color","white");
+            }
+
+            function changeMaleBlack()
+            {
+                $(".fa-male").css("color","black");
+            }
+
+            function changeMaleWhite()
+            {
+                $(".fa-male").css("color","white");
+            }
+
+
+            function setRegisterPosition()
+            {
+
+                if($(window).width() > 1200 && $(window).width() <1500)
+                {
+                    $(".Register").css("margin-top","0%");
+
+                }
+
+            }
+
+
+
+            var lStat = 0;
+            var lLock = true;
+           
+            function TriggerTitleFix()
+            {
+                
+              $(".Title").css("position","fixed");
+              $(".Title").css("margin-left","18%");
+                
+              setTimeout(function(){
+                  
+               
+                  
+                      
+                 // SlideUp();
+                  
+                  
+                  
+              },1000);
+            }
+        
+            var gloIndex = 1;
+            
+            
+            function FormNext()
+            {
+                var string = ".form-" + gloIndex.toString();
+                
+                $(string).css("display","none");
+                
+                // Reset the current state of the form colour.
+                $(".circle-next").css("color","black"); 
+
+                // Set to default form Stat
+                formstat=null;
+
+
+                // alert("asd");
+                gloIndex = gloIndex + 1;
+                
+                SlideDown();
+                
+                
+                string = ".form-" + gloIndex.toString();
+                
+                $(string).css("display","unset");
+                
+                
+                
+                
+            }
+            
+            // To reset circle-next and form control settings
+            function resetCircleNext()
+            {
+                     $(".circle-next").css("color","black");
+                     $(".form-control-reg").css("border-color","black");
+              
+                    //alert("hi");
+                     $(".circle-next").css("border-color","black");
+            }
+
+        
+            function checkFormStat()
+            {
+                 
+                
+                if(window.formstat==true)
+                {
+                    //alert("hasd");
+                     $(".circle-next-1").css("color","#39FF14");
+                     $(".circle-next-1").css("border-color","#39FF14");
+                     $(".form-control-reg-1").css("border-color","#39FF14");
+              
+                    //alert("hi");
+
+                   //  $(".Register").css("margin-bottom","0%");
+                    
+                }
+                else
+                {
+                         $(".circle-next-1").css("color","black");
+                         $(".circle-next-1").css("border-color","black");
+                    
+                    
+                }
+
+
+                // First Name input border to green.
+                if(window.formstat2a==true)
+                {
+                
+                     $(".form-control-reg-2").css("border-color","#39FF14");
+                }
+
+                // Last Name input border to green.
+                if(window.formstat2b==true)
+                {
+                
+                     $(".form-control-reg-3").css("border-color","#39FF14");
+                }
+                
+                // For Button Next color to turn green (Name)
+                if(window.formstat2a==true&&window.formstat2b==true)
+                {
+
+                     $(".circle-next-2").css("color","#39FF14");
+                     $(".circle-next-2").css("border-color","#39FF14");
+
+                }
+                else
+                {
+                    
+                     $(".circle-next-2").css("color","black");
+                     $(".circle-next-2").css("border-color","black");
+
+                }
+                
+                if(window.regemail==true)
+                {
+                        $("#reg-email").css("border-color","red");
+                         
+                }
+                else
+                {
+                       //  $("#reg-email").css("border-color","black");
+                }
+
+                if(window.regnameA ==true)
+                {
+                
+                     $(".form-control-reg-2").css("border-color","red");
+                }
+
+                if(window.regnameB ==true)
+                {
+                
+                     $(".form-control-reg-3").css("border-color","red");
+                }
+                
+
+
+
+                //Telephone
+                if(window.formstat4 == true)
+                {
+                    $(".form-control-reg-4").css("border-color","#39FF14");
+                    $(".circle-next-4").css("color","#39FF14");
+                    $(".circle-next-4").css("border-color","#39FF14");
+                }
+                else
+                {
+                     $(".circle-next-4").css("color","black");
+                     $(".circle-next-4").css("border-color","black");
+                }
+
+                if(window.regtel == true)
+                {
+                    $(".form-control-reg-4").css("border-color","red");
+                }
+
+                //Weight
+                if(window.formstat5 == true)
+                {
+                    $(".form-control-reg-5").css("border-color","#39FF14");
+                    $(".circle-next-5").css("color","#39FF14");
+                    $(".circle-next-5").css("border-color","#39FF14");
+                }
+                else
+                {
+                     $(".circle-next-5").css("color","black");
+                     $(".circle-next-5").css("border-color","black");
+                }
+
+                if(window.regweight == true)
+                {
+                    $(".form-control-reg-5").css("border-color","red");
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+                // For Button Next color to turn green (Gender)
+
+                if(gender==true)
+                {
+                    $(".circle-next-3").css("color","#39FF14");
+                    $(".circle-next-3").css("border-color","#39FF14");
+                }
+                else
+                {  
+                    $(".circle-next-3").css("color","black");
+                    $(".circle-next-3").css("border-color","black");
+                }
+
+                
+
+                /*** Mechanism For the indicators of the form ***/$
+
+                var indexstring = ".indi-"+gloIndex.toString();
+                
+                $(indexstring).css("background","rgba(205,92,92,1)");
+                $(indexstring).css("color","white");
+                $(indexstring).css("border-color","white");
+
+                for (var i=1; i<5; i++)
+                {
+                    var loopstring = ".indi-"+i.toString();
+                    if(i != gloIndex)
+                    {
+                        $(loopstring).css("background","black");
+                        $(loopstring).css("color","grey");
+                        $(loopstring).css("border-color","grey");
+
+                    }
+
+                }
+
+
+                
+            }
+            
+            setInterval(function(){checkFormStat();},50);
+            
+            
+            /*** Slidding in ascending order ***/
+            function SlideUp()
+            {
+                        $(".Register").animate({
+                     'marginTop':"-60%" , /** Distance covered: 75% **/
+                     'marginBottom':"100%" /** Replace Distance covered **/
+                  },1000);
+                  
+                          
+                  
+                  /*** Execute after up animation **/
+                  setTimeout(function(){
+                     $(".Register").css("margin-top","100%");
+                     $(".Register").css("margin-bottom","0%");
+                       //$(".Register").css("margin-bottom","0%");
+                      
+                     
+                        $(".Register").animate({
+                    'marginTop':"15%"  /** Replace Distance covered **/
+                        },1000);
+                      
+                  },1050);
+                  
+                
+            }
+            
+            /*** Sliding  in descending order ***/
+            function SlideDown()
+            {
+                
+                             $(".Register").animate({
+                     'marginTop':"100%" , /** Distance covered: 75% **/
+                     'marginBottom':"0%" /** Replace Distance covered **/
+                  },500);
+                  
+                          
+                  
+                  /*** Execute after up animation **/
+                  setTimeout(function(){
+                     $(".Register").css("margin-top","-60%");
+                     $(".Register").css("margin-bottom","100%");
+                       //$(".Register").css("margin-bottom","0%");
+                      
+                     
+                        $(".Register").animate({
+                    'marginTop':"0%"  /** Replace Distance covered **/
+                        },500);
+                      
+                  },550);
+                
+            }
+            
+            setInterval(function(){
+            
+                 var scrollPos = $(window).scrollTop();
+                 if(lLock==false)
+                    {
+                
+                if(scrollPos==0 && lStat==1)
+                {
+                         $(".hover-down").animate({
+                                 
+                                      'marginTop' : "0%",
+                                    'marginBottom' : "0%"
+                                     // 'marginBottom' : "50%"
+                                                           
+                                                           },1000);      
+                    
+                      $(".hover-down-child").animate({
+                                      
+                                
+                                      'paddingBottom':"0%",
+                                      'paddingTop':"5%"
+                                                           },0);
+                    
+                       $(".hover-down-text").css("color","white");
+                       $(".hover-down-child").removeClass("transparent-gradient");
+                        
+                        // Set to state 0
+                        // Set Viewport lock to true
+                        lLock=true;
+                        lStat=0;
+                     
+                        $(".turn-display").css('display','unset');
+                   
+                }
+                 }
+                },100);
+                            var CurrentScroll = 0;
+                        
+                  
+                                         $(window).scroll(function(e) { 
+                         if(lLock)
+                        {             
+                             window.scrollTo(0, 330);
+                    if($(window).scrollTop() >=330) {
+                       $(window).scrollTop(330);
+                    }
+                                         }
+                                                   var NextScroll = $(this).scrollTop();
+
+      if (NextScroll > CurrentScroll){
+         //write the codes related to down-ward scrolling here
+         // alert("asd");
+                    
+                    if(lStat==0)
+                    {
+          
+                                  //$(".turn-display").css('display','none');
+                                  $(".turn-display").css('display','none');
+                                  $(".hover-down").css("margin-bottom","35%");
+                                  $(".hover-down").animate({
+                                      
+                                      'marginTop' : "25%",
+                                      'marginBottom' : "-20%"
+                                                           
+                                                           },1000);
+          
+                                    $(".hover-down-child").animate({
+                                      
+                                
+                                      'paddingBottom':"5%",
+                                      'paddingTop':"20%"
+                                                           },0);
+                        
+                                    /****** TEMP SOLUTION: -5% ******/
+                                    $(".logo").css('margin-top','-5%');
+                        
+                        
+                         $(".hover-down-text").css("color","black");
+          
+                       setTimeout(function(){lLock=false;},1000);  
+                        
+                        
+                            $(".hover-down-child").addClass("transparent-gradient");
+                                  var height=$(window).height() /3;
+                                 // $(".hover-down").css('height',height.toString() + 'px');
+                     
+                        lStat=1;
+                        
+                        
+                    }
+          
+
+                   
+      }
+      else {
+         //write the codes related to upward-scrolling here
+          
+       
+      
+          
+      }     
+
+      CurrentScroll = NextScroll; 
+                });
+
+
+
+
+     /*
+               
+   
+                $(document).ready(function() {
+                       
+                               
+                           
+                     
+                          var CurrentScroll = 0;
+                          $(window).scroll(function(event){
+
+                              var NextScroll = $(this).scrollTop();
+                           
+                              if (NextScroll > CurrentScroll){
+                                 //write the codes related to down-ward scrolling here
+                                 // alert("down");
+                                 
+              
+
+                                  //$(".turn-display").css('display','none');
+                                  $(".turn-display").css('display','none');
+                                  $(".hover-down").css("margin-bottom","35%");
+                                  $(".hover-down").animate({
+                                      
+                                      'marginTop' : "35%",
+                                      'marginBottom' : "-5%"
+                                                           
+                                                           },1000);
+                                      
+                                      
+                                   
+                                  var height=$(window).height() /3;
+                                  $(".hover-down").css('height',height.toString() + 'px');
+                                
+                                  
+                   
+                                
+                        
+
+                                  
+                     
+                                  
+                                 //alert("done");
+                              }
+                              else {
+                                 //write the codes related to upward-scrolling here
+                                   // alert("up");
+                              }
+
+                              CurrentScroll = NextScroll;  //Updates current scroll position
+                          });
+                        });
+                 */
+           
+            
+        </script>
+
+
+
+
+ 
+        <div class="container-fluid fadeIn1 animated1" data-ng-init="boolFront=0" >
+            
+            
+               
+                <div id="img-bgg">
+                     <img id="a" src="http://imgh.us/Banner5_3.jpg" alt="">
+                </div>
+     
+            <div class="row hover-down Title" style="" >
+                <div class="col-xs-12  hover-down-child " style="padding-top:5%">
+                    
+                    <p class="text-center transition-1 hover-down-text" style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
+                 
+{{regform.first.$valid}}
+                </div>
+            </div>
+            
+                <div class="row" data-ng-show="boolFront==0">
+                    <div class="col-xs-12 ">
+                    
+                    
+                    
+                        <div data-ng-show="boolFront==1">
+
+                        </div>      
+                    </div>
+                
+                
+                
+                </div>
+           
+            
+        <!-- Dummy RowCol Block to Make space  -->
+        <div class="row" data-ng-show="boolFront==1">
+            <div class="col-xs-12" style="height:200px;" >
+
+            </div>
+        </div>
+
+        <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%" > 
+            
+            <div class="col-xs-2" style="">
+                 <div class="text-center indi-1" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >1</p></div>
+                 <div class="text-center indi-2" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >2</p></div>
+                 <div class="text-center indi-3" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >3</p></div>
+                 <div class="text-center indi-4" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >4</p></div>
+                 <div class="text-center indi-5" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >5</p></div>
+                 <!--
+                <div onclick="SlideDown()" class="text-center"data-ng-repeat="i in [2,3,4,5,6]" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >{{i}}</p></div>
+                 -->
+            
+            </div>
+            
+            
+            
+            
+            <div class="col-xs-8 Register text-center " style="height:500px;margin-bottom:10%;background:rgba(192,192,192,0.5); border: 4px solid white">
+                      
+                
+                <!-------------------------EMAIL START -->
+
+                <div class="form-1" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+            
+                <!-- Dummy RowCol Block to Make space  -->
+                <div class="row">
+                    <div class="col-xs-12" style="height:200px">
+
+                    </div>
+                </div>
+
+                <div class="row form-1" >
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                
+                
+
+
+                    <!-- Email Form -->        
+                    <form class="form-1" name="regform" class="form-register" data-ng-init="email">
+                        
+                        <div class="align-center">
+                            <input class="align-center inline-block form-control-reg form-control-reg-1" style="color:white;" placeholder="Your Email" type="email" data-ng-required="true" required="required" name="email" data-ng-model="email" data-ng-blur="enableEmailWarning()" data-ng-focus="disableEmailWarning()" id="reg-email"/>
+                
+                        
+                            <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform.email.$valid == false && warningEmailShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Invalid Email</p>
+                        </div> 
+                        
+
+                    
+                    
+                    
+                    
+                    
+                    </form>
+                        
+                    </div>
+                    
+                    <div class="col-xs-4" >
+                    
+                        <div class="inline-block pull-left form-1" >
+                            <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
+                           <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-------------------------EMAIL END -->
+
+
+
+
+
+
+                <!-------------------------NAME START -->
+
+
+                  <div class="form-2" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Name</p></div>
+            
+                
+                <div class="row form-2">
+                    <div class="col-xs-4"></div>
+              <div class="col-xs-4">
+
+
+                <!-- Name Form -->        
+                <form class="form-2" name="regform2" class="form-register" data-ng-init="email" style="display:none">
+                    
+                
+                    <div class="align-center" style="margin-top:0%">
+                        
+                                   <input class="align-center inline-block form-control-reg form-control-reg-2" style="color:black;" placeholder="First Name" data-ng-pattern="/^[A-z]+$/" type="text" data-ng-required="true" required="required" name="first" data-ng-model="first" data-ng-blur="enableNameWarning()"  id="reg-first"/>
+                        
+                                   <input class="align-center inline-block form-control-reg form-control-reg-3" style="color:black;" placeholder="Last Name"   data-ng-pattern="/^[A-z]+$/"type="text" data-ng-required="true" required="required" name="last" data-ng-model="last" data-ng-blur="enableNameWarning()" data-ng-focus="disableNameWarning()" id="reg-last"/>
+              
+
+                        <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform2.first.$valid == false && warningNameShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Your name should only consist alphabets</p>
+                    </div> 
+                    
+                  <!--  {{warningEmailShow}} -->
+                
+                
+                
+                
+                
+                </form>
+            </div>
+
+                    <div class="col-xs-4">
+                        <div class="inline-block pull-left form-2" style="display:none;margin-top:22%">
+                            <span class="glyphicon glyphicon-ok circle-next circle-next-2" onclick="FormNext()" style="font-size:27px;margin-left:4%;"></span>
+                      
+                        </div>
+                    </div>
+                </div>
+
+                 <!-------------------------NAME END-->
+
+
+
+
+
+
+                 <!-------------------------GENDER START-->
+
+                <div class="form-3" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Gender</p></div>
+                
+                    
+                    <div class="row form-3" style="display:none">
+                        <div class="col-xs-2"></div>
+
+
+
+
+                  <div class="col-xs-8">
+
+
+                        <div onclick="clickFemale() " onmouseover="this.style.background ='white';changeFemaleBlack();" onmouseout="mouseOutFemale();"  class="inline-block gender-female" style="border:3px solid white;width:100px;height:100px;color:white"><div class="fa fa-female" style="font-size:50px;margin-top:20%;"></div></div>
+                        <div onclick="clickMale() " onmouseover="this.style.background ='white';changeMaleBlack();" onmouseout="mouseOutMale();"  class="inline-block gender-male" style="border:3px solid white;width:100px;height:100px"><div class="fa fa-male" style="font-size:50px;margin-top:20%;color:white"></div></div>
+
+                       
+
+                  </div>
+    
+                        <div class="col-xs-2">
+                           
+                        </div>
+                    </div>
+
+
+            <div class="row form-3" style="display:none">
+                <div class="col-xs-12">
+
+                        <div class="inline-block form-3" style="display:none;margin:0 auto">
+                                <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-3" style="font-size:27px;margin-left:0%;"></span>
+                          
+                            </div>
+
+
+
+                </div>
+            </div>
+    
+                     <!-------------------------GENDER END-->
+    
+    
+             <!-------------------------TELEPHONE START -->
+
+             <div class="form-4" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+             
+
+                 <div class="row form-4" style="display:none" >
+                     <div class="col-xs-4"></div>
+                     <div class="col-xs-4">
+                 
+                 
+ 
+ 
+                     <!-- Telephone Form -->        
+                     <form class="form-4" name="regform4" class="form-register" data-ng-init="tel">
+                         
+                         <div class="align-center">
+                             <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-5 " style="color:white;" placeholder="Your Telephone Number" type="text" data-ng-required="true" required="required" name="tel" data-ng-model="tel" data-ng-blur="enableTelWarning()" data-ng-focus="disableTelWarning()" id="reg-tel"/>
+                 
+                             {{regform4.tel.$valid}}
+                             <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform5.weight.$valid == false && warningTelShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Your Telephone number should only consist of alphabets.</p>
+                         </div> 
+                         
+ 
+                     
+                     
+                     
+                     
+                     
+                     </form>
+                         
+                     </div>
+                     
+                     <div class="col-xs-4" >
+
+                         <div class="inline-block pull-left form-4" >
+                             <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
+                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                         </div>
+                         
+                     </div>
+                 </div>
+                 
+            <!-------------------------TELEPHONE END -->
+ 
+
+
+
+
+
+
+            <!-------------------------WEIGHT START -->
+
+            <div class="form-5" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+            
+
+                <div class="row form-5" style="display:none" >
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4">
+                
+                
+
+
+                    <!-- Weight Form -->        
+                    <form class="form-5" name="regform5" class="form-register" data-ng-init="weight">
+                        
+                        <div class="align-center">
+                            <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-4" style="color:white;" placeholder="Competing Weight (KG)" type="text" data-ng-required="true" required="required" name="weight" data-ng-model="weight" data-ng-blur="enableWeightWarning()" data-ng-focus="disableWeightWarning()" id="reg-tel"/>
+                
+                            {{regform4.tel.$valid}}
+                            <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform4.tel.$valid == false && warningTelShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Your Telephone number should only consist of alphabets.</p>
+                        </div> 
+                        
+
+                    
+                    
+                    
+                    
+                    
+                    </form>
+                        
+                    </div>
+                    
+                    <div class="col-xs-4" >
+
+                        <div class="inline-block pull-left form-5" >
+                            <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-5" style="font-size:27px;margin-left:4%;"></span>
+                           <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                        </div>
+                        
+                    </div>
+                </div>
+                
+           <!-------------------------WEIGHT END -->
+
+
+
+            </div>
+            
+            
+            <div class="col-xs-2">
+                
+            </div>
+            
+        </div>
+           
+            
+        
+        <div class="row turn-display " data-ng-show="boolFront==0">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6 logo">
+                <div >
+             <img style="width:100%" id="img-height"  src="http://imgh.us/Logo1_30.png" alt="">
+                </div>
+            </div>  
+            <div class="col-xs-3"></div>
+            
+ 
+
+            </div>
+            
+            
+        <div class="row turn-display " data-ng-show="boolFront==0" >
+            <div class="col-xs-12" style="margin-top:-7%">
+                
+                <section class="buttons-hover">
+                    <div class="container-hover" >
+                    <a style="font-size:20px" data-ng-click="boolFront=1" onclick="TriggerTitleFix()" class="btn-hover btn-11">
+                    <svg>
+                    <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                    </svg>
+                    Get Started
+                    </a>
+                    </div>
+                </section>
+            
+            
+            
+            </div>    
+            
+        </div>
+
+
+            
+        
+        <div class="row turn-display" data-ng-show="boolFront==0" >
+            <!--- Margin Top for Registered Users section -->
+            <div class="col-xs-12" style="margin-top:-1%;margin-bottom:15%">
+            
+            <div class=" text-center color-white">
+                <!--Set Margin Bottom Here-->
+          
+                <p style="margin-bottom:-.1%">Registered Participant: </p>
+                <!--- JOINED PARTICIPANTS (Margin-top)-->
+                <span class="circle-lime-green" style="margin-top:1%" ></span><span style="color:#00ff00;margin-left:.5%">21</span>
+                <!--- UNCONFIRMED PARTICIPANTS -->
+                <span class="circle-light-gray" style="margin-left:.5%"></span><span style="color:#AAAAAA;margin-left:.5%">11</span>
+                <p style="margin-top:3%">Scroll down to see more</p>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            
+            </div>
+            
+            </div>
+        </div>
+ 
+            
+        <div class="row inview" style="margin-top:0%" data-ng-show="boolFront==0">
+            <!-- -1 to fit properly -->
+            <div class="col-xs-12 sec-two " id="" style="background:white;border-top:5px solid white;margin-top:-1%">
+                <div style="height:1000px">
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+    
+        </div> 
+
+
+        </div>
+    
+    
+    
+    
+    
+        <!--
+               
+        <nav class="m-navbar-welcome navbar navbar-custom">
+                    <div class="container-fluid white-border-bottom">
+                        <div class="brand navbar-header text-center" style="margin:0 auto;">
+                        <a onmouseover="this.style.color = '#347AB6'" onmouseout="this.style.color = 'white'"class=" navbar-brand text-center  mx-auto" style="font-size:50px;" href="#">KUCHING POWERLIFTING MEET <span style="color:red">2018</span></a>
+
+                         <div style="margin-top:0%; margin-right: 5%;"class="m-display button-login navbar-body">
+                             <button class="btn-custom btn navbar-btn pull-right" type="button" data-ng-click="tologin()">Log In</button>
+                        </div>
+                            
+                        </div>
+                        <div class="d-button-login button-login navbar-body">
+                             <button class=" btn-custom btn navbar-btn pull-right" type="button" data-ng-click="tologin()">Log In</button>
+                        </div>
+                           </div>
+                    </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-12 text-center " id="jintro-resize">
+                
+                <div id="intro" >
+                    <p id="intro-text" class="m-intro-text  text-center">Sign up now to generate your very own customized workout based on your preferences!</p>
+                    <div class=" m-intro-btn intro-btn-div" id="btn-start"><button class="btn btn-custom intro-btn center-block" data-ng-click="toregister1()" type="button" >Get Started</button></div>
+                </div> 
+                
+                <div id="intro-see-more" class="text-white"  >
+                    <p class="color-white">see more</p>
+                    <span class="glyphicon glyphicon-chevron-down color-white"></span>
+                </div>
+            </div>
+            
+        </div>
+</div>
+        
+    
+        <div class="container-fluid" style="width:100%;">
+        <div class="row intro-features-bg">
+            <div class="col-md-4 col-sm-4 col-xs-12 m-intro-features intro-features text-center" id="intro-feature-text-1">
+                <span class="m-global-color glyphicon glyphicon-check"></span>
+                <p class="m-global-color h4">Workout Generator</p>
+                <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 m-intro-features intro-features text-center" id="intro-feature-text-2">
+                 <span class="m-global-color glyphicon glyphicon-time"></span>
+                <p class="m-global-color h4">Workout Tracker</p>
+                 <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12  m-intro-features intro-features text-center" id="intro-feature-text-3">
+                 <span class="m-global-color glyphicon glyphicon-wrench"></span>
+                <p class="h4 m-global-color">Custom Builder</p>
+                <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
+            </div>
+        </div>
+        
+        
+        <div class=" row">
+            <div class="col-md-12 intro-footer text-center ">
+            <button class="btn m-intro-btn intro-btn center-block" type="button" style="margin-bottom:3%">Important Disclaimer</button>
+               <p class="m-footer-text color-white align-center" style="width:80%;">WorkoutTracker.com is singe page application that builds a workout program based on your needs and specification. Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
+               <div >
+                  <a href="#" class=" h2 m-social-icons fa fa-facebook color-white footer-icon"></a>
+                  <a href="#" class="h2 m-social-icons fa fa-instagram color-white footer-icon"></a>
+                  <a href="#" class="h2 m-social-icons fa fa-twitter color-white footer-icon"></a>
+                
+                </div>
+                
+                
+            
+            
+            
+       
+        
+        </div> 
+    </div>
+        
+        
+-->
+        <script src="frameworks/js/jquery.js"></script>
+
