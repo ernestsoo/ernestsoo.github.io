@@ -4,6 +4,14 @@
 $red: #E1332D;
 $white: #fff;
 
+/*MOBILE OVERIDE FOR KUCHING POWERLIFTING*/
+@media only screen and (max-width: 768px) 
+ { 
+   .m-khpl-title
+   {
+     font-size: 23px !important;
+   }
+} 
 
                
 * {
@@ -704,8 +712,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
 
                
             /**** Viewport Setting for XS ****/
-             @media only screen and (max-width:768px){
-            /* styles for mobile browsers smaller than 480px; (iPhone) */
+            @media only screen and (max-width:768px)
+             {
+            /* styles for mobile browsers smaller than 480px; (iPhone) */
                  
                  .m-btn-login
                  {
@@ -887,6 +896,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
                  {
                      padding: 2% !important;
                  }
+
+
                  
                  /*** Global settings to hide elements ***/
                  .d-view
@@ -2224,9 +2235,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
               position: :relative;
               z-index: 1;
             }
-
-  
-
-
-        
-        
