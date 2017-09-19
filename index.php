@@ -6,21 +6,25 @@
 <!DOCTYPE html> 
 <html data-ng-app ="myApp" > 
     <head> 
-        <title>Workout Tracker</title> 
+        <title>Kuching Powerlifting Meet 2018</title> 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         
         <!-- Bootstrap --> 
         <link href="frameworks/css/bootstrap.min.css" rel="stylesheet" />  
-<link href='https://fonts.googleapis.com/css?family=Fjalla One' rel='stylesheet'>
+
+        <!-- Font Face: Fjalla One -->
+        <link href='https://fonts.googleapis.com/css?family=Fjalla One' rel='stylesheet'>
+        
         <!-- JQuery --> 
         <script src="frameworks/js/jquery.js"></script>
         
-        <link href="https://www.fontify.me/wf/bcc2940fdec41ea604f09b09c4f650df" rel="stylesheet" type="text/css">
+    <!--    <link href="https://www.fontify.me/wf/bcc2940fdec41ea604f09b09c4f650df" rel="stylesheet" type="text/css">
+    -->
 
-
+    <!--
         <link href="frameworks/css/responsive-calendar.css" rel="stylesheet" media="screen">
-  
+    -->
  
         <!-- CSS --> 
         <link href="frameworks/css/index-css.css" rel="stylesheet"/>
@@ -31,8 +35,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--- High Charts -->
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+       <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>-->
 
         <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>

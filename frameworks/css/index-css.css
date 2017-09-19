@@ -4,14 +4,6 @@
 $red: #E1332D;
 $white: #fff;
 
-/*MOBILE OVERIDE FOR KUCHING POWERLIFTING*/
-@media only screen and (max-width: 768px) 
- { 
-   .m-khpl-title
-   {
-     font-size: 23px !important;
-   }
-} 
 
                
 * {
@@ -35,7 +27,62 @@ input::-moz-placeholder { /* Firefox 18- */
 }
 
 
-            .circle-next
+
+
+
+
+/** ALL SETTINGS FOR KCH PL MOBILE VIEW **/
+@media only screen and (max-width: 778px )
+{
+    .m-khpl-title
+    {
+        font-size: 27px !important;
+
+    }
+
+    /* Reduce padding top at registration site when in mobile view */
+    .reg-padding
+    {
+        height:100px !important;
+    }
+
+    .m-absolute-title
+    {
+        height: 40px !important;
+        width: 110px !important;
+        margin-top: 1% !important;
+    }
+
+    .m-absolute-text
+    {
+        font-size:14px !important;
+        
+    
+    }
+
+    /* Form 1-5 padding settings */
+    .m-form-1-pt
+    {
+        height: 100px !important;
+    }
+
+    /* Height of main form container */
+    .m-form-height
+    {
+        height:300px !important;
+        margin-top:12% !important;
+
+    }
+
+   .Title
+   {
+       margin-left: 0% !important;
+   }
+    
+}
+
+
+.circle-next
 {
     cursor: pointer;
                             color:black;
@@ -55,7 +102,7 @@ input::-moz-placeholder { /* Firefox 18- */
 }
 
 
-      .circle-next: hover
+.circle-next:hover
 {
     
                             color:#39FF14;
@@ -712,9 +759,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
 
                
             /**** Viewport Setting for XS ****/
-            @media only screen and (max-width:768px)
-             {
-            /* styles for mobile browsers smaller than 480px; (iPhone) */
+             @media only screen and (max-width:768px){
+            /* styles for mobile browsers smaller than 480px; (iPhone) */
                  
                  .m-btn-login
                  {
@@ -896,8 +942,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
                  {
                      padding: 2% !important;
                  }
-
-
                  
                  /*** Global settings to hide elements ***/
                  .d-view
@@ -1115,7 +1159,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
              /**** Viewport Setting for XS and above ****/
              @media only screen and (min-width:768px){
                  
-                            .m-display
+                 .m-display
                  {
                     display: none;   
                  }
@@ -2235,3 +2279,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff' , 
               position: :relative;
               z-index: 1;
             }
+
+  
+
+
+        
+        

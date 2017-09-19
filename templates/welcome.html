@@ -7,7 +7,14 @@
             // To detect 
             $(document).keypress(function(e) {
                 if(e.which == 13) {
-                    FormNext();
+
+                    // Verifying Form input before moving towards to the next form with hotkey (Enter)
+
+                    var string = "FormNextFrom"+gloIndex.toString()+"();";
+
+                    eval(string);
+                    
+
                 }
             });
             // alert($(window).width());
@@ -19,6 +26,13 @@
             var male = false;
             var female = false;
 
+            // Set of Bools to handle the state of each form's visitation
+            var visit2 = false;
+            var visit3 = false;
+            var visit4 = false;
+            var visit5 = false;
+            var visit6 = false;
+            var visit7 = false;
             
 
             function mouseOutMale()
@@ -167,7 +181,7 @@
             function TriggerTitleFix()
             {
                 
-              $(".Title").css("position","fixed");
+              $(".Title").css("position","absolute");
               $(".Title").css("margin-left","18%");
                 
               setTimeout(function(){
@@ -184,7 +198,154 @@
         
             var gloIndex = 1;
             
+            // To handle the function of going up to previous completed and verified forms
+            function GoBackUp(int)
+            {
+
+                var string = ".form-" + gloIndex.toString();
+                
+                $(string).css("display","none");
+
+                SlideUp();
+
+                string = ".form-" + int.toString();
+                
+                $(string).css("display","unset");
+
+                gloIndex = int;
+
+            }
+
+            // To handle the function of going down to completed forms ONLY
+            function GoBackDown(int)
+            {
+                var string = ".form-" + gloIndex.toString();
+                
+                $(string).css("display","none");
+
+                SlideDown();
+
+                string = ".form-" + int.toString();
+
+                $(string).css("display","unset");
+
+                gloIndex = int;
+
+            }
+
+            // Function to handle manual navigation around the form.
+            function FormNextTo(int)
+            {
+    
+
+                if (gloIndex > int)
+                {
+                    GoBackUp(int);
+                }
+                else
+                {
+                    if(int==2&&visit2==true)
+                    {
+                        GoBackDown(int);
+                    }
+                    else if (int==3&&visit3==true)
+                    {
+                        GoBackDown(int);
+                    }
+                    else if (int==4&&visit4==true)
+                    {
+                        GoBackDown(int);
+                    }
+                    else if (int==5&&visit5==true)
+                    {
+                        GoBackDown(int);
+                    }
+                    else if(int==6&&visit6==true)
+                    {
+                        GoBackDown(int);
+                    }
+                    else if (int==7&&visit7==true)
+                    {
+                        GoBackDown(int);
+                    }
+                 
+                    
+                }
+       
+
+            }
+
+            //// Hard coding of each Form Next
+            function FormNextFrom1()
+            {
+                if(window.formstat)
+                {
+                    $(".form-1").css("display","none");
+
+                    gloIndex++;
+
+                    SlideDown();
+
+                    $(".form-2").css("display","unset");
+
+                    // visit status of this form to be visited
+                    visit2=true;
+                }
+            }
+
             
+
+            function FormNextFrom2()
+            {
+                if(window.formstat2a==true&&window.formstat2b==true)
+                {
+                    $(".form-2").css("display","none");
+
+                    gloIndex++;
+
+                    SlideDown();
+
+                    $(".form-3").css("display","unset");
+
+                    // visit status of this form to be visited
+                    visit3=true;
+                }
+            }
+
+            function FormNextFrom3()
+            {
+                if(gender)
+                {
+                    $(".form-3").css("display","none");
+
+                    gloIndex++;
+
+                    SlideDown();
+
+                    $(".form-4").css("display","unset");
+
+                    // visit status of this form to be visited
+                    visit4=true;
+                }
+            }
+
+            function FormNextFrom4()
+            {
+                if(window.formstat4)
+                {
+                    $(".form-4").css("display","none");
+
+                    gloIndex++;
+
+                    SlideDown();
+
+                    $(".form-5").css("display","unset");
+
+                    // visit status of this form to be visited
+                    visit5=true;
+                }
+            }
+
             function FormNext()
             {
                 var string = ".form-" + gloIndex.toString();
@@ -192,7 +353,7 @@
                 $(string).css("display","none");
                 
                 // Reset the current state of the form colour.
-                $(".circle-next").css("color","black"); 
+               // $(".circle-next").css("color","black"); 
 
                 // Set to default form Stat
                 formstat=null;
@@ -397,8 +558,8 @@
             /*** Slidding in ascending order ***/
             function SlideUp()
             {
-                        $(".Register").animate({
-                     'marginTop':"-60%" , /** Distance covered: 75% **/
+                  $(".Register").animate({
+                     'marginTop':"-100%" , /** Distance covered: 75% **/
                      'marginBottom':"100%" /** Replace Distance covered **/
                   },1000);
                   
@@ -412,7 +573,7 @@
                       
                      
                         $(".Register").animate({
-                    'marginTop':"15%"  /** Replace Distance covered **/
+                    'marginTop':"0%"  /** Replace Distance covered **/
                         },1000);
                       
                   },1050);
@@ -620,7 +781,8 @@
             
                
                 <div id="img-bgg">
-                     <img id="a" src="http://imgh.us/Banner5_3.jpg" alt="">
+                <!--  Backup online link:   <img id="a" src="http://imgh.us/Banner5_3.jpg" alt=""> -->
+                    <img id="a" src="images/banner5.jpg" alt="">
                 </div>
      
             <div class="row hover-down Title" style="" >
@@ -628,7 +790,7 @@
                     
                     <p class="text-center m-khpl-title transition-1 hover-down-text" style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
                  
-{{regform.first.$valid}}
+
                 </div>
             </div>
             
@@ -649,54 +811,68 @@
             
         <!-- Dummy RowCol Block to Make space  -->
         <div class="row" data-ng-show="boolFront==1">
-            <div class="col-xs-12" style="height:200px;" >
+            <div class="col-xs-12 reg-padding" style="height:200px;" >
 
             </div>
         </div>
 
-        <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%" > 
+        <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%; margin-top:0%" > 
             
-            <div class="col-xs-2" style="">
-                 <div class="text-center indi-1" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >1</p></div>
-                 <div class="text-center indi-2" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >2</p></div>
-                 <div class="text-center indi-3" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >3</p></div>
-                 <div class="text-center indi-4" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >4</p></div>
-                 <div class="text-center indi-5" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >5</p></div>
+            <div class="col-xs-12 col-md-2 m-form-nav-pt" >
+
+                <div class="m-display">
+                    <div onclick="FormNextTo(1)" class="text-center inline-block indi-1" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >1</p></div>
+                    <div onclick="FormNextTo(2)" class="text-center inline-block indi-2" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >2</p></div>
+                    <div onclick="FormNextTo(3)" class="text-center inline-block indi-3" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >3</p></div>
+                    <div onclick="FormNextTo(4)" class="text-center inline-block indi-4" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >4</p></div>
+                    <div onclick="FormNextTo(5)" class="text-center inline-block indi-5" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >5</p></div>
+                    <!--
+                    <div onclick="SlideDown()" class="text-center"data-ng-repeat="i in [2,3,4,5,6]" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >{{i}}</p></div>
+                    -->
+                 </div>
+
+                <div class="d-display">
+                 <div onclick="FormNextTo(1)" class="text-center indi-1" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >1</p></div>
+                 <div onclick="FormNextTo(2)" class="text-center indi-2" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >2</p></div>
+                 <div onclick="FormNextTo(3)" class="text-center indi-3" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >3</p></div>
+                 <div onclick="FormNextTo(4)" class="text-center indi-4" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >4</p></div>
+                 <div onclick="FormNextTo(5)" class="text-center indi-5" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >5</p></div>
                  <!--
                 <div onclick="SlideDown()" class="text-center"data-ng-repeat="i in [2,3,4,5,6]" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >{{i}}</p></div>
                  -->
+                 </div>
             
             </div>
             
             
             
             
-            <div class="col-xs-8 Register text-center " style="height:500px;margin-bottom:10%;background:rgba(192,192,192,0.5); border: 4px solid white">
+            <div class="col-xs-12 col-md-8 Register text-center m-form-height" style="height:500px;margin-bottom:10%;background:rgba(192,192,192,0.5); border: 4px solid white">
                       
                 
                 <!-------------------------EMAIL START -->
 
-                <div class="form-1" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+                <div class="form-1 m-absolute-title" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p class="m-absolute-text" style="margin-top:9%;color:red;">Email</p></div>
             
                 <!-- Dummy RowCol Block to Make space  -->
                 <div class="row">
-                    <div class="col-xs-12" style="height:200px">
+                    <div class="col-xs-12 m-form-1-pt" style="height:200px">
 
                     </div>
                 </div>
 
                 <div class="row form-1" >
-                    <div class="col-xs-4"></div>
-                    <div class="col-xs-4">
+                    <div class="col-md-4 col-xs-1"></div>
+                    <div class="col-md-4 col-xs-10">
                 
                 
 
 
                     <!-- Email Form -->        
-                    <form class="form-1" name="regform" class="form-register" data-ng-init="email">
+                    <form class=" form-1" name="regform" class="form-register" data-ng-init="email">
                         
                         <div class="align-center">
-                            <input class="align-center inline-block form-control-reg form-control-reg-1" style="color:white;" placeholder="Your Email" type="email" data-ng-required="true" required="required" name="email" data-ng-model="email" data-ng-blur="enableEmailWarning()" data-ng-focus="disableEmailWarning()" id="reg-email"/>
+                            <input class="align-center inline-block form-control-reg form-control-reg-1" style="color:black;" placeholder="Your Email" type="email" data-ng-required="true" required="required" name="email" data-ng-model="email" data-ng-blur="enableEmailWarning()" data-ng-focus="disableEmailWarning()" id="reg-email"/>
                 
                         
                             <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform.email.$valid == false && warningEmailShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Invalid Email</p>
@@ -712,10 +888,17 @@
                         
                     </div>
                     
-                    <div class="col-xs-4" >
+
+
+                    <div class="col-md-4 col-xs-12" >
                     
-                        <div class="inline-block pull-left form-1" >
-                            <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
+                        <div  class="inline-block pull-left form-1 d-display" >
+                            <span  onclick="FormNextFrom1()" class="glyphicon d-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
+                           <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                        </div>
+
+                         <div style="text-align:centerl;margin-top:13%" class="inline-block form-1 m-display" >
+                            <span  onclick="FormNextFrom1()" class="glyphicon m-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                         </div>
                         
@@ -732,7 +915,7 @@
                 <!-------------------------NAME START -->
 
 
-                  <div class="form-2" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Name</p></div>
+                  <div class="form-2" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Nme</p></div>
             
                 
                 <div class="row form-2">
@@ -765,7 +948,7 @@
 
                     <div class="col-xs-4">
                         <div class="inline-block pull-left form-2" style="display:none;margin-top:22%">
-                            <span class="glyphicon glyphicon-ok circle-next circle-next-2" onclick="FormNext()" style="font-size:27px;margin-left:4%;"></span>
+                            <span class="glyphicon glyphicon-ok circle-next circle-next-2" onclick="FormNextFrom2()" style="font-size:27px;margin-left:4%;"></span>
                       
                         </div>
                     </div>
@@ -809,7 +992,7 @@
                 <div class="col-xs-12">
 
                         <div class="inline-block form-3" style="display:none;margin:0 auto">
-                                <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-3" style="font-size:27px;margin-left:0%;"></span>
+                                <span onclick="FormNextFrom3()" class="glyphicon glyphicon-ok circle-next circle-next-3" style="font-size:27px;margin-left:0%;"></span>
                           
                             </div>
 
@@ -823,7 +1006,7 @@
     
              <!-------------------------TELEPHONE START -->
 
-             <div class="form-4" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+             <div class="form-4" style="display:none;position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
              
 
                  <div class="row form-4" style="display:none" >
@@ -856,7 +1039,7 @@
                      <div class="col-xs-4" >
 
                          <div class="inline-block pull-left form-4" >
-                             <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
+                             <span onclick="FormNextFrom4()" class="glyphicon glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
                             <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                          </div>
                          
@@ -873,7 +1056,7 @@
 
             <!-------------------------WEIGHT START -->
 
-            <div class="form-5" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+            <div class="form-5" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Weight</p></div>
             
 
                 <div class="row form-5" style="display:none" >
@@ -920,7 +1103,7 @@
             </div>
             
             
-            <div class="col-xs-2">
+            <div class="col-xs-0 col-md-2">
                 
             </div>
             
@@ -929,13 +1112,15 @@
             
         
         <div class="row turn-display " data-ng-show="boolFront==0">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-6 logo">
+            <div class="col-xs-1 col-md-3"></div>
+            <div class="col-xs-10 col-md-6 logo">
                 <div >
-             <img style="width:100%" id="img-height"  src="http://imgh.us/Logo1_30.png" alt="">
+       <!-- Backup Online Link:  <img style="width:100%" id="img-height"  src="http://imgh.us/Logo1_30.png" alt=""> -->
+
+       <img style="width:100%" id="img-height" src="images/Logo1.png" alt="">
                 </div>
             </div>  
-            <div class="col-xs-3"></div>
+            <div class="col-xs-1 col-md-3"></div>
             
  
 
@@ -1004,85 +1189,6 @@
     
     
     
-    
-    
-        <!--
-               
-        <nav class="m-navbar-welcome navbar navbar-custom">
-                    <div class="container-fluid white-border-bottom">
-                        <div class="brand navbar-header text-center" style="margin:0 auto;">
-                        <a onmouseover="this.style.color = '#347AB6'" onmouseout="this.style.color = 'white'"class=" navbar-brand text-center  mx-auto" style="font-size:50px;" href="#">KUCHING POWERLIFTING MEET <span style="color:red">2018</span></a>
 
-                         <div style="margin-top:0%; margin-right: 5%;"class="m-display button-login navbar-body">
-                             <button class="btn-custom btn navbar-btn pull-right" type="button" data-ng-click="tologin()">Log In</button>
-                        </div>
-                            
-                        </div>
-                        <div class="d-button-login button-login navbar-body">
-                             <button class=" btn-custom btn navbar-btn pull-right" type="button" data-ng-click="tologin()">Log In</button>
-                        </div>
-                           </div>
-                    </div>
-        </nav>
-
-        <div class="row">
-            <div class="col-md-12 text-center " id="jintro-resize">
-                
-                <div id="intro" >
-                    <p id="intro-text" class="m-intro-text  text-center">Sign up now to generate your very own customized workout based on your preferences!</p>
-                    <div class=" m-intro-btn intro-btn-div" id="btn-start"><button class="btn btn-custom intro-btn center-block" data-ng-click="toregister1()" type="button" >Get Started</button></div>
-                </div> 
-                
-                <div id="intro-see-more" class="text-white"  >
-                    <p class="color-white">see more</p>
-                    <span class="glyphicon glyphicon-chevron-down color-white"></span>
-                </div>
-            </div>
-            
-        </div>
-</div>
-        
-    
-        <div class="container-fluid" style="width:100%;">
-        <div class="row intro-features-bg">
-            <div class="col-md-4 col-sm-4 col-xs-12 m-intro-features intro-features text-center" id="intro-feature-text-1">
-                <span class="m-global-color glyphicon glyphicon-check"></span>
-                <p class="m-global-color h4">Workout Generator</p>
-                <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12 m-intro-features intro-features text-center" id="intro-feature-text-2">
-                 <span class="m-global-color glyphicon glyphicon-time"></span>
-                <p class="m-global-color h4">Workout Tracker</p>
-                 <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12  m-intro-features intro-features text-center" id="intro-feature-text-3">
-                 <span class="m-global-color glyphicon glyphicon-wrench"></span>
-                <p class="h4 m-global-color">Custom Builder</p>
-                <p class="intro-feature-text">Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
-            </div>
-        </div>
-        
-        
-        <div class=" row">
-            <div class="col-md-12 intro-footer text-center ">
-            <button class="btn m-intro-btn intro-btn center-block" type="button" style="margin-bottom:3%">Important Disclaimer</button>
-               <p class="m-footer-text color-white align-center" style="width:80%;">WorkoutTracker.com is singe page application that builds a workout program based on your needs and specification. Corporate sites differ from electronic commerce, portal, or sites in that they provide information to the public about the company rather than transacting business or providing other services.</p>
-               <div >
-                  <a href="#" class=" h2 m-social-icons fa fa-facebook color-white footer-icon"></a>
-                  <a href="#" class="h2 m-social-icons fa fa-instagram color-white footer-icon"></a>
-                  <a href="#" class="h2 m-social-icons fa fa-twitter color-white footer-icon"></a>
-                
-                </div>
-                
-                
-            
-            
-            
-       
-        
-        </div> 
-    </div>
-        
-        
--->
         <script src="frameworks/js/jquery.js"></script>
+
