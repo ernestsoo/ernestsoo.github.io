@@ -646,15 +646,28 @@
                             var CurrentScroll = 0;
                         
                   
-                                         $(window).scroll(function(e) { 
+                        $(window).scroll(function(e) { 
                          if(lLock)
                         {             
-                             window.scrollTo(0, 330);
-                    if($(window).scrollTop() >=330) {
-                       $(window).scrollTop(330);
-                    }
-                                         }
-                                                   var NextScroll = $(this).scrollTop();
+                                /* Window width size to be confirmed */
+                                if ( $(window).width() > 778)
+                                {
+                                    window.scrollTo(0, 330);
+                                    if($(window).scrollTop() >=330) {
+                                    $(window).scrollTop(330);
+                                    }
+                                }
+                                else
+                                {
+                                      window.scrollTo(0, 130);
+                                    if($(window).scrollTop() >=110) {
+                                    $(window).scrollTop(110);
+                                    }
+
+                                }
+                        }
+
+                        var NextScroll = $(this).scrollTop();
 
       if (NextScroll > CurrentScroll){
          //write the codes related to down-ward scrolling here
@@ -781,11 +794,11 @@
             
                
                 <div id="img-bgg">
-                    <img id="a" src="http://imgh.us/Banner5_3.jpg" alt=""> 
-                    <!--  <img id="a" src="images/banner5.jpg" alt=""> -->
+                     <img id="a" src="http://imgh.us/Banner5_3.jpg" alt=""> 
+                     <!--   Backup online link:  <img id="a" src="images/banner5.jpg" alt=""> -->
                 </div>
      
-            <div class="row hover-down Title" style="" >
+            <div class="row hover-down Title">
                 <div class="col-xs-12  hover-down-child " style="padding-top:5%">
                     
                     <p class="text-center m-khpl-title transition-1 hover-down-text" style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
@@ -821,11 +834,13 @@
             <div class="col-xs-12 col-md-2 m-form-nav-pt" >
 
                 <div class="m-display">
-                    <div onclick="FormNextTo(1)" class="text-center inline-block indi-1" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >1</p></div>
-                    <div onclick="FormNextTo(2)" class="text-center inline-block indi-2" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >2</p></div>
-                    <div onclick="FormNextTo(3)" class="text-center inline-block indi-3" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >3</p></div>
-                    <div onclick="FormNextTo(4)" class="text-center inline-block indi-4" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >4</p></div>
-                    <div onclick="FormNextTo(5)" class="text-center inline-block indi-5" style="border:2px solid grey;width:30%;width:40px;height:40px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:10% ;" >5</p></div>
+                    <div onclick="FormNextTo(1)" class="text-center inline-block indi-1" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >1</p></div>
+                    <div onclick="FormNextTo(2)" class="text-center inline-block indi-2" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >2</p></div>
+                    <div onclick="FormNextTo(3)" class="text-center inline-block indi-3" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >3</p></div>
+                    <div onclick="FormNextTo(4)" class="text-center inline-block indi-4" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >4</p></div>
+                    <div onclick="FormNextTo(5)" class="text-center inline-block indi-5" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >5</p></div>
+                    <div onclick="FormNextTo(6)" class="text-center inline-block indi-6" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >6</p></div>
+                    <div onclick="FormNextTo(7)" class="text-center inline-block indi-7" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey"><p style="margin-top:10% ;" >7</p></div>
                     <!--
                     <div onclick="SlideDown()" class="text-center"data-ng-repeat="i in [2,3,4,5,6]" style="border:2px solid grey;width:30%;width:50px;height:50px;background:black; margin-bottom: 10%;font-size:20px;color:grey"><p style="margin-top:25% ;" >{{i}}</p></div>
                     -->
@@ -855,8 +870,8 @@
                 <div class="form-1 m-absolute-title" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p class="m-absolute-text" style="margin-top:9%;color:red;">Email</p></div>
             
                 <!-- Dummy RowCol Block to Make space  -->
-                <div class="row">
-                    <div class="col-xs-12 m-form-1-pt" style="height:200px">
+                <div class="row form-1">
+                    <div class="col-xs-12 m-form-1-pt">
 
                     </div>
                 </div>
@@ -897,7 +912,8 @@
                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                         </div>
 
-                         <div style="text-align:centerl;margin-top:13%" class="inline-block form-1 m-display" >
+                        <div class="m-display form-1" style="visibility:hidden"><p>asdasd</p></div>
+                         <div style="text-align:center;" class="inline-block form-1 m-display" >
                             <span  onclick="FormNextFrom1()" class="glyphicon m-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                         </div>
@@ -915,12 +931,18 @@
                 <!-------------------------NAME START -->
 
 
-                  <div class="form-2" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Nme</p></div>
+                  <div class="form-2 m-absolute-title" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p class="m-absolute-text" style="margin-top:9%;color:red;font-size:15.5px">Name</p></div>
             
-                
+                <!-- Dummy RowCol Block to Make space  -->
+                <div class="row form-2" style="display:none">
+                    <div class="col-xs-12 m-form-2-pt" >
+
+                    </div>
+                </div>
+
                 <div class="row form-2">
-                    <div class="col-xs-4"></div>
-              <div class="col-xs-4">
+                    <div class="col-md-4 col-xs-1"></div>
+              <div class="col-md-4 col-xs-10">
 
 
                 <!-- Name Form -->        
@@ -946,9 +968,17 @@
                 </form>
             </div>
 
-                    <div class="col-xs-4">
-                        <div class="inline-block pull-left form-2" style="display:none;margin-top:22%">
-                            <span class="glyphicon glyphicon-ok circle-next circle-next-2" onclick="FormNextFrom2()" style="font-size:27px;margin-left:4%;"></span>
+                    <div class="col-md-4 col-xs-12 ">
+                        <div class="d-display inline-block pull-left form-2" style="display:none;margin-top:22%">
+                            <span class="glyphicon d-display glyphicon-ok circle-next circle-next-2" onclick="FormNextFrom2()" style="font-size:27px;margin-left:4%;"></span>
+                      
+                        </div>
+
+                        
+                        <div class="m-display form-2" style="visibility:hidden;display:none"><p>asdasd</p></div>
+
+                        <div class="m-display inline-block form-2" style="text-align: center;display:none;margin-top:22%">
+                            <span class="glyphicon m-display glyphicon-ok circle-next circle-next-2" onclick="FormNextFrom2()" style="font-size:27px;margin-left:4%;"></span>
                       
                         </div>
                     </div>
@@ -963,16 +993,22 @@
 
                  <!-------------------------GENDER START-->
 
-                <div class="form-3" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Gender</p></div>
+                <div class="form-3 m-absolute-title" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p class="m-absolute-text" style="margin-top:9%;color:red;font-size:15.5px">Gender</p></div>
                 
+                <!-- Dummy RowCol Block to Make space  -->
+                <div class="row form-3" style="display:none">
+                    <div class="col-xs-12 m-form-3-pt" >
+
+                    </div>
+                </div>
                     
                     <div class="row form-3" style="display:none">
-                        <div class="col-xs-2"></div>
+                        <div class="col-xs-0 col-md-2"></div>
 
 
 
 
-                  <div class="col-xs-8">
+                  <div class="col-xs-12 col-md-8">
 
 
                         <div onclick="clickFemale() " onmouseover="this.style.background ='white';changeFemaleBlack();" onmouseout="mouseOutFemale();"  class="inline-block gender-female" style="border:3px solid white;width:100px;height:100px;color:white"><div class="fa fa-female" style="font-size:50px;margin-top:20%;"></div></div>
@@ -982,7 +1018,7 @@
 
                   </div>
     
-                        <div class="col-xs-2">
+                        <div class="col-xs-0 col-md-2">
                            
                         </div>
                     </div>
@@ -1006,12 +1042,18 @@
     
              <!-------------------------TELEPHONE START -->
 
-             <div class="form-4" style="display:none;position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
+             <div class="form-4 m-absolute-title" style="display:none;position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black"><p class="m-absolute-text" style="margin-top:9%;color:red;font-size:15.5px">Email</p></div>
              
+                 <!-- Dummy RowCol Block to Make space  -->
+                <div class="row form-4" style="display:none">
+                    <div class="col-xs-12 m-form-4-pt" >
+
+                    </div>
+                </div>
 
                  <div class="row form-4" style="display:none" >
-                     <div class="col-xs-4"></div>
-                     <div class="col-xs-4">
+                     <div class="col-xs-1 col-md-4"></div>
+                     <div class="col-xs-10 col-md-4">
                  
                  
  
@@ -1022,7 +1064,7 @@
                          <div class="align-center">
                              <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-5 " style="color:white;" placeholder="Your Telephone Number" type="text" data-ng-required="true" required="required" name="tel" data-ng-model="tel" data-ng-blur="enableTelWarning()" data-ng-focus="disableTelWarning()" id="reg-tel"/>
                  
-                             {{regform4.tel.$valid}}
+                             <!-- {{regform4.tel.$valid}} -->
                              <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform5.weight.$valid == false && warningTelShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Your Telephone number should only consist of alphabets.</p>
                          </div> 
                          
@@ -1036,10 +1078,18 @@
                          
                      </div>
                      
-                     <div class="col-xs-4" >
+                     <div class="col-xs-12 col-md-4" >
 
-                         <div class="inline-block pull-left form-4" >
-                             <span onclick="FormNextFrom4()" class="glyphicon glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
+                         <div class="d-display inline-block pull-left form-4" >
+                             <span onclick="FormNextFrom4()" class="glyphicon d-display glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
+                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                         </div>
+
+                         
+                         <div class="m-display form-4" style="visibility:hidden;display:none"><p>asdasd</p></div>
+                         
+                         <div style="text-align: center" class="inline-block m-display form-4" >
+                             <span   onclick="FormNextFrom4()" class="glyphicon m-display glyphicon-ok circle-next circle-next-4" style="font-size:27px;margin-left:4%;"></span>
                             <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                          </div>
                          
@@ -1056,12 +1106,18 @@
 
             <!-------------------------WEIGHT START -->
 
-            <div class="form-5" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p style="margin-top:9%;color:red;font-size:15.5px">Weight</p></div>
+            <div class="form-5 m-absolute-title" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none"><p class="m-absolute-text" style="margin-top:9%;color:red;font-size:15.5px">Weight</p></div>
             
+                <!-- Dummy RowCol Block to Make space  -->
+                <div class="row form-5" style="display:none">
+                    <div class="col-xs-12 m-form-5-pt" >
+
+                    </div>
+                </div>
 
                 <div class="row form-5" style="display:none" >
-                    <div class="col-xs-4"></div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-1 col-md-4"></div>
+                    <div class="col-xs-10 col-md-4">
                 
                 
 
@@ -1072,7 +1128,7 @@
                         <div class="align-center">
                             <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-4" style="color:white;" placeholder="Competing Weight (KG)" type="text" data-ng-required="true" required="required" name="weight" data-ng-model="weight" data-ng-blur="enableWeightWarning()" data-ng-focus="disableWeightWarning()" id="reg-tel"/>
                 
-                            {{regform4.tel.$valid}}
+                           <!-- {{regform4.tel.$valid}}-->
                             <p data-ng-model-options="{ updateOn: 'blur'}" data-ng-show="regform4.tel.$valid == false && warningTelShow==true" class="text-center" style="margin-top:1%;margin-left:-5%;color:red"  >Your Telephone number should only consist of alphabets.</p>
                         </div> 
                         
@@ -1086,10 +1142,17 @@
                         
                     </div>
                     
-                    <div class="col-xs-4" >
+                    <div class="col-xs-12 col-md-4" >
 
-                        <div class="inline-block pull-left form-5" >
-                            <span onclick="FormNext()" class="glyphicon glyphicon-ok circle-next circle-next-5" style="font-size:27px;margin-left:4%;"></span>
+                        <div class="d-display inline-block pull-left form-5" >
+                            <span onclick="FormNext()" class="d-display glyphicon glyphicon-ok circle-next circle-next-5" style="font-size:27px;margin-left:4%;"></span>
+                           <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
+                        </div>
+
+                         <div class="m-display form-5" style="visibility:hidden;display:none"><p>asdasd</p></div>
+
+                        <div style="text-align: center" class="inline-block m-display form-5" >
+                            <span onclick="FormNext()" class="m-display glyphicon glyphicon-ok circle-next circle-next-5" style="font-size:27px;margin-left:4%;"></span>
                            <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                         </div>
                         
@@ -1115,9 +1178,9 @@
             <div class="col-xs-1 col-md-3"></div>
             <div class="col-xs-10 col-md-6 logo">
                 <div >
-         <img style="width:100%" id="img-height"  src="http://imgh.us/Logo1_30.png" alt=""> 
+        <img style="width:100%" id="img-height"  src="http://imgh.us/Logo1_30.png" alt=""> 
 
-       <!-- Backup Online Link: <img style="width:100%" id="img-height" src="images/Logo1.png" alt=""> -->
+        <!-- Backup Online Link: <img style="width:100%" id="img-height" src="images/Logo1.png" alt=""> -->
                 </div>
             </div>  
             <div class="col-xs-1 col-md-3"></div>

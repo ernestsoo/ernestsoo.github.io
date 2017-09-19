@@ -56,14 +56,32 @@ input::-moz-placeholder { /* Firefox 18- */
     .m-absolute-text
     {
         font-size:14px !important;
-        
-    
     }
 
-    /* Form 1-5 padding settings */
+    /* Form 1-7 padding settings */
     .m-form-1-pt
     {
-        height: 100px !important;
+        height: 100px;
+    }
+
+    .m-form-2-pt
+    {
+        height: 35px !important;
+    }
+
+    .m-form-3-pt
+    {
+        height: 30px !important;
+    }
+
+    .m-form-4-pt
+    {
+        height: 50px !important;
+    }
+
+    .m-form-5-pt
+    {
+        height: 50px !important;
     }
 
     /* Height of main form container */
@@ -71,16 +89,54 @@ input::-moz-placeholder { /* Firefox 18- */
     {
         height:300px !important;
         margin-top:12% !important;
-
     }
 
    .Title
    {
-       margin-left: 0% !important;
+       /* Temporary solution for the mobile title view left margin off?*/
+       margin-left: -5% !important;
    }
+
+   /* Inline-block for mobile views */
+   .m-inline-block
+   {
+       display:inline-block;
+   }
+
+
     
 }
 
+/** ALL SETTINGS FOR KCH PL DESKTOP VIEW **/
+@media only screen and (min-width: 778px )
+{
+    /* Form 1-7 padding settings */
+    .m-form-1-pt
+    {
+        height: 200px !important;
+    }
+
+    .m-form-2-pt
+    {
+        height: 200px !important;
+    }
+
+    .m-form-3-pt
+    {
+        height: 200px !important;
+    }
+
+    .m-form-4-pt
+    {
+        height: 200px !important;
+    }
+
+    .m-form-5-pt
+    {
+        height: 200px !important;
+    }
+
+}
 
 .circle-next
 {
