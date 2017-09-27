@@ -102,7 +102,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         
 
         $scope.tshirt="front";
-        alert($scope.tshirt);
+      //  alert($scope.tshirt);
         $scope.changetshirt = function()
         {
             if($scope.tshirt == "front")
@@ -255,6 +255,9 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         window.tel=$scope.tel;
         window.weight=$scope.weight;
         window.tsize=$scope.tsize;
+        window.state=$scope.state;
+        window.country=$scope.country;
+        window.occupation=$scope.occupation;
 
 
         

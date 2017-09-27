@@ -22,8 +22,8 @@ var database = firebase.database();
 //writeUserData(1000,"ernest","ernestsoo22@gmail.com");
 
 
-function writeParData(userId,email,first,last,gender,tel,weight,tsize){
-  alert("called");
+function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,country,occupation){
+  //alert("called");
   firebase.database().ref('id1/' + userId).set({
     email: email,
     first:first,
@@ -31,26 +31,36 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize){
     gender:gender,
     tel:tel,
     weight:weight,
-    tsize:tsize
+    tsize:tsize,
+    state:state,
+    country:country,
+    occupation:occupation
   });
-  alert("success run addRecord.");
+ // alert("success run addRecord.");
   
 }
 
-alert("new run1");
+
+
+//alert("new run1");
 
         setInterval(function(){
             
           if(window.sendFirebase)
           {
-              writeParData(0006,window.email,window.first,window.last,window.genderstore,window.tel,window.weight,window.tsize);
+              writeParData(0007,window.email,window.first,window.last,window.genderstore,window.tel,window.weight,window.tsize,window.state,window.country,window.occupation);
               window.sendFirebase=false;
           }
 
 
         },10);
 
-
+/*var idCounter = 077;
+return firebase.database().ref('idcounter/'+ idCounter).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+  alert(username);
+  // ...
+});*/
 
 
 }());
