@@ -34,6 +34,29 @@ input::-moz-placeholder { /* Firefox 18- */
 /** ALL SETTINGS FOR KCH PL MOBILE VIEW **/
 @media only screen and (max-width: 778px )
 {
+    .glyphicon-ok-4:before {
+        margin-top:-10% !important;
+
+    
+    }
+
+    .glyphicon-ok:before {
+    content: "\e013";
+    font-size:25px !important;
+
+    
+    }
+
+
+    .m-tel-form
+    {
+        margin-top: -11% !important;
+    }
+    .fa-arrow-circle-o-left:before {
+        content: "\f190";
+        display: none !important;
+        font-size:10px !important;
+    }
     .m-khpl-title
     {
         font-size: 27px !important;
@@ -76,7 +99,7 @@ input::-moz-placeholder { /* Firefox 18- */
 
     .m-form-4-pt
     {
-        height: 50px !important;
+        height: 0px !important;
     }
 
     .m-form-5-pt
@@ -84,11 +107,32 @@ input::-moz-placeholder { /* Firefox 18- */
         height: 50px !important;
     }
 
+     .m-form-6-pt
+    {
+        height: 0px !important;
+    }
+
+    .m-tsize-pic
+    {
+        margin-top: -20% !important;
+    }
+
     /* Height of main form container */
     .m-form-height
     {
         height:300px !important;
         margin-top:12% !important;
+    }
+
+    .m-tsize-select
+    {
+        margin-top:-75% !important;
+        margin-left:-50% !important;
+    }
+
+    .m-tsize-check
+    {
+        margin-top: -20% !important;
     }
 
    .Title
@@ -103,13 +147,80 @@ input::-moz-placeholder { /* Firefox 18- */
        display:inline-block;
    }
 
+   .m-block-pay
+   {
+       display:block !important;
+       text-align: center;
+       margin: 0 auto;
+   }
+
+   .m-pay-or
+   {
+       margin-top: 5%;
+       margin-bottom: 5%;
+   }
+
+   .m-pay-title
+   {
+       font-size:14px !important;
+   }
+
+   .m-pay-text
+   {
+       font-size:11px !important;
+   }
+
+   .m-pay-button
+   {
+       font-size:14px !important;
+   }
+
+   .m-success-mt
+   {
+       margin-top:0% !important;
+   }
+
+   .m-success-title
+   {
+       font-size:17px !important;
+   }
+   
+   .m-success-text
+   {
+       font-size:13px !important;
+   }
+       .circle-complete
+    {
+        width:45px !important;
+        height:45px !important;
+        font-size:20px !important;
+        margin-bottom:5% !important;
+        padding-top:12px !important;
+    }
+
+    .m-shirt
+    {
+        margin-top: 0% !important;
+    }
 
     
+}
+
+
+.pay-button
+{
+    color:white;
+    background: rgba(205,92,92,1); 
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /** ALL SETTINGS FOR KCH PL DESKTOP VIEW **/
 @media only screen and (min-width: 778px )
 {
+
+
     /* Form 1-7 padding settings */
     .m-form-1-pt
     {
@@ -118,23 +229,43 @@ input::-moz-placeholder { /* Firefox 18- */
 
     .m-form-2-pt
     {
-        height: 200px !important;
+        height: 150px !important;
     }
 
     .m-form-3-pt
     {
-        height: 200px !important;
+        height: 150px !important;
     }
 
     .m-form-4-pt
     {
-        height: 200px !important;
+        height: 75px !important;
     }
 
     .m-form-5-pt
     {
         height: 200px !important;
     }
+    
+    .m-form-6-pt
+    {
+        height: 35px !important;
+    }
+
+}
+
+.circle-complete
+{
+        color:white
+        ;
+                     background-color:#39FF14;
+                            border:1px solid #39FF14;    
+                            height:65px;
+                            border-radius:50%;
+                            -moz-border-radius:50%;
+                            -webkit-border-radius:50%;
+                            width:65px;
+                            padding-top: 16px;
 
 }
 

@@ -1,7 +1,3 @@
-  
-        <?php
-            session_start();
-        ?>
 
 <!DOCTYPE html> 
 <html data-ng-app ="myApp" > 
@@ -18,7 +14,15 @@
         
         <!-- JQuery --> 
         <script src="frameworks/js/jquery.js"></script>
+
+     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+     <script src="frameworks/js/firebaseconnect.js"></script>
+
         
+        
+
+        
+
     <!--    <link href="https://www.fontify.me/wf/bcc2940fdec41ea604f09b09c4f650df" rel="stylesheet" type="text/css">
     -->
 
@@ -45,30 +49,17 @@
     </head> 
     
  
-    <body onLoad="script" style="overflow:hidden">
+    <body onLoad="script" style="overflow:hidden" >
+      
+
 
     
+      
+        
         <div data-ng-view></div>
       
         
-        
-        <?php 
-            if(isset($_GET['table']))
-                $_SESSION['table'] = $_GET['table'];
-            if(isset($_GET['field']))
-                $_SESSION['field'] = $_GET['field'];
-            if(isset($_GET['key']))
-                $_SESSION['key'] = $_GET['key'];
-            if(isset($_GET['key2']))
-                $_SESSION['key2'] = $_GET['key2'];
-            if(isset($_GET['key3']))
-                $_SESSION['key3'] = $_GET['key3'];
-             if(isset($_GET['key4']))
-                $_SESSION['key4'] = $_GET['key4'];
-        
-            
 
-        ?>
         
         
         
@@ -99,6 +90,10 @@
         <script src="frameworks/register.js"></script>
         <script src="frameworks/js/jquery.js"></script>
         <script src="moment.js"></script>
+
+        
+        <!-- FireBase -->
+
 
         
         

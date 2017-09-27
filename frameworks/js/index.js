@@ -1,18 +1,23 @@
 
 
-var app = angular.module('myApp', ["ngRoute"]);
+var app = angular.module('myApp',['ngRoute']);
 
 
 app.controller("formControl", function ($scope, $http,$interval,$window) {
 
-    
-    
-            
+        $scope.sendFirebase = false;
+        $scope.submitted = false;
         
+        $scope.tsize='Size';
+    
+       // alert("hi2");
         $scope.warningEmailShow = false;
         $scope.warningNameShow = false;
         $scope.warningTelShow = false;
         $scope.warningWeightShow = false;
+        $scope.warningStateShow = false;
+        $scope.warningCountryShow = false;
+        $scope.warningOccupationShow = false;
 
         $scope.disableEmailWarning = function()
         {
@@ -55,10 +60,60 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningWeightShow = true;
         }
+
+        $scope.disableStateWarning = function()
+        {
+            $scope.warningStateShow = false;
+        }
+        
+        $scope.enableStateWarning= function()
+        {
+            $scope.warningStateShow = true;
+        }
+        $scope.disableCountryWarning = function()
+        {
+            $scope.warningCountryShow = false;
+        }
+        
+        $scope.enableCountryWarning= function()
+        {
+            $scope.warningCountryShow = true;
+        }
+
+        $scope.disableOccupationWarning = function()
+        {
+            $scope.warningOccupationShow = false;
+        }
+        
+        $scope.enableOccupationWarning= function()
+        {
+            $scope.warningOccupationShow = true;
+        }
+    
+    
+    
+    
+    
+    
+
+
     
     
         
 
+        $scope.tshirt="front";
+        alert($scope.tshirt);
+        $scope.changetshirt = function()
+        {
+            if($scope.tshirt == "front")
+            {
+                $scope.tshirt="back";
+            }
+            else
+            {
+                $scope.tshirt="front";
+            }
+        }
     
   //  $scope.test="testtest";
     
@@ -115,7 +170,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         }
 
         /*** Checking for Telephone ***/
-        $window.formstat4= $scope.regform4.tel.$valid;
+        $window.formstat4a= $scope.regform4.tel.$valid;
 
         if($scope.warningTelShow && !$scope.regform4.tel.$valid)
         {
@@ -127,6 +182,55 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
                 $window.regtel= null;
          }
 
+        /*** Checking for State ***/
+        $window.formstat4b= $scope.regform4.state.$valid;
+
+        if($scope.warningStateShow && !$scope.regform4.state.$valid)
+        {
+                $window.regstate= true ;
+           
+        }
+        else 
+        {
+                $window.regstate= null;
+        }
+
+        
+        /*** Checking for Country ***/
+        $window.formstat4c= $scope.regform4.country.$valid;
+
+        if($scope.warningCountryShow && !$scope.regform4.country.$valid)
+        {
+                $window.regcountry =  true ;
+           
+        }
+        else 
+        {
+                $window.regcountry= null;
+        }
+
+           
+        /*** Checking for Country ***/
+        $window.formstat4d= $scope.regform4.occupation.$valid;
+
+        if($scope.warningOccupationShow && !$scope.regform4.occupation.$valid)
+        {
+                $window.regoccupation =  true ;
+           
+        }
+        else 
+        {
+                $window.regoccupation= null;
+        }
+
+        if($window.formstat4a && $window.formstat4b && $window.formstat4c && $window.formstat4d)
+        {
+            $window.formstat4 = true;
+        }
+        else
+        {
+            $window.formstat4 = false
+        }
 
 
         /*** Checking for Weight ***/
@@ -141,6 +245,40 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
             {
                     $window.regweight= null;
              }
+
+
+
+        // Send User Data All the Time
+        window.email = $scope.email;
+        window.first=$scope.first;
+        window.last=$scope.last;
+        window.tel=$scope.tel;
+        window.weight=$scope.weight;
+        window.tsize=$scope.tsize;
+
+
+        
+        // Trigger if form sent
+        if($scope.sendFirebase)
+        {
+            // Send bool to firebaseconnect.js
+            window.sendFirebase = true;
+
+            // Disable bool for AngularJS
+            $scope.sendFirebase = false;
+        }
+
+        // Trigger if size selected
+        {
+            if($scope.tsize!='Size')
+            {
+                window.tsize = $scope.tsize;
+                window.formstat6 = true;
+
+            }
+
+        }
+
 
     }
     
