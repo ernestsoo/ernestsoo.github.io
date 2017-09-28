@@ -5,8 +5,10 @@ var app = angular.module('myApp',['ngRoute']);
 
 app.controller("formControl", function ($scope, $http,$interval,$window) {
 
+        $scope.method='';
         $scope.sendFirebase = false;
         $scope.submitted = false;
+        $scope.gender = '';
         
         $scope.tsize='Size';
     

@@ -5,6 +5,24 @@
         document.body.style.overflow = 'hidden';
     }
 
+    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+    var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+    var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+    if ((is_chrome)&&(is_safari)) {is_safari=false;}
+    if ((is_chrome)&&(is_opera)) {is_chrome=false;}
+
+    if(is_safari)
+    {
+        alert("safari");
+    }
+
+    if(is_chrome)
+    {
+        alert("chrome");
+    }
+ //   alert(navigator.appCodeName);
 
     // global access window index
     onreg = false;
@@ -727,10 +745,11 @@
                   }*/
             }
             else {
-                window.scrollTo(0, 130);
+             /*   window.scrollTo(0, 130);
                 if ($(window).scrollTop() >= 110) {
                     $(window).scrollTop(110);
                 }
+*/
 
             }
         }
@@ -858,6 +877,99 @@
 </script>
 
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Contact Us</h4>
+        </div>
+        <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>For any enquiries, feel free to contact us at:</p>
+                            </div>
+                        </div>
+          
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img class="inline-block" src="images/whatsapp-logo.png" style="width:10%;font-size:17px" alt="WhatsApp Logo" />
+                                <p
+                                    class="inline-block" style="padding-left:8px">+60128866650</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img class="inline-block" src="images/telegram-logo.png" style="width:10%;font-size:17px" alt="Telegram Logo" />
+                                <p
+                                    class="inline-block" style="padding-left:8px">+60128866650</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img class="inline-block" src="images/wechat-logo.png" style="width:10%;font-size:17px" alt="WeChat Logo" />
+                                <p
+                                    class="inline-block" style="padding-left:8px">powerliftingkch</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p style="font-size:12px;margin-top:2%;color:grey">Typically reply within 2 hours</p>
+                            </div>
+                        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal2 -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Details Confirmation</h4>
+        </div>
+        <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p style="font-size:16px">Please confirm your submission details:</p>
+                            </div>
+                        </div>
+          
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>Email: {{email}}</p>
+                                <p>First Name: {{first}}</p>
+                                <p>Last Name: {{last}}</p>
+                                <p>Gender: {{gender}}</p>
+                                <p>Telephone Number: {{tel}}</p>
+                                <p>State: {{state}}</p>
+                                <p>Country: {{country}}</p>
+                                <p>Occupation: {{occupation}}</p>
+                                <p>Estimated Competing Weight: {{weight}}<p>
+                                <p>T-Shirt Size: {{tsize}}</p>
+        
+                            </div>
+                        </div>
+
+             
+        </div>
+        <div class="modal-footer">
+          <button data-ng-click="method='complete';sendFirebase=true" type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -867,7 +979,7 @@
 
     <div id="img-bgg">
         <!--<img id="a" src="http://imgh.us/Banner5_3.jpg" alt="">-->
-        <img id="a" src="https://s20.postimg.org/x5focegul/banner5.jpg" alt="">
+        <img id="a" src="images/banner5.jpg" alt="">
     </div>
 
     <div class="row hover-down Title">
@@ -896,17 +1008,26 @@
 
     <!-- Dummy RowCol Block to Make space  -->
     <div class="row" data-ng-show="boolFront==1">
-        <div class="col-xs-12 reg-padding" style="height:200px;">
-
-            <span onclick="TriggerTitleLoose();onreg=false" data-ng-click="boolFront=0" class="d-display fa fa-arrow-circle-o-left" style="font-size:50px;color:white;margin-left:4%"></span>
-            <p onclick="TriggerTitleLoose();onreg=false" class="d-display" data-ng-click="boolFront=0" style="font-size:25px;color:white;margin-left:4%">Return</p>
+        <div class="col-xs-12 reg-padding d-arrow-left" style="height:200px;">
+            
+            <span onclick="TriggerTitleLoose();onreg=false" data-ng-click="boolFront=0" class="d-display  fa fa-arrow-circle-o-left" style="font-size:50px;color:white;margin-left:4%"></span>
+            <p onclick="TriggerTitleLoose();onreg=false" class="d-display " data-ng-click="boolFront=0" style="font-size:27px;color:white;margin-left:4%">Return</p>
 
         </div>
     </div>
 
+
+
     <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%; margin-top:0%">
 
         <div class="col-xs-12 col-sm-2 m-form-nav-pt">
+            
+        <div class="row m-display" style="margin-bottom:10%" >
+            <div class="col-xs-12">
+                 <span onclick="TriggerTitleLoose();onreg=false" data-ng-click="boolFront=0" class="m-display fa fa-arrow-circle-o-left align-center" style="font-size:30px;color:white;margin-left:0%"></span>
+                <p onclick="TriggerTitleLoose();onreg=false" class="m-display align-center inline-block" data-ng-click="boolFront=0" style="font-size:20px;color:white;margin-left:0%;margin-top:-100%">Return</p>
+            </div>
+         </div>
 
             <div class="m-display">
                 <div onclick="FormNextTo(1)" class="text-center inline-block indi-1" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey">
@@ -1018,7 +1139,7 @@
                 <div class="col-sm-4 col-xs-12">
 
                     <div class="inline-block pull-left form-1 d-display">
-                        <span onclick="FormNextFrom6()" class="glyphicon d-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
+                        <span onclick="FormNextFrom1()" class="glyphicon d-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
                         <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                     </div>
 
@@ -1026,7 +1147,7 @@
                         <p>asdasd</p>
                     </div>
                     <div style="text-align:center;" class="inline-block form-1 m-display">
-                        <span onclick="FormNextFrom6()" class="glyphicon m-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
+                        <span onclick="FormNextFrom1()" class="glyphicon m-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
                         <!-- <p>asd:{{ formstat = regform.email.$valid}}{{test}}</p>-->
                     </div>
 
@@ -1066,11 +1187,11 @@
                         <div class="align-center" style="margin-top:0%">
                     
                             <input class="align-center inline-block form-control-reg form-control-reg-2" style="color:black;" placeholder="First Name"
-                                data-ng-pattern="/^[A-z]+$/" type="text" data-ng-required="true" required="required" name="first"
+                                data-ng-pattern="/^[A-z ]+$/" type="text" data-ng-required="true" required="required" name="first"
                                 data-ng-model="first" data-ng-blur="enableNameWarning()" id="reg-first" />
 
                             <input class="align-center inline-block form-control-reg form-control-reg-3" style="color:black;" placeholder="Last Name"
-                                data-ng-pattern="/^[A-z]+$/" type="text" data-ng-required="true" required="required" name="last"
+                                data-ng-pattern="/^[A-z ]+$/" type="text" data-ng-required="true" required="required" name="last"
                                 data-ng-model="last" data-ng-blur="enableNameWarning()" data-ng-focus="disableNameWarning()"
                                 id="reg-last" />
 
@@ -1134,11 +1255,11 @@
 
                 <div class="col-xs-12 col-sm-8">
 
-                    <div onclick="clickFemale() " onmouseover="this.style.background ='white';changeFemaleBlack();" onmouseout="mouseOutFemale();"
+                    <div onclick="clickFemale() " data-ng-click="gender='Female'" onmouseover="this.style.background ='white';changeFemaleBlack();" onmouseout="mouseOutFemale();"
                         class="inline-block gender-female" style="border:3px solid white;width:100px;height:100px;color:white">
                         <div class="fa fa-female" style="font-size:50px;margin-top:20%;"></div>
                     </div>
-                    <div onclick="clickMale() " onmouseover="this.style.background ='white';changeMaleBlack();" onmouseout="mouseOutMale();"
+                    <div onclick="clickMale() "  data-ng-click="gender ='Male' "onmouseover="this.style.background ='white';changeMaleBlack();" onmouseout="mouseOutMale();"
                         class="inline-block gender-male" style="border:3px solid white;width:100px;height:100px">
                         <div class="fa fa-male" style="font-size:50px;margin-top:20%;color:white"></div>
                     </div>
@@ -1281,7 +1402,7 @@
                     <form class="form-5" name="regform5" class="form-register" data-ng-init="weight">
 
                         <div class="align-center">
-                            <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-6" style="color:white;"
+                            <input data-ng-pattern="/^[0-9]*$/" class="align-center inline-block form-control-reg form-control-reg-5" style="color:white;"
                                 placeholder="Competing Weight (KG)" type="text" data-ng-required="true" required="required" name="weight"
                                 data-ng-model="weight" data-ng-blur="enableWeightWarning()" data-ng-focus="disableWeightWarning()"
                                 id="reg-tel" />
@@ -1299,11 +1420,11 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-3">
+                <div class="col-xs-12 col-sm-3 m-weight-check">
 
                     
-                    <div class="m-display form-6" style="visibility:hidden;display:none">
-                        <p>asdasd</p>
+                    <div class="m-display form-6" style="display:none" style="height:20px">
+                        <p class="form-6 m-display">asdasd</p>
                     </div>
 
                     <div class="d-display inline-block pull-left form-6">
@@ -1441,7 +1562,7 @@
 
             <!-------------------------PAYMENT START -->
 
-            <div data-ng-init="method=''" class="form-7 m-absolute-title complete-gone" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none">
+            <div  class="form-7 m-absolute-title complete-gone" style="position:absolute;left:20%;top:-6%;border:3px solid white;height:50px;width:140px; background: black;display:none">
                 <p class="m-absolute-text" style="margin-top:9%;color:red;font-size:15.5px">Payment</p>
             </div>
 
@@ -1452,14 +1573,17 @@
                 </div>
             </div>
 
-            <div class="row form-7" style="display:none" data-ng-init="paymentState">
-                <div class="col-xs-1 col-sm-1"></div>
-                <div class="col-xs-10 col-sm-10">
+            <div class="row form-7" style="display:none;" data-ng-init="paymentState">
+                <div class="col-xs-0 col-sm-2 m-mt-n15" >
+                     <span  data-ng-hide="method=='complete' || method==''" data-ng-click="method=''" data-ng-click="boolFront=0" class="d-display fa fa-arrow-circle-o-left" style="font-size:28px;color:white;margin-left:-10%"></span>
+                     <p  data-ng-hide="method=='complete' || method==''"data-ng-click="method=''" style="color:white;margin-left:-3.5%;font-size:13px" class="inline-block">Other Payment Method</p>
+                </div>
+                <div class="col-xs-12 col-sm-8">
 
 
 
 
-                    <div data-ng-show="method==''" style="margin-top:90px">
+                    <div class="m-payment-choice align-center text-center" data-ng-show="method==''" style="margin-top:90px">
                         <button data-ng-click="method='bank'" class="btn m-block-pay inline-block pay-button">Pay via Bank Transfer</button>
                         <div class="inline-block m-block-pay m-pay-or" style="padding-left:5%;padding-right:5%;color:white;font-size:15px">OR</div>
                         <button data-ng-click="method='meet'" class="btn m-block-pay inline-block pay-button" style="padding-left:5%; padding-right:5%">Pay via Meet Up</button>
@@ -1497,7 +1621,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-12" onclick="clearCompleteGone()" data-ng-click="sendFirebase=true;method='complete'">
+                            <div class="col-xs-12"  data-toggle="modal" data-target="#myModal2" onclick="clearCompleteGone()" >
                                          <section class="buttons-hover d-display" >
                                             <div class="container-hover">
                                                 <a  style="font-size:20px" data-ng-click="boolFront=1" onclick="TriggerTitleFix()" class="btn-hover btn-11 m-pay-button">
@@ -1510,7 +1634,7 @@
                                         </section>
 
                                         <div class="m-display">
-                                          <button  class="btn m-display m-block-pay align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
+                                          <button data-toggle="modal" data-target="#myModal2"  class="btn m-display m-block-pay align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
                                         </div>
                             </div>
                         </div>
@@ -1547,7 +1671,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-12" onclick="clearCompleteGone()" data-ng-click="sendFirebase=true;method='complete'">
+                            <div class="col-xs-12"  data-toggle="modal" data-target="#myModal2" onclick="clearCompleteGone()" >
                                          <section class="buttons-hover d-display">
                                             <div class="container-hover">
                                                 <a style="font-size:20px" data-ng-click="boolFront=1" onclick="TriggerTitleFix()" class="btn-hover btn-11 m-pay-button">
@@ -1560,7 +1684,7 @@
                                         </section>
                                         
                                         <div class="m-display">
-                                          <button  class="btn m-block-pay m-display align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
+                                          <button  data-toggle="modal" data-target="#myModal2"   class="btn m-block-pay m-display align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
                                         </div>
                             </div>
                         </div>
@@ -1568,7 +1692,7 @@
 
                     <div class="text-center" data-ng-show="method=='complete' " >
                         <div class="m-success-mt" style="margin-top:10%;">
-                            <div class="circle-complete  glyphicon glyphicon-ok "></div>
+                            <div class="circle-complete glyphicon glyphicon-ok "></div>
                             
                         </div>
 
@@ -1599,7 +1723,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-1">
+                <div class="col-xs-0 col-sm-2">
 
                     <!--  <div class="d-display inline-block pull-left form-7" >
                             <span onclick="FormNextFrom6()" class="d-display glyphicon glyphicon-ok circle-next circle-next-6" style="font-size:27px;margin-left:4%;"></span>
@@ -1670,8 +1794,10 @@
 
 
     <div class="row turn-display" data-ng-show="boolFront==0">
+
+        <div class="col-xs-2 col-sm-4"></div>
         <!--- Margin Top for Registered Users section -->
-        <div class="col-xs-12" style="margin-top:-1%;margin-bottom:15%">
+        <div class="col-xs-8 col-sm-4" style="margin-top:-1%;margin-bottom:15%">
 
             <div class=" text-center color-white">
                 <!--Set Margin Bottom Here-->
@@ -1687,7 +1813,15 @@
             </div>
 
         </div>
+
+        <div class="col-xs-2 col-sm-4"> 
+
+                 <span class="glyphicon glyphicon-earphone circle-contact pull-right cursor-pointer" data-toggle="modal" data-target="#myModal" style="margin-top:12%;margin-right:5%"></span>
+        </div>
     </div>
+
+
+
 
 
     <div class="row inview" style="margin-top:0%" data-ng-show="boolFront==0">
@@ -1697,29 +1831,29 @@
 
 
                 <div class="row" style="background: #fafafa; margin-top:-2%;padding-bottom:5%">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-8">
-                        <p class="text-center" style="margin-top:5%;font-size:40px">Our Mission</p>
-                        <p class="text-center" style="font-size:18px">Powerlifting Kuching aims to provide a platform for all athletes of different backgrounds to showcase
+                    <div class="col-xs-1 col-sm-2"></div>
+                    <div class="col-xs-10 col-sm-8">
+                        <p class="text-center m-mission-title" style="margin-top:5%;font-size:40px">Our Mission</p>
+                        <p class="text-center m-mission-text" style="font-size:18px">Powerlifting Kuching aims to provide a platform for all athletes of different backgrounds to showcase
                             their strength in the sport of Powerlifting.</p>
-                        <p class="text-center" style="font-size:18px">The mission of Powerlifting Kuching is to promote the health and mental benefits of strength training
+                        <p class="text-center m-mission-text" style="font-size:18px">The mission of Powerlifting Kuching is to promote the health and mental benefits of strength training
                             and the sport of Powerlifting in Malaysia, particularly East Malaysia.</p>
-                        <p class="text-center" style="font-size:18px">Powerlifting Kuching strives to provide recognition to all strength athletes of all levels through
+                        <p class="text-center m-mission-text m-mission-text-3" style="font-size:18px">Powerlifting Kuching strives to provide recognition to all strength athletes of all levels through
                             hosting powerlifting competitions regularly.</p>
 
 
 
                     </div>
-                    <div class="col-xs-2"></div>
+                    <div class="col-xs-1 col-sm-2"></div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <p class="text-center" style="margin-top:5%;font-size:40px;margin-bottom:3%">Registered Participants</p>
+                        <p class="text-center m-par-title" style="margin-top:5%;font-size:40px;margin-bottom:3%">Registered Participants</p>
 
-                        <table class="m-table table table-striped text-center table-borderless" style="margin-left:10%;margin-top:0%;margin-bottom:3%;">
+                        <table class="m-par-table m-table table table-striped text-center table-borderless" style="margin-left:10%;margin-top:0%;margin-bottom:3%;">
                             <thead>
 
                                 <tr class="text-center">
