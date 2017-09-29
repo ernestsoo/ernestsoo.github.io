@@ -139,7 +139,7 @@ input::-moz-placeholder { /* Firefox 18- */
     /* Reduce padding top at registration site when in mobile view */
     .reg-padding
     {
-        height:50px !important
+        height:20px !important
     }
 
     .m-absolute-title
@@ -193,7 +193,7 @@ input::-moz-placeholder { /* Firefox 18- */
     /* Height of main form container */
     .m-form-height
     {
-        height:300px !important;
+        min-height:300px !important;
         margin-top:12% !important;
     }
     .m-mt-n15
@@ -302,7 +302,7 @@ input::-moz-placeholder { /* Firefox 18- */
 {
     .m-indi
     {
-        width:28px !important;
+        width:13% !important;
         height:28px !important;
     }
 
@@ -313,7 +313,7 @@ input::-moz-placeholder { /* Firefox 18- */
 
     .reg-padding
     {
-        height: 60px !important;
+        height: 20px !important;
     }
 
     .m-khpl-title

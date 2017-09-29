@@ -47,6 +47,21 @@
     // setTimeout(function(){alert(window.formstat);},5000);
     // alert('I AM HERE');
 
+    function hideMainTitle()
+    {
+        if($(window).width() < 758)
+        {
+            $(".Title").css("display","none");
+        }
+    }
+
+    function showMainTitle()
+    {
+        if($(window).width() <758)
+        {
+            $(".Title").css("display","unset");
+        }
+    }
 
     // Set of Bools to handle the state of each form's visitation
     var visit2 = false;
@@ -1020,7 +1035,7 @@
     <div class="row hover-down Title">
         <div class="col-xs-12  hover-down-child " style="padding-top:5%">
 
-            <p class="text-center m-khpl-title transition-1 hover-down-text"  style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
+            <p class="text-center m-khpl-title transition-1 hover-down-text "  style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
 
 
         </div>
@@ -1045,8 +1060,8 @@
     <div class="row" data-ng-show="boolFront==1">
         <div class="col-xs-12 reg-padding d-arrow-left" style="height:200px;">
             
-            <span onclick="TriggerTitleLoose();onreg=false" data-ng-click="boolFront=0" class="d-display  fa fa-arrow-circle-o-left" style="font-size:50px;color:white;margin-left:4%"></span>
-            <p onclick="TriggerTitleLoose();onreg=false" class="d-display " data-ng-click="boolFront=0" style="font-size:27px;color:white;margin-left:4%">Return</p>
+            <span onclick="TriggerTitleLoose();onreg=false;showMainTitle()" data-ng-click="boolFront=0" class="d-display  fa fa-arrow-circle-o-left" style="font-size:50px;color:white;margin-left:4%"></span>
+            <p onclick="TriggerTitleLoose();onreg=false;showMainTitle()" class="d-display " data-ng-click="boolFront=0" style="font-size:27px;color:white;margin-left:4%">Return</p>
 
         </div>
     </div>
@@ -1056,11 +1071,17 @@
     <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%; margin-top:0%">
 
         <div class="col-xs-12 col-sm-2 m-form-nav-pt">
+        
+        <div class="row m-display secondary-title">
+            <div>
+                <p class="text-center m-khpl-title transition-1 hover-down-text "  style="font-size:23px !important;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
+            </div>
+        </div>
             
         <div class="row m-display" style="margin-bottom:10%" >
             <div class="col-xs-12">
-                 <span onclick="TriggerTitleLoose();onreg=false" data-ng-click="boolFront=0" class="m-display fa fa-arrow-circle-o-left align-center" style="font-size:30px;color:white;margin-left:0%"></span>
-                <p onclick="TriggerTitleLoose();onreg=false" class="m-display align-center inline-block" data-ng-click="boolFront=0" style="font-size:20px;color:white;margin-left:0%;margin-top:-100%">Return</p>
+                 <span onclick="TriggerTitleLoose();onreg=false;showMainTitle()" data-ng-click="boolFront=0" class="m-display fa fa-arrow-circle-o-left align-center" style="font-size:30px;color:white;margin-left:0%"></span>
+                <p onclick="TriggerTitleLoose();onreg=false;showMainTitle()" class="m-display align-center inline-block" data-ng-click="boolFront=0" style="font-size:20px;color:white;margin-left:0%;margin-top:-100%">Return</p>
             </div>
          </div>
 
@@ -1123,7 +1144,7 @@
 
 
 
-        <div class="col-xs-12 col-sm-8 Register text-center m-form-height" style="height:500px;margin-bottom:10%;background:rgba(192,192,192,0.5); border: 4px solid white">
+        <div class="col-xs-12 col-sm-8 Register text-center m-form-height" style="min-height:500px;margin-bottom:10%;background:rgba(192,192,192,0.5); border: 4px solid white">
 
 
             <!-------------------------EMAIL START -->
@@ -1171,7 +1192,7 @@
 
 
 
-                <div class="col-sm-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12" >
 
                     <div class="inline-block pull-left form-1 d-display">
                         <span onclick="FormNextFrom1()" class="glyphicon d-display glyphicon-ok circle-next circle-next-1" style="font-size:27px;margin-left:4%;"></span>
@@ -1401,7 +1422,7 @@
 
                  
 
-                   <div class="inline-block m-display form-4" style="display:none;margin:0 auto ;">
+                   <div class="inline-block m-display form-4" style="display:none;margin:0 auto ;margin-bottom:15px;">
                         <span onclick="FormNextFrom4()" class="glyphicon m-display glyphicon-ok circle-next circle-next-4" style="font-size:22px;margin-left:0%;margin-top:5%"></span>
 
                     </div>
@@ -1673,7 +1694,7 @@
                                         </section>
 
                                         <div class="m-display">
-                                           <button   class="btn m-display m-block-pay align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
+                                           <button   class="btn m-display m-block-pay align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%;margin-bottom:15px;">Submit Form</button>
                                         </div>
                             </div>
                         </div>
@@ -1723,7 +1744,7 @@
                                         </section>
                                         
                                         <div class="m-display">
-                                          <button   class="btn m-block-pay m-display align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%">Submit Form</button>
+                                          <button   class="btn m-block-pay m-display align-center inline-block pay-button" style="padding-left:3%; padding-right:3%;font-size:14.5px;margin-top:1%;margin-bottom:15px;">Submit Form</button>
                                         </div>
                             </div>
                         </div>
@@ -1814,7 +1835,7 @@
 
             <section class="buttons-hover">
                 <div class="container-hover">
-                    <a style="font-size:20px" data-ng-click="boolFront=1" onclick="TriggerTitleFix();onreg=true;" class="btn-hover btn-11">
+                    <a style="font-size:20px" data-ng-click="boolFront=1" onclick="TriggerTitleFix();hideMainTitle();onreg=true;" class="btn-hover btn-11">
                         <svg>
                             <rect x="0" y="0" fill="none" width="100%" height="100%" />
                         </svg>
