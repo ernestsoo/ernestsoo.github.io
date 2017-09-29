@@ -28,11 +28,27 @@ input::-moz-placeholder { /* Firefox 18- */
 
 
 
+.fa-arrow-circle-o-up:before {
+    content: "\f01b";
+    margin:0 auto !important;
+    text-align: center !important;
+}
 
 
 /** ALL SETTINGS FOR KCH PL MOBILE VIEW **/
 @media only screen and (max-width: 778px )
 {
+
+.m-safari-glyph
+{
+    font-size: 30px !important;
+}
+
+
+.m-safari-text
+{
+    font-size: 14px !important;
+}
 
 .circle-contact
 {
