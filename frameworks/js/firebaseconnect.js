@@ -37,18 +37,44 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
   
 }
 
+ var idcounter;
+ var datab;
 
-
-alert("new run3");
+//alert("new run5");
 
         setInterval(function(){
             
           if(window.sendFirebase)
           {
-              writeParData(0007,window.email,window.first,window.last,window.genderstore,window.tel,window.weight,window.tsize,window.state,window.country,window.occupation);
-              window.sendFirebase=false;
+
+              
+              var ref = firebase.database().ref("idcounter/");
+             
+              ref.on("value", function(data) {
+                datab = data.val();
+               // console.log(datab);
+
+              //  alert(datab['id']);
+                idcounter = parseInt(datab['id']);
+              }, function (error) {
+                console.log("Error: " + error.code);
+              });
+
+   
+              var idcounter = idcounter +1;
+
+              writeParData(idcounter,window.email,window.first,window.last,window.genderstore,window.tel,window.weight,window.tsize,window.state,window.country,window.occupation);
+              
               sendEmail();
-              alert('executed');
+    
+
+
+
+              firebase.database().ref('idcounter').set({
+                id: idcounter
+              });
+
+              window.sendFirebase=false;
           }
 
           
