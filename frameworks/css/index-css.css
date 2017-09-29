@@ -298,7 +298,7 @@ input::-moz-placeholder { /* Firefox 18- */
 
 
 /** ALL SETTINGS FOR ANDROID **/
-@media only screen and (max-width: 450px )
+@media only screen and (max-width: 380px )
 {
     .m-indi
     {
@@ -313,12 +313,12 @@ input::-moz-placeholder { /* Firefox 18- */
 
     .reg-padding
     {
-        height: 85px !important;
+        height: 60px !important;
     }
 
     .m-khpl-title
     {
-        font-size: 22.5px !important;
+        font-size: 23px !important;
     }
 
     /*** Extremely Bad Practise, should be avoided at all times ***/
