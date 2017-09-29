@@ -19,7 +19,18 @@
      <script src="frameworks/js/firebaseconnect.js"></script>
 
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("user_1J2Jq55nrOHLMGy7n5fLf");
+            })();
 
+            alert("new");
+            // parameters: service_id, template_id, template_parameters
+            function sendEmail()
+            {
+                emailjs.send("gmailernestsoo","registration_complete123",{});
+            }
+        </script>
         
 
         

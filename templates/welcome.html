@@ -5,7 +5,7 @@
         document.body.style.overflow = 'hidden';
     }
 
-    alert($(window).width());
+   // alert($(window).width());
     var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
     var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
     var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
@@ -51,7 +51,9 @@
     {
         if($(window).width() < 758)
         {
-            $(".Title").css("display","none");
+            $(".main-title").css("color","transparent");
+             $(".main-title-red").css("color","transparent");
+            $(".Title").css("visibility","hidden");
             $(".secondary-title").css("display","unset");
         }
     }
@@ -60,8 +62,12 @@
     {
         if($(window).width() <758)
         {
-            $(".Title").css("display","unset");
-                  $(".secondary-title").css("display","none");
+            $(".main-title").css("color","white");
+            $(".main-title-red").css("color","red");
+
+            $(".Title").css("visibility","visible");
+           // $(".Title").css("display","unset");
+            $(".secondary-title").css("display","none");
         }
     }
 
@@ -1037,7 +1043,7 @@
     <div class="row hover-down Title">
         <div class="col-xs-12  hover-down-child " style="padding-top:5%">
 
-            <p class="text-center m-khpl-title transition-1 hover-down-text "  style="font-size:58px;">KUCHING POWERLIFTING MEET<span style="color:red"> 2018</span></p>
+            <p class="text-center m-khpl-title transition-1 main-title hover-down-text "  style="font-size:58px;">KUCHING POWERLIFTING MEET<span class="main-title-red transition-1" style="color:red"> 2018</span></p>
 
 
         </div>
@@ -1077,7 +1083,7 @@
 
     <div class="row animated1  fadeIn1  " data-ng-show="boolFront==1" style="margin:1% 7%; margin-top:0%">
 
-        <div class="col-xs-12 col-sm-2 m-form-nav-pt">
+        <div class="col-xs-12 col-sm-2 m-form-nav-pt align-center">
  
             
         <div class="row m-display" style="margin-bottom:10%" >
@@ -1087,7 +1093,7 @@
             </div>
          </div>
 
-            <div class="m-display">
+            <div class="m-display" style="margin: 0 auto;">
                 <div onclick="FormNextTo(1)" class="text-center m-indi inline-block indi-1" style="border:2px solid grey;width:30%;width:35px;height:35px;background:black; margin-bottom: 10%;font-size:18px;color:grey">
                     <p style="margin-top:10% ;">1</p>
                 </div>

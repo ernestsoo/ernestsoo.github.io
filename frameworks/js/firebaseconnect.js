@@ -1,9 +1,4 @@
 
-      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-        
-
-
 (function(){
 
 
@@ -22,12 +17,7 @@
 
 var database = firebase.database();
 
-emailjs.init("user_1J2Jq55nrOHLMGy7n5fLf");
 
-emailjs.send("gmail","registration_complete",{name: "James", notes: "Check this out!"});
-//writeUserData(1000,"ernest","ernestsoo22@gmail.com");
-
-alert("email sent");
 
 function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,country,occupation){
   //alert("called");
@@ -49,7 +39,7 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
 
 
 
-//alert("new run1");
+alert("new run3");
 
         setInterval(function(){
             
@@ -57,8 +47,11 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
           {
               writeParData(0007,window.email,window.first,window.last,window.genderstore,window.tel,window.weight,window.tsize,window.state,window.country,window.occupation);
               window.sendFirebase=false;
+              sendEmail();
+              alert('executed');
           }
 
+          
 
         },10);
 
