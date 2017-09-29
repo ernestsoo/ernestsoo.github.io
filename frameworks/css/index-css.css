@@ -30,7 +30,6 @@ input::-moz-placeholder { /* Firefox 18- */
 
 
 
-
 /** ALL SETTINGS FOR KCH PL MOBILE VIEW **/
 @media only screen and (max-width: 778px )
 {
@@ -123,7 +122,7 @@ input::-moz-placeholder { /* Firefox 18- */
     /* Reduce padding top at registration site when in mobile view */
     .reg-padding
     {
-        height:50px !important;
+        height:50px !important
     }
 
     .m-absolute-title
@@ -277,6 +276,42 @@ input::-moz-placeholder { /* Firefox 18- */
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+
+
+/** ALL SETTINGS FOR ANDROID **/
+@media only screen and (max-width: 325px )
+{
+    .m-indi
+    {
+        width:28px !important;
+        height:28px !important;
+    }
+
+    .m-indi p
+    {
+        font-size:15px !important;
+    }
+
+    .reg-padding
+    {
+        height: 85px !important;
+    }
+
+    .m-khpl-title
+    {
+        font-size: 22.5px !important;
+    }
+
+    /*** Extremely Bad Practise, should be avoided at all times ***/
+    .m-android-form
+    {
+        width:200% !important;
+        margin-left:-10px !important;
+
+    }
+
 }
 
 
