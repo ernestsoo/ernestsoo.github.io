@@ -67,6 +67,20 @@ input::-moz-placeholder { /* Firefox 18- */
 /** ALL SETTINGS FOR KCH PL MOBILE VIEW **/
 @media only screen and (max-width: 778px )
 {
+  .m-table-size
+  {
+        margin-left: -20px;
+  }
+
+  .m-table-size th
+  {
+        font-size: 14px !important;
+  }
+
+  .m-table-size td
+  {
+        font-size: 11px !important;
+  }
 
   .m-payment-price
   {
