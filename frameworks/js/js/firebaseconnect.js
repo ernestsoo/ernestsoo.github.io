@@ -81,36 +81,34 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
 
         },10);
 
+        var EmailDone = false;
 
-        var EmailDone =false;
-              setInterval(function(){
-                
-                if(window.sendFirebase)
-                {
-                      if(window.paymentmethod=='bank')
-                      {
-                        if(!EmailDone)
-                        {
-                          sendEmailBank();
-                          alert("email bank sent");
-                          //window.paymentmethod == '';
-                          EmailDone = true;
-                      }
-                    }
-                    else if (window.paymentmethod=='meet') {
-                      if(!EmailDone)
-                        {
-                      sendEmailMeet();
-                      alert("email meet sent");
-                      //window.paymentmethod == '';
-                      EmailDone=true;
-                    }
-                    }
-             }
+        setInterval(function(){
+          if(window.sendFirebase)
+          {
+
+                          if(window.paymentmethod=='bank')
+                          {
+                            if(!EmailDone)
+                            {
+                            sendEmailBank();
+                            alert("email bank sent");
+                            EmailDone=true;
+                            }
+                        }
+                        else if (window.paymentmethod=='meet'){
+                          if(!EmailDone)
+                          {
+                          sendEmailMeet();
+                          alert("email meet sent");
+                            EmailDone=true;
+                          }
+                        }
+
+          }
 
 
-              },1000);
-
+        },1000);
 
 /*var idCounter = 077;
 return firebase.database().ref('idcounter/'+ idCounter).once('value').then(function(snapshot) {

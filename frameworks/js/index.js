@@ -9,9 +9,9 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         $scope.sendFirebase = false;
         $scope.submitted = false;
         $scope.gender = '';
-        
+
         $scope.tsize='Size';
-    
+
        // alert("hi2");
         $scope.warningEmailShow = false;
         $scope.warningNameShow = false;
@@ -25,7 +25,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningEmailShow = false;
         }
-        
+
         $scope.enableEmailWarning= function()
         {
             $scope.warningEmailShow = true;
@@ -35,18 +35,18 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningNameShow = false;
         }
-        
+
         $scope.enableNameWarning= function()
         {
             $scope.warningNameShow = true;
         }
 
-        
+
         $scope.disableTelWarning = function()
         {
             $scope.warningTelShow = false;
         }
-        
+
         $scope.enableTelWarning= function()
         {
             $scope.warningTelShow = true;
@@ -57,7 +57,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningWeightShow = false;
         }
-        
+
         $scope.enableWeightWarning= function()
         {
             $scope.warningWeightShow = true;
@@ -67,7 +67,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningStateShow = false;
         }
-        
+
         $scope.enableStateWarning= function()
         {
             $scope.warningStateShow = true;
@@ -76,7 +76,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningCountryShow = false;
         }
-        
+
         $scope.enableCountryWarning= function()
         {
             $scope.warningCountryShow = true;
@@ -86,22 +86,22 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         {
             $scope.warningOccupationShow = false;
         }
-        
+
         $scope.enableOccupationWarning= function()
         {
             $scope.warningOccupationShow = true;
         }
-    
-    
-    
-    
-    
-    
 
 
-    
-    
-        
+
+
+
+
+
+
+
+
+
 
         $scope.tshirt="front";
       //  alert($scope.tshirt);
@@ -116,32 +116,32 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
                 $scope.tshirt="front";
             }
         }
-    
+
   //  $scope.test="testtest";
-    
-        
+
+
     $scope.formstat = null;
-    $scope.formstat2 = null;  
-    $scope.formstat2a = null;  
-    $scope.formstat2b = null;  
+    $scope.formstat2 = null;
+    $scope.formstat2a = null;
+    $scope.formstat2b = null;
 
     var checkformstat = function()
-    {   
+    {
      // alert ("hi");
-        
+
         /*** Checking for Email ***/
         $window.formstat= $scope.regform.email.$valid;
-       
+
         if($scope.warningEmailShow && !$scope.regform.email.$valid)
         {
             $window.regemail= true ;
-       
+
         }
-        else 
+        else
         {
             $window.regemail= null;
         }
-     
+
 
 
 
@@ -161,7 +161,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         }
 
 
-        
+
         if($scope.warningNameShow && !$scope.regform2.last.$valid)
         {
             $window.regnameB= true ;
@@ -177,9 +177,9 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         if($scope.warningTelShow && !$scope.regform4.tel.$valid)
         {
                 $window.regtel= true ;
-           
+
         }
-        else 
+        else
         {
                 $window.regtel= null;
          }
@@ -190,37 +190,37 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         if($scope.warningStateShow && !$scope.regform4.state.$valid)
         {
                 $window.regstate= true ;
-           
+
         }
-        else 
+        else
         {
                 $window.regstate= null;
         }
 
-        
+
         /*** Checking for Country ***/
         $window.formstat4c= $scope.regform4.country.$valid;
 
         if($scope.warningCountryShow && !$scope.regform4.country.$valid)
         {
                 $window.regcountry =  true ;
-           
+
         }
-        else 
+        else
         {
                 $window.regcountry= null;
         }
 
-           
+
         /*** Checking for Country ***/
         $window.formstat4d= $scope.regform4.occupation.$valid;
 
         if($scope.warningOccupationShow && !$scope.regform4.occupation.$valid)
         {
                 $window.regoccupation =  true ;
-           
+
         }
-        else 
+        else
         {
                 $window.regoccupation= null;
         }
@@ -241,9 +241,9 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         if($scope.warningWeightShow && !$scope.regform5.weight.$valid)
             {
                     $window.regweight= true ;
-               
+
             }
-            else 
+            else
             {
                     $window.regweight= null;
              }
@@ -260,9 +260,10 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         window.state=$scope.state;
         window.country=$scope.country;
         window.occupation=$scope.occupation;
+        window.method = $scope.method;
 
 
-        
+
         // Trigger if form sent
         if($scope.sendFirebase)
         {
@@ -286,89 +287,89 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
 
 
     }
-    
-    
+
+
     // Intervals set at 10ms to enable rapid checking.
     $interval(checkformstat,10);
-    
 
-    
+
+
     //setTimeout(function(){alert($scope.regform.email.$valid);},5000);
-    
+
 });
 
 
 app.controller("myCtrl", function($scope,$http,$interval,$window){
 
-    
-    
-    
+
+
+
     $scope.formstat = null;
           alert ("hi");
     var sendformstattowindow = function()
-    {   
+    {
         alert ("hi");
-        
+
         $window.formstat= $scope.formstat;
-     
+
 
     }
-    
+
     $interval(sendformstattowindow,10);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /************************************************************************************/
-    
+
      /*** Initialize bool scope variables for Tracker ***/
      /*** bool: Bool tracks the number of set completed ****/
      $scope.bool = 0;
-    
-    
-     
+
+
+
      /*** Initialize bool2 to bool10 ***/
      for(var i = 2 ; i<11; i++)
      {
          eval("$scope.bool"+i.toString()+"=0;");
      }
-    
-    
+
+
      $scope.intensity = null;
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
        $scope.week = ["mon","tue","wed","thu","fri","sat","sun"];
         $scope.fullweek = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 
@@ -376,8 +377,8 @@ app.controller("myCtrl", function($scope,$http,$interval,$window){
     $scope.boolcustomworkout =new Array(100);
     $scope.customworkoutcounter=0;
 
-        
-    
+
+
         var d = new Date();
         var weekday = new Array(7);
         weekday[0] =  "Sunday";
@@ -392,11 +393,11 @@ app.controller("myCtrl", function($scope,$http,$interval,$window){
         $scope.currentdate = d.getDate();
         $scope.currentmonth = d.getMonth() + 1;
         $scope.currentyear = d.getFullYear();
-        
-  
+
+
     $window.time = $scope.currentyear.toString() + '-' + $scope.currentmonth.toString();
-    
-    
+
+
 
 
     /*** Methods to handle plan altering ***/
@@ -438,24 +439,24 @@ app.controller("myCtrl", function($scope,$http,$interval,$window){
     /*** Methods to handle custom workout pages ***/
 
     $scope.onetohundred=new Array(50);
-    
+
     for(var i=0; i<50; i++)
     {
-        
+
         $scope.onetohundred[i] = i;
-        
+
     }
-    
+
     $scope.weightlist = new Array(50);
     $scope.weight=0;
-    
+
     for(var i=0; i<50; i++)
     {
-        var lTemp= $scope.weight + 2.5; 
+        var lTemp= $scope.weight + 2.5;
          $scope.weightlist[i] = parseFloat(lTemp);
         $scope.weight+=2.5;
     }
-    
+
     /* To filter out empty tables while displaying with `ng-repeat` */
     $scope.usertrainingdays = [false,false,false,false,false,false,false];
     $scope.usertrainingdaysplan = [false,false,false,false,false,false,false];
@@ -471,13 +472,13 @@ $scope.weekfrequencycount = new Array(7);
 
             for(var x =0; x<$scope.customworkout.length; x++)
             {
-          
+
                 for(var y=0; y<7 ; y++)
                 {
 
                     if($scope.fullweek[y] == $scope.customworkout[x].day )
                     {
-              
+
                         $scope.weekfrequencycount[y] = $scope.weekfrequencycount[y] + 1;
                     }
                 }
@@ -493,8 +494,8 @@ var lTempInt =0;
 
 $scope.addcustomworkout = function()
 {
-     
-         
+
+
          for(var i =0; i<$scope.customworkout.length; i++)
          {
              if($scope.customworkout[i] != null)
@@ -502,17 +503,17 @@ $scope.addcustomworkout = function()
 
             for(var y=0; y<7;y++)
             {
-           
+
 
                     if($scope.customworkout[i].day == $scope.fullweek[y])
                     {
                             lTempInt = y;
-                  
+
                     }
             }
 
 
-         
+
              var url = "api/apiphp1.php/";
                                         var data = JSON.stringify({user_id: $scope.userid.toString(), set:$scope.customworkout[i].set.toString(),rep:$scope.customworkout[i].rep.toString(),exercise:$scope.customworkout[i].exercise,weights:$scope.customworkout[i].weights,day:$scope.customworkout[i].day,frequency:  $scope.weekfrequencycount[lTempInt]});
                                         //Call the services
@@ -521,74 +522,74 @@ $scope.addcustomworkout = function()
                                             function (response) {
                                                 if (response.data)
                                                     $scope.msg = "Post successfully";
-                                                 
+
                                         }, function (response) {
                                                 $scope.msg = "Service not Exists";
                                                 $scope.statusval = response.status;
                                                 $scope.statustext = response.statusText;
                                                 $scope.headers = response.headers();
                                         });
-             
-       
+
+
              }
-             
+
          }
 }
 
 
 $scope.decrementfrequency = function()
 {
-    
+
      for(var i =0; i<$scope.posts.length; i++)
          {
-            
-                
+
+
             if($scope.posts[i]!=null)
                 {
             if($scope.posts[i].user_id == $scope.userid )
             {
-                
+
                 if($scope.posts[i].day == $scope.tempday)
                     $scope.posts[i].frequency = $scope.posts[i].frequency - 1;
             }
-                    
-                    
+
+
                 }
-             
-         } 
+
+         }
 }
 
 
 $scope.incrementfrequency = function()
 {
-    
+
      for(var i =0; i<$scope.posts.length; i++)
          {
-            
-                
+
+
             if($scope.posts[i]!=null)
                 {
             if($scope.posts[i].user_id == $scope.userid )
             {
-                
+
                 if($scope.posts[i].day == $scope.tempday)
                    { $scope.posts[i].frequency = $scope.posts[i].frequency + 1;}
             }
-                    
-                    
+
+
             }
-             
-         } 
+
+         }
 }
 
 
 $scope.addchangedworkout = function()
 {
-    
+
          for(var i =0; i<$scope.posts.length; i++)
          {
-            
-                
+
+
             if($scope.posts[i]!=null)
                 {
             if($scope.posts[i].user_id == $scope.userid )
@@ -601,8 +602,8 @@ $scope.addchangedworkout = function()
                                             function (response) {
                                                 if (response.data)
                                                     $scope.msg = "Post successfully";
-                                            
-                                                 
+
+
                                         }, function (response) {
                                                 $scope.msg = "Service not Exists";
                                                 $scope.statusval = response.status;
@@ -610,43 +611,43 @@ $scope.addchangedworkout = function()
                                                 $scope.headers = response.headers();
                                                 //alert("Posted failure!");
                                         });
-             
-       
+
+
             }
-          
-             
+
+
          } else
             {
-                 
+
             }
-         
-         
+
+
          }
-       
+
 
          $scope.tohome();
 }
 
 
 $scope.tempfrequency = null;
-    
+
 $scope.settempfrequency = function(value)
 {
-    
+
     $scope.tempfrequency = value;
-    
-    
+
+
 }
 
 $scope.addcustomexerciseatplan = function()
 {
 
         var pushelement = {"exercise":$scope.exercisepicked,"weights":$scope.weightpicked,"set":$scope.setpicked,"rep":$scope.reppicked,"day":$scope.tempday};
-    
- 
-    
+
+
+
    // alert(pushelement);
-    
+
     for (var i=0; i<$scope.posts.length; i++)
     {
         if($scope.posts[i].day == $scope.tempday && $scope.posts[i].user_id == $scope.userid)
@@ -658,19 +659,19 @@ $scope.addcustomexerciseatplan = function()
     $scope.posts.push({"user_id":$scope.userid,"exercise_id":1,"set":$scope.setpicked,"rep":$scope.reppicked,"exercise":$scope.exercisepicked,"weights":$scope.weightpicked,"day":$scope.tempday,"frequency": $scope.tempfrequency});
     $scope.customworkout.push({"exercise":$scope.exercisepicked,"weights":$scope.weightpicked,"set":$scope.setpicked,"rep":$scope.reppicked,"day":$scope.tempday});
 
-    
+
 }
 
-    
+
 $scope.addcustomexercise = function()
 {
     if(!$scope.customkey)
     {
-        
+
     $scope.customworkout[$scope.customworkoutcounter] = {"exercise":$scope.exercisepicked,"weights":$scope.weightpicked,"set":$scope.setpicked,"rep":$scope.reppicked,"day":$scope.daypicked};
     $scope.boolcustomworkout[$scope.customworkoutcounter] = true;
     $scope.customworkoutcounter = $scope.customworkoutcounter+1;
-    
+
       for(var i =0; i<$scope.customworkout.length; i++)
          {
                for(var x=0; x<7; x++)
@@ -680,9 +681,9 @@ $scope.addcustomexercise = function()
                       $scope.usertrainingdays[x] = true;
                 }
             }
-             
+
          }
-    
+
     }
 }
 
@@ -698,12 +699,12 @@ $scope.changesetorrep =function(value)
 {
 
         $scope.posts[value].set = setpicked;
-        
-  
+
+
     if(reppicked!='Rep')
     {
         $scope.posts[value].rep = reppicked;
-         
+
     }
 }
 
@@ -720,7 +721,7 @@ $scope.reinit = function()
 
 $scope.checkcustom = function()
 {
-   
+
         if( $scope.daypicked != 'Day' && $scope.reppicked != 'Rep' &&  $scope.setpicked != 'Set' && $scope.weightpicked != 'Weight' && $scope.exercisepicked != 'Exercise'   )
         {
              $scope.customkey = false;
@@ -735,12 +736,12 @@ $scope.checkcustom = function()
 
 
         }
-    
-    
+
+
 }
 
 var alwaysCheckCustom = function(){
-    
+
  if($scope.customaux)
  {
         if( $scope.daypicked != 'Day' && $scope.reppicked != 'Rep' &&  $scope.setpicked != 'Set' && $scope.weightpicked != 'Weight' && $scope.exercisepicked != 'Exercise'   )
@@ -754,50 +755,50 @@ var alwaysCheckCustom = function(){
 
             $scope.customkey = true;
         }
-        
-        
+
+
  }
-    
-    
-    
+
+
+
 }
 
 $interval(alwaysCheckCustom,100);
  var alwaysCheckPlan = function(){
-    
+
 
         if( $scope.daypicked != 'Day' && $scope.reppicked != 'Rep' &&  $scope.setpicked != 'Set' && $scope.weightpicked != 'Weight' && $scope.exercisepicked != 'Exercise'   )
         {
              $scope.plankey = false;
-        
+
         }
         else
         {
 
             $scope.plankey = true;
         }
-        
-        
- 
-    
-    
-    
+
+
+
+
+
+
 }
 
-$interval(alwaysCheckPlan,100);   
+$interval(alwaysCheckPlan,100);
 
 
 $scope.tempday = null
 
 $scope.settempday  =function(pass)
 {
-    
+
     $scope.tempday = pass;
     $scope.daypicked = pass;
 }
 
 $scope.tempindex = 0;
-    
+
 $scope.settempindex  =function(pass)
 {
     $scope.tempindex = pass;
@@ -806,17 +807,17 @@ $scope.settempindex  =function(pass)
 $scope.changeismadetotrue = function()
 {
      $scope.changeismade = true;
-  
+
 }
-    
+
 $scope.saveday = function(value)
  {
      $scope.daypicked=value;
 
     $scope.changeismade = true;
  }
-    
-        
+
+
 $scope.saverep = function(value)
  {
      $scope.reppicked=value;
@@ -836,37 +837,37 @@ $scope.saveset = function(value)
 
     $scope.changeismade = true;
  }
-  
+
  $scope.saveexercise = function(value)
  {
      $scope.exercisepicked=value;
 
      $scope.changeismade = true;
  }
-        
+
  $scope.check = function(value,value1,value2) {
-    
+
      if (value>value1) {
-        
+
             var lTemp = value2-1;
            $scope.showinput[lTemp] = 1;
-            
+
     }
-   
+
 }
-        
+
    //    $scope.indexShow = $routeParams.index;
       $scope.register2=false;
       $scope.lgusername=null;
       $scope.loggedid=0;
       $scope.userid =0;
 
-    
+
       $scope.questionwarning = '';
-    
-    
-    
-    
+
+
+
+
        // property initialisation
     $scope.name = null;
     $scope.age = null;
@@ -899,31 +900,31 @@ $scope.saveset = function(value)
         .then (
         function(response) {
             $scope.posts = response.data;
-        
 
-            
+
+
         },
         function(response) {
         // error handling routine
         });
     }
-    
-    
+
+
       $http.get('api/apiphp.php/')
         .then (
         function(response) {
             $scope.posts = response.data;
 
-            
+
 
         var checkPlanDays = function()
         {
-       
-            
+
+
          for(var i =0; i<$scope.posts.length; i++)
          {
-             
-             
+
+
             if($scope.posts[i].user_id == $scope.userid)
             {
                 for(var x=0; x<7; x++)
@@ -935,18 +936,18 @@ $scope.saveset = function(value)
                     }
                 }
             }
-             
+
          }
         }
 
         /** Check Plan Table at 10ms to ensure successful display */
         $interval(checkPlanDays,10);
-            
+
         },
         function(response) {
         // error handling routine
         });
-    
+
 
         /** Get the value of posts again to reset changes made. **/
         $scope.resetplanchanged = function()
@@ -955,8 +956,8 @@ $scope.saveset = function(value)
             .then (
             function(response) {
                 $scope.posts = response.data;
-                
-                
+
+
             },
             function(response) {
             // error handling routine
@@ -964,56 +965,56 @@ $scope.saveset = function(value)
 
         }
 
-    
-    
+
+
         $http.get('api/apiphp1.php/')
         .then (
         function(response) {
             $scope.id = response.data;
             $scope.userid = $scope.id[0].user_id;
-            
-           
+
+
         },
         function(response) {
-    
-        });
-    
 
-    
-    
-        
-    
+        });
+
+
+
+
+
+
              $http.get('api/workoutplan-api.php/')
         .then (
         function(response) {
             $scope.usertrackerplan = response.data;
-            
+
             $scope.repcount=[$scope.usertrackerplan[0].rep,$scope.usertrackerplan[0].rep,$scope.usertrackerplan[0].rep,$scope.usertrackerplan[0].rep,$scope.usertrackerplan[0].rep,$scope.usertrackerplan[0].rep];
-            
+
             $scope.repcount2=[0,0,0,0,0];
             for(var i = 0; i<5;i++)
             {
                 $scope.repcount2[i] = $scope.usertrackerplan[1].rep
             }
-            
+
             $scope.repcount3=[0,0,0,0,0];
             for(var i = 0; i<5;i++)
             {
                 $scope.repcount3[i] = $scope.usertrackerplan[2].rep
             }
-            
+
             $scope.repcount4=[0,0,0,0,0];
             for(var i = 0; i<5;i++)
             {
                 $scope.repcount4[i] = $scope.usertrackerplan[3].rep
             }
-            
+
             $scope.repcount5=[0,0,0,0,0];
             for(var i = 0; i<5;i++)
             {
                 $scope.repcount5[i] = $scope.usertrackerplan[4].rep
             }
-            
+
              $scope.repcount6=[0,0,0,0,0];
             for(var i = 0; i<5;i++)
             {
@@ -1039,64 +1040,64 @@ $scope.saveset = function(value)
             {
                 $scope.repcount10[i] = $scope.usertrackerplan[9].rep
             }
-            
-            
+
+
         },
         function(response) {
-        // error handling routine 
+        // error handling routine
           //  alert("error with workout api");
         });
-        
-        
-    
+
+
+
     $scope.graphselector=null;
     $scope.graphdata='[{name:"exercise",data:[]}]';
     $window.graphdata = $scope.graphdata;
-    
+
         /*** Get user's past workouts ***/
         $http.get('api/apiphp3.php/')
         .then (
         function(response) {
             $scope.pastworkouts = response.data;
-           
-            
+
+
         $scope.saveselector = function(data){
             $scope.graphselector = data;
         }
-            
+
             $scope.graphcounter = 0;
-            
+
         $scope.addgraphexercise = function(){
-            
+
             if(  $scope.graphcounter== 0)
             {
                 $scope.graphdata = '[{name:"'+$scope.graphselector  +'",data:';
 
                 $scope.graphdata = $scope.graphdata + '[';
-                
-                
+
+
                 $scope.graphcounter = 1;
-            
-            
+
+
             }
             else
             {
-   
+
                  // Remove last ]
                  $scope.graphdata = $scope.graphdata.slice(0, -1);
-                 
+
                  $scope.graphdata = $scope.graphdata + ',{name:"'+ $scope.graphselector +'",data:['
-                
-                
-                
+
+
+
             }
-            
+
                 var bool=false;
-                
+
                 for(var i = 0; i < $scope.pastworkouts.length; i++)
                 {
                     var str ='';
-                   
+
                     if($scope.pastworkouts[i].exercise == $scope.graphselector)
                     {
                         str = '[Date.UTC('+$scope.pastworkouts[i].year.toString()+','+$scope.pastworkouts[i].month.toString()+','+$scope.pastworkouts[i].day.toString()+'),'+$scope.pastworkouts[i].volume.toString()+'],';
@@ -1114,67 +1115,67 @@ $scope.saveset = function(value)
                 }
 
                 $scope.graphdata = $scope.graphdata + ']}]';
-            
+
           $window.graphdata = $scope.graphdata;
-            
+
             //alert(  $window.graphdata);
 
         }
-            
+
         },
         function(response) {
         // error handling routine
         });
-    
+
      $scope.graphselector=null;
     $scope.graphdata1='[{name:"exercise",data:[]}]';
     $window.graphdata1 = $scope.graphdata1;
 
-    
+
         /*** Get user's past workouts ***/
         $http.get('api/apiphp3.php/')
         .then (
         function(response) {
             $scope.pastworkouts1 = response.data;
-           
-     /*       
+
+     /*
         $scope.saveselector = function(data){
             $scope.graphselector = data;
         }*/
-            
+
             $scope.graphcounter1 = 0;
-            
+
         $scope.addgraphexercise1 = function(){
-            
+
             if(  $scope.graphcounter1== 0)
             {
                 $scope.graphdata1 = '[{name:"'+$scope.graphselector  +'",data:';
 
                 $scope.graphdata1 = $scope.graphdata1 + '[';
-                
-                
+
+
                 $scope.graphcounter1 = 1;
-            
-            
+
+
             }
             else
             {
-   
+
                  // Remove last ]
                  $scope.graphdata1 = $scope.graphdata1.slice(0, -1);
-                 
+
                  $scope.graphdata1 = $scope.graphdata1 + ',{name:"'+ $scope.graphselector +'",data:['
-                
-                
-                
+
+
+
             }
-            
+
                 var bool=false;
-                
+
                 for(var i = 0; i < $scope.pastworkouts1.length; i++)
                 {
                     var str ='';
-                   
+
                     if($scope.pastworkouts1[i].exercise == $scope.graphselector)
                     {
                         str = '[Date.UTC('+$scope.pastworkouts1[i].year.toString()+','+$scope.pastworkouts1[i].month.toString()+','+$scope.pastworkouts1[i].day.toString()+'),'+$scope.pastworkouts1[i].weights.toString()+'],';
@@ -1192,55 +1193,55 @@ $scope.saveset = function(value)
                 }
 
                 $scope.graphdata1 = $scope.graphdata1 + ']}]';
-            
+
           $window.graphdata1 = $scope.graphdata1;
-            
+
             //alert(  $window.graphdata1);
 
         }
-            
+
         },
         function(response) {
         // error handling routine
         });
-    
-    
+
+
         /*** Get Calender Events ***/
         $http.get('api/apiphp4.php/')
         .then (
         function(response) {
             $scope.calenderevents = response.data;
-           
+
            // Open Brackets
     $scope.StrCalenderEvents = "{";
-  
+
     for(var i = 0; i<$scope.calenderevents.length; i++)
     {
-        
+
         var string;
-        
+
         if($scope.calenderevents[i].user_id == $scope.userid)
         {
         if($scope.calenderevents[i].month>9)
         {
-            
-           
+
+
             if($scope.calenderevents[i].day>9)
             {
             // no zeros
-                
+
                 // HARD CODED HERE
             string='"'+$scope.calenderevents[i].year+'-'+$scope.calenderevents[i].month+'-12":{"number":'+$scope.calenderevents[i].number+'}';
             }
             else
             {
             // 0 in front of day
-            string='"'+$scope.calenderevents[i].year+'-'+$scope.calenderevents[i].month+'-0'+$scope.calenderevents[i].day+'":{"number":'+$scope.calenderevents[i].number+'}';  
+            string='"'+$scope.calenderevents[i].year+'-'+$scope.calenderevents[i].month+'-0'+$scope.calenderevents[i].day+'":{"number":'+$scope.calenderevents[i].number+'}';
             }
         }
         else
         {
-            
+
               if($scope.calenderevents[i].day>9)
             {
             // 0 in front of month
@@ -1251,73 +1252,73 @@ $scope.saveset = function(value)
               // 0 in front of month and day
             string='"'+$scope.calenderevents[i].year+'-0'+$scope.calenderevents[i].month+'-0'+$scope.calenderevents[i].day+'":{"number":'+$scope.calenderevents[i].number+'}';
             }
-            
+
         }
-        
-        
-      
-         
-        
+
+
+
+
+
         $scope.StrCalenderEvents =  $scope.StrCalenderEvents + string;
-     
-        
+
+
         if(i !=$scope.calenderevents.length-1 )
         {
              $scope.StrCalenderEvents =  $scope.StrCalenderEvents + ",";
         }
-        
+
     }
-        
+
     }
     // Close Brackets
-     $scope.StrCalenderEvents =  $scope.StrCalenderEvents + "}";    
+     $scope.StrCalenderEvents =  $scope.StrCalenderEvents + "}";
 
             $window.events = $scope.StrCalenderEvents;
-            
-        
-            
+
+
+
         },
         function(response) {
         // error handling routine
         });
-      
 
-    
-    
 
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
         $scope.login = function()
         {
-            
+
               $http.get('api/apiphp.php/')
         .then (
         function(response) {f
             $scope.dataa = response.data;
-            
+
             for(i=0;i<5;i++)
             {
                 if($scope.dataa[i].user_name == $scope.lgusername)
                 {
                     $scope.loggedid = $scope.dataa[i].user_id;
                 }
-            
-    
+
+
             }
         },
         function(response) {
         // error handling routine
         });
-            
-            
+
+
         }
-              
-        
-    
-    
+
+
+
+
        // property initialisation
         $scope.name = null;
         $scope.age = null;
@@ -1335,48 +1336,48 @@ $scope.saveset = function(value)
                     $scope.msg = "Post successfully";
         }, function (response) {
 
-            
+
                 $scope.msg = "Service not Exists";
                 $scope.statusval = response.status;
                 $scope.statustext = response.statusText;
                 $scope.headers = response.headers();
         });
-    
-    
-  
+
+
+
         };
-    
+
         $scope.homeStatus = 'wo';
-    
-    
-    
-    
-    
+
+
+
+
+
         $http.get('data/Workouts.json')
         .then (
         function (response) {
             $scope.workoutdatabase = response.data;
         },
-        
-        function(response) {  
+
+        function(response) {
         }
         );
-    
-    
-    
-    
-        
-    
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
         var str= $scope.username;
-    
+
           $scope.towelcome= function()
         {
              window.location.href = "#welcome";
@@ -1387,152 +1388,152 @@ $scope.saveset = function(value)
              window.location.href = "?table=app_user#login";
 
         }
-        
+
         $scope.toregister1 = function()
         {
              window.location.href = "?table=app_user#register1";
         }
-            
+
         $scope.toregister2 = function()
         {
              window.location.href = "?key2="+$scope.username+"#register2";
         }
-        
+
         $scope.toregister3 = function()
         {
              window.location.href = window.location.search+"#register3";
         }
-        
+
         $scope.tohome = function()
         {
              window.location.href = "?table=user_data&"+window.location.search+"#home";
         }
-        
+
         $scope.tohomefromlogin = function()
         {
              window.location.href = "?table=user_data&key2="+$scope.lgusername+"#home";
         }
-        
+
         $scope.tohomefromtracker = function()
         {
              window.location.href = window.location.search+"#home";
         }
-        
+
         $scope.tologinfail = function()
         {
              window.location.href = "?table=user_data&key2="+$scope.lgusername+"#loginfail";
         }
-        
+
         $scope.totracker = function()
         {
             window.location.href = "?table=user_data&key2="+$scope.id[0].user_name+"&key3="+$scope.userid+"&key4="+$scope.currentday+"#tracker";
         }
-        
+
          $scope.tograph = function()
         {
             window.location.href = "?table=user_data&key2="+$scope.id[0].user_name+"&key3="+$scope.userid+"&key4="+$scope.currentday+"#graph";
         }
-        
+
          $scope.toplanfromhome = function()
         {
             window.location.href = window.location.search +"&key3="+ $scope.userid.toString() +  "#plan";
         }
-         
+
           $scope.tocustomfromhome = function()
         {
             window.location.href = window.location.search +"&key3="+ $scope.userid.toString() + "#custom";
         }
-       
-    
-        
-        
-  
-        
-        
 
-        
-    
-    
+
+
+
+
+
+
+
+
+
+
         var checkValidity = function()
-       {   
-            
+       {
+
             $scope.boolUsernameTemp=0;
              $scope.boolEmailTemp=0;
 
             for(var i=0; i < $scope.posts.length; i++)
             {
-                                  
+
                 if($scope.posts[i].user_name == $scope.username)
                 {
                     $scope.boolUsernameTemp = $scope.boolUsernameTemp +1;
                 }
 
-                
+
                 if($scope.posts[i].user_mail == $scope.name)
                 {
                     $scope.boolEmailTemp = $scope.boolEmailTemp +1;
-           
+
                 }
 
             }
-           
 
-           
+
+
        }
-        
-        $interval(checkValidity, 1000);
-       
 
-    
-    
+        $interval(checkValidity, 1000);
+
+
+
+
         var checkValidityLogin = function()
        {
-        
-           
+
+
              $scope.loginUsernameTemp=0;
              $scope.loginEmailTemp=0;
-            
-         
+
+
 
             for(var i=0; i < $scope.posts.length; i++)
             {
-                
+
                 if($scope.posts[i].user_name == null)
                 {
                     $scope.hello = 'lel';
                 }
-                    
-                
+
+
                 if($scope.lgusername == $scope.posts[i].user_name)
                 {
                     $scope.loginUsernameTemp = $scope.loginUsernameTemp +1;
                 }
 
-                
+
                 if($scope.posts[i].user_mail == $scope.name)
                 {
                     $scope.loginEmailTemp = $scope.loginEmailTemp +1;
-           
+
                 }
 
             }
-           
-         
-            
-                
-            
-       }
-       
-       $interval(checkValidityLogin, 1000);
-    
 
-    
+
+
+
+
+       }
+
+       $interval(checkValidityLogin, 1000);
+
+
+
         $scope.checkLogin = function()
         {
-            
-            
+
+
             $scope.lTemp = 0;
-            
+
             if($scope.loginUsernameTemp == 1)
             {
                 for(var i=0; i < $scope.posts.length; i++)
@@ -1540,7 +1541,7 @@ $scope.saveset = function(value)
                     if($scope.lgusername == $scope.posts[i].user_name)
                     {
                         $scope.lTemp = $scope.lTemp + 1;
-                        
+
                         if($scope.lgpass == $scope.posts[i].password)
                         {
                             $scope.tohomefromlogin();
@@ -1549,92 +1550,92 @@ $scope.saveset = function(value)
                         {
                             $scope.tologinfail();
                         }
-                        
+
                     }
 
                 }
-                
-               
-                
+
+
+
             }
-            
+
              if($scope.lTemp == 0)
              {
                 $scope.tologinfail();
              }
 
         }
-    
-    
-    
-    
-            
-        
-        
+
+
+
+
+
+
+
         $scope.warningEmailShow = false;
         $scope.warningUsernameShow = false;
-        
+
         $scope.disableUsernameWarning = function()
         {
-            
+
             $scope.warningUsernameShow = false;
 
         }
-        
+
         $scope.enableUsernameWarning= function()
         {
             $scope.warningUsernameShow = true;
 
         }
-        
+
         $scope.disableEmailWarning = function()
         {
-            
+
 
             $scope.warningEmailShow = false;
         }
-        
+
         $scope.enableEmailWarning= function()
         {
 
             $scope.warningEmailShow = true;
         }
-    
-        
 
-    
-        
 
-        
-    
-        
-    
 
-       
-        
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
         $scope.passover = function()
         {
             $scope.pass=$scope.username;
-            
+
         }
-        
-        
+
+
         $scope.type = null;
         $scope.days = [false,false,false,false,false,false,false];
         $scope.frequency = 0;
         $scope.dayfrequency = 0;
         $scope.freqmatch = false;
-        
+
         $scope.numOfDays = 0;
-    
- 
+
+
         $scope.checkquestion = function()
         {
            var no = 0;
-      
+
                 for(i=0;i<7;i++)
                 {
                     if($scope.days[i] == true)
@@ -1642,10 +1643,10 @@ $scope.saveset = function(value)
                         no=  no + 1;
                     }
                 }
-            
-            
-         
-        
+
+
+
+
           if ($scope.freqmatch == false && $scope.type != null && $scope.dayfrequency!=0 &&  $scope.frequency!=0  )
           {
                     $scope.questionwarning = "The number of days you train does not match the days picked.";
@@ -1655,7 +1656,7 @@ $scope.saveset = function(value)
           {
               $scope.questionwarning = "Must answer all questions.";
               $scope.register2=true;
-            
+
           }
           else
           {
@@ -1665,18 +1666,18 @@ $scope.saveset = function(value)
                 $scope.generate();
                 $scope.tohome();
           }
-            
-            
-        }
-        
 
-        
-        
-       
-        
-        
+
+        }
+
+
+
+
+
+
+
                    var no1 = 0;
-      
+
                 for(i=0;i<7;i++)
                 {
                     if($scope.days[i] == true)
@@ -1684,33 +1685,33 @@ $scope.saveset = function(value)
                         no1=  no1 + 1;
                     }
                 }
-            
-            
-         
-        
+
+
+
+
           if ($scope.freqmatch == false && $scope.type != null && $scope.dayfrequency!=0 &&  $scope.frequency!=0  )
           {
-            
+
                     $scope.register2=true;
           }
           else if ($scope.type == null || no==0 || $scope.frequency==0 || $scope.dayfrequency==0)
           {
               $scope.register2=true;
-            
+
           }
           else
           {
                 $scope.register2=false;
           }
-    
-    
-    
-    
-    
+
+
+
+
+
         $scope.match=function()
         {
             var no = 0;
-      
+
                 for(i=0;i<7;i++)
                 {
                     if($scope.days[i] == true)
@@ -1720,8 +1721,8 @@ $scope.saveset = function(value)
                 }
 
             $scope.numOfDays = no;
-            
-            
+
+
                 if($scope.numOfDays!=$scope.dayfrequency)
                 {
                     $scope.freqmatch = false;
@@ -1732,34 +1733,34 @@ $scope.saveset = function(value)
                 }
 
         }
-        
-        
-        
 
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
         $scope.num = [0,1,2,3,4,5,6];
-        
-     
+
+
         var rep = ["8","10","12","15"];
-    
-        
+
+
         $scope.program = [[],[],[],[],[],[],[],[],[],[]];
-        
-    
+
+
         $scope.generate = function() {
 
             $http.get('Workouts.json')
             .then (
             function (response) {
-                
-                
+
+
                 $scope.used = [];
-                
-               
+
+
                 if($scope.type=="full")
                 {
                 for(j=0;j<7;j++)
@@ -1768,33 +1769,33 @@ $scope.saveset = function(value)
                             var day = $scope.fullweek[j];
 
                             if($scope.days[j] == true)
-                            {    
+                            {
 
                                 var ranNum2 = Math.floor((Math.random() * 3) + 0);
                                 var arr = []
-                                
-                                
+
+
                                  while(arr.length < 10){
                                         var randomnumber = Math.ceil((Math.random()*10)-1);
                                         if(arr.indexOf(randomnumber) > -1) continue;
                                         arr[arr.length] = randomnumber;
                                     }
-                                    
+
                                 //alert(arr);
 
-                                for (i = 0; i < $scope.frequency  ; i++) { 
+                                for (i = 0; i < $scope.frequency  ; i++) {
 
                                     var ranNum = Math.floor((Math.random() * 6) + 0);
                                     var ranNum2 = Math.floor((Math.random() * 4) + 0);
                                     var ranNum1 = Math.floor((Math.random() * 6) + 0);
-                                    
-                                    
+
+
                                     //$scope.used.push(ranNum1);
-                                    
-                                    
-                                   
-                                    
-                                 
+
+
+
+
+
                                  /*   while($.inArray(ranNum1, $scope.used) != -1)
                                     {
                                         ranNum1 = Math.floor((Math.random() * 6) + 0);
@@ -1813,7 +1814,7 @@ $scope.saveset = function(value)
                                    }
 
                                    $scope.program[i][2] = day;
-                                    
+
                                     var url = "api/apiphp1.php/";
                                     var data = JSON.stringify({user_id: $scope.userid, set: $scope.intensity,rep:repp,exercise:$scope.program[i][0].toString(),weights:20,day:$scope.program[i][2].toString(),frequency: $scope.frequency});
                                     //Call the services
@@ -1829,60 +1830,60 @@ $scope.saveset = function(value)
                                             $scope.headers = response.headers();
                                     });
 
-                                   
+
                                 }
 
                             }
                     }
-                    
+
                 }
                 else if ($scope.type=="single")
                 {
                         var arr1 = []
-                                
-                                
+
+
                                  while(arr1.length < 7){
                                         var randomnumber = Math.ceil((Math.random()*7)-1);
                                         if(arr1.indexOf(randomnumber) > -1) continue;
                                         arr1[arr1.length] = randomnumber;
                                     }
-                    
+
                                // alert(arr1)
-                    
+
                     for(j=0;j<7;j++)
                     {
 
                             var day = $scope.fullweek[j];
 
                             if($scope.days[j] == true)
-                            {    
+                            {
 
                                 var ranNum2 = Math.floor((Math.random() * 3) + 0);
                                 var arr = []
-                                
-                                
+
+
                                  while(arr.length < 10){
                                         var randomnumber = Math.ceil((Math.random()*10)-1);
                                         if(arr.indexOf(randomnumber) > -1) continue;
                                         arr[arr.length] = randomnumber;
                                     }
-                                    
-                              //  alert(arr);
-                                
-                           
 
-                                for (i = 0; i < $scope.frequency  ; i++) { 
+                              //  alert(arr);
+
+
+
+                                for (i = 0; i < $scope.frequency  ; i++) {
 
                                     var ranNum = Math.floor((Math.random() * 4) + 0);
                                     var ranNum1 = Math.floor((Math.random() * 6) + 0);
-                                    
-                                    
+
+
                                    // $scope.used.push(ranNum1);
-                                    
-                                    
-                                   
-                                    
-                                 
+
+
+
+
+
                                  /*   while($.inArray(ranNum1, $scope.used) != -1)
                                     {
                                         ranNum1 = Math.floor((Math.random() * 6) + 0);
@@ -1901,10 +1902,10 @@ $scope.saveset = function(value)
                                    }
 
                                    $scope.program[i][2] = day;
-                                    
+
                                     var url = "api/apiphp1.php/";
                                     var data = JSON.stringify({user_id: $scope.userid, set: $scope.intensity,rep:repp,exercise:$scope.program[i][0].toString(),weights:20,day:$scope.program[i][2].toString(),frequency: $scope.frequency});
-                                    
+
                                     //alert(data);
                                     //Call the services
                                     $http.post(url, data)
@@ -1919,87 +1920,87 @@ $scope.saveset = function(value)
                                             $scope.headers = response.headers();
                                     });
 
-                                   
+
                                 }
 
                             }
                     }
-                    
+
                 }
-                
+
 
             },
 
-            function(response) {  
+            function(response) {
             }
             );
 
-    
+
         }
 
 
-        
+
         /*** To handle calender selections by the user ***/
-        
+
         $window.currentdate = $scope.currentdate;
         $window.currentmonth = $scope.currentmonth;
         $window.currentyear = $scope.currentyear;
-    
+
         $scope.boolShowCurrent = true;
         $scope.dateSelectedConcat = null;
-    
+
         /*** Interval to update Date all the time at 50ms (to be safe) ***/
         var alwaysDo = function(){
-       
+
         $scope.daySelected = $window.daySelected;
         $scope.monthSelected = $window.monthSelected;
         $scope.yearSelected = $window.yearSelected;
         $scope.dateSelectedConcat= $scope.daySelected.toString() + '-' + $scope.monthSelected.toString()+'-'+$scope.yearSelected.toString();
-        
-     
-      
-    
+
+
+
+
         if($window.sethomestatus=='wo')
         {
             $scope.homeStatus = $window.sethomestatus;
-            
-            
+
+
         }
 
         $window.sethomestatus = '';
-        
-        
-             
+
+
+
          }
-        
+
         $interval(alwaysDo,50);
-         
+
         var alwaysDoDo = function(){
-               
-                   
-           
+
+
+
         }
-        
+
          $interval(alwaysDoDo,2000);
-            
+
         $scope.postworkout = function() {
 
-     
-     
-            
+
+
+
          for(var i =0; i<$scope.usertrackerplan[0].frequency; i++)
          {
              var setStr = '';
-             var volumeInt= 0; 
-             
+             var volumeInt= 0;
+
              if (i==0)
              {
-                 
+
                  for(var x=0; x<$scope.bool; x++)
                  {
-               
+
                     var appendStr="";
-                     
+
                     if(x!=$scope.bool-1)
                     {
                          appendStr = $scope.repcount[x].toString() + " / ";
@@ -2008,30 +2009,30 @@ $scope.saveset = function(value)
                     {
                          appendStr = $scope.repcount[x].toString();
                     }
-                    
-                    
+
+
                     setStr = setStr + appendStr;
-                    
+
                     volumeInt = parseFloat(volumeInt) + parseFloat($scope.repcount[x]);
-            
+
                  }
-                 
+
              }
              else
              {
                  var ii = i+1;
-                 
+
                  eval("  for(var x=0; x<$scope.bool"+ii.toString()+"; x++){var appendStr='';if(x!=$scope.bool"+ii.toString()+"-1){appendStr = $scope.repcount"+ii.toString()+"[x].toString() + ' / ';}else{appendStr = $scope.repcount"+ii.toString()+"[x].toString();}setStr = setStr + appendStr;volumeInt = parseFloat(volumeInt) + parseFloat($scope.repcount"+ii.toString()+"[x]);}");
-                 
+
              }
-             
-             
-             
-             
+
+
+
+
              //alert($scope.usertrackerplan[i].exercise);
              var url = "api/apiphp3.php/";
              var data = JSON.stringify({user_id: $scope.userid.toString(), set: setStr,exercise:$scope.usertrackerplan[i].exercise,weights:$scope.usertrackerplan[i].weights,volume:volumeInt,day:$scope.currentdate,month:$scope.currentmonth,year:$scope.currentyear,order: i});
-             
+
                                         //Call the services
                                         $http.post(url, data)
                                         .then(
@@ -2039,8 +2040,8 @@ $scope.saveset = function(value)
                                                 if (response.data)
                                                     $scope.msg = "Post successfully";
                                                 console.log("yeepee");
-                                            
-                                                 
+
+
                                         }, function (response) {
                                                 $scope.msg = "Service not Exists";
                                                 $scope.statusval = response.status;
@@ -2048,15 +2049,15 @@ $scope.saveset = function(value)
                                                 $scope.headers = response.headers();
                                                 //alert("Posted failure!");
                                         });
-             
-       
-            
-            
+
+
+
+
          }
-            
+
           var url = "api/apiphp4.php/";
              var data = JSON.stringify({user_id: $scope.userid.toString(), number:$scope.usertrackerplan[0].frequency,day:$scope.currentdate,month:$scope.currentmonth,year:$scope.currentyear});
-             
+
                                         //Call the services
                                         $http.post(url, data)
                                         .then(
@@ -2064,8 +2065,8 @@ $scope.saveset = function(value)
                                                 if (response.data)
                                                     $scope.msg = "Post successfully";
                                                 console.log("yeepee");
-                                            
-                                                 
+
+
                                         }, function (response) {
                                                 $scope.msg = "Service not Exists";
                                                 $scope.statusval = response.status;
@@ -2073,15 +2074,15 @@ $scope.saveset = function(value)
                                                 $scope.headers = response.headers();
                                                 //alert("Posted failure!");
                                         });
-            
-        
 
-        
+
+
+
         }
-      
-      
-    
-    
+
+
+
+
 
 });
 
@@ -2095,12 +2096,12 @@ app.controller("getCtrl", function($scope, $http) {
         function(response) {
         // error handling routine
         });
-    
-    
+
+
 });
 
 app.controller("postCtrl", function ($scope, $http) {
-      
+
     // property initialisation
     $scope.strName = null;
     $scope.strEmail = null;
@@ -2123,7 +2124,7 @@ app.controller("postCtrl", function ($scope, $http) {
                 $scope.headers = response.headers();
         });
     };
-   
+
 });
 
 
@@ -2169,7 +2170,7 @@ app.controller("delCtrl", function ($scope, $http) {
             // there may be instances of put failure
             if (response.data)
                 $scope.msg = "Delete successfully";
-                
+
         }, function (response) {
             $scope.msg = "Service not Exists";
             $scope.statusval = response.status;
@@ -2203,12 +2204,3 @@ app.config(function($routeProvider){
         redirectTo: "/welcome"
     });
 });
-
-
-
-    
-
-
-      
-
-
