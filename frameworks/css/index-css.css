@@ -68,6 +68,15 @@ input::-moz-placeholder { /* Firefox 18- */
 @media only screen and (max-width: 778px )
 {
 
+  .m-table-size th
+  {
+    font-size:14px !important;
+  }
+
+  .m-table-size td
+  {
+    font-size:11px !important;
+  }
   .m-payment-price
   {
       font-size:19px !important;

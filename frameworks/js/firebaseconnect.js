@@ -46,8 +46,8 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
 
           if(window.sendFirebase)
           {
-            alert("text");
-            alert(window.paymentmethod);
+            //alert("text");
+            //alert(window.paymentmethod);
 
               var ref = firebase.database().ref("idcounter/");
 
@@ -84,7 +84,7 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
 
         var EmailDone =false;
               setInterval(function(){
-                
+
                 if(window.sendFirebase)
                 {
                       if(window.paymentmethod=='bank')
@@ -92,7 +92,7 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
                         if(!EmailDone)
                         {
                           sendEmailBank();
-                          alert("email bank sent");
+                      //    alert("email bank sent");
                           //window.paymentmethod == '';
                           EmailDone = true;
                       }
@@ -101,7 +101,7 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
                       if(!EmailDone)
                         {
                       sendEmailMeet();
-                      alert("email meet sent");
+                    //  alert("email meet sent");
                       //window.paymentmethod == '';
                       EmailDone=true;
                     }
