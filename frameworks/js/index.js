@@ -9,6 +9,7 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
         $scope.sendFirebase = false;
         $scope.submitted = false;
         $scope.gender = '';
+        $scope.seetshirt='See Back';
 
         $scope.tsize='Size';
 
@@ -110,10 +111,12 @@ app.controller("formControl", function ($scope, $http,$interval,$window) {
             if($scope.tshirt == "front")
             {
                 $scope.tshirt="back";
+                $scope.seetshirt='See Front';
             }
             else
             {
                 $scope.tshirt="front";
+                $scope.seetshirt='See Back';
             }
         }
 

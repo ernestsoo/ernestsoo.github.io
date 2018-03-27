@@ -46,8 +46,8 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
 
           if(window.sendFirebase)
           {
-            alert("text");
-            alert(window.paymentmethod);
+            //alert("text");
+            //alert(window.paymentmethod);
 
               var ref = firebase.database().ref("idcounter/");
 
@@ -74,41 +74,42 @@ function writeParData(userId,email,first,last,gender,tel,weight,tsize,state,coun
                 id: idcounter
               });
 
-
-                                    if(window.paymentmethod=='bank')
-                                    {
-
-                                        sendEmailBank();
-                                        alert("email bank sent");
-                                        //window.paymentmethod == '';
-                                        window.paymentmethod='done';
-
-                                  }
-                                  else if (window.paymentmethod=='meet') {
-
-                                    sendEmailMeet();
-                                    alert("email meet sent");
-                                    //window.paymentmethod == '';
-                                    window.paymentmethod='done';
-
-                                }
-
               window.sendFirebase=false;
           }
 
 
 
-        },100);
-
-        alert("yoohoo1");
-
-        setInterval(function(){
+        },10);
 
 
+        var EmailDone =false;
+              setInterval(function(){
+
+                if(window.sendFirebase)
+                {
+                      if(window.paymentmethod=='bank')
+                      {
+                        if(!EmailDone)
+                        {
+                          sendEmailBank();
+                      //    alert("email bank sent");
+                          //window.paymentmethod == '';
+                          EmailDone = true;
+                      }
+                    }
+                    else if (window.paymentmethod=='meet') {
+                      if(!EmailDone)
+                        {
+                      sendEmailMeet();
+                    //  alert("email meet sent");
+                      //window.paymentmethod == '';
+                      EmailDone=true;
+                    }
+                    }
+             }
 
 
-
-           },100);
+              },1000);
 
 
 /*var idCounter = 077;
