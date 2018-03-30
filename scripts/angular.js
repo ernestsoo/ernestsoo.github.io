@@ -31,7 +31,7 @@ $( document ).ready(function() {
         $('.lds-ripple').css("display","none");
 
         $('.welcome-logo').animate({marginTop: "9%" },1250);
-        $('.welcome-text').fadeTo(1000,1.0);
+        $('.welcome-text').fadeTo(1250,1.0);
         
         $('.welcome-area').css("height","200%");
     },1250);
