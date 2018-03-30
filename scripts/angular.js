@@ -1,5 +1,5 @@
 	// create the module and name it scotchApp
-	var tiyaApp = angular.module('scotchApp', ['ngRoute']);
+	var tiyaApp = angular.module('tiyaApp', ['ngRoute']);
 
 
 	// create the controller and inject Angular's $scope
