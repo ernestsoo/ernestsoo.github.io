@@ -73,11 +73,12 @@ background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, 
     margin-top: 8%;
     font-size:12px;
     letter-spacing: 2px;
+    color:#696969;
 }
 .glyphicon-home-more
 {
     margin-top: 0%;
-    color:black;
+    color:#696969;
 }
 
 /*** END - HOME PAGE ***/

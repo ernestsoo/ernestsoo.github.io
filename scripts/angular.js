@@ -26,11 +26,11 @@ $( document ).ready(function() {
            $('.glyphicon-home-more').fadeTo(0,1.0);
            $('.welcome-discover').fadeTo(0,1.0);
 
-        },1050);    
+        },1250);    
         
         $('.lds-ripple').css("display","none");
 
-        $('.welcome-logo').animate({marginTop: "9%" },1000);
+        $('.welcome-logo').animate({marginTop: "9%" },1250);
         $('.welcome-text').fadeTo(1000,1.0);
         
         $('.welcome-area').css("height","200%");
