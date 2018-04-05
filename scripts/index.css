@@ -1,79 +1,85 @@
 /* CSS Rules */
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/TheBrooklyn.otf') format("opentype");
+}
+
 
 body
 {
-    /* CSS */
     
-    /* Style - As specified by Ker Hong */
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
-    font-style: normal;
-    font-variant: normal;
+
 }
+
+
 
 /*** HOME PAGE ***/
 
-
-
 .welcome-logo
 {       
-    width: 300px ;
+    width: 375px;
     
     /** Adjustment **/
-    margin-top: 16.5%;
+    margin-top: 15%;
+    margin-bottom: 4%;
 }
 
 
 .welcome-text
 {
     text-align: justify;
-
-    font-size: 14px !important;
+    
+    font-family: 'Raleway' !important;
+    font-size: 12px !important;
     letter-spacing: 1.5px;
     line-height: 28px;
-
+    font-weight:300;
+    line-height: 2;
+  
     color: black !important;
         
     /** Adjustment **/
     margin-top: 17%;
+    width: 77%;
+    margin: 0 auto;
 }
 
 .welcome-area
 {
-    width: 100%; 
+
     
+
     /* Temporary fix? */
     height:100%;
+    width:100%;
     
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    
-background: #3C3B3F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* Initial Loading Background */
+    background:  #3C3B3F;   /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-
-    background-size:     cover;                      /* <------ */
+    background-size:     cover;                 
     background-repeat:   no-repeat;
     background-position: center center;   
     
   /** Initial Loading  Transition Setting **/
-  -webkit-transition: all 1.5s ;
-  -moz-transition: all 1.5s ;
-  -o-transition: all 1.5s ;
-  transition: all 1.5s;
+  -webkit-transition: background 1.5s ;
+  -moz-transition: background 1.5s ;
+  -o-transition: background 1.5s ;
+  transition: background 1.5s;
     
     
 }
 
 .welcome-discover
 {
-    margin-top: 8%;
+    margin-top: 4%;
     font-size:12px;
     letter-spacing: 2px;
     color:#696969;
+    font-family: 'Raleway', sans-serif;
+    font-weight:200;
 }
 .glyphicon-home-more
 {
@@ -171,4 +177,89 @@ background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, 
     height: 58px;
     opacity: 0;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** Home Area Code ***/
+.home-area
+{
+
+    background:black;
+    display:none;
+    z-index:-1;
+    height:100%;
+}
+
+
+.home-logo
+{
+    margin-top: 18%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+}
+
+.home-category
+{
+    color: 	#e52c4c;
+    margin-top: 4%;
+    font-family: "Raleway" !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size:12.5px;
+  
+}
+
+.home-contact-button {
+
+    border: 2px solid #996515;
+    border-radius: 8px;
+    font-family: "Raleway" !important;
+    font-weight: 800;
+    padding: 3% 0%;
+    width: 80%;
+    margin: 0 auto;
+    color: #996515;
+    font-size:12.5px;
+  
+
+    
+}
+
+.home-contact-button-con
+{
+    margin-top: 45%;
+}
+
+.home-grid-view
+{
+    width: 104%;
+    margin: 0 auto;
+}
+
+.home-grid-view-rest
+{
+    margin-top: 1.7%;
 }
