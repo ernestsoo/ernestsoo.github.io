@@ -7,17 +7,120 @@
 
 body
 {
+    font-family: 'Raleway' !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
+/* The only rule that matters */
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+.booking-shadow
+{
+    position:absolute;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.9);
+    z-index:999;
+}
+
+.booking-title
+{
+    font-weight: 800;
+    color: white;
+    margin-top:22px;
+    font-size:27px;
+}
 
 
+.booking-input
+{
+    color:white;
+    background: transparent;
+    border: 3.5px white solid;
+    border-radius: 75px;
+    padding:16px;
+    width:300px;
+}
+
+.booking-button
+{
+  color: black;
+  background: transparent;
+  border: 3px white solid;
+  border-radius: 20px;
+  padding: 8px;
+  width: 110px;
+  margin: 0 auto;
+  margin-top: 55px;
+  cursor: pointer;
+  background: white;
+}
+
+.booking-cancel
+{
+  margin-top:20px;
+  width:25px;
+  cursor: pointer;
+}
+
+.booking-img
+{
+  margin-top:35px;
+
+}
+.booking-name
+{
+    margin-top:30px;
+}
+
+.booking-email
+{
+    margin-top:20px;
+}
+
+.booking-description
+{
+    margin-top:20px;
+    resize:none;
 }
 
 
 /*** FIXED NAV BAR ***/
+.nav-pop
+{
+    z-index: 105 !important;
+}
+
+.nav-hide
+{
+    z-index: 5 !important;
+}
+
 .nav-bar
 {
-
     visibility: hidden;
-
 }
 
 .nav-tab
@@ -35,18 +138,20 @@ body
     font-family: 'Raleway' !important;
     font-size: 10px !important;
     font-weight: 300;
+    z-index: 999 !important;
 }
 
 .nav-tab-con
 {
     position:relative;
-    display: inline-block
+    display: inline-block;
+    cursor: pointer;
 }
 .nav-booking-tab
 {
     width: 200px;
     display: inline-block;
-    z-index: 100 !important;
+    z-index: 100;
 
 }
 
@@ -55,7 +160,7 @@ body
     width: 120px;
     margin-left:-56px;
     display: inline-block;
-    z-index: 10; !important;
+    z-index: 10;
 
 }
 
@@ -64,8 +169,7 @@ body
     width: 120px;
     margin-left:-49px;
     display: inline-block;
-    z-index: 9; !important;
-
+    z-index: 9;
 }
 
 
@@ -74,8 +178,7 @@ body
     width: 120px;
     margin-left:-49px;
     display: inline-block;
-    z-index: 8; !important;
-
+    z-index: 8;
 }
 
 
@@ -84,7 +187,6 @@ body
     position: absolute;
     left:42px;
     top: 6px;
-    z-index: 101 !important;
 }
 
 .nav-english-text
@@ -92,36 +194,30 @@ body
     position: absolute;
     left:-15px;
     top: 6px;
-    z-index: 101 !important;
 }
 
 .nav-chinese-text
 {
     position: absolute;
-    left:-6.5px;
+    left:4.5px;
     top: 6px;
-    z-index: 101 !important;
 }
 
 
 .nav-korean-text
 {
     position: absolute;
-    left:-4.5px;
+    left:0px;
     top: 6px;
-    z-index: 101 !important;
 }
-
-
-
 
 
 /*** HOME PAGE ***/
 
 .welcome-logo
-{       
+{
     width: 375px;
-    
+
     /** Adjustment **/
     margin-top: 11%;
     margin-bottom: 4%;
@@ -131,16 +227,16 @@ body
 .welcome-text
 {
     text-align: justify;
-    
+
     font-family: 'Raleway' !important;
     font-size: 12px !important;
     letter-spacing: 1.5px;
     line-height: 28px;
     font-weight:300;
     line-height: 2;
-  
+
     color: black !important;
-        
+
     /** Adjustment **/
     margin-top: 17%;
     width: 325px;
@@ -152,23 +248,21 @@ body
     /* Temporary fix? */
     height:100%;
     width:100%;
-    
+
     /* Initial Loading Background */
     background:  #3C3B3F;   /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    background-size:     cover;                 
+    background-size:     cover;
     background-repeat:   no-repeat;
-    background-position: center center;   
-    
+    background-position: center center;
+
   /** Initial Loading  Transition Setting **/
-  -webkit-transition: background 1.5s ;
-  -moz-transition: background 1.5s ;
-  -o-transition: background 1.5s ;
+  -webkit-transition: background 1.5s;
+  -moz-transition: background 1.5s;
+  -o-transition: background 1.5s;
   transition: background 1.5s;
-    
-    
 }
 
 .welcome-discover
@@ -224,10 +318,10 @@ body
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  } 40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
@@ -303,7 +397,7 @@ body
 .home-area
 {
     background: white;
-
+    min-height: 1000px;
 }
 
 
@@ -325,13 +419,13 @@ body
     font-weight: 800;
     letter-spacing: 2px;
     font-size:12.5px;
-  
-    
+
+
     -webkit-transition: all 0.7s ;
     -moz-transition: all 0.7s;
     -o-transition: all 0.7s;
     transition: all 0.7s;
-    
+
     position: relative;
     z-index: 1;
 }
@@ -347,9 +441,6 @@ body
     margin: 0 auto;
     color: #996515;
     font-size:12.5px;
-  
-
-    
 }
 
 .home-contact-button-con
@@ -363,6 +454,116 @@ body
     margin: 0 auto;
 }
 
+
+.home-grid-view-x
+{
+    height:245px;
+    
+    background-color: rgba(229, 44, 76, 0.15);
+    background-blend-mode: multiply;
+}
+
+.home-grid-view-y
+{
+    height:275px;
+    
+    background-color: rgba(229, 44, 76, 0.15);
+    background-blend-mode: multiply;
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+    .home-grid-view-x
+    {
+        height:245px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+    .home-grid-view-y
+    {
+        height:275px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+    .home-grid-view-x
+    {
+        height:285px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+    .home-grid-view-y
+    {
+        height:315px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+    
+    .home-grid-view-x
+    {
+        height:375px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+    .home-grid-view-y
+    {
+        height:405px;
+
+        background-color: rgba(229, 44, 76, 0.15);
+        background-blend-mode: multiply;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .home-grid-view-2
 {
     margin-left:20%;
@@ -372,7 +573,7 @@ body
 {
     margin-left:40%;
 }
-    
+
 
 .home-grid-view-rest
 {
@@ -384,7 +585,7 @@ body
 
 
 
- .home-category-shadow-1, .home-category-shadow-2, .home-category-shadow-3
+  .home-category-shadow-0, .home-category-shadow-1, .home-category-shadow-2, .home-category-shadow-3
  {
     position: absolute;
     width: 250px;
@@ -393,70 +594,86 @@ body
     border-radius: 10px;
     top:5px;
     left: -350px;
-    
+
   -webkit-transition: all 0.7s ;
   -moz-transition: all 0.7s;
   -o-transition: all 0.7s;
   transition: all 0.7s;
-    
+
     z-index: 0;
-    
+
  }
 
 
-.home-category-con-1, .home-category-con-2, .home-category-con-3
+.home-category-con-0, .home-category-con-1, .home-category-con-2, .home-category-con-3
 {
     color:white;
     position: relative;
-    
-
 }
 
 
 
-.home-category-con-1:hover , .home-category-con-2:hover , .home-category-con-3:hover
+.home-category-con-0:hover, .home-category-con-1:hover , .home-category-con-2:hover , .home-category-con-3:hover
 {
     cursor: pointer;
 }
 
+
+.shadow-hover
+{
+  left: -130px !important;
+}
+
+.text-menu-hover
+{
+  margin-left: -35% !important;
+  margin-right: 35% !important;
+  color:white !important;
+}
+
+
+/*
 .home-category-con-1:hover div
 {
-    left: -80%;
+    left: -130px;
 }
+
+
+
 
 .home-category-con-2:hover div
 {
-    left: -80%;
+    left: -130px;
 }
 
 .home-category-con-3:hover div
 {
-    left: -80%;
+    left: -130px;
 }
+
 
 .home-category-con-1:hover p
 {
-    margin-left: -47%;
+    margin-left: -35%;
+    margin-right: 35%;
     color:white;
-
 }
 
 .home-category-con-2:hover p
 {
-    margin-left: -47%;
+    margin-left: -35%;
+    margin-right: 35%;
     color:white;
-
 }
 
 .home-category-con-3:hover p
 {
-    margin-left: -47%;
+    margin-left: -35%;
+    margin-right: 35%;
     color:white;
-
-
 }
 
-
+*/
 
 .home-category-links
 {
@@ -466,8 +683,8 @@ body
     font-size:11.5px;
     opacity: 1;
     display: none;
-    
-    
+
+
     margin-left:10%;
 }
 
@@ -478,16 +695,10 @@ body
     color: #e52c4c;
 }
 
-.home-c-t
+.home-c-1, .home-c-2, .home-c-3
 {
     margin-top: -19%;
 }
-
-
-
-
-
-
 
 /** Article Styling **/
 .art-img-guasha
@@ -497,3 +708,40 @@ body
     margin-left:-20px;
 }
 
+
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+.vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+.vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+.vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
