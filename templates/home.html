@@ -13,7 +13,15 @@
             <div class="row" style="margin-top:20px">
                 <div class="col-xs-0"></div>
                 <div class="col-xs-11">
-                    <p class="text-right hamburger-main-option" ng-click="close_hamburger()">Make a Booking</p>
+                    <p class="text-right hamburger-main-option" ng-click="close_hamburger();m_toggle_section('booking')">Make a Booking</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+             
+            <div class="row">
+                <div class="col-xs-0"></div>
+                <div class="col-xs-11">
+                    <p class="text-right hamburger-main-option" ng-click="close_hamburger();m_toggle_section('gallery')">Gallery</p>
                 </div>
                 <div class="col-xs-1"></div>
             </div>
@@ -63,7 +71,8 @@
                 <div class="col-xs-1"></div>
             </div>
             
-            <div class="section-welcome">
+
+            <div class="section-welcome m-section" ng-click="close_hamburger();">
                 <div class="row">
                     <div class="col-xs-12">
                         <image class="m-welcome-logo" src="images/logo.png" alt="Company Logo" />
@@ -89,6 +98,46 @@
                     </div>
                 </div>
             </div>
+
+
+             
+            <div class="m-section-booking m-section" style="display:none">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <img src="images/logo.png" class="m-booking-img"  align="center"/>
+                        <p class="m-booking-title text-center">BOOK AN APPOINTMENT</p>
+                        <input class="m-booking-input booking-name" type="text" placeholder="name" name="name"  />
+                        <input class="m-booking-input booking-email" type="text" placeholder="email" name="email"  />
+                        <textarea class="m-booking-input booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
+                        <div class="m-booking-button text-center" type="button" ng-click="submit_booking()" style="margin-bottom: 20px;">BOOK</div>
+                    </div>
+                    <div class="col-xs-1"></div>
+                </div>
+            </div>
+             
+            <div class="m-section-gallery m-section" style="display:none">
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <img src="images/1.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/2.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/3.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/4.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/5.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/6.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/7.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/8.jpg" class="m-gallery-img"  align="center"/>
+                        <img src="images/9.jpg" class="m-gallery-img"  align="center" style="margin-bottom:20px"/>
+                    </div>
+                    <div class="col-xs-1"></div>
+                    
+                    
+                </div>
+             
+             
+            </div> 
+             
         </div>
     </div>
 </div>

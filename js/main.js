@@ -61,7 +61,7 @@
     ============================================================================
     ==========================================================================*/
     $(".mobile-content").css("width",$(window).width().toString() + "px");
-    $(".mobile-content").css("height",$(window).height().toString() + "px" );
+    $(".mobile-content").css("min-height",$(window).height().toString() + "px" );
     
     var shadow_width = $(window).width() * 0.8;
         
@@ -147,6 +147,13 @@
         
     }
     
+    $scope.m_toggle_section = function(sectionParam) {
+        
+        $(".m-section").css("display","none");
+        
+        $(".m-section-"+sectionParam).css("display","unset");
+    }
+
     
     
         
