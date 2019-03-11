@@ -94,7 +94,7 @@
     
     
     
-        
+    
         
 
         
@@ -131,9 +131,21 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "eng"){
             
+            $scope.txt_booking = "BOOK AN APPOINTMENT";
+            
+            //Changes for txt_booking
+            //$(".txt_booking").css("left","42px");
+            
             $scope.txt_welcome_message="Tiya Spa & Reflexology is the first of its kind in Kota Kinabalu to offer a variety to those who are seeking authentic Asian massage. All therapist are well trained in their own ethnic wats to sooth the human body of stress.";
             
             $scope.txt_discover="DISCOVER MORE";
+            
+            $scope.cat_1 = "GALLERY";
+            $scope.cat_2 = "THERAPIES";
+            $scope.cat_3 = "MASSAGES";
+            $scope.cat_4 = "PRODUCTS";
+            
+            $scope.txt_contact = "CONTACT";
             
         }
         /* ++++++++++++++++++++++++++++++++
@@ -141,9 +153,21 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "ch"){
             
+            $scope.txt_booking = "预约";
+            
+            //Changes for txt_booking
+            //$(".txt_booking").css("left","90px");
+            
             $scope.txt_welcome_message="Tiya Spa＆Reflexology是哥打京那巴鲁的第一家同类产品，为那些寻求正宗亚洲按摩的人提供各种服务。所有治疗师都训练有素的自己的种族饮食，以舒缓人体的压力。";
             
             $scope.txt_discover="发现更多";
+            
+            $scope.cat_1 = "画廊";
+            $scope.cat_2 = "治疗";
+            $scope.cat_3 = "按摩";
+            $scope.cat_4 = "产品";
+            
+            $scope.txt_contact = "联系";
             
         }
         /* ++++++++++++++++++++++++++++++++
@@ -151,10 +175,23 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "kor"){
             
+            $scope.txt_booking="약속을 잡다"
+            
+            //Changes for txt_booking
+            //$(".txt_booking").css("left","77px");
+
+            
             $scope.txt_welcome_message="티야 스파 & 리플 렉솔 로지 (Tiya Spa & Reflexology)는 코타 키나발루에서 처음으로 진정한 아시아 마사지를 찾는 사람들에게 다양한 것을 제공합니다. 모든 치료사는 스트레스의 인체를 진정시키기 위해 자신의 민족 와트에서 잘 훈련받습니다.";
             
             
             $scope.txt_discover="더 발견하다";
+            
+            $scope.cat_1 = "갱도";
+            $scope.cat_2 = "치료법";
+            $scope.cat_3 = "마사지";
+            $scope.cat_4 = "제품";
+            
+            $scope.txt_contact = "접촉";
             
         }
         
@@ -228,7 +265,11 @@
         
     // Dynamically change home area on resize
     $(window).resize(function(){
-      $('.home-area').css("margin-top", "-"+$(window).height().toString()+"px");
+      if($(window).height() > 580)
+      {
+        $('.home-area').css("margin-top", "-"+$(window).height().toString()+"px");
+      }
+      
     });
     
     
@@ -535,6 +576,12 @@
 		$scope.enter_booking = function()
 		{
 				$(".booking-shadow").css("display","unset");
+            
+                  // Center Booking Logo
+            var booking_img_left = ($(window).width() - $(".booking-img").width()) / 2;
+		   //   booking_img_left = booking_img_left - 72;
+	       $(".booking-img").css("margin-left",booking_img_left.toString()+"px");
+
 		}
 
 		$scope.exit_booking = function()
@@ -565,11 +612,11 @@
 
 
 		$(".booking-shadow").css("width",$(window).width()+"px");
-		$(".booking-shadow").css("height",$(window).height()+"px");
+		$(".booking-shadow").css("height",$(".home-area").height()+"px");
         
         $(window).resize(function(){
           $(".booking-shadow").css("width",$(window).width()+"px");
-		  $(".booking-shadow").css("height",$(window).height()+"px");
+		  $(".booking-shadow").css("height",$(".home-area").height()+"px");
         
 
             // Center Booking Logo

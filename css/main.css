@@ -7,7 +7,7 @@
 
 body
 {
-    font-family: 'Raleway' !important;
+    font-family: 'Raleway', "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif !important;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -43,6 +43,7 @@ body
     left:0;
     background: rgba(0,0,0,0.9);
     z-index:999;
+    min-height: 1000px;
 }
 
 .booking-title
@@ -205,6 +206,80 @@ body
 
 
 .nav-korean-text
+{
+    position: absolute;
+    left:0px;
+    top: 6px;
+}
+
+
+.m-nav-text
+{
+    font-family: 'Raleway' !important;
+    font-size: 8px !important;
+    font-weight: 300;
+    z-index: 999 !important;
+}
+.m-nav-booking-tab
+{
+    width: 163px;
+    display: inline-block;
+    z-index: 100;
+    margin-left:-29px;
+    
+
+}
+
+.m-nav-english-tab
+{
+    width: 100px;
+    margin-left:-56px;
+    display: inline-block;
+    z-index: 10;
+
+}
+
+.m-nav-chinese-tab
+{
+    width: 100px;
+    margin-left:-49px;
+    display: inline-block;
+    z-index: 9;
+}
+
+
+.m-nav-korean-tab
+{
+    width: 100px;
+    margin-left:-50px;
+    display: inline-block;
+    z-index: 8;
+}
+
+
+.m-nav-booking-text
+{
+    position: absolute;
+    left:5px;
+    top: 6px;
+}
+
+.m-nav-english-text
+{
+    position: absolute;
+    left:-15px;
+    top: 6px;
+}
+
+.m-nav-chinese-text
+{
+    position: absolute;
+    left:4.5px;
+    top: 6px;
+}
+
+
+.m-nav-korean-text
 {
     position: absolute;
     left:0px;
@@ -432,6 +507,7 @@ body
 
 .home-contact-button {
 
+    cursor: pointer;
     border: 2px solid #996515;
     border-radius: 8px;
     font-family: "Raleway" !important;
@@ -711,7 +787,8 @@ body
 
 * { box-sizing: border-box; }
 .video-background {
-  background: #000;
+  /* To be added again if needed. */
+  /*background: #000;*/
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -99;
