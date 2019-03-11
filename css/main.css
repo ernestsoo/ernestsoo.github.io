@@ -298,6 +298,15 @@ body
     margin-bottom: 4%;
 }
 
+.m-welcome-logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 225px;
+    margin-top: 5%;
+}
+
 
 .welcome-text
 {
@@ -316,6 +325,25 @@ body
     margin-top: 17%;
     width: 325px;
     margin: 0 auto;
+}
+
+.m-welcome-text
+{
+    text-align: justify;
+
+    font-family: 'Raleway' !important;
+    font-size: 10px !important;
+    letter-spacing: 1.5px;
+    line-height: 28px;
+    font-weight:300;
+    line-height: 1.5;
+
+    color: black !important;
+
+    /** Adjustment **/
+    margin-top: 12%;
+    width: 325px;
+
 }
 
 .welcome-area
@@ -343,6 +371,16 @@ body
 .welcome-discover
 {
     margin-top: 4%;
+    font-size:10px;
+    letter-spacing: 2px;
+    color:#696969;
+    font-family: 'Raleway', sans-serif;
+    font-weight:200;
+}
+
+.m-welcome-discover
+{
+    margin-top: 8%;
     font-size:12px;
     letter-spacing: 2px;
     color:#696969;
@@ -547,6 +585,31 @@ body
     background-blend-mode: multiply;
 }
 
+.desktop {
+    display:none;
+}
+
+.mobile {
+    display:unset;
+}
+
+.mobile-content {
+    
+    background: rgba(255, 248, 249, 0.5);
+    
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+    .desktop {
+        display: unset;
+    }
+    
+    .mobile {
+        display: none;
+    }
+
+}
 
 /*==========  Mobile First Method  ==========*/
 
