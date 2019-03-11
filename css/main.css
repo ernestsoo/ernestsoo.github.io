@@ -304,7 +304,7 @@ body
     margin-left: auto;
     margin-right: auto;
     width: 225px;
-    margin-top: 5%;
+    margin-top: 8%;
 }
 
 
@@ -332,7 +332,7 @@ body
     text-align: justify;
 
     font-family: 'Raleway' !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
     letter-spacing: 1.5px;
     line-height: 28px;
     font-weight:300;
@@ -341,8 +341,7 @@ body
     color: black !important;
 
     /** Adjustment **/
-    margin-top: 12%;
-    width: 325px;
+    margin-top: 14%;
 
 }
 
@@ -371,7 +370,7 @@ body
 .welcome-discover
 {
     margin-top: 4%;
-    font-size:10px;
+    font-size:12px;
     letter-spacing: 2px;
     color:#696969;
     font-family: 'Raleway', sans-serif;
@@ -380,8 +379,8 @@ body
 
 .m-welcome-discover
 {
-    margin-top: 8%;
-    font-size:12px;
+    margin-top: 10%;
+    font-size:11px;
     letter-spacing: 2px;
     color:#696969;
     font-family: 'Raleway', sans-serif;
