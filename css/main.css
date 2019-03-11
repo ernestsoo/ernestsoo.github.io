@@ -46,6 +46,28 @@ body
     min-height: 1000px;
 }
 
+.hamburger-shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    z-index:999;
+}
+
+.hamburger-cancel
+{
+  margin-top:20px;
+  width:25px;
+  cursor: pointer;
+}
+
+.hamburger-main-option
+{
+    color: white;
+    font-size: 20px;
+    margin-top: 5%;
+}
 .booking-title
 {
     font-weight: 800;

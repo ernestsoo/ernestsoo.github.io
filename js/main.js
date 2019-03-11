@@ -42,7 +42,26 @@
     ============================================================================
     ==========================================================================*/
     $(".mobile-content").css("width",$(window).width().toString() + "px");
-    $(".mobile-content").css("height",$(window).height().toString() + "px" )
+    $(".mobile-content").css("height",$(window).height().toString() + "px" );
+    
+    var shadow_width = $(window).width() * 0.8;
+        
+        
+        
+    $(".hamburger-shadow").css("width", shadow_width.toString() + "px");
+    $(".hamburger-shadow").css("height", $(window).height().toString() + "px" );
+        
+    $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px"  );
+        
+    
+    $scope.open_hamburger = function() {
+        $(".hamburger-shadow").animate({marginLeft: "0px"});
+    }
+    
+    $scope.close_hamburger = function() {
+        $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
+    }
+   
         
         
     /* #########################################################################

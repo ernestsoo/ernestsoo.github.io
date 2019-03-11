@@ -1,28 +1,82 @@
 <div class="mobile ">
     <div class="mobile-content text-center">
-         <div class="container-fluid p-0 m-0">
-             <div class="row">
-                <div class="col-xs-12">
-                    <image class="m-welcome-logo" src="images/logo.png" alt="Company Logo" />
-                </div>
-            </div>
-
+         <div class="hamburger-shadow">
+             
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-10">
-                    <p class="m-welcome-text text-transition">{{txt_welcome_message}}</p>
+                    <img src="images/cancel.svg" align="right" class="hamburger-cancel" ng-click="close_hamburger()" />
                 </div>
                 <div class="col-xs-1"></div>
             </div>
-
+             
+            <div class="row" style="margin-top:20px">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <p class="text-right hamburger-main-option">Make a Booking</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+             
             <div class="row">
-                    <div class="col-xs-12"  >
-                        <p class="m-welcome-discover text-transition">{{txt_discover}}</p>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <p class="text-right hamburger-main-option">Change Language</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+             
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <p class="text-right hamburger-main-option">Services</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+             
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <p class="text-right hamburger-main-option">Products</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            
+         </div>
+         <div class="container-fluid p-0 m-0">
+             
+            <div class="row" ng-click="open_hamburger();">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <p>hamgburger here</p>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            
+            <div class="section-welcome">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <image class="m-welcome-logo" src="images/logo.png" alt="Company Logo" />
                     </div>
                 </div>
-            <div class="row">
-                <div class="col-xs-12"  >
-                     <span  class="glyphicon glyphicon-menu-down glyphicon-home-more"></span>
+
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <p class="m-welcome-text text-transition">{{txt_welcome_message}}</p>
+                    </div>
+                    <div class="col-xs-1"></div>
+                </div>
+
+                <div class="row">
+                        <div class="col-xs-12"  >
+                            <p class="m-welcome-discover text-transition">{{txt_discover}}</p>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-xs-12"  >
+                         <span  class="glyphicon glyphicon-menu-down glyphicon-home-more"></span>
+                    </div>
                 </div>
             </div>
         </div>
