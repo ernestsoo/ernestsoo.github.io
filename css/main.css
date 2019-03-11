@@ -65,9 +65,25 @@ body
 .hamburger-main-option
 {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 5%;
 }
+
+.hamburger-sub-option
+{
+    color: white;
+    font-size: 18px;
+    margin-top: 2%;
+}
+
+.glyphicon-lang
+{
+    font-size: 16px;
+    margin-right: 5px;
+
+}
+
+
 .booking-title
 {
     font-weight: 800;

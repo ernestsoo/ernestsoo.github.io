@@ -62,6 +62,45 @@
         $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
     }
    
+    $scope.lang_bool = false;
+        
+        
+    $scope.lang_toggle = function() {
+        
+        if($scope.lang_bool == false)
+        {
+            $(".glyphicon-lang").animate(
+            { deg: 90 },
+            {
+              duration: 400,
+              step: function(now) {
+                $(this).css({ transform: 'rotate(' + now + 'deg)' });
+              }
+            }
+           );
+        
+            $(".lang-options").css("display","unset"); 
+            
+            $scope.lang_bool = true;
+        }else{
+            
+            $(".glyphicon-lang").animate(
+            { deg: 0 },
+            {
+              duration: 400,
+              step: function(now) {
+                $(this).css({ transform: 'rotate(' + now + 'deg)' });
+              }
+            }
+           );
+            
+            $(".lang-options").css("display","none");
+            
+            $scope.lang_bool = false;
+            
+        }
+        
+    }
         
         
     /* #########################################################################
