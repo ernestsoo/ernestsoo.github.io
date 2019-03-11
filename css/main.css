@@ -46,6 +46,12 @@ body
     min-height: 1000px;
 }
 
+.hamburger-menu
+{
+    width:22px;
+    margin-top: 10%;
+}
+
 .hamburger-shadow
 {
     position: absolute;
@@ -80,8 +86,16 @@ body
 {
     font-size: 16px;
     margin-right: 5px;
-
 }
+
+.glyphicon-alt
+{
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+
+
 
 
 .booking-title
