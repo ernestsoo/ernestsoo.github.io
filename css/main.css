@@ -399,13 +399,13 @@ body
     text-align: justify;
 
     font-family: 'Raleway' !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     letter-spacing: 1.5px;
     line-height: 28px;
-    font-weight:300;
+    font-weight:600;
     line-height: 2;
 
-    color: black !important;
+    color: white !important;
 
     /** Adjustment **/
     margin-top: 17%;
@@ -458,7 +458,7 @@ body
     margin-top: 4%;
     font-size:12px;
     letter-spacing: 2px;
-    color:#696969;
+    color: white;
     font-family: 'Raleway', sans-serif;
     font-weight:200;
 }
@@ -680,7 +680,7 @@ body
 
 .mobile-content {
     
-    background: rgba(255, 248, 249, 0.5);
+    background: rgba(255, 248, 249, 1);
     
 }
 
@@ -977,6 +977,71 @@ body
   height: 100%;
   pointer-events: none;
 }
+
+.service-video-background{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+    margin-top: 5%;
+}
+.service-video-background iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    z-index: 10;
+}
+.service-video-text {
+    top:100px;
+    left:0;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+    position: absolute;
+    z-index: 100;
+    padding: 0px !important;
+    margin: 0px !important;
+    line-height: 1;
+}
+
+.service-video-text p {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.service-explain{
+    font-size: 15px;
+}
+.price-box-start {
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 14px;
+    font-weight: 200;
+}
+.price-box-value {
+    font-size: 50px;
+    font-weight: 800;
+    padding: 0px !important;
+    margin: 0px;
+    margin-top: -10px;
+}
+
+.price-box-booking {
+    border: 1px solid grey;
+    color: grey;
+    border-radius: 8px;
+    display: table;
+    padding: 5px 12px;
+    cursor: pointer;
+    margin-top: 5%;
+    font-size: 15px;
+}
+
+.price-box-booking:hover {
+    background:grey;
+    color:white;
+}
+
 #vidtop-content {
 	top: 0;
 	color: #fff;

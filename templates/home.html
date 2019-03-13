@@ -272,7 +272,7 @@
                             <p class="home-category-links home-category-links-1">Foot Reflexology</p>
                             <p class="home-category-links home-category-links-1 home-c-1">Body Scrub</p>
                             <p class="home-category-links home-category-links-1 home-c-1">Aroma Oil Bath</p>
-                            <p class="home-category-links home-category-links-1 home-c-1 link-guasha">Gua Sha</p>
+                            <p class="home-category-links home-category-links-1 home-c-1 link-guasha" ng-click="service_set_up()">Gua Sha</p>
                         </div>
                         <div class="col-xs-3"></div>
 
@@ -413,17 +413,46 @@
 
             </div>
 
+            <!----- ############################################################
+            ####################################################################
 
+            Service - VIP Overnight SPA
+
+            ####################################################################
+            ##############################################################----->
             <div class="col-xs-8 col-md-9 section-guasha" style="display:none">
-
                 <div class="row">
                     <div class="col-xs-12">
-
-                        <img class="art-img-guasha" src="images/guasha-x.jpg" alt="Gua Sha"/>
-
+                        <div class="service-video-background">
+                             <iframe class="service-video" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
+                             <div class="service-video-text" style="opacity: 0;">
+                                <p>VIP OVERNIGHT SPA</p>
+                             </div>
+                        </div>
                     </div>
                 </div>
-
+                
+                <div class="row" style="margin-top: 3.5%;">
+                    <div class="col-xs-8">
+                        <ul class="service-explain">
+                          <li>Check in after 11pm</li>
+                          <li>Check out at 11am</li>
+                          <li>VIP Floor - Rooms</li>
+                          <li>VIP Lounge - Free Coffee, Tea, Snack</li> 
+                          <li>2 Hours Selections of Massages + Foot Scrub</li>
+                          <li>Free Shower Facilities</li>
+                          <li>Free Airport Transfer to Tiya Spa upon arrival (Mins. 2pax)</li>
+                        </ul>  
+                    
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="price-box">
+                            <p class="price-box-start">Price Starting from:</p>
+                            <p class="price-box-value">RM298</p>
+                            <div class="price-box-booking" ng-click="enter_booking();">Book Now</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

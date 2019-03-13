@@ -60,101 +60,111 @@
 
     ============================================================================
     ==========================================================================*/
-    $(".mobile-content").css("width",$(window).width().toString() + "px");
-    $(".mobile-content").css("min-height",$(window).height().toString() + "px" );
-    
-    var shadow_width = $(window).width() * 0.8;
         
+    $(window).resize(function(){
+        mobile_function();
+    });
         
-        
-    $(".hamburger-shadow").css("width", shadow_width.toString() + "px");
-    $(".hamburger-shadow").css("height", $(window).height().toString() + "px" );
-        
-    $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px"  );
-        
-    
-    $scope.open_hamburger = function() {
-        $(".hamburger-shadow").animate({marginLeft: "0px"});
-    }
-    
-    $scope.close_hamburger = function() {
-        $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
-    }
-   
-    $scope.lang_bool = false;
-        
-        
-    $scope.lang_toggle = function() {
-        
-        if($scope.lang_bool == false)
-        {
-            $(".glyphicon-lang").animate(
-            { deg: 90 },
-            {
-              duration: 400,
-              step: function(now) {
-                $(this).css({ transform: 'rotate(' + now + 'deg)' });
-              }
-            }
-           );
-        
-            $(".lang-options").css("display","unset"); 
-            
-            $scope.lang_bool = true;
-        }else{
-            
-            $(".glyphicon-lang").animate(
-            { deg: 0 },
-            {
-              duration: 400,
-              step: function(now) {
-                $(this).css({ transform: 'rotate(' + now + 'deg)' });
-              }
-            }
-           );
-            
-            $(".lang-options").css("display","none");
-            
-            $scope.lang_bool = false;
-            
-        }
-        
-    }
-    
-    $scope.m_toggle_lang= function(paramLang) {
-        
-        $scope.lang= paramLang;
-        
-        $scope.onLangChange();
-        
-        $(".glyphicon-lang").animate(
-            { deg: 0 },
-            {
-              duration: 400,
-              step: function(now) {
-                $(this).css({ transform: 'rotate(' + now + 'deg)' });
-              }
-            }
-           );
-            
-        $(".lang-options").css("display","none");
-            
-        $scope.lang_bool = false;
-        
-        
-        $scope.close_hamburger();
-        
-        
-    }
-    
-    $scope.m_toggle_section = function(sectionParam) {
-        
-        $(".m-section").css("display","none");
-        
-        $(".m-section-"+sectionParam).css("display","unset");
-    }
+    mobile_function();
 
-    
+        function mobile_function()
+        {
+            
+            $(".mobile-content").css("width",$(window).width().toString() + "px");
+            $(".mobile-content").css("min-height",$(window).height().toString() + "px" );
+
+            var shadow_width = $(window).width() * 0.8;
+
+            $(".hamburger-shadow").css("width", shadow_width.toString() + "px");
+            $(".hamburger-shadow").css("height", $(window).height().toString() + "px" );
+
+            $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px"  );
+
+
+            $scope.open_hamburger = function() {
+                $(".hamburger-shadow").animate({marginLeft: "0px"});
+            }
+
+            $scope.close_hamburger = function() {
+                $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
+            }
+
+            $scope.lang_bool = false;
+
+
+            $scope.lang_toggle = function() {
+
+                if($scope.lang_bool == false)
+                {
+                    $(".glyphicon-lang").animate(
+                    { deg: 90 },
+                    {
+                      duration: 400,
+                      step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                      }
+                    }
+                   );
+
+                    $(".lang-options").css("display","unset"); 
+
+                    $scope.lang_bool = true;
+                }else{
+
+                    $(".glyphicon-lang").animate(
+                    { deg: 0 },
+                    {
+                      duration: 400,
+                      step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                      }
+                    }
+                   );
+
+                    $(".lang-options").css("display","none");
+
+                    $scope.lang_bool = false;
+
+                }
+
+            }
+
+            $scope.m_toggle_lang= function(paramLang) {
+
+                $scope.lang= paramLang;
+
+                $scope.onLangChange();
+
+                $(".glyphicon-lang").animate(
+                    { deg: 0 },
+                    {
+                      duration: 400,
+                      step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                      }
+                    }
+                   );
+
+                $(".lang-options").css("display","none");
+
+                $scope.lang_bool = false;
+
+
+                $scope.close_hamburger();
+
+
+            }
+
+            $scope.m_toggle_section = function(sectionParam) {
+
+                $(".m-section").css("display","none");
+
+                $(".m-section-"+sectionParam).css("display","unset");
+            }
+        
+        }
+
+
     
         
         
@@ -190,7 +200,9 @@
 
     setTimeout(function(){
 
-        $('.welcome-area').css("background","rgba(255, 248, 249, 0.5)");
+        //$('.welcome-area').css("background","rgba(255, 248, 249, 0)");
+        $('.welcome-area').css("background","rgba(0,0,0, 0.25)");
+
 
         setTimeout(function(){
            $('.glyphicon-home-more').fadeTo(0,1.0);
@@ -259,7 +271,7 @@
             $scope.txt_booking = "BOOK AN APPOINTMENT";
             
             //Changes for txt_booking
-            //$(".txt_booking").css("left","42px");
+            $(".txt_booking").css("left","42px");
             
             $scope.txt_welcome_message="Tiya Spa & Reflexology is the first of its kind in Kota Kinabalu to offer a variety to those who are seeking authentic Asian massage. All therapist are well trained in their own ethnic wats to sooth the human body of stress.";
             
@@ -281,7 +293,7 @@
             $scope.txt_booking = "预约";
             
             //Changes for txt_booking
-            //$(".txt_booking").css("left","90px");
+            $(".txt_booking").css("left","90px");
             
             $scope.txt_welcome_message="Tiya Spa＆Reflexology是哥打京那巴鲁的第一家同类产品，为那些寻求正宗亚洲按摩的人提供各种服务。所有治疗师都训练有素的自己的种族饮食，以舒缓人体的压力。";
             
@@ -303,7 +315,7 @@
             $scope.txt_booking="약속을 잡다"
             
             //Changes for txt_booking
-            //$(".txt_booking").css("left","77px");
+            $(".txt_booking").css("left","77px");
 
             
             $scope.txt_welcome_message="티야 스파 & 리플 렉솔 로지 (Tiya Spa & Reflexology)는 코타 키나발루에서 처음으로 진정한 아시아 마사지를 찾는 사람들에게 다양한 것을 제공합니다. 모든 치료사는 스트레스의 인체를 진정시키기 위해 자신의 민족 와트에서 잘 훈련받습니다.";
@@ -681,6 +693,57 @@
         
         
         
+    /* =========================================================================
+    ============================================================================
+    SERVICE SECTION
+
+    ============================================================================
+    ==========================================================================*/
+        
+        $scope.service_set_up = function(){
+             
+                
+                setTimeout(function(){
+                    var top_service_title = $(".service-video").height() - $(".service-video-text").height();
+                    var left_service_title = $(".service-video").width() - $(".service-video-text").width();
+                    
+                    top_service_title = top_service_title + 14;
+                    left_service_title = left_service_title / 2;
+                    
+             
+                    $(".service-video-text").css("top",top_service_title.toString()+"px");
+                    $(".service-video-text").css("left",left_service_title.toString()+"px");
+                    $(".service-video-text").animate({opacity: 1},1000);
+                },1000)
+            
+            
+                $(window).resize(function(){ 
+                
+                    var top_service_title = $(".service-video").height() - $(".service-video-text").height();
+                    var left_service_title = $(".service-video").width() - $(".service-video-text").width();
+                    
+                    top_service_title = top_service_title + 14;
+                    left_service_title = left_service_title / 2;
+                    
+             
+                    $(".service-video-text").css("top",top_service_title.toString()+"px");
+                    $(".service-video-text").css("left",left_service_title.toString()+"px");
+                
+                });
+                
+                
+
+                
+        }
+   
+        
+        
+    /* #########################################################################
+    ############################################################################
+    SERVICE SECTION
+    
+    ############################################################################
+    ##########################################################################*/
         
         
         
@@ -713,26 +776,25 @@
 		{
 				$(".booking-shadow").css("display","none");
 		}
+        
+        var email_body = "tester";
 
 		$scope.submit_booking = ()=>
 		{
-            $(".booking-shadow").css("display","none");
-                
-            var template_params = {
-               "reply_to": $(".booking-name").val(),
-               "from_name": $(".booking-name").val(),
-               "to_name": $(".booking-name").val(),
-               "message_html": $(".booking-name").val()
-            }
-
-            var service_id = "default_service";
-            var template_id = "template_10nMAYeb";
-            emailjs.send(service_id, template_id, template_params)
-             .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-             }, function(error) {
-                console.log('FAILED...', error);
-             });
+            // Get content of booking
+            email_body = $(".booking-description").val();
+            
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "ernestsoo22@gmail.com",
+                Password : "8cee3215-e693-46c5-90ac-59b508a8bfdc",
+                To : '100067584@student.swin.edu.au',
+                From : "ernestsoo22@gmail.com",
+                Subject: "Sucessful Booking!",
+                Body: '<!DOCTYPE html PUBLIC " -//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"> <head> <title> </title> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta name="viewport" content="width=device-width"> <style type="text/css">body, html { margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; text-size-adjust: none; width: 100% !important; } table td, table { } #outlook a { padding: 0px; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; } .ExternalClass { width: 100%; } @media only screen and (max-width: 480px) { table, table tr td, table td { width: 100% !important; } img { width: inherit; } .layer_2 { max-width: 100% !important; } .edsocialfollowcontainer table { max-width: 25% !important; } .edsocialfollowcontainer table td { padding: 10px !important; } .edsocialfollowcontainer table { max-width: 25% !important; } .edsocialfollowcontainer table td { padding: 10px !important; } } </style> </head> <body style="padding:0; margin: 0;"> <table style="height: 100%; width: 100%; background-color: #efefef;" align="center"> <tbody> <tr> <td valign="top" id="dbody" data-version="2.31" style="width: 100%; height: 100%; padding-top: 30px; padding-bottom: 30px; background-color: #efefef;"> <!--[if (gte mso 9)|(IE)]><table align="center" style="max-width:600px" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <table class="layer_1" align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; box-sizing: border-box; width: 100%; margin: 0px auto;"> <tbody> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edimg" valign="top" style="padding: 0px; box-sizing: border-box; text-align: center;"> <img style="border-width: 0px; border-style: none; max-width: 366px; width: 100%;" width="366" alt="Image" src="https://api.elasticemail.com/userfile/0eeea5f4-4373-4534-97e2-f46c914ce9a4/logo.png"> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #e52c4c; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%;" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edtext" valign="top" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p class="style2 text-center" style="text-align: center; margin: 0px; padding: 0px; color: #ffffff; font-size: 32px; font-family: Helvetica, Arial, sans-serif;">Thank you for your Booking! <br> </p> <p style="margin: 0px; padding: 0px;"> <span style="color: #ffffff;"> <br>Your Booking has been successfully submitted to Tiya Spa and you should be expecting a response soon. </span> </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="display: inline-block; vertical-align: top; width: 100%; max-width: 600px;"> <table border="0" cellspacing="0" class="edcontent" style="border-collapse: collapse;width:100%"> <tbody> <tr> <td valign="top" class="edtext" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="margin: 0px; padding: 0px;">'+email_body.toString()+'</p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edtext" valign="top" style="padding: 10px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="text-align: center; font-size: 11px; margin: 0px; padding: 0px;">If you no longer wish to receive mail from us, you can <a href="{unsubscribe}" style="background-color: initial; color: #828282; font-size: 12px; font-family: Helvetica, Arial, sans-serif; text-decoration: none;">unsubscribe</a> <br>{accountaddress} </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> </tbody> </table> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> </tbody> </table> </body></html>'
+            }).then(
+              message => console.log(message)
+            );
         }
 
 
