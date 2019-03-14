@@ -110,7 +110,9 @@
                         <input class="m-booking-input booking-name " type="text" placeholder="name" name="name"  />
                         <input class="m-booking-input booking-email" type="text" placeholder="email" name="email"  />
                         <textarea class="m-booking-input booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
-                        <div class="m-booking-button text-center" type="button" ng-click="submit_booking()" style="margin-bottom: 20px;">BOOK</div>
+                        <div class="m-booking-button text-center" type="button" ng-click="submit_booking()" style="margin-bottom: 20px;">        <!--<p>BOOK</p>-->
+                           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        </div>
                     </div>
                     <div class="col-xs-1"></div>
                 </div>
@@ -147,11 +149,17 @@
 <div class="booking-shadow" style="display:none">
     <img src="images/cancel.svg" class="booking-cancel" ng-click="exit_booking()" />
     <img src="images/logo-trans.png" class="booking-img"  />
-    <p class="booking-title text-center">BOOK AN APPOINTMENT</p>
+    <p class="booking-title text-center">{{booking_title}}</p>
     <input class="booking-input d-booking-name booking-input-desktop-measure" type="text" placeholder="name" name="name"  />
     <input class="booking-input d-booking-email" type="email" placeholder="email" name="email"  />
     <textarea class="booking-input d-booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
-    <div class="booking-button text-center" type="button" ng-click="submit_booking()">BOOK</div>
+    <div class="booking-button text-center" type="button" ng-click="submit_booking()">
+        <span class="booking-button-text">{{booking_word}}</span>
+        <div class="lds-ring" style="display:none; margin: 0 auto"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <img src="images/checked.svg" class="booking-checked" ng-click="exit_booking()" />
+    <p class="booking-successful text-center">{{booking_successful}}</p>
+    <div class="booking-new-booking text-center" type="button" ng-click="submit_booking()">{{booking_new}}</div>
 </div>
 
 
@@ -269,10 +277,10 @@
                     <div class="row">
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
-                            <p class="home-category-links home-category-links-1">Foot Reflexology</p>
-                            <p class="home-category-links home-category-links-1 home-c-1">Body Scrub</p>
-                            <p class="home-category-links home-category-links-1 home-c-1">Aroma Oil Bath</p>
-                            <p class="home-category-links home-category-links-1 home-c-1 link-guasha" ng-click="service_set_up()">Gua Sha</p>
+                            <p class="home-category-links home-category-links-1 link-c-2-s-1" ng-click="service_set_up(1)">{{cat_2_sub_1}}</p>
+                            <p class="home-category-links home-category-links-1 home-c-1 link-c-2-s-2" ng-click="service_set_up(2)">{{cat_2_sub_2}}</p>
+                            <p class="home-category-links home-category-links-1 home-c-1 link-c-2-s-3" ng-click="service_set_up(3)">{{cat_2_sub_3}}</p>
+                            <p class="home-category-links home-category-links-1 home-c-1 link-c-2-s-4" ng-click="service_set_up(4)">{{cat_2_sub_4}}</p>
                         </div>
                         <div class="col-xs-3"></div>
 
@@ -378,8 +386,8 @@
 -->
 
 
-                <div class="row ">
-                    <div class="col-xs-7 home-grid-view-y" style="background-image: url(images/6.jpg); background-size: cover">
+                <div class="row"style="margin-top: 2%">
+                    <div  class="col-xs-7 home-grid-view-y" style="background-image: url(images/6.jpg); background-size: cover">
 <!--                        <img class="home-grid-view-x" src="images/4.jpg" style="background-image: url(images/4.jpg)" />-->
                     </div>
                     <div class="col-xs-5" style="padding-left:5px;padding-right:5px">
@@ -420,13 +428,13 @@
 
             ####################################################################
             ##############################################################----->
-            <div class="col-xs-8 col-md-9 section-guasha" style="display:none">
+            <div class="col-xs-8 col-md-9 sec-c-2-s-1" style="display:none">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="service-video-background">
-                             <iframe class="service-video" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
-                             <div class="service-video-text" style="opacity: 0;">
-                                <p>VIP OVERNIGHT SPA</p>
+                             <iframe class="service-video-1" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
+                             <div class="service-video-text service-video-text-1" style="opacity: 0;">
+                                <p>{{c2s1_title}}</p>
                              </div>
                         </div>
                     </div>
@@ -435,21 +443,62 @@
                 <div class="row" style="margin-top: 3.5%;">
                     <div class="col-xs-8">
                         <ul class="service-explain">
-                          <li>Check in after 11pm</li>
-                          <li>Check out at 11am</li>
-                          <li>VIP Floor - Rooms</li>
-                          <li>VIP Lounge - Free Coffee, Tea, Snack</li> 
-                          <li>2 Hours Selections of Massages + Foot Scrub</li>
-                          <li>Free Shower Facilities</li>
-                          <li>Free Airport Transfer to Tiya Spa upon arrival (Mins. 2pax)</li>
+                          <li>{{c2s1_bullet_1}}</li>
+                          <li>{{c2s1_bullet_2}}</li>
+                          <li>{{c2s1_bullet_3}}</li> 
+                          <li>{{c2s1_bullet_4}}</li>
+                          <li>{{c2s1_bullet_5}}</li>
+                          <li>{{c2s1_bullet_6}}</li>
                         </ul>  
                     
                     </div>
                     <div class="col-xs-4">
                         <div class="price-box">
-                            <p class="price-box-start">Price Starting from:</p>
-                            <p class="price-box-value">RM298</p>
-                            <div class="price-box-booking" ng-click="enter_booking();">Book Now</div>
+                            <p class="price-box-start">{{service_start}}</p>
+                            <p class="price-box-value">{{c2s1_price}}</p>
+                            <div class="price-box-booking" ng-click="enter_booking();">{{service_book_now}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!----- ############################################################
+            ####################################################################
+
+            Service - VIP SPA
+
+            ####################################################################
+            ##############################################################----->
+            <div class="col-xs-8 col-md-9 sec-c-2-s-2" style="display:none">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="service-video-background">
+                             <iframe class="service-video-2" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
+                             <div class="service-video-text service-video-text-2" style="opacity: 0;">
+                                <p>{{c2s2_title}}</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row" style="margin-top: 3.5%;">
+                    <div class="col-xs-8">
+                        <ul class="service-explain">
+                          <li>{{c2s2_bullet_1}}</li>
+                          <li>{{c2s2_bullet_2}}</li>
+                          <li>{{c2s2_bullet_3}}</li> 
+                          <li>{{c2s2_bullet_4}}</li>
+                          <li>{{c2s2_bullet_5}}</li>
+                          <li>{{c2s2_bullet_6}}</li>
+                        </ul>  
+                    
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="price-box">
+                            <p class="price-box-start">{{service_start}}</p>
+                            <p class="price-box-value">{{c2s2_price}}</p>
+                            <div class="price-box-booking" ng-click="enter_booking();">{{service_book_now}}</div>
                         </div>
                     </div>
                 </div>

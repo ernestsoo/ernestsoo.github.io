@@ -43,6 +43,8 @@
         
     // Global variable to track user's selected language.
 	$scope.lang = "eng";
+    $scope.service_title_extra  = 14;
+    $scope.service_cache = 0;
         
     /* #########################################################################
     ############################################################################
@@ -93,6 +95,8 @@
 
 
             $scope.lang_toggle = function() {
+                
+                
 
                 if($scope.lang_bool == false)
                 {
@@ -161,6 +165,7 @@
 
                 $(".m-section-"+sectionParam).css("display","unset");
             }
+            
         
         }
 
@@ -200,8 +205,8 @@
 
     setTimeout(function(){
 
-        //$('.welcome-area').css("background","rgba(255, 248, 249, 0)");
-        $('.welcome-area').css("background","rgba(0,0,0, 0.25)");
+        //$('.welcome-area').css("background","la(255, 248, 249, 0)");
+        $('.welcome-area').css("background","rgba(189, 195, 199, 0.30)");
 
 
         setTimeout(function(){
@@ -235,7 +240,57 @@
     
     
         
+    /* =========================================================================
+    ============================================================================
+    SERVICE SECTION
 
+    ============================================================================
+    ==========================================================================*/
+        
+        $scope.service_set_up = function(index){
+             
+                $scope.service_cache = index;
+                
+                setTimeout(function(){
+                    var top_service_title = $(".service-video-"+index.toString()).height() - $(".service-video-text-"+index.toString()).height();
+                    var left_service_title = $(".service-video-"+index.toString()).width() - $(".service-video-text-"+index.toString()).width();
+                    
+                    top_service_title = top_service_title + $scope.service_title_extra;
+                    left_service_title = left_service_title / 2;
+                    
+             
+                    $(".service-video-text-"+index.toString()).css("top",top_service_title.toString()+"px");
+                    $(".service-video-text-"+index.toString()).css("left",left_service_title.toString()+"px");
+                    $(".service-video-text-"+index.toString()).animate({opacity: 1},1000);
+                },1000)
+            
+            
+                $(window).resize(function(){ 
+                
+                    var top_service_title = $(".service-video-"+index.toString()).height() - $(".service-video-text-"+index.toString()).height();
+                    var left_service_title = $(".service-video-"+index.toString()).width() - $(".service-video-text-"+index.toString()).width();
+                    
+                    top_service_title = top_service_title + $scope.service_title_extra;
+                    left_service_title = left_service_title / 2;
+                    
+             
+                    $(".service-video-text-"+index.toString()).css("top",top_service_title.toString()+"px");
+                    $(".service-video-text-"+index.toString()).css("left",left_service_title.toString()+"px");
+                
+                });
+                
+                
+                
+        }
+   
+        
+        
+    /* #########################################################################
+    ############################################################################
+    SERVICE SECTION
+    
+    ############################################################################
+    ##########################################################################*/
         
         
         
@@ -268,32 +323,86 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "eng"){
             
+            $scope.service_title_extra = 14;
+            
             $scope.txt_booking = "BOOK AN APPOINTMENT";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","42px");
+            
+            $scope.booking_title = "BOOK AN APPOINTMENT";
+            
+            $(".d-booking-name").attr("placeholder","Name");
+            $(".d-booking-email").attr("placeholder","Email");
+            $(".d-booking-description").attr("placeholder","Description");
+            
+            $scope.booking_successful = "Successful Booking！";
+            $scope.booking_new = "NEW BOOKING";
             
             $scope.txt_welcome_message="Tiya Spa & Reflexology is the first of its kind in Kota Kinabalu to offer a variety to those who are seeking authentic Asian massage. All therapist are well trained in their own ethnic wats to sooth the human body of stress.";
             
             $scope.txt_discover="DISCOVER MORE";
             
             $scope.cat_1 = "GALLERY";
-            $scope.cat_2 = "THERAPIES";
+            $scope.cat_2 = "SERVICES";
+                $scope.cat_2_sub_1 = "VIP OVERNIGHT SPA";
+                $scope.cat_2_sub_2 = "VIP SPA";
+                $scope.cat_2_sub_3 = "LOCAL BORNEO HERBAL BALL + BODY MASSAGE";
+                $scope.cat_2_sub_4 = "'RANAU' LOCAL HOT STONE MASSAGE THERAPY";
+            
             $scope.cat_3 = "MASSAGES";
             $scope.cat_4 = "PRODUCTS";
             
             $scope.txt_contact = "CONTACT";
             
+            $scope.service_start = "Price Starting from:";
+            $scope.service_book_now = "BOOK NOW";
+            
+            $scope.booking_word = "BOOK";
+            
+            // Cat 2 Sub 1
+            $scope.c2s1_title = "VIP OVERNIGHT SPA";
+            $scope.c2s1_bullet_1 = "Check in after 11pm, Checkout out 11am";
+            $scope.c2s1_bullet_2 = "VIP Floor - Rooms";
+            $scope.c2s1_bullet_3 = "VIP Lounge - Free Coffee, Tea, Snack";
+            $scope.c2s1_bullet_4 = "2 Hours Selections of Massages + Foot Scrub";
+            $scope.c2s1_bullet_5 = "Free Shower Facialities";
+            $scope.c2s1_bullet_6 = "Free Airport Transfer to Tiya Spa upon Arrival (Min. 2pax)";
+            $scope.c2s1_price = "RM298";
+            
+            // Cat 2 Sub 2
+            $scope.c2s2_title = "VIP SPA";
+            $scope.c2s2_bullet_1 = "3 Hours";
+            $scope.c2s2_bullet_2 = "VIP Floor - Rooms";
+            $scope.c2s2_bullet_3 = "VIP Lounge - Free Coffee, Tea, Snack";
+            $scope.c2s2_bullet_4 = "2 Hours Selections of Massages + Foot Scrub";
+            $scope.c2s2_bullet_5 = "1 hour, resting time in Room";
+            $scope.c2s2_bullet_6 = "Free Transport to City Hotels after Spa";
+            $scope.c2s2_price = "RM248";
         }
         /* ++++++++++++++++++++++++++++++++
         MANDARIN TEXT
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "ch"){
             
+            $scope.service_title_extra = 8;
+            
             $scope.txt_booking = "预约";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","90px");
+
+            $scope.booking_title = "预约";
+            
+            $(".d-booking-name").attr("placeholder","名称");
+            $(".d-booking-email").attr("placeholder","电子邮件");
+            $(".d-booking-description").attr("placeholder","预订说明");
+            
+            $scope.booking_successful = "成功预订！";
+            $scope.booking_new = "新预订";
+            
+            $scope.booking_word = "预订";
+            $scope.service_book_now = "现在预订";
             
             $scope.txt_welcome_message="Tiya Spa＆Reflexology是哥打京那巴鲁的第一家同类产品，为那些寻求正宗亚洲按摩的人提供各种服务。所有治疗师都训练有素的自己的种族饮食，以舒缓人体的压力。";
             
@@ -301,10 +410,37 @@
             
             $scope.cat_1 = "画廊";
             $scope.cat_2 = "治疗";
+                $scope.cat_2_sub_1 = "VIP 过夜温泉";
+                $scope.cat_2_sub_2 = "VIP 温泉";
+                $scope.cat_2_sub_3 = "当地BORNEO HERBAL球+身体按摩";
+                $scope.cat_2_sub_4 = "'RANAU'本地热石按摩治疗";
             $scope.cat_3 = "按摩";
             $scope.cat_4 = "产品";
             
             $scope.txt_contact = "联系";
+            
+            $scope.service_start = "价格从：";
+            $scope.service_book_now = "现在预订";
+
+            // Cat 2 Sub 1
+            $scope.c2s1_title = "VIP 过夜温泉";
+            $scope.c2s1_bullet_1 = "晚上11点后入住，11点结账";
+            $scope.c2s1_bullet_2 = "贵宾楼层 - 客房";
+            $scope.c2s1_bullet_3 = "贵宾休息室 - 免费咖啡，茶，小吃";
+            $scope.c2s1_bullet_4 = "2小时精选按摩+足部磨砂";
+            $scope.c2s1_bullet_5 = "免费淋浴面部护理";
+            $scope.c2s1_bullet_6 = "抵达时免费机场接送至Tiya Spa（最低2份）";
+            $scope.c2s1_price = "RM298";
+            
+            // Cat 2 Sub 2
+            $scope.c2s2_title = "VIP 温泉";
+            $scope.c2s2_bullet_1 = "3小时";
+            $scope.c2s2_bullet_2 = "贵宾楼层 - 客房";
+            $scope.c2s2_bullet_3 = "贵宾休息室 - 免费咖啡，茶，小吃";
+            $scope.c2s2_bullet_4 = "2小时精选按摩+足部磨砂";
+            $scope.c2s2_bullet_5 = "1小时，在房间休息时间";
+            $scope.c2s2_bullet_6 = "水疗后免费送往城市酒店";
+            $scope.c2s2_price = "RM248";
             
         }
         /* ++++++++++++++++++++++++++++++++
@@ -312,10 +448,26 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "kor"){
             
-            $scope.txt_booking="약속을 잡다"
+            $scope.service_title_extra = 8;
+            
+            $scope.txt_booking="약속을 잡다";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","77px");
+            
+            $scope.booking_title = "약속을 잡다";
+            
+            $(".d-booking-name").attr("placeholder","이름");
+            $(".d-booking-email").attr("placeholder","이메일");
+            $(".d-booking-description").attr("placeholder","예약 설명");
+            
+            $scope.booking_successful = "예약 완료!";
+            $scope.booking_new = "신규 예약";
+            
+            $scope.booking_word = "예매";
+            
+            
+            
 
             
             $scope.txt_welcome_message="티야 스파 & 리플 렉솔 로지 (Tiya Spa & Reflexology)는 코타 키나발루에서 처음으로 진정한 아시아 마사지를 찾는 사람들에게 다양한 것을 제공합니다. 모든 치료사는 스트레스의 인체를 진정시키기 위해 자신의 민족 와트에서 잘 훈련받습니다.";
@@ -325,14 +477,44 @@
             
             $scope.cat_1 = "갱도";
             $scope.cat_2 = "치료법";
+                $scope.cat_2_sub_1 = "VIP 박 스파";
+                $scope.cat_2_sub_2 = "VIP 온천";
+                $scope.cat_2_sub_3 = "지방산 보르네오 화 환 + 체내 마사지";
+                $scope.cat_2_sub_4 = "'라나 우 (LANAU)'지역 온천탕 마사지 요법";
+            $scope.cat_3 = "按摩";
+            $scope.cat_4 = "产品";
             $scope.cat_3 = "마사지";
             $scope.cat_4 = "제품";
             
             $scope.txt_contact = "접촉";
             
+            $scope.service_start = "출발 가격:";
+            $scope.service_book_now = "지금 예약";
+            
+            // Cat 2 Sub 1
+            $scope.c2s1_title = "VIP 오버 나이트 스파";
+            $scope.c2s1_bullet_1 = "11시 이후에 체크인, 11시에 체크 아웃";
+            $scope.c2s1_bullet_2 = "VIP 층 - 객실";
+            $scope.c2s1_bullet_3 = "VIP 라운지 - 무료 커피, 차, 스낵";
+            $scope.c2s1_bullet_4 = "마사지 + 발 스크럽 2 시간 선택";
+            $scope.c2s1_bullet_5 = "무료 샤워 시설";
+            $scope.c2s1_bullet_6 = "Tiya Spa 도착시 무료 공항 교통편 (최소 2 인승)";
+            $scope.c2s1_price = "RM298";
+            
+            // Cat 2 Sub 2
+            $scope.c2s2_title = "VIP 온천";
+            $scope.c2s2_bullet_1 = "3 시간";
+            $scope.c2s2_bullet_2 = "VIP 층 - 객실";
+            $scope.c2s2_bullet_3 = "VIP 라운지 - 무료 커피, 차, 스낵";
+            $scope.c2s2_bullet_4 = "마사지 + 발 스크럽 2 시간 선택";
+            $scope.c2s2_bullet_5 = "1 시간, 방에 휴식 시간";
+            $scope.c2s2_bullet_6 = "스파 후 도시 교통편 무료 교통편";
+            $scope.c2s2_price = "RM248";
+            
         }
         
-   
+        // Need fresh function
+       // $scope.service_set_up($scope.service_cache);
         
         
     }
@@ -592,11 +774,21 @@
 
     }
 
-    $('.link-guasha').click(function(){
+    $('.link-c-2-s-1').click(function(){
     
-       if(current_section != '.section-guasha')
+       if(current_section != '.sec-c-2-s-1')
        {
-           transition_section(".section-guasha"); 
+           transition_section(".sec-c-2-s-1"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-2').click(function(){
+    
+       if(current_section != '.sec-c-2-s-2')
+       {
+           transition_section(".sec-c-2-s-2"); 
        }
       
         
@@ -693,57 +885,7 @@
         
         
         
-    /* =========================================================================
-    ============================================================================
-    SERVICE SECTION
-
-    ============================================================================
-    ==========================================================================*/
-        
-        $scope.service_set_up = function(){
-             
-                
-                setTimeout(function(){
-                    var top_service_title = $(".service-video").height() - $(".service-video-text").height();
-                    var left_service_title = $(".service-video").width() - $(".service-video-text").width();
-                    
-                    top_service_title = top_service_title + 14;
-                    left_service_title = left_service_title / 2;
-                    
-             
-                    $(".service-video-text").css("top",top_service_title.toString()+"px");
-                    $(".service-video-text").css("left",left_service_title.toString()+"px");
-                    $(".service-video-text").animate({opacity: 1},1000);
-                },1000)
-            
-            
-                $(window).resize(function(){ 
-                
-                    var top_service_title = $(".service-video").height() - $(".service-video-text").height();
-                    var left_service_title = $(".service-video").width() - $(".service-video-text").width();
-                    
-                    top_service_title = top_service_title + 14;
-                    left_service_title = left_service_title / 2;
-                    
-             
-                    $(".service-video-text").css("top",top_service_title.toString()+"px");
-                    $(".service-video-text").css("left",left_service_title.toString()+"px");
-                
-                });
-                
-                
-
-                
-        }
-   
-        
-        
-    /* #########################################################################
-    ############################################################################
-    SERVICE SECTION
     
-    ############################################################################
-    ##########################################################################*/
         
         
         
@@ -789,6 +931,9 @@
             email_name = $(".d-booking-name").val();
             console.log(email_target);
             
+            $(".booking-button-text").css("display","none");
+            $(".lds-ring").css("display","block");
+            
             
             Email.send({
                 Host : "smtp.elasticemail.com",
@@ -799,7 +944,27 @@
                 Subject: "Sucessful Booking!",
                 Body: '<!DOCTYPE html PUBLIC " -//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"> <head> <title> </title> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta name="viewport" content="width=device-width"> <style type="text/css">body, html { margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; text-size-adjust: none; width: 100% !important; } table td, table { } #outlook a { padding: 0px; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; } .ExternalClass { width: 100%; } @media only screen and (max-width: 480px) { table, table tr td, table td { width: 100% !important; } img { width: inherit; } .layer_2 { max-width: 100% !important; } .edsocialfollowcontainer table { max-width: 25% !important; } .edsocialfollowcontainer table td { padding: 10px !important; } .edsocialfollowcontainer table { max-width: 25% !important; } .edsocialfollowcontainer table td { padding: 10px !important; } } </style> </head> <body style="padding:0; margin: 0;"> <table style="height: 100%; width: 100%; background-color: #efefef;" align="center"> <tbody> <tr> <td valign="top" id="dbody" data-version="2.31" style="width: 100%; height: 100%; padding-top: 30px; padding-bottom: 30px; background-color: #efefef;"> <!--[if (gte mso 9)|(IE)]><table align="center" style="max-width:600px" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <table class="layer_1" align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; box-sizing: border-box; width: 100%; margin: 0px auto;"> <tbody> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edimg" valign="top" style="padding: 0px; box-sizing: border-box; text-align: center;"> <img style="border-width: 0px; border-style: none; max-width: 600px; width: 100%;" width="600" alt="Image" src="https://api.elasticemail.com/userfile/0eeea5f4-4373-4534-97e2-f46c914ce9a4/Tiya_Logo.png"> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #e52c4c; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%;" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edtext" valign="top" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p class="style2 text-center" style="text-align: center; margin: 0px; padding: 0px; color: #ffffff; font-size: 32px; font-family: Helvetica, Arial, sans-serif;">Thank you for your Booking! <br> </p> <p style="margin: 0px; padding: 0px;"> <span style="color: #ffffff;"> <br>Your Booking has been successfully submitted to Tiya Spa and you should be expecting a response soon within 24 hours. </span> </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table border="0" cellspacing="0" class="edcontent" style="border-collapse: collapse;width:100%"> <tbody> <tr> <td valign="top" class="edtext" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="margin: 0px; padding: 0px;">Here is your Booking Summary: </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="display: inline-block; vertical-align: top; width: 100%; max-width: 600px;"> <table border="0" cellspacing="0" class="edcontent" style="border-collapse: collapse;width:100%"> <tbody> <tr> <td valign="top" class="edtext" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="margin: 0px; padding: 0px;"> <strong>Customer Name: </strong> '+email_name+' </p> <p style="margin: 0px; padding: 0px;"> <br> </p> <p style="margin: 0px; padding: 0px;"> <strong>Booking Description: </strong> '+email_body+' </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="display: inline-block; vertical-align: top; width: 100%; max-width: 600px;"> <table border="0" cellspacing="0" class="edcontent" style="border-collapse: collapse;width:100%"> <tbody> <tr> <td valign="top" class="edtext" style="padding: 20px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="margin: 0px; padding: 0px;"> <br> </p> <p style="margin: 0px; padding: 0px;"> <br> </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> <tr> <td class="drow" valign="top" align="center" style="background-color: #ffffff; box-sizing: border-box; font-size: 0px; text-align: center;"> <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> <div class="layer_2" style="max-width: 600px; display: inline-block; vertical-align: top; width: 100%;"> <table class="edcontent" style="border-collapse: collapse;width:100%" border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td class="edtext" valign="top" style="padding: 10px; text-align: left; color: #5f5f5f; font-size: 12px; font-family: Helvetica, Arial, sans-serif; word-break: break-word; direction: ltr; box-sizing: border-box;"> <p style="text-align: center; font-size: 11px; margin: 0px; padding: 0px;">If you no longer wish to receive mail from us, you can <a href="{unsubscribe}" style="background-color: initial; color: #828282; font-size: 12px; font-family: Helvetica, Arial, sans-serif; text-decoration: none;">unsubscribe</a> <br>{accountaddress} </p> </td> </tr> </tbody> </table> </div> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> </tbody> </table> <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td> </tr> </tbody> </table> </body></html>'
             }).then(
-              message => console.log(message)
+              message => {
+                  
+                  
+              console.log(message)
+              
+              if(message == "OK")
+              {
+                $(".booking-input").css("display","none");
+                $(".booking-button").css("display","none");
+                $(".booking-title").css("display","none");
+                  
+                $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
+                $(".booking-successful").animate({opacity: 1},500);
+                $(".booking-new-booking").animate({opacity: 1}, 500);
+              } else {
+                alert("fail");
+              }
+                         
+                         
+            }
+          
             );
         }
 
@@ -821,17 +986,33 @@
             var booking_cancel_left = ($(window).width() - $(".booking-cancel").width()) / 2;
             booking_cancel_left = booking_cancel_left -10;
             $(".booking-cancel").css("margin-left",booking_cancel_left.toString()+"px");
+            
+            // Center Booking Checked Icon
+            var booking_checked_left = ($(window).width() - $(".booking-checked").width()) / 2;
+            booking_checked_left = booking_checked_left -10;
+            $(".booking-checked").css("margin-left",booking_checked_left.toString()+"px");
 
-            var booking_left = ($(window).width() - $(".booking-name").width()) / 2;
+            var booking_left = ($(window).width() - $(".booking-input-desktop-measure").width()) / 2;
 
 
             booking_left = booking_left - 20;
 
             $(".booking-input").css("margin-left",booking_left.toString()+"px");
 
-            $(".booking-description").focus(function(){
+            $(".d-booking-description").focus(function(){
                     $(this).animate({height:180,borderRadius:32},750);
-                    $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+                
+                    if($scope.lang == "eng")
+                    {
+                        $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+                    } else if ($scope.lang == "ch") {
+                        $(this).attr("placeholder","输入您希望从Tiya获得的服务列表以及您要删除的日期。您将在确认预订后收到Tiya发送的电子邮件");
+                        
+                    } else if ($scope.lang == "kor") {
+                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        
+                    }
+                    
             });
         });
 
@@ -844,6 +1025,11 @@
 		var booking_cancel_left = ($(window).width() - $(".booking-cancel").width()) / 2;
 		booking_cancel_left = booking_cancel_left -10;
 		$(".booking-cancel").css("margin-left",booking_cancel_left.toString()+"px");
+        
+        // Center Booking Checked Icon
+        var booking_checked_left = ($(window).width() - $(".booking-checked").width()) / 2;
+        booking_checked_left = booking_checked_left;
+        $(".booking-checked").css("margin-left",booking_checked_left.toString()+"px");
 
 		var booking_left = ($(window).width() - $(".booking-input-desktop-measure").width()) / 2;
 
@@ -852,9 +1038,19 @@
 
 		$(".booking-input").css("margin-left",booking_left.toString()+"px");
 
-		$(".booking-description").focus(function(){
-				$(this).animate({height:180,borderRadius:32},750);
-				$(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+		$(".d-booking-description").focus(function(){
+                    $(this).animate({height:180,borderRadius:32},750);
+                
+                    if($scope.lang == "eng")
+                    {
+                        $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+                    } else if ($scope.lang == "ch") {
+                        $(this).attr("placeholder","输入您希望从Tiya获得的服务列表以及您要删除的日期。您将在确认预订后收到Tiya发送的电子邮件");
+                        
+                    } else if ($scope.lang == "kor") {
+                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        
+                    }
 		});
         
     /* #########################################################################

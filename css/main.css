@@ -95,6 +95,15 @@ body
     font-size:27px;
 }
 
+.booking-successful
+{
+    font-weight: 800;
+    color: white;
+    margin-top:10px;
+    font-size:27px;
+    opacity: 0;
+}
+
 .m-booking-title
 {
     font-weight: 600;
@@ -145,6 +154,21 @@ body
   background: white;
 }
 
+.booking-new-booking
+{
+  color: black;
+  background: transparent;
+  border: 3px white solid;
+  border-radius: 20px;
+  padding: 8px;
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 55px;
+  cursor: pointer;
+  background: white;
+  opacity: 0px;
+}
+
 .m-booking-button
 {
   color: black;
@@ -163,6 +187,13 @@ body
   margin-top:20px;
   width:25px;
   cursor: pointer;
+}
+
+.booking-checked
+{
+  width:80px;
+  margin-top: 90px;
+  opacity: 0;
 }
 
 .booking-img
@@ -418,7 +449,7 @@ body
     text-align: justify;
 
     font-family: 'Raleway' !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
     letter-spacing: 1.5px;
     line-height: 28px;
     font-weight:600;
@@ -552,6 +583,44 @@ body
     background: -webkit-linear-gradient(to top, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  margin: 6px;
+  border: 2px solid black;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 
