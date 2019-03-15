@@ -206,7 +206,7 @@
     setTimeout(function(){
 
         //$('.welcome-area').css("background","la(255, 248, 249, 0)");
-        $('.welcome-area').css("background","rgba(189, 195, 199, 0.30)");
+        $('.welcome-area').css("background","rgba(189, 195, 199, 0.00)");
 
 
         setTimeout(function(){
