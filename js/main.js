@@ -228,14 +228,19 @@
         //$('.home-area').css("height",$(window).height().toString() + "px");
 
     },1250);
+        
+    var combined_height = $(".discover-1").height() + $(".discover-2").height();
     
+    var discover_height = $(".welcome-area").height() - combined_height -100;
+    
+    $(".discover-1").css("margin-top",discover_height.toString() + "px");
+        
     /* #########################################################################
     ############################################################################
     WELCOME LOADING SECTION
     
     ############################################################################
     ##########################################################################*/
-    
     
     
     
