@@ -11,7 +11,15 @@ body
 }
 
 
-
+.logo-absolute {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 125px;
+    z-index: 1000;
+    opacity: 0.9;
+    
+}
 /* The only rule that matters */
 #video-background {
 /*  making the video fullscreen  */

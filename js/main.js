@@ -581,7 +581,13 @@
         if (scroll != 0 && scrolled != true)
         {
           $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},1500);
-
+        
+          $('.logo-absolute').animate({opacity: 0}, 1000);
+          setTimeout(function(){ 
+            $(".logo-absolute").css("display","none");
+          
+          } , 1000);
+            
           setTimeout(function(){ MOUSE_OVER = false; } , 2000);
           scrolled = true;
         }
