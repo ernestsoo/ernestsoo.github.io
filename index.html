@@ -28,6 +28,9 @@
     <!-- Our Website CSS Styles -->
     <link rel="stylesheet" href="css/main.css">
     
+    
+   
+    
     <!-- Website Font: Raleway -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     
@@ -43,7 +46,9 @@
 
 <!-- Our Website Content Goes Here -->
 <div ng-view></div>
-
+ <!-- Google Maps -->
+    
+    
 
 <!-- Vendor: Javascripts -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -55,6 +60,21 @@
 
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
+    
+<!-- Parallax: JQuery -->
+<script src="js/parallax.js"></script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDum9rA0rV9jbPcYCYek2Pd1cEVT5MWTW8"
+    async defer></script>
+    
+    
+<!-- EmailJs Service -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_1J2Jq55nrOHLMGy7n5fLf");
+       })();
+    </script>
 
 </body>
 </html>

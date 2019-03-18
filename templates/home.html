@@ -149,22 +149,83 @@
     <img src="images/cancel.svg" class="booking-cancel" ng-click="exit_booking()" />
     <img src="images/logo-trans.png" class="booking-img"  />
     <p class="booking-title text-center">{{booking_title}}</p>
-    <input class="booking-input d-booking-name booking-input-desktop-measure" type="text" placeholder="name" name="name"  />
-    <input class="booking-input d-booking-email" type="email" placeholder="email" name="email"  />
-    <textarea class="booking-input d-booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
-    <div class="booking-button text-center" type="button" ng-click="submit_booking()">
-        <span class="booking-button-text">{{booking_word}}</span>
-        <div class="lds-ring" style="display:none; margin: 0 auto"><div></div><div></div><div></div><div></div></div>
+    
+    <div class="booking-selection">
+        <p class="text-center" style="color:white">{{booking_select}}</p>
+        <div class="booking-selection-button text-center" type="button" ng-click="enter_booking_email()">
+            <span class="booking-button-text">{{booking_email}}</span>
+        </div>
+        <div class="booking-selection-button text-center" type="button">
+            <span class="booking-button-text" ng-click="enter_booking_kakao()">{{booking_kakao}}</span>
+        </div><div class="booking-selection-button text-center" type="button" ng-click="enter_booking_wechat()">
+            <span class="booking-button-text">{{booking_wechat}}</span>
+        </div>
+        <div class="booking-selection-button text-center" type="button" ng-click="enter_booking_telephone()">
+            <span class="booking-button-text">{{booking_telephone}}</span>
+        </div>
     </div>
-    <img src="images/checked.svg" class="booking-checked" ng-click="exit_booking()" />
-    <p class="booking-successful text-center">{{booking_successful}}</p>
-    <div class="booking-new-booking text-center" type="button" ng-click="submit_booking()">{{booking_new}}</div>
+    
+    
+    <div class="booking-section-kakao text-center" style="display:none; opacity:0; margin-top: 20px;color: white">
+        <p style="margin-top: 3%; font-size: 16px">Please call:</p>
+        
+        <p style="font-size: 28px;">011-10503388</p>
+        
+        <p style="font-size: 16px;">For appointment enquiries</p>
+        
+        <p class="booking-go-back text-center">{{booking_go_back}}</p>
+    </div>
+    
+    <div class="booking-section-wechat text-center" style="display:none; opacity:0; margin-top: 20px;color: white">
+        <p style="margin-top: 3%; font-size: 16px">Please call:</p>
+        
+        <p style="font-size: 28px;">011-10503388</p>
+        
+        <p style="font-size: 16px;">For appointment enquiries</p>
+        
+        <p class="booking-go-back text-center">{{booking_go_back}}</p>
+    </div>
+    
+    <div class="booking-section-telephone text-center" style="display:none; opacity:0; margin-top: 20px;color:white">
+        <p style="margin-top: 3%; font-size: 16px">Please call:</p>
+        
+        <p style="font-size: 28px;">011-10503388</p>
+        
+        <p style="font-size: 16px;">For appointment enquiries</p>
+        
+        <p class="booking-go-back text-center">{{booking_go_back}}</p>
+        
+    </div>
+    <div class="booking-section-email" style="display:none; opacity:0; margin-top: 20px;">
+        <input class="booking-input d-booking-name booking-input-desktop-measure" type="text" placeholder="name" name="name"  />
+        <input class="booking-input d-booking-email" type="email" placeholder="email" name="email"  />
+        <textarea class="booking-input d-booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
+        <div class="booking-button text-center" type="button" ng-click="submit_booking()">
+            <span class="booking-button-text">{{booking_word}}</span>
+            <div class="lds-ring" style="display:none; margin: 0 auto"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <p class="booking-go-back text-center" ng-click="booking_go_back()">{{booking_go_back}}</p>
+        
+        <img src="images/checked.svg" class="booking-checked" ng-click="exit_booking()" />
+        <p class="booking-successful text-center">{{booking_successful}}</p>
+        <div class="booking-new-booking text-center" type="button" ng-click="submit_booking()">{{booking_new}}</div>
+       
+    </div>
 </div>
 
 
 <!-- Welcoming/Landing Page -->
 <div class="text-center welcome-area body" >
     <img class="logo-absolute" src="images/tiya_new.png" />
+    <div class="social-media-group">
+        <img class="social-icon" src="images/kakao-circle.png" /> 
+        <img class="social-icon" src="images/wechat-circle.png" />
+        <img class="social-icon" src="images/facebook-circle.png" /> 
+        <img class="social-icon" src="images/instagram-circle.png" />
+        <img class="social-icon" src="images/tripadvisor-circle.png" /> 
+    
+    
+    </div>
     <div class="container-fluid">
         
         <!-- Vimeo video example 
@@ -209,7 +270,7 @@
         </div>
 
 
-        <!--
+        
         <div class="row">
             <div class="col-xs-12">
                 <image class="welcome-logo" src="images/logo.png" alt="Company Logo" />
@@ -217,7 +278,7 @@
         </div>
 
         <div class="lds-ripple"><div></div><div></div></div>
-
+<!--
 
         <div class="row" class="welcome-text-con" >
             <div class="col-xs-3 col-md-4"></div>
@@ -245,7 +306,7 @@
 <div class="container-fluid p-0">
 <div class="row">
     <div class="col-xs-12">
-        <div class="row home-area" style="">
+        <div class="row home-area" class="parallax-window" data-parallax="scroll" data-image-src="images/background-min.png">
             <div class="col-xs-4 col-md-3" style="margin-left: -2%">
 
                     <div class="row">
@@ -291,11 +352,11 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6 text-center home-category-con-2 home-category-con ">
                             <div class="home-category-shadow-2"></div>
-                            <p class="home-category">{{cat_3}}</p>
+                            <p class="home-category link-map">{{cat_3}}</p>
                         </div>
                         <div class="col-xs-3"></div>
                     </div>
-
+                <!--
                     <div class="row">
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
@@ -306,8 +367,8 @@
                         </div>
                         <div class="col-xs-3"></div>
 
-                    </div>
-
+                    </div> 
+                
 
                     <div class="row">
                         <div class="col-xs-3 "></div>
@@ -328,8 +389,10 @@
                             <p class="home-category-links home-category-links-3 home-c-3">Gua Sha</p>
                         </div>
                         <div class="col-xs-3"></div>
-                    </div>
+                    </div>-->
 
+                                        
+                                        
 
                     <div class="row">
                         <div class="col-xs-3"></div>
@@ -429,7 +492,7 @@
 
             ####################################################################
             ##############################################################----->
-            <div class="col-xs-8 col-md-9 sec-c-2-s-1" style="display:none">
+            <div class="col-xs-8 col-md-9 sec-c-2-s-1" style="display:none; color:white;">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="service-video-background">
@@ -441,7 +504,7 @@
                     </div>
                 </div>
                 
-                <div class="row" style="margin-top: 3.5%;">
+                <div class="row" style="margin-top: 5.5%;">
                     <div class="col-xs-8">
                         <ul class="service-explain">
                           <li>{{c2s1_bullet_1}}</li>
@@ -471,7 +534,7 @@
 
             ####################################################################
             ##############################################################----->
-            <div class="col-xs-8 col-md-9 sec-c-2-s-2" style="display:none">
+            <div class="col-xs-8 col-md-9 sec-c-2-s-2" style="display:none; color:white;">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="service-video-background">
@@ -483,7 +546,7 @@
                     </div>
                 </div>
                 
-                <div class="row" style="margin-top: 3.5%;">
+                <div class="row" style="margin-top: 5.5%;">
                     <div class="col-xs-8">
                         <ul class="service-explain">
                           <li>{{c2s2_bullet_1}}</li>
@@ -503,6 +566,47 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            
+            
+            <!----- ############################################################
+            ####################################################################
+
+            Locate Us - Google Maps
+
+            ####################################################################
+            ##############################################################----->
+            <div class="col-xs-8 col-md-9 section-map" style="display:none;">
+                <div id="map" style="margin-top: 5%;"></div>
+                <script>
+                  var map;
+                  var marker;
+                  function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                      center: {lat: 5.9703284, lng: 116.0624367},
+                      zoom: 14
+                    });
+                      
+                    var myLatLng = {lat: 5.9703284, lng: 116.0624367};
+
+
+
+                    marker = new google.maps.Marker({
+                      position: myLatLng,
+                      map: map,
+                      title: 'Tiya Spa & Reflexology'
+                    });
+                      
+                      
+                    google.maps.event.addListener(marker, 'click', function() {
+                        window.location.href = 'https://goo.gl/maps/aj3CG6nZgPT2';
+                    });
+                  }
+                    
+                  initMap();
+                </script>
+              
             </div>
         </div>
     </div>

@@ -217,8 +217,8 @@
 
         $('.lds-ripple').css("display","none");
 
-        $('.welcome-logo').animate({marginTop: "6%" },1250);
-        $('.welcome-text').fadeTo(1250,1.0);
+        $('.welcome-logo').css("display","none")
+       // $('.welcome-text').fadeTo(1250,1.0);
 
         // Make Nav Bar appear
         $('.nav-bar').css("visibility","visible");
@@ -231,9 +231,41 @@
         
     var combined_height = $(".discover-1").height() + $(".discover-2").height();
     
-    var discover_height = $(".welcome-area").height() - combined_height -100;
+    var discover_height = $(window).height() - combined_height -100;
     
     $(".discover-1").css("margin-top",discover_height.toString() + "px");
+        
+        
+    var social_top = $(window).height() - $(".social-media-group").height();
+        
+    social_top = social_top / 2;
+        
+    $(".social-media-group").css("margin-top", social_top+"px");
+        
+    var social_left = $(window).width() - $(".social-media-group").width();
+        
+    $(".social-media-group").css("margin-left", (social_left-10)+"px");
+        
+     $(window).resize(function(){ 
+         
+            var combined_height = $(".discover-1").height() + $(".discover-2").height();
+    
+            var discover_height = $(window).height() - combined_height -100;
+
+            $(".discover-1").css("margin-top",discover_height.toString() + "px");
+
+
+            var social_top = $(window).height() - $(".social-media-group").height();
+
+            social_top = social_top / 2;
+
+            $(".social-media-group").css("margin-top", social_top+"px");
+
+            var social_left = $(window).width() - $(".social-media-group").width();
+
+            $(".social-media-group").css("margin-left", (social_left-10)+"px");
+     });
+    
         
     /* #########################################################################
     ############################################################################
@@ -328,7 +360,7 @@
         ++++++++++++++++++++++++++++++++ */
         if($scope.lang == "eng"){
             
-            $scope.service_title_extra = 14;
+            $scope.service_title_extra = 8;
             
             $scope.txt_booking = "BOOK AN APPOINTMENT";
             
@@ -349,13 +381,13 @@
             $scope.txt_discover="DISCOVER MORE";
             
             $scope.cat_1 = "GALLERY";
-            $scope.cat_2 = "SERVICES";
+            $scope.cat_2 = "MENU";
                 $scope.cat_2_sub_1 = "VIP OVERNIGHT SPA";
                 $scope.cat_2_sub_2 = "VIP SPA";
                 $scope.cat_2_sub_3 = "LOCAL BORNEO HERBAL BALL + BODY MASSAGE";
                 $scope.cat_2_sub_4 = "'RANAU' LOCAL HOT STONE MASSAGE THERAPY";
             
-            $scope.cat_3 = "MASSAGES";
+            $scope.cat_3 = "LOCATE US";
             $scope.cat_4 = "PRODUCTS";
             
             $scope.txt_contact = "CONTACT";
@@ -364,6 +396,15 @@
             $scope.service_book_now = "BOOK NOW";
             
             $scope.booking_word = "BOOK";
+            
+            $scope.booking_select = "Select your booking method:"
+            
+            $scope.booking_email = "Email"
+            $scope.booking_kakao = "KaKao Talk"
+            $scope.booking_wechat = "WeChat"
+            $scope.booking_telephone = "Telephone"
+            
+            $scope.booking_go_back = "Go Back";
             
             // Cat 2 Sub 1
             $scope.c2s1_title = "VIP OVERNIGHT SPA";
@@ -414,7 +455,7 @@
             $scope.txt_discover="发现更多";
             
             $scope.cat_1 = "画廊";
-            $scope.cat_2 = "治疗";
+            $scope.cat_2 = "画面";
                 $scope.cat_2_sub_1 = "VIP 过夜温泉";
                 $scope.cat_2_sub_2 = "VIP 温泉";
                 $scope.cat_2_sub_3 = "当地BORNEO HERBAL球+身体按摩";
@@ -481,7 +522,7 @@
             $scope.txt_discover="더 발견하다";
             
             $scope.cat_1 = "갱도";
-            $scope.cat_2 = "치료법";
+            $scope.cat_2 = "메뉴";
                 $scope.cat_2_sub_1 = "VIP 박 스파";
                 $scope.cat_2_sub_2 = "VIP 온천";
                 $scope.cat_2_sub_3 = "지방산 보르네오 화 환 + 체내 마사지";
@@ -548,7 +589,7 @@
 
     ============================================================================
     ==========================================================================*/
-
+        
     var MOUSE_OVER = true;
     
     $('body').bind('mousewheel', function(e){
@@ -722,13 +763,13 @@
 				$('.home-category-con').find("div").css("left","-350px");
 				$('.home-category-con').find("p").css("margin-left","0px");
 				$('.home-category-con').find("p").css("margin-right","0px");
-				$('.home-category-con').find("p").css("color","#e52c4c");
+				$('.home-category-con').find("p").css("color","white");
 
 				// Highlight selected menu
         $(this).find("div").css("left", "-130px");
         $(this).find("p").css("margin-left", "-35%");
 				$(this).find("p").css("margin-right", "35%");
-        $(this).find("p").css("color", "white");
+        $(this).find("p").css("color", "black");
 
     });
 
@@ -753,11 +794,11 @@
 
         //Reset already selected links
         $('.home-category-links').css("text-decoration","none");
-        $('.home-category-links').css("color","black");
+        $('.home-category-links').css("color","white");
 
         // Set current link
         $(this).css("text-decoration","underline");
-        $(this).css("color"," #e52c4c");
+        $(this).css("color"," #FACF69");
 
     });
         
@@ -810,6 +851,15 @@
         if(current_section != '.section-gallery')
         {
             transition_section(".section-gallery");
+        }
+        
+    })
+        
+      $('.link-map').click(function(){
+       
+        if(current_section != '.section-map')
+        {
+            transition_section(".section-map");
         }
         
     })
@@ -934,6 +984,63 @@
         var email_target = "";
         var email_name = "";
         
+        $scope.enter_booking_email = function() {
+            $(".booking-selection").css("display","none");
+            
+            
+            $(".booking-section-email").css("display","unset");
+            
+            
+            $(".booking-section-email").animate({opacity: 1, marginTop: "0px"},500);
+            
+            
+        }
+        
+        $scope.enter_booking_telephone = function() {
+            $(".booking-selection").css("display","none");
+            
+            
+            $(".booking-section-telephone").css("display","unset");
+            
+            $(".booking-section-telephone").animate({opacity: 1, marginTop: "0px"},600);
+            
+        }
+        
+        $scope.enter_booking_kakao = function() {
+            $(".booking-selection").css("display","none");
+            
+            
+            $(".booking-section-kakao").css("display","unset");
+            
+            $(".booking-section-kakao").animate({opacity: 1, marginTop: "0px"},600);
+            
+        }
+        
+        $scope.enter_booking_wechat= function() {
+            $(".booking-selection").css("display","none");
+            
+            
+            $(".booking-section-wechat").css("display","unset");
+            
+            $(".booking-section-wechat").animate({opacity: 1, marginTop: "0px"},600);
+            
+        }
+        
+        $(".booking-go-back").click(function(){
+     
+            $(".booking-section-email").css("display","none");
+            $(".booking-section-kakao").css("display","none");
+            $(".booking-section-telephone").css("display","none");
+            $(".booking-section-wechat").css("display","none");
+            
+            $(".booking-selection").css("display","unset");
+        });
+
+            
+            
+        
+        
+        
 		$scope.submit_booking = ()=>
 		{
             // Get content of booking
@@ -945,7 +1052,19 @@
             $(".booking-button-text").css("display","none");
             $(".lds-ring").css("display","block");
             
-            
+            emailjs.send('gmail', 'tiya', {})
+            .then(function(response) {
+               $(".booking-input").css("display","none");
+               $(".booking-button").css("display","none");
+               $(".booking-title").css("display","none");
+                  
+                $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
+                $(".booking-successful").animate({opacity: 1},500);
+                $(".booking-new-booking").animate({opacity: 1}, 500);
+            }, function(error) {
+               console.log('FAILED...', error);
+            });
+            /*
             Email.send({
                 Host : "smtp.elasticemail.com",
                 Username : "ernestsoo22@gmail.com",
@@ -977,6 +1096,8 @@
             }
           
             );
+            
+            */
         }
 
 
@@ -1070,8 +1191,10 @@
     
     ############################################################################
     ##########################################################################*/
-
-
-
+    
+    var map_height = $(window).height() * 0.8;
+    $("#map").css("height", map_height+"px")
+    
+ 
     
 });

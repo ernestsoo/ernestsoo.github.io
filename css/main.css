@@ -9,7 +9,13 @@ body
 {
     font-family: 'Raleway', "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif !important;
 }
-
+ /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 500px;
+        width: 100%;
+        background: white;
+      }
 
 .logo-absolute {
     position: absolute;
@@ -19,6 +25,20 @@ body
     z-index: 1000;
     opacity: 0.9;
     
+}
+
+.social-media-group {
+    position: absolute;
+    top:0;
+    left:0;
+    
+}
+
+.social-icon {
+    width:50px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
 }
 /* The only rule that matters */
 #video-background {
@@ -162,6 +182,30 @@ body
   background: white;
 }
 
+.booking-go-back
+{
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 3%;
+    text-decoration: underline;
+    color: white;
+    z-index: 1000;
+}
+
+.booking-selection-button
+{
+  color: black;
+  background: transparent;
+  border: 3px white solid;
+  border-radius: 20px;
+  padding: 8px;
+  width: 110px;
+  margin: 0 auto;
+  margin-top: 25px;
+  cursor: pointer;
+  background: white;
+}
+
 .booking-new-booking
 {
   color: black;
@@ -175,6 +219,7 @@ body
   cursor: pointer;
   background: white;
   opacity: 0px;
+  display: none;
 }
 
 .m-booking-button
@@ -685,12 +730,15 @@ body
 
 
 
-
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
 
 /*** Home Area Code ***/
 .home-area
 {
-    background: white;
+    background: url("../images/test.png");
     min-height: 1000px;
 }
 
@@ -707,7 +755,8 @@ body
 
 .home-category
 {
-    color: 	#e52c4c;
+    /*color: #e52c4c;*/
+    color: white;
     margin-top: 4%;
     font-family: "Raleway" !important;
     font-weight: 800;
@@ -727,14 +776,15 @@ body
 .home-contact-button {
 
     cursor: pointer;
-    border: 2px solid #996515;
+    border: 2px solid #FACF69;
+    background: #FACF69;
     border-radius: 8px;
     font-family: "Raleway" !important;
     font-weight: 800;
     padding: 3% 0%;
     width: 80%;
     margin: 0 auto;
-    color: #996515;
+    color: black;
     font-size:12.5px;
 }
 
@@ -937,7 +987,7 @@ body
     position: absolute;
     width: 250px;
     height: 17px;
-    background: #e52c4c;
+    background: #FACF69;
     border-radius: 10px;
     top:5px;
     left: -350px;
@@ -975,7 +1025,7 @@ body
 {
   margin-left: -35% !important;
   margin-right: 35% !important;
-  color:white !important;
+  color:black !important;
 }
 
 
@@ -1024,7 +1074,7 @@ body
 
 .home-category-links
 {
-    color: black;
+    color: white;
     font-family: "Raleway", sans-serif;
     font-weight: 300;
     font-size:11.5px;
@@ -1123,8 +1173,8 @@ body
 }
 
 .price-box-booking {
-    border: 1px solid grey;
-    color: grey;
+    border: 1px solid #FACF69;
+    color: #FACF69;
     border-radius: 8px;
     display: table;
     padding: 5px 12px;
@@ -1133,7 +1183,7 @@ body
     font-size: 15px;
 }
 
-.price-box-booking:hover {
+.price-box-booking:hover 
     background:grey;
     color:white;
 }
