@@ -1039,7 +1039,20 @@
             
             
         
-        
+        $scope.new_booking = () => {
+            $(".booking-input").css("display","unset");
+            $(".booking-button").css("display","block");
+            $(".booking-title").css("display","block");
+            
+            $(".booking-button-text").css("display","block");
+            $(".lds-ring").css("display","none");
+                  
+                $(".booking-checked").css("margin-top","90px");
+                $(".booking-checked").css("opacity",0);
+                $(".booking-successful").css("opacity",0);
+                $(".booking-new-booking").css("opacity",0);
+
+        }
         
 		$scope.submit_booking = ()=>
 		{
@@ -1060,6 +1073,7 @@
                   
                 $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
                 $(".booking-successful").animate({opacity: 1},500);
+                $(".booking-new_booking").css("display","unset");
                 $(".booking-new-booking").animate({opacity: 1}, 500);
             }, function(error) {
                console.log('FAILED...', error);

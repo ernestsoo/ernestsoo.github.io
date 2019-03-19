@@ -218,8 +218,7 @@ body
   margin-top: 55px;
   cursor: pointer;
   background: white;
-  opacity: 0px;
-  display: none;
+  opacity: 0;
 }
 
 .m-booking-button
@@ -1113,6 +1112,7 @@ body
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -99;
+
 }
 .video-foreground,
 .video-background iframe {
@@ -1124,11 +1124,19 @@ body
   pointer-events: none;
 }
 
+.service-title {
+    color: #FACF69;
+    text-decoration: underline;
+    font-size: 38px;
+    
+}
 .service-video-background{
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
     margin-top: 5%;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .service-video-background iframe {
 	position: absolute;
