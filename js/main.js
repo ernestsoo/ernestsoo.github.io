@@ -67,6 +67,7 @@
         mobile_function();
     });
         
+    $scope.hamburger= false;
     mobile_function();
 
         function mobile_function()
@@ -85,13 +86,25 @@
 
             $scope.open_hamburger = function() {
                 $(".hamburger-shadow").animate({marginLeft: "0px"});
+                
+                setTimeout(function(){
+                    $scope.hamburger= true;
+                },1000)
+                
             }
 
             $scope.close_hamburger = function() {
-                $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
+                if($scope.hamburger)
+                {
+                    $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
+                }
+                
+                $scope.hamburger = false;
+                
             }
 
             $scope.lang_bool = false;
+            $scope.menu_bool = false;
 
 
             $scope.lang_toggle = function() {
@@ -128,6 +141,44 @@
                     $(".lang-options").css("display","none");
 
                     $scope.lang_bool = false;
+
+                }
+
+            }
+             $scope.menu_toggle = function() {
+                
+                
+
+                if($scope.menu_bool == false)
+                {
+                    $(".glyphicon-menu").animate(
+                    { deg: 90 },
+                    {
+                      duration: 400,
+                      step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                      }
+                    }
+                   );
+
+                    $(".menu-options").css("display","unset"); 
+
+                    $scope.menu_bool = true;
+                }else{
+
+                    $(".glyphicon-menu").animate(
+                    { deg: 0 },
+                    {
+                      duration: 400,
+                      step: function(now) {
+                        $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                      }
+                    }
+                   );
+
+                    $(".menu-options").css("display","none");
+
+                    $scope.menu_bool = false;
 
                 }
 
@@ -996,6 +1047,18 @@
             
         }
         
+         $scope.enter_m_booking_email = function() {
+            $(".m-booking-selection").css("display","none");
+            
+            
+            $(".m-booking-email").css("display","unset");
+            
+            
+            $(".m-booking-email").animate({opacity: 1, marginTop: "0px"},500);
+            
+            
+        }
+        
         $scope.enter_booking_telephone = function() {
             $(".booking-selection").css("display","none");
             
@@ -1003,6 +1066,18 @@
             $(".booking-section-telephone").css("display","unset");
             
             $(".booking-section-telephone").animate({opacity: 1, marginTop: "0px"},600);
+            
+        }
+        
+        $scope.enter_m_booking_telephone = function() {
+            $(".m-booking-selection").css("display","none");
+            
+            
+            $(".m-booking-telephone").css("display","unset");
+            
+            
+            $(".m-booking-telephone").animate({opacity: 1, marginTop: "0px"},500);
+            
             
         }
         
@@ -1016,6 +1091,18 @@
             
         }
         
+        $scope.enter_m_booking_kakao = function() {
+            $(".m-booking-selection").css("display","none");
+            
+            
+            $(".m-booking-kakao").css("display","unset");
+            
+            
+            $(".m-booking-kakao").animate({opacity: 1, marginTop: "0px"},500);
+            
+            
+        }
+        
         $scope.enter_booking_wechat= function() {
             $(".booking-selection").css("display","none");
             
@@ -1023,6 +1110,18 @@
             $(".booking-section-wechat").css("display","unset");
             
             $(".booking-section-wechat").animate({opacity: 1, marginTop: "0px"},600);
+            
+        }
+        
+        $scope.enter_m_booking_wechat = function() {
+            $(".m-booking-selection").css("display","none");
+            
+            
+            $(".m-booking-wechat").css("display","unset");
+            
+            
+            $(".m-booking-wechat").animate({opacity: 1, marginTop: "0px"},500);
+            
             
         }
         
@@ -1034,6 +1133,16 @@
             $(".booking-section-wechat").css("display","none");
             
             $(".booking-selection").css("display","unset");
+        });
+        
+        $(".m-booking-go-back").click(function(){
+     
+            $(".m-booking-email").css("display","none");
+            $(".m-booking-kakao").css("display","none");
+            $(".m-booking-telephone").css("display","none");
+            $(".m-booking-wechat").css("display","none");
+            
+            $(".m-booking-selection").css("display","unset");
         });
 
             
