@@ -11,7 +11,7 @@ body
 }
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
+      #map, #d-map {
         height: 500px;
         width: 100%;
         background: white;
@@ -1151,6 +1151,13 @@ body
     font-size: 38px;
 }
 
+.m-service-title {
+    color: #FACF69;
+    text-decoration: underline;
+    font-size: 24px;
+    margin-top: 5%;
+}
+
 .service-intro-background{
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
@@ -1203,12 +1210,26 @@ body
 .service-explain{
     font-size: 15px;
 }
+
+.m-service-explain{
+    font-size: 13px;
+    color: white;
+}
 .price-box-start {
     padding: 0px !important;
     margin: 0px !important;
     font-size: 14px;
     font-weight: 200;
 }
+.m-price-box-start {
+    padding: 0px !important;
+    margin: 0px ;
+    color:#FACF69;
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 10%;
+}
+
 .price-box-value {
     font-size: 50px;
     font-weight: 800;
@@ -1216,16 +1237,29 @@ body
     margin: 0px;
     margin-top: -10px;
 }
+.m-price-box-value {
+    font-size: 42px;
+    font-weight: 800;
+    padding: 0px !important;
+    margin: 0px;
+    margin-top: -10px;
+    color:white;
+}
+
 
 .price-box-booking {
     border: 1px solid #FACF69;
-    color: #FACF69;
+    color: black;
+    background: #FACF69;
     border-radius: 8px;
     display: table;
     padding: 5px 12px;
     cursor: pointer;
-    margin-top: 5%;
+    
     font-size: 15px;
+    margin:0 auto;
+    
+    margin-top: 5%;
 }
 
 .price-box-booking:hover 
