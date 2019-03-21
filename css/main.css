@@ -1215,6 +1215,10 @@ body
     font-size: 13px;
     color: white;
 }
+
+.m-price-box {
+    margin-bottom: 20%;
+}
 .price-box-start {
     padding: 0px !important;
     margin: 0px !important;
