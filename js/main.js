@@ -1343,8 +1343,12 @@
     ############################################################################
     ##########################################################################*/
     
-    var map_height = $(window).height() * 0.8;
-    $("#d-map").css("height", map_height+"px")
+    
+        
+    $(window).resize(function(){ 
+        var map_height = $(window).height() * 0.8;
+        $("#d-map").css("height", map_height+"px");
+    });
     
  
     
