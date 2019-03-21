@@ -215,6 +215,8 @@
                 $(".m-section").css("display","none");
 
                 $(".m-section-"+sectionParam).css("display","unset");
+                
+                $scope.close_hamburger();
             }
             
         
