@@ -15,7 +15,12 @@ body
         height: 500px;
         width: 100%;
         background: white;
+        
       }
+
+#map {
+    margin-bottom: 20%;
+}
 
 .logo-absolute {
     position: absolute;
