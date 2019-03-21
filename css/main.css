@@ -1167,7 +1167,6 @@ body
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
     margin-top: 5%;
-    height: 800px;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -1257,6 +1256,17 @@ body
 
 
 .price-box-booking {
+    border: 1px solid #FACF69;
+    color: #FACF69;
+    border-radius: 8px;
+    display: table;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+.m-price-box-booking {
     border: 1px solid #FACF69;
     color: black;
     background: #FACF69;

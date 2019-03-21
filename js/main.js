@@ -79,9 +79,14 @@
             var shadow_width = $(window).width() * 0.8;
 
             $(".hamburger-shadow").css("width", shadow_width.toString() + "px");
-            $(".hamburger-shadow").css("height", $(window).height().toString() + "px" );
+            $(".hamburger-shadow").css("min-height", $(window).height().toString() + "px" );
 
             $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px"  );
+            
+            if($(".hamburger-shadow").height() > $(window).height())
+            {
+                $(".mobile-content").css("height", $(".hamburger-shadow").height().toString() + "px");
+            }
 
 
             $scope.open_hamburger = function() {
@@ -337,6 +342,11 @@
     ============================================================================
     ==========================================================================*/
         
+        $(".service-intro-background").css("height", ($(window).height() * 0.85).toString() + 'px');
+        
+        $(window).resize(function(){
+            $(".service-intro-background").css("height", ($(window).height() * 0.85).toString() + 'px');
+        });
         $scope.service_set_up = function(index){
              
                 $scope.service_cache = index;
@@ -1016,7 +1026,11 @@
     ==========================================================================*/
     
 
-
+        function isEmail(email) {
+          var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          return regex.test(email);
+        }
+        
 		$scope.enter_booking = function()
 		{
 				$(".booking-shadow").css("display","unset");
@@ -1165,30 +1179,42 @@
 
         }
         
+        $scope.email_valid = false;
+        
 		$scope.submit_booking = ()=>
 		{
             // Get content of booking
             email_body = $(".d-booking-description").val();
             email_target = $(".d-booking-email").val();
             email_name = $(".d-booking-name").val();
-            console.log(email_target);
             
-            $(".booking-button-text").css("display","none");
-            $(".lds-ring").css("display","block");
+            if(isEmail(email_target))
+            {
+                $scope.email_valid = true;
+            }
             
-            emailjs.send('gmail', 'tiya', {})
-            .then(function(response) {
-               $(".booking-input").css("display","none");
-               $(".booking-button").css("display","none");
-               $(".booking-title").css("display","none");
-                  
-                $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
-                $(".booking-successful").animate({opacity: 1},500);
-                $(".booking-new_booking").css("display","unset");
-                $(".booking-new-booking").animate({opacity: 1}, 500);
-            }, function(error) {
-               console.log('FAILED...', error);
-            });
+            if($scope.email_valid)
+            {  
+
+                $(".booking-button-text").css("display","none");
+                $(".lds-ring").css("display","block");
+
+                emailjs.send('gmail', 'tiya', {})
+                .then(function(response) {
+                   $(".booking-input").css("display","none");
+                   $(".booking-button").css("display","none");
+                   $(".booking-title").css("display","none");
+
+                    $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
+                    $(".booking-successful").animate({opacity: 1},500);
+                    $(".booking-new_booking").css("display","unset");
+                    $(".booking-new-booking").animate({opacity: 1}, 500);
+                }, function(error) {
+                   console.log('FAILED...', error);
+                });
+            } else {
+                alert("invalid email");
+            }
             /*
             Email.send({
                 Host : "smtp.elasticemail.com",
@@ -1318,7 +1344,7 @@
     ##########################################################################*/
     
     var map_height = $(window).height() * 0.8;
-    $("#map").css("height", map_height+"px")
+    $("#d-map").css("height", map_height+"px")
     
  
     

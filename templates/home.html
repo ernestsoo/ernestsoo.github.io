@@ -52,9 +52,9 @@
                     <div class="row menu-options" style="display:none">
                         <div class="col-xs-11 text-right" style="margin-top:-20px;">
                             <p class="hamburger-sub-option" ng-click="m_toggle_section('m1')">{{cat_2_sub_1}}</p>
-                            <p class="hamburger-sub-option">{{cat_2_sub_2}}</p>
-                            <p class="hamburger-sub-option">{{cat_2_sub_3}}</p>
-                            <p class="hamburger-sub-option">{{cat_2_sub_4}}</p>
+                            <p class="hamburger-sub-option" ng-click="m_toggle_section('m2')">{{cat_2_sub_2}}</p>
+                            <p class="hamburger-sub-option" ng-click="m_toggle_section('m3')">{{cat_2_sub_3}}</p>
+                            <p class="hamburger-sub-option" ng-click="m_toggle_section('m4')">{{cat_2_sub_4}}</p>
                         </div>
                         <div class="col-xs-1">
                         </div>
@@ -236,6 +236,42 @@
                           <li>{{c2s1_bullet_4}}</li>
                           <li>{{c2s1_bullet_5}}</li>
                           <li>{{c2s1_bullet_6}}</li>
+                        </ul> 
+                        <div class="m-price-box text-center text-white">
+                            <p class="m-price-box-start">{{service_start}}</p>
+                            <p class="m-price-box-value">{{c2s1_price}}</p>
+                            <div class="price-box-booking" ng-click="m_toggle_section('booking');">{{service_book_now}}</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1"></div>
+                    
+                     
+                </div>
+                
+                
+              
+            </div>
+             
+             
+             <div class="m-section-m2 m-section" style="display:none">
+                
+                <div class="row" style="margin-top: 2.5%">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <div class="service-video-background"  >
+                             <iframe class="service-video-2" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
+                             <div class="service-video-text service-video-text-2" style="opacity: 0;">
+                                <p>{{c2s2_title}}</p>
+                             </div>
+                        </div>
+                        <p class="m-service-title text-left">{{c2s2_title}}</p>
+                        <ul class="m-service-explain text-left">
+                          <li>{{c2s2_bullet_1}}</li>
+                          <li>{{c2s2_bullet_2}}</li>
+                          <li>{{c2s2_bullet_3}}</li> 
+                          <li>{{c2s2_bullet_4}}</li>
+                          <li>{{c2s2_bullet_5}}</li>
+                          <li>{{c2s2_bullet_6}}</li>
                         </ul> 
                         <div class="m-price-box text-center text-white">
                             <p class="m-price-box-start">{{service_start}}</p>
@@ -518,7 +554,7 @@
 
 
             <!-- temporary usage of 1 missing column -->
-            <div class="col-xs-8 col-md-9 section-gallery" style="margin-top:4%;margin-left: 0%;margin-right:0%;">
+            <div class="col-xs-8 col-md-9 section-gallery" style="margin-top:1%;margin-left: 0%;margin-right:0%;">
                 <div class="service-intro-background">
                              <iframe class="service-video-1" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
                            <!--  <div class="service-video-text service-video-text-1" style="opacity: 0;">
