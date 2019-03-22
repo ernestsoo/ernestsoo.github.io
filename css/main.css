@@ -1114,7 +1114,7 @@ body
 {
     cursor:pointer;
     text-decoration: underline;
-    color: #e52c4c;
+    color: #FACF69;
 }
 
 .home-c-1, .home-c-2, .home-c-3
@@ -1130,6 +1130,11 @@ body
     margin-left:-20px;
 }
 
+.scan-id {
+    width: 250px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
 
 * { box-sizing: border-box; }
 .video-background {

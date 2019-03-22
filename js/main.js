@@ -674,6 +674,12 @@
         //go down
           $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},2000);
           setTimeout(function(){ MOUSE_OVER = false; } , 2000);
+          
+          $('.logo-absolute').animate({opacity: 0}, 1000);
+          setTimeout(function(){ 
+            $(".logo-absolute").css("display","none");
+          
+          } , 1000);
           scrolled = true;
       }
     });
@@ -1188,6 +1194,8 @@
             email_target = $(".d-booking-email").val();
             email_name = $(".d-booking-name").val();
             
+            var variables = {name: email_name, details: email_body, target: email_target}
+            
             if(isEmail(email_target))
             {
                 $scope.email_valid = true;
@@ -1199,7 +1207,7 @@
                 $(".booking-button-text").css("display","none");
                 $(".lds-ring").css("display","block");
 
-                emailjs.send('gmail', 'tiya', {})
+                emailjs.send('gmail', 'tiya', variables)
                 .then(function(response) {
                    $(".booking-input").css("display","none");
                    $(".booking-button").css("display","none");
@@ -1264,6 +1272,11 @@
             var booking_img_left = ($(window).width() - $(".booking-img").width()) / 2;
 		   //   booking_img_left = booking_img_left - 72;
 	       $(".booking-img").css("margin-left",booking_img_left.toString()+"px");
+            
+            // Center Scan 
+            var scan_left = ($(window).width() - $(".scan-id").width()) / 2;
+		   //   booking_img_left = booking_img_left - 72;
+	       $(".scan-id").css("margin-left",scan_left.toString()+"px");
 
             // Center Booking Cancel Icon
             var booking_cancel_left = ($(window).width() - $(".booking-cancel").width()) / 2;
@@ -1303,6 +1316,12 @@
 		var booking_img_left = ($(window).width() - $(".booking-img").width()) / 2;
 		booking_img_left = booking_img_left - 72;
 	  $(".booking-img").css("margin-left",booking_img_left.toString()+"px");
+        
+          // Center Scan 
+            var scan_left = ($(window).width() - $(".scan-id").width()) / 2;
+		   //   booking_img_left = booking_img_left - 72;
+	       $(".scan-id").css("margin-left",scan_left.toString()+"px");
+
 
 		// Center Booking Cancel Icon
 		var booking_cancel_left = ($(window).width() - $(".booking-cancel").width()) / 2;
@@ -1332,7 +1351,6 @@
                         
                     } else if ($scope.lang == "kor") {
                         $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
-                        
                     }
 		});
         
@@ -1343,12 +1361,16 @@
     ############################################################################
     ##########################################################################*/
     
-    
+    var map_height = $(window).height() * 0.8;
+        $("#d-map").css("height", map_height+"px");
         
     $(window).resize(function(){ 
         var map_height = $(window).height() * 0.8;
         $("#d-map").css("height", map_height+"px");
     });
+        
+        
+    $('.jumbotron').paroller();
     
  
     
