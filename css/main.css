@@ -34,6 +34,7 @@ body
 
 .social-media-group {
     position: absolute;
+    z-index: 88;
     top:0;
     left:0;
     

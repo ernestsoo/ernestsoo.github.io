@@ -676,14 +676,31 @@
           setTimeout(function(){ MOUSE_OVER = false; } , 2000);
           
           $('.logo-absolute').animate({opacity: 0}, 1000);
+          $('.social-media-group').animate({opacity: 0}, 1000);
           setTimeout(function(){ 
             $(".logo-absolute").css("display","none");
-          
+            $(".social-media-group").css("display","none");
           } , 1000);
+          
           scrolled = true;
       }
     });
-    
+    function openInNewTab(href) {
+      Object.assign(document.createElement('a'), {
+        target: '_blank',
+        href,
+      }).click();
+    }
+        
+    $(".social-icon-fb").click(function(){
+        openInNewTab("https://www.facebook.com/tiyaspa/");
+    })
+    $(".social-icon-insta").click(function(){
+        openInNewTab("https://www.instagram.com/tiyaspa/");
+    })
+    $(".social-icon-trip").click(function(){
+        openInNewTab("https://www.tripadvisor.com.my/Attraction_Review-g298307-d10441150-Reviews-Tiya_Spa_Reflexology-Kota_Kinabalu_Kota_Kinabalu_District_West_Coast_Division_Sa.html");
+    })
     $(window).scroll(function (event) {
         var scroll = $(window).scrollTop(); 
 
@@ -693,9 +710,10 @@
           $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},1500);
         
           $('.logo-absolute').animate({opacity: 0}, 1000);
+          $('.social-media-group').animate({opacity: 0}, 1000);
           setTimeout(function(){ 
             $(".logo-absolute").css("display","none");
-          
+            $(".social-media-group").css("display","none");
           } , 1000);
             
           setTimeout(function(){ MOUSE_OVER = false; } , 2000);
