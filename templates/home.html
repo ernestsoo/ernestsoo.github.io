@@ -92,8 +92,13 @@
 
                 <div class="row">
                     <div class="col-xs-1"></div>
-                    <div class="col-xs-10">
-                        <p class="m-welcome-text text-transition">{{txt_welcome_message}}</p>
+                    <div class="col-xs-10" style="padding: 0px;">
+                       <div class="service-video-background" style="margin-top: 10%;" >
+                             <iframe class="service-video-2" src="https://www.youtube.com/embed/RIUbTC-qmRk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=RIUbTC-qmRk" frameborder="0" allowfullscreen></iframe>
+                             <div class="service-video-text service-video-text-2" style="opacity: 0;">
+                                <p>{{c2s2_title}}</p>
+                             </div>
+                        </div>
                     </div>
                     <div class="col-xs-1"></div>
                 </div>
@@ -128,11 +133,31 @@
                             </div>
                         </div>
                         
+                        <div class="m-booking-kakao text-center" style="display:none; opacity:0; margin-top: 20px;color: white">
+                            <p style="margin-top: 3%; font-size: 16px">Please scan:</p>
+
+                            <img class="m-scan-id"  src="images/kakao_id.jpeg" />
+
+                            <p style="font-size: 16px;">For appointment enquiries</p>
+
+                            <p class="m-booking-go-back text-center">{{booking_go_back}}</p>
+                        </div>
+                        
+                         <div class="m-booking-wechat text-center" style="display:none; opacity:0; margin-top: 20px;color: white">
+                            <p style="margin-top: 3%; font-size: 16px">Please scan:</p>
+
+                            <img class="m-scan-id"  src="images/wechat_id.jpeg" />
+
+                            <p style="font-size: 16px;">For appointment enquiries</p>
+
+                            <p class="m-booking-go-back text-center">{{booking_go_back}}</p>
+                        </div>
+                        
                         <div class="m-booking-email" style="display:none; opacity:0; margin-top: 20px;">
                             <input class="m-booking-input booking-name " type="text" placeholder="name" name="name"  />
                             <input class="m-booking-input booking-email" type="text" placeholder="email" name="email"  />
                             <textarea class="m-booking-input booking-description" rows="1" type="text" placeholder="booking description" name="description" ></textarea>
-                            <div class="m-booking-button text-center" type="button" ng-click="submit_booking()" style="margin-bottom: 20px;">           <span>BOOK</span>
+                            <div class="m-booking-button text-center" type="button" ng-click="submit_booking()" style="margin-bottom: 20px;">                   <span>BOOK</span>
                             </div>
                             
                             <p class="m-booking-go-back text-center" style="margin-top: 8%">{{booking_go_back}}</p>
@@ -141,11 +166,11 @@
                         <div class="m-booking-telephone text-center"  style="display:none; opacity:0; margin-top: 20px;color:white">
                             <p style="margin-top: 3%; font-size: 13px; margin-top: 12%;">Please call:</p>
 
-                            <p style="font-size: 24px;">011-10503388</p>
+                            <p style="font-size: 27px; margin-top: 5%;">011-10503388</p>
 
-                            <p style="font-size: 13px;">For appointment enquiries</p>
+                            <p style="font-size: 13px; margin-top: 5%;">For appointment enquiries</p>
 
-                            <p class="m-booking-go-back text-center" style="margin-top: 8%">{{booking_go_back}}</p>
+                            <p class="m-booking-go-back text-center" style="margin-top: 15%">{{booking_go_back}}</p>
                         </div>
                         
                         
@@ -240,7 +265,7 @@
                         <div class="m-price-box text-center text-white">
                             <p class="m-price-box-start">{{service_start}}</p>
                             <p class="m-price-box-value">{{c2s1_price}}</p>
-                            <div class="price-box-booking" ng-click="m_toggle_section('booking');">{{service_book_now}}</div>
+                            <div class="m-price-box-booking" ng-click="m_toggle_section('booking');">{{service_book_now}}</div>
                         </div>
                     </div>
                     <div class="col-xs-1"></div>
@@ -276,7 +301,7 @@
                         <div class="m-price-box text-center text-white">
                             <p class="m-price-box-start">{{service_start}}</p>
                             <p class="m-price-box-value">{{c2s2_price}}</p>
-                            <div class="price-box-booking" ng-click="m_toggle_section('booking');">{{service_book_now}}</div>
+                            <div class="m-price-box-booking" ng-click="m_toggle_section('booking');">{{service_book_now}}</div>
                         </div>
                     </div>
                     <div class="col-xs-1"></div>
@@ -354,6 +379,12 @@
             <span class="booking-button-text">{{booking_word}}</span>
             <div class="lds-ring" style="display:none; margin: 0 auto"><div></div><div></div><div></div><div></div></div>
         </div>
+        <div class="booking-error text-center">
+            <p class="name-empty" style="margin-top: 1%">Please enter name</p>
+            <p class="details-empty" style="margin-top: 1%">Please enter booking details</p>
+            <p class="email-empty" style="margin-top: 1%">Please enter email</p>
+            <p class="email-invalid" style="margin-top: 1%">Invalid email</p>
+        </div>
         <p class="booking-go-back text-center" ng-click="booking_go_back()">{{booking_go_back}}</p>
         
         <img src="images/checked.svg" class="booking-checked" ng-click="exit_booking()" />
@@ -368,11 +399,12 @@
 <div class="text-center welcome-area body" >
     <img class="logo-absolute" src="images/tiya_new.png" />
     <div class="social-media-group">
-        <img class="social-icon" src="images/kakao-circle.png" /> 
-        <img class="social-icon" src="images/wechat-circle.png" />
+   <!--     <img class="social-icon" src="images/kakao-circle.png" /> 
+        <img class="social-icon" src="images/wechat-circle.png" /> -->
         <img class="social-icon social-icon-fb" src="images/facebook-circle.png" href="http://www.google.com" /> 
+        <img class="social-icon social-icon-trip" src="images/tripadvisor-circle.png" />  
         <img class="social-icon social-icon-insta" src="images/instagram-circle.png" />
-        <img class="social-icon social-icon-trip" src="images/tripadvisor-circle.png" />     
+        <img class=" social-icon-meituan" src="images/meituan-circle.png" /> 
     </div>
     <div class="container-fluid">
         
@@ -554,7 +586,7 @@
 
             <!-- temporary usage of 1 missing column -->
             <div class="col-xs-8 col-md-9 section-gallery" style="margin-top:1%;margin-left: 0%;margin-right:0%;">
-                <div class="service-intro-background">
+                <div class="service-intro-background detect-view">
                              <iframe  src="https://www.youtube.com/embed/LIM2aHrL5sM?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=LIM2aHrL5sM" frameborder="0" allowfullscreen></iframe>
                            <!--  <div class="service-video-text service-video-text-1" style="opacity: 0;">
                                 <p>{{c2s1_title}}</p>

@@ -453,7 +453,7 @@
             $scope.cat_3 = "LOCATE US";
             $scope.cat_4 = "PRODUCTS";
             
-            $scope.txt_contact = "CONTACT";
+            $scope.txt_contact = "CONTACT US";
             
             $scope.service_start = "Price Starting from:";
             $scope.service_book_now = "BOOK NOW";
@@ -720,6 +720,24 @@
           scrolled = true;
         }
     });
+        
+    setInterval(function(){
+        
+        
+        if ($('.detect-view').visible(true)) {
+            // The element is visible, do something
+            $('.logo-absolute').animate({opacity: 0}, 1000);
+            $('.social-media-group').animate({opacity: 0}, 1000);
+            setTimeout(function(){ 
+                $(".logo-absolute").css("display","none");
+                $(".social-media-group").css("display","none");
+            } , 1000);
+            
+        } else {
+            // The element is NOT visible, do something else
+        }
+
+    }, 500);
         
     // Dynamically change home area on resize
     $(window).resize(function(){
@@ -1203,7 +1221,7 @@
 
         }
         
-        $scope.email_valid = false;
+        $scope.valid = true;
         
 		$scope.submit_booking = ()=>
 		{
@@ -1214,12 +1232,36 @@
             
             var variables = {name: email_name, details: email_body, target: email_target}
             
-            if(isEmail(email_target))
+            $scope.valid = true;
+            $(".booking-error p").css("display","none");
+            
+            if(email_target != "")
             {
-                $scope.email_valid = true;
+                if(!isEmail(email_target))
+                {
+                    $scope.valid = false;
+                    $(".email-invalid").css("display","block");
+                    
+                }
+            } else {
+                $scope.valid = false;
+                $(".email-empty").css("display","block"); 
             }
             
-            if($scope.email_valid)
+            
+            if(email_body == "")
+            {
+                $scope.valid = false;
+                $(".details-empty").css("display","block");  
+            }
+            
+            if(email_name == "")
+            {
+                $scope.valid = false;
+                $(".name-empty").css("display","block");  
+            }
+            
+            if($scope.valid)
             {  
 
                 $(".booking-button-text").css("display","none");
@@ -1238,9 +1280,7 @@
                 }, function(error) {
                    console.log('FAILED...', error);
                 });
-            } else {
-                alert("invalid email");
-            }
+            } 
             /*
             Email.send({
                 Host : "smtp.elasticemail.com",

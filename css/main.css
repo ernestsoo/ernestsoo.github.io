@@ -46,6 +46,13 @@ body
     display: block;
     cursor: pointer;
 }
+
+.social-icon-meituan {
+    width:50px;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+}
 /* The only rule that matters */
 #video-background {
 /*  making the video fullscreen  */
@@ -67,6 +74,13 @@ body
     background: rgba(0,0,0,0.9);
     z-index:999;
     min-height: 1000px;
+}
+
+.booking-error p{
+    color: red;
+    text-decoration: underline;
+    display: none;
+    
 }
 
 .hamburger-menu
@@ -600,7 +614,7 @@ body
     margin: 0 auto;
     padding: 7px 8px;
     font-weight: 600;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 .glyphicon-home-more
 {
@@ -809,7 +823,7 @@ body
     font-family: "Raleway" !important;
     font-weight: 800;
     padding: 3% 0%;
-    width: 80%;
+
     margin: 0 auto;
     color: black;
     font-size:12.5px;
@@ -1131,11 +1145,21 @@ body
     margin-left:-20px;
 }
 
+
 .scan-id {
     width: 250px;
-    margin-top: 15px ;
+    margin-top: 15px;
     margin-bottom: 35px ;
 }
+
+
+.m-scan-id {
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 35px ;
+}
+
 
 * { box-sizing: border-box; }
 .video-background {
@@ -1280,11 +1304,12 @@ body
     display: table;
     padding: 5px 12px;
     cursor: pointer;
-    
+
     font-size: 15px;
     margin:0 auto;
-    
     margin-top: 5%;
+    
+  
 }
 
 .price-box-booking:hover 
