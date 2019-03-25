@@ -110,14 +110,14 @@
             
             if(!$scope.hamburger)
             {
-                $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px"  );
+                $(".hamburger-shadow").css("margin-left","-"+ shadow_width.toString() + "px");
             }
 
             
             
             if($(".hamburger-shadow").height() > $(window).height())
             {
-                $(".mobile-content").css("height", $(".hamburger-shadow").height().toString() + "px");
+                $(".mobile-content").css("min-height", $(".hamburger-shadow").height().toString() + "px");
             }
 
             $scope.open_hamburger = function() {
