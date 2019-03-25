@@ -536,6 +536,40 @@
             $scope.c2s4_bullet_4 = "Traditional Thai Massage";
             $scope.c2s4_price = "RM168";
             
+            // Cat 2 Sub 5: Urut-urut
+            $scope.c2s5_title = "Local Traditional “URUT-URUT” Lymphatic Detox Massage";
+            $scope.c2s5_bullet_1 = "Improve Immune System";
+            $scope.c2s5_bullet_2 = "Relaxing";
+            $scope.c2s5_bullet_3 = "Detox";
+            $scope.c2s5_bullet_4 = "Calming";
+            $scope.c2s5_price = "RM138";
+            
+            // Cat 2 Sub 6: Tari-tari
+            $scope.c2s6_title = "Malay Traditional “TARI-TARI” Pressure Point Massage";
+            $scope.c2s6_bullet_1 = "Reduces pain & muscle spasms";
+            $scope.c2s6_bullet_2 = "Acupressure";
+            $scope.c2s6_price = "RM128";
+            
+            // Cat 2 Sub 7: Aroma Oil
+            $scope.c2s7_title = "Aroma Oil Massage";
+            $scope.c2s7_price = "RM98";
+            
+            // Cat 2 Sub 8: Thai Massage
+            $scope.c2s8_title = "Traditional Thai Massage";
+            $scope.c2s8_price = "RM98";
+            
+            // Cat 2 Sub 9: Tiya "Sunburn"
+            $scope.c2s9_title = "‘Tiya’ Sunburn Treatment + Body & Foot Massage ";
+            $scope.c2s9_bullet_1 = "Aloe vera contains 150 vitamins";
+            $scope.c2s9_bullet_2 = "Relieve pain and inflammation";
+            $scope.c2s9_bullet_3 = "Help repair damaged skin cells";
+            $scope.c2s9_price = "RM138";
+            
+            // Cat 2 Sub 10: Kids Spa
+            $scope.c2s10_title = "Kid's Spa";
+            $scope.c2s10_bullet_1 = "Apply for Children age below 12 years old";
+            $scope.c2s10_bullet_2 = "Must identify with Passport or Any other Formal Identity Materials";
+            $scope.c2s10_price = "RM92";
         }
         /* ++++++++++++++++++++++++++++++++
         MANDARIN TEXT
@@ -616,6 +650,40 @@
             $scope.c2s4_bullet_3 = "马来传统“达厘达厘”指压按摩";
             $scope.c2s4_bullet_4 = "传统泰式按摩";
             $scope.c2s4_price = "RM168";
+            
+            // Cat 2 Sub 5: Urut-urut
+            $scope.c2s5_title = "本地传统“乌噜-乌噜”淋巴排毒按摩";
+            $scope.c2s5_bullet_1 = "改善免疫系统";
+            $scope.c2s5_bullet_2 = "舒缓减压";
+            $scope.c2s5_bullet_3 = "排毒驱风";
+            $scope.c2s5_bullet_4 = "改善情绪紧张，忧郁";
+            $scope.c2s5_price = "RM138";
+            
+            // Cat 2 Sub 6: Tari-tari
+            $scope.c2s6_title = "马来传统‘达厘达厘’指压按摩";
+            $scope.c2s6_bullet_1 = "疏通经络";
+            $scope.c2s6_bullet_2 = "穴位指压";
+            $scope.c2s6_price = "RM128";
+            
+            // Cat 2 Sub 7: Aroma Oil
+            $scope.c2s7_title = "精油按摩";
+            
+            // Cat 2 Sub 8: Thai Massage
+            $scope.c2s8_title = "传统泰式按摩";
+            $scope.c2s8_price = "RM98";
+            
+             // Cat 2 Sub 9: Tiya "Sunburn"
+            $scope.c2s9_title = "‘梃雅’ 专属晒伤护理 + 按摩 + 沐足";
+            $scope.c2s9_bullet_1 = "芦荟含有150 种维生素";
+            $scope.c2s9_bullet_2 = "缓解疼痛和炎症";
+            $scope.c2s9_bullet_3 = "帮助修复受损的皮肤细胞";
+            $scope.c2s9_price = "RM138";
+            
+            // Cat 2 Sub 10: Kids Spa
+            $scope.c2s10_title = "儿童水疗";
+            $scope.c2s10_bullet_1 = "12岁以下的儿童方可申请";
+            $scope.c2s10_bullet_2 = "必须出示护照或任何其他身份资料";
+            $scope.c2s10_price = "RM92";
         }
         /* ++++++++++++++++++++++++++++++++
         KOREAN TEXT
@@ -700,6 +768,41 @@
             $scope.c2s4_bullet_3 = "무슬림 전통 “타리타리” 혈자리 마사지";
             $scope.c2s4_bullet_4 = "타이 전통 마사지";
             $scope.c2s4_price = "RM168";
+            
+            // Cat 2 Sub 5: Urut-urut
+            $scope.c2s5_title = "원주민 '우룻우룻' 임파선 디톡스 마사지";
+            $scope.c2s5_bullet_1 = "면역력 증대";
+            $scope.c2s5_bullet_2 = "피로완화";
+            $scope.c2s5_bullet_3 = "디톡스";
+            $scope.c2s5_bullet_4 = "진정 효과";
+            $scope.c2s5_price = "RM138";
+            
+            // Cat 2 Sub 6: Tari-tari
+            $scope.c2s6_title = "말레이 전통 '타리타리' 혈자리 마사지";
+            $scope.c2s6_bullet_1 = "통증, 근육통완화";
+            $scope.c2s6_bullet_2 = "지압 효과";
+            $scope.c2s6_price = "RM128";
+            
+            // Cat 2 Sub 7: Aroma Oil
+            $scope.c2s7_title = "아로마 테라피 마사지";
+            
+            // Cat 2 Sub 8: Thai Massage
+            $scope.c2s8_title = "태국 전통 마사지";
+            $scope.c2s8_price = "RM98";
+            
+            // Cat 2 Sub 9: Tiya "Sunburn"
+            $scope.c2s9_title = "‘티야’ 썬텐 화상 케어 + 몸 &발 마사지";
+            $scope.c2s9_bullet_1 = "150여종의 비타민을 함유한 알로에";
+            $scope.c2s9_bullet_2 = "화상 통증 완화 및 염증 예방";
+            $scope.c2s9_bullet_3 = "피부재생 도움";
+            $scope.c2s9_price = "RM138";
+            
+            // Cat 2 Sub 10: Kids Spa
+            $scope.c2s10_title = "어린이 스파";
+            $scope.c2s10_bullet_1 = "12세 미만 아동에 한함";
+            $scope.c2s10_bullet_2 = "여권 또는 나이를 증빙할만한 신분증을 제시 필";
+            $scope.c2s10_price = "RM92";
+            
             
         }
         
@@ -815,24 +918,7 @@
           scrolled = true;
         }
     });
-        
-    setInterval(function(){
-        
-        
-        if ($('.detect-view').visible(true)) {
-            // The element is visible, do something
-            $('.logo-absolute').animate({opacity: 0}, 1000);
-            $('.social-media-group').animate({opacity: 0}, 1000);
-            setTimeout(function(){ 
-                $(".logo-absolute").css("display","none");
-                $(".social-media-group").css("display","none");
-            } , 1000);
-            
-        } else {
-            // The element is NOT visible, do something else
-        }
-
-    }, 500);
+    
         
     // Dynamically change home area on resize
     $(window).resize(function(){
@@ -1041,6 +1127,84 @@
        if(current_section != '.sec-c-2-s-2')
        {
            transition_section(".sec-c-2-s-2"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-3').click(function(){
+    
+       if(current_section != '.sec-c-2-s-3')
+       {
+           transition_section(".sec-c-2-s-3"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-4').click(function(){
+    
+       if(current_section != '.sec-c-2-s-4')
+       {
+           transition_section(".sec-c-2-s-4"); 
+       }
+      
+        
+    })
+    
+    $('.link-c-2-s-5').click(function(){
+    
+       if(current_section != '.sec-c-2-s-5')
+       {
+           transition_section(".sec-c-2-s-5"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-6').click(function(){
+    
+       if(current_section != '.sec-c-2-s-6')
+       {
+           transition_section(".sec-c-2-s-6"); 
+       }
+      
+        
+    })
+    $('.link-c-2-s-7').click(function(){
+    
+       if(current_section != '.sec-c-2-s-7')
+       {
+           transition_section(".sec-c-2-s-7"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-8').click(function(){
+    
+       if(current_section != '.sec-c-2-s-8')
+       {
+           transition_section(".sec-c-2-s-8"); 
+       }
+      
+        
+    })
+    $('.link-c-2-s-9').click(function(){
+    
+       if(current_section != '.sec-c-2-s-9')
+       {
+           transition_section(".sec-c-2-s-9"); 
+       }
+      
+        
+    })
+        
+    $('.link-c-2-s-10').click(function(){
+    
+       if(current_section != '.sec-c-2-s-10')
+       {
+           transition_section(".sec-c-2-s-10"); 
        }
       
         
