@@ -30,10 +30,35 @@
      * Controls all other Pages
      */
     app.controller('PageCtrl', function ( $scope /* $location, $http */) {
-      console.log("Page Controller reporting for duty.");
-
-        
     
+ 
+    $(document).ready(function() {
+       setTimeout(function(){
+           $('.preloader').fadeOut('slow');
+       }, 1500);
+       
+    });
+        
+    var lds_top = $(window).height() - $(".preloader-ripple").height();
+        
+    lds_top = lds_top / 2;
+        
+    $(".preloader-ripple").css("margin-top", lds_top.toString() + "px");
+    
+        
+    var lds_left = $(window).width() - $(".preloader-ripple").width();
+        
+    lds_left = lds_left / 2;
+        
+    $(".preloader-ripple").css("margin-left", lds_left.toString() + "px");
+        
+    $(".lds-ripple").css("display","inline-block");
+  
+    setTimeout(function(){
+        $(".preloader").fadeOut("slow");
+    },5000)
+
+
     /* =========================================================================
     ============================================================================
     GLOBAL SECTION
@@ -52,7 +77,9 @@
     
     ############################################################################
     ##########################################################################*/
-        
+    
+   
+    
 
 
     
@@ -261,19 +288,19 @@
       $('.welcome-area').css("height",$(window).height().toString() + "px");
     });
 
-    setTimeout(function(){
+ //   setTimeout(function(){
 
         //$('.welcome-area').css("background","la(255, 248, 249, 0)");
         $('.welcome-area').css("background","rgba(189, 195, 199, 0.00)");
 
 
-        setTimeout(function(){
+     //   setTimeout(function(){
            $('.glyphicon-home-more').fadeTo(0,1.0);
            $('.glyphicon-home-more').animate({marginTop: "15px"}, 1000);
            $('.welcome-discover').fadeTo(0,1.0);
-        },1250);
+     //   },1250);
 
-        $('.lds-ripple').css("display","none");
+        //$('.lds-ripple').css("display","none");
 
         $('.welcome-logo').css("display","none")
        // $('.welcome-text').fadeTo(1250,1.0);
@@ -285,7 +312,7 @@
         // Set height to user's window height.
         //$('.home-area').css("height",$(window).height().toString() + "px");
 
-    },1250);
+   // },1250);
         
     var combined_height = $(".discover-1").height() + $(".discover-2").height();
     
@@ -426,6 +453,7 @@
             $scope.service_title_extra = 8;
             
             $scope.txt_booking = "BOOK AN APPOINTMENT";
+            $scope.m_txt_booking = "MAKE A BOOKING";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","42px");
@@ -438,6 +466,8 @@
             
             $scope.booking_successful = "Successful Booking！";
             $scope.booking_new = "NEW BOOKING";
+            $scope.language = "LANGUAGE";
+            $scope.gallery = "GALLERY";
             
             $scope.txt_welcome_message="Tiya Spa & Reflexology is the first of its kind in Kota Kinabalu to offer a variety to those who are seeking authentic Asian massage. All therapist are well trained in their own ethnic wats to sooth the human body of stress.";
             
@@ -469,8 +499,12 @@
             
             $scope.booking_go_back = "Go Back";
             
-            // Cat 2 Sub 1
-            $scope.c2s1_title = "VIP OVERNIGHT SPA";
+            $scope.booking_scan = "Please Scan:";
+            $scope.booking_call = "Please Call:";
+            $scope.booking_enquiries = "For Booking Enquiries";
+            
+            // Cat 2 Sub 1: VIP OVERNIGHT SPA
+            $scope.c2s1_title = "VIP Overnight Spa";
             $scope.c2s1_bullet_1 = "Check in after 11pm, Checkout out 11am";
             $scope.c2s1_bullet_2 = "VIP Floor - Rooms";
             $scope.c2s1_bullet_3 = "VIP Lounge - Free Coffee, Tea, Snack";
@@ -479,15 +513,29 @@
             $scope.c2s1_bullet_6 = "Free Airport Transfer to Tiya Spa upon Arrival (Min. 2pax)";
             $scope.c2s1_price = "RM298";
             
-            // Cat 2 Sub 2
-            $scope.c2s2_title = "VIP SPA";
-            $scope.c2s2_bullet_1 = "3 Hours";
-            $scope.c2s2_bullet_2 = "VIP Floor - Rooms";
-            $scope.c2s2_bullet_3 = "VIP Lounge - Free Coffee, Tea, Snack";
-            $scope.c2s2_bullet_4 = "2 Hours Selections of Massages + Foot Scrub";
-            $scope.c2s2_bullet_5 = "1 hour, resting time in Room";
-            $scope.c2s2_bullet_6 = "Free Transport to City Hotels after Spa";
-            $scope.c2s2_price = "RM248";
+            // Cat 2 Sub 2: Local Borneo Herball Ball + Body Massage;
+            $scope.c2s2_title = "Local Borneo Herbal Ball + Body Massage";
+            $scope.c2s2_bullet_1 = "Relaxing";
+            $scope.c2s2_bullet_2 = "Improve blood circulation";
+            $scope.c2s2_bullet_3 = "Release muscle & joint pain";
+            $scope.c2s2_price = "RM168";
+            
+            // Cat 2 Sub 3: "Ranau" 
+            $scope.c2s3_title = "“RANAU” Hot Stone Massage Therapy";
+            $scope.c2s3_bullet_1 = "Relieve stress";
+            $scope.c2s3_bullet_2 = "Improve Metabolic Rate";
+            $scope.c2s3_bullet_3 = "Reduce water retention";
+            $scope.c2s3_price = "RM168";
+            
+            
+            // Cat 2 Sub 4: Cocao butter body scrub.
+            $scope.c2s4_title = "COCOA  BUTTER BODY SCRUB + Shower + Body & Foot Massage";
+            $scope.c2s4_bullet_1 = "Aroma Oil Massage";
+            $scope.c2s4_bullet_2 = "Traditional “Lomi Lomi” Massage";
+            $scope.c2s4_bullet_3 = "Malay Traditional “Tari Tari” Pressure Point Massage";
+            $scope.c2s4_bullet_4 = "Traditional Thai Massage";
+            $scope.c2s4_price = "RM168";
+            
         }
         /* ++++++++++++++++++++++++++++++++
         MANDARIN TEXT
@@ -497,14 +545,18 @@
             $scope.service_title_extra = 8;
             
             $scope.txt_booking = "预约";
+            $scope.m_txt_booking = "预约";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","90px");
 
             $scope.booking_title = "预约";
             
-            $(".d-booking-name").attr("placeholder","名称");
-            $(".d-booking-email").attr("placeholder","电子邮件");
+            $scope.language = "语言";
+            $scope.gallery = "画廊";
+            
+            $(".d-booking-name").attr("placeholder","姓名");
+            $(".d-booking-email").attr("placeholder","电子邮箱");
             $(".d-booking-description").attr("placeholder","预订说明");
             
             $scope.booking_successful = "成功预订！";
@@ -513,44 +565,57 @@
             $scope.booking_word = "预订";
             $scope.service_book_now = "现在预订";
             
-            $scope.txt_welcome_message="Tiya Spa＆Reflexology是哥打京那巴鲁的第一家同类产品，为那些寻求正宗亚洲按摩的人提供各种服务。所有治疗师都训练有素的自己的种族饮食，以舒缓人体的压力。";
+            $scope.booking_select = "请选择你的预约方式:";
             
-            $scope.txt_discover="发现更多";
+            $scope.booking_scan = "请扫描:";
+            $scope.booking_call = "请打:";
+            $scope.booking_enquiries = "询问预约详情";
             
-            $scope.cat_1 = "画廊";
-            $scope.cat_2 = "画面";
+            $scope.txt_discover="更多资讯";
+            
+            $scope.cat_1 = "短片廊";
+            $scope.cat_2 = "服务项目";
                 $scope.cat_2_sub_1 = "VIP 过夜温泉";
                 $scope.cat_2_sub_2 = "VIP 温泉";
                 $scope.cat_2_sub_3 = "当地BORNEO HERBAL球+身体按摩";
                 $scope.cat_2_sub_4 = "'RANAU'本地热石按摩治疗";
-            $scope.cat_3 = "按摩";
-            $scope.cat_4 = "产品";
-            
-            $scope.txt_contact = "联系";
+            $scope.cat_3 = "店铺位置";
+            $scope.txt_contact = "联系方式";
             
             $scope.service_start = "价格从：";
             $scope.service_book_now = "现在预订";
 
-            // Cat 2 Sub 1
-            $scope.c2s1_title = "VIP 过夜温泉";
-            $scope.c2s1_bullet_1 = "晚上11点后入住，11点结账";
-            $scope.c2s1_bullet_2 = "贵宾楼层 - 客房";
-            $scope.c2s1_bullet_3 = "贵宾休息室 - 免费咖啡，茶，小吃";
-            $scope.c2s1_bullet_4 = "2小时精选按摩+足部磨砂";
-            $scope.c2s1_bullet_5 = "免费淋浴面部护理";
-            $scope.c2s1_bullet_6 = "抵达时免费机场接送至Tiya Spa（最低2份）";
+            // Cat 2 Sub 1 : VIP Overnight Spa
+            $scope.c2s1_title = "VIP 逍遥夜专享";
+            $scope.c2s1_bullet_1 = "晚上11点后入住 ,早上11点退房";
+            $scope.c2s1_bullet_2 = "享有贵宾房";
+            $scope.c2s1_bullet_3 = "享有贵宾休息室享用免费咖啡，茶和小吃";
+            $scope.c2s1_bullet_4 = "享有2个小时的按摩 + 足部磨砂 (配套任选其一)";
+            $scope.c2s1_bullet_5 = "享有沐浴设施";
+            $scope.c2s1_bullet_6 = "享有免费机场接机 (2人以上方可享用)";
             $scope.c2s1_price = "RM298";
             
-            // Cat 2 Sub 2
-            $scope.c2s2_title = "VIP 温泉";
-            $scope.c2s2_bullet_1 = "3小时";
-            $scope.c2s2_bullet_2 = "贵宾楼层 - 客房";
-            $scope.c2s2_bullet_3 = "贵宾休息室 - 免费咖啡，茶，小吃";
-            $scope.c2s2_bullet_4 = "2小时精选按摩+足部磨砂";
-            $scope.c2s2_bullet_5 = "1小时，在房间休息时间";
-            $scope.c2s2_bullet_6 = "水疗后免费送往城市酒店";
-            $scope.c2s2_price = "RM248";
+            // Cat 2 Sub 2: Local Borneo Herball Ball + Body Massage;
+            $scope.c2s2_title = "婆罗洲传统草药理疗按摩";
+            $scope.c2s2_bullet_1 = "舒缓减压";
+            $scope.c2s2_bullet_2 = "促进血液循环";
+            $scope.c2s2_bullet_3 = "减轻肌肉疼痛";
+            $scope.c2s2_price = "RM168";
             
+            // Cat 2 Sub 3: "Ranau"
+            $scope.c2s3_title = "“拉瑙”本地传统热石按摩护理";
+            $scope.c2s3_bullet_1 = "消除疲劳";
+            $scope.c2s3_bullet_2 = "提高代谢";
+            $scope.c2s3_bullet_3 = "消除水肿";
+            $scope.c2s3_price = "RM168";
+            
+            // Cat 2 Sub 4: Cocao butter body scrub.
+            $scope.c2s4_title = "可可油磨砂护理 + 淋浴 + 全身与沐足";
+            $scope.c2s4_bullet_1 = "精油按摩";
+            $scope.c2s4_bullet_2 = "传统“喽咪喽咪”推油按摩";
+            $scope.c2s4_bullet_3 = "马来传统“达厘达厘”指压按摩";
+            $scope.c2s4_bullet_4 = "传统泰式按摩";
+            $scope.c2s4_price = "RM168";
         }
         /* ++++++++++++++++++++++++++++++++
         KOREAN TEXT
@@ -560,11 +625,15 @@
             $scope.service_title_extra = 8;
             
             $scope.txt_booking="약속을 잡다";
+            $scope.m_txt_booking="약속을 잡다";
             
             //Changes for txt_booking
             $(".txt_booking").css("left","77px");
             
             $scope.booking_title = "약속을 잡다";
+            
+            $scope.language = "언어";
+            $scope.gallery = "갱도";
             
             $(".d-booking-name").attr("placeholder","이름");
             $(".d-booking-email").attr("placeholder","이메일");
@@ -601,24 +670,36 @@
             $scope.service_book_now = "지금 예약";
             
             // Cat 2 Sub 1
-            $scope.c2s1_title = "VIP 오버 나이트 스파";
-            $scope.c2s1_bullet_1 = "11시 이후에 체크인, 11시에 체크 아웃";
-            $scope.c2s1_bullet_2 = "VIP 층 - 객실";
-            $scope.c2s1_bullet_3 = "VIP 라운지 - 무료 커피, 차, 스낵";
-            $scope.c2s1_bullet_4 = "마사지 + 발 스크럽 2 시간 선택";
+            $scope.c2s1_title = "VIP 심야 스파";
+            $scope.c2s1_bullet_1 = "오후 11시 이후 체크인, 오전 11시 체크아웃";
+            $scope.c2s1_bullet_2 = "VIP 전용층 및 룸";
+            $scope.c2s1_bullet_3 = "VIP 라운지에서 무료 커피, 차, 스낵 제공";
+            $scope.c2s1_bullet_4 = "마사지 + 풋 스크럽 2시간 선택";
             $scope.c2s1_bullet_5 = "무료 샤워 시설";
-            $scope.c2s1_bullet_6 = "Tiya Spa 도착시 무료 공항 교통편 (최소 2 인승)";
+            $scope.c2s1_bullet_6 = "공항 무료 픽업 (최소 2명이상)";
             $scope.c2s1_price = "RM298";
             
-            // Cat 2 Sub 2
-            $scope.c2s2_title = "VIP 온천";
-            $scope.c2s2_bullet_1 = "3 시간";
-            $scope.c2s2_bullet_2 = "VIP 층 - 객실";
-            $scope.c2s2_bullet_3 = "VIP 라운지 - 무료 커피, 차, 스낵";
-            $scope.c2s2_bullet_4 = "마사지 + 발 스크럽 2 시간 선택";
-            $scope.c2s2_bullet_5 = "1 시간, 방에 휴식 시간";
-            $scope.c2s2_bullet_6 = "스파 후 도시 교통편 무료 교통편";
-            $scope.c2s2_price = "RM248";
+            // Cat 2 Sub 2: Local Borneo Herball Ball + Body Massage;
+            $scope.c2s2_title = "보르네오 원주민 허브 볼 + 바디 마사지";
+            $scope.c2s2_bullet_1 = "편안한";
+            $scope.c2s2_bullet_2 = "혈액 순환 개선";
+            $scope.c2s2_bullet_3 = "근육 및 관절 통증 완화";
+            $scope.c2s2_price = "RM168";
+            
+            // Cat 2 Sub 3: "Ranau"
+            $scope.c2s3_title = "'라나우 지역' 온천 돌 마사지 테라피";
+            $scope.c2s3_bullet_1 = "스트레스 해소";
+            $scope.c2s3_bullet_2 = "率혈액 순환 개선";
+            $scope.c2s3_bullet_3 = "수분 보유력 감소 ";
+            $scope.c2s3_price = "RM168";
+            
+            // Cat 2 Sub 4: Cocao butter body scrub.
+            $scope.c2s4_title = "코코아 버터 바디 스크럽 + 샤워+ 몸,발 마사지";
+            $scope.c2s4_bullet_1 = "아로마 오일 마사지";
+            $scope.c2s4_bullet_2 = "발리 섬 사람 Lomi-Lomi 마사지";
+            $scope.c2s4_bullet_3 = "무슬림 전통 “타리타리” 혈자리 마사지";
+            $scope.c2s4_bullet_4 = "타이 전통 마사지";
+            $scope.c2s4_price = "RM168";
             
         }
         
@@ -691,7 +772,8 @@
         href,
       }).click();
     }
-        
+    
+    
     $(".social-icon-fb").click(function(){
         openInNewTab("https://www.facebook.com/tiyaspa/");
     })
@@ -701,6 +783,19 @@
     $(".social-icon-trip").click(function(){
         openInNewTab("https://www.tripadvisor.com.my/Attraction_Review-g298307-d10441150-Reviews-Tiya_Spa_Reflexology-Kota_Kinabalu_Kota_Kinabalu_District_West_Coast_Division_Sa.html");
     })
+    $(".social-icon-meituan").click(function(){
+        openInNewTab("http://i.meituan.com/poi/151861483");
+    })
+        
+    $(window).resize(function(){
+         $('.logo-absolute').animate({opacity: 0}, 1000);
+          $('.social-media-group').animate({opacity: 0}, 1000);
+          setTimeout(function(){ 
+            $(".logo-absolute").css("display","none");
+            $(".social-media-group").css("display","none");
+          } , 1000);
+    })
+       
     $(window).scroll(function (event) {
         var scroll = $(window).scrollTop(); 
 
@@ -1075,6 +1170,22 @@
         
 		$scope.enter_booking = function()
 		{
+            
+            // if not scrolled, do it now
+            
+            if(!scrolled) {
+                $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},750);
+
+                  $('.logo-absolute').animate({opacity: 0}, 750);
+                  $('.social-media-group').animate({opacity: 0}, 750);
+                  setTimeout(function(){ 
+                    $(".logo-absolute").css("display","none");
+                    $(".social-media-group").css("display","none");
+                  } , 500);
+
+                  setTimeout(function(){ MOUSE_OVER = false; } , 750);
+                  scrolled = true;
+            }
 				$(".booking-shadow").css("display","unset");
             
                   // Center Booking Logo
@@ -1221,6 +1332,21 @@
 
         }
         
+        $scope.m_new_booking = () => {
+            $(".m-booking-input").css("display","unset");
+            $(".m-booking-button").css("display","block");
+            $(".m-booking-title").css("display","block");
+            
+            $(".m-booking-button-text").css("display","block");
+            $(".m-lds-ring").css("display","none");
+                  
+                $(".m-booking-checked").css("margin-top","90px");
+                $(".m-booking-checked").css("opacity",0);
+                $(".m-booking-successful").css("opacity",0);
+                $(".m-booking-new-booking").css("opacity",0);
+
+        }
+        
         $scope.valid = true;
         
 		$scope.submit_booking = ()=>
@@ -1231,6 +1357,7 @@
             email_name = $(".d-booking-name").val();
             
             var variables = {name: email_name, details: email_body, target: email_target}
+            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com"};
             
             $scope.valid = true;
             $(".booking-error p").css("display","none");
@@ -1267,18 +1394,23 @@
                 $(".booking-button-text").css("display","none");
                 $(".lds-ring").css("display","block");
 
-                emailjs.send('gmail', 'tiya', variables)
+                emailjs.send('default_service', 'tiya', variables)
                 .then(function(response) {
-                   $(".booking-input").css("display","none");
-                   $(".booking-button").css("display","none");
-                   $(".booking-title").css("display","none");
+                    emailjs.send('default_service', 'tiya', own_variables)
+                    .then(function(response) {
+                       $(".booking-input").css("display","none");
+                       $(".booking-button").css("display","none");
+                       $(".booking-title").css("display","none");
 
-                    $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
-                    $(".booking-successful").animate({opacity: 1},500);
-                    $(".booking-new_booking").css("display","unset");
-                    $(".booking-new-booking").animate({opacity: 1}, 500);
+                        $(".booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
+                        $(".booking-successful").animate({opacity: 1},500);
+                        $(".booking-new_booking").css("display","unset");
+                        $(".booking-new-booking").animate({opacity: 1}, 500);
+                    }, function(error) {
+                       alert("booking error, please try again.");
+                    });
                 }, function(error) {
-                   console.log('FAILED...', error);
+                   alert("booking error, please try again.");
                 });
             } 
             /*
@@ -1315,6 +1447,74 @@
             );
             
             */
+        }
+        
+        
+        $scope.m_submit_booking = ()=>
+		{
+            // Get content of booking
+            email_body = $(".booking-description").val();
+            email_target = $(".booking-email").val();
+            email_name = $(".booking-name").val();
+            
+            var variables = {name: email_name, details: email_body, target: email_target}
+            var own_variables = {name: email_name , details: email_body, target: "ernestsoo22@gmail.com"};
+            
+            $scope.valid = true;
+            $(".m-booking-error p").css("display","none");
+            
+            if(email_target != "")
+            {
+                if(!isEmail(email_target))
+                {
+                    $scope.valid = false;
+                    $(".m-email-invalid").css("display","block");
+                    
+                }
+            } else {
+                $scope.valid = false;
+                $(".m-email-empty").css("display","block"); 
+            }
+            
+            
+            if(email_body == "")
+            {
+                $scope.valid = false;
+                $(".m-details-empty").css("display","block");  
+            }
+            
+            if(email_name == "")
+            {
+                $scope.valid = false;
+                $(".m-name-empty").css("display","block");  
+            }
+            
+            if($scope.valid)
+            {  
+
+                $(".m-booking-button-text").css("display","none");
+                $(".m-lds-ring").css("display","block");
+
+                emailjs.send('default_service', 'tiya', variables)
+                .then(function(response) {
+                    emailjs.send('default_service', 'tiya', own_variables)
+                    .then(function(response) {
+                       $(".m-booking-input").css("display","none");
+                       $(".m-booking-button").css("display","none");
+                       $(".m-booking-title").css("display","none");
+
+                        $(".m-booking-checked").animate({marginTop: "80px", opacity: 1}, 500);
+                        $(".m-booking-successful").animate({opacity: 1},500);
+                        $(".m-booking-new_booking").css("display","unset");
+                        $(".m-booking-new-booking").animate({opacity: 1}, 500);
+                    }, function(error) {
+                       console.log('FAILED...', error);
+                    });
+                }, function(error) {
+                   console.log('FAILED...', error);
+                });
+            } 
+            
         }
 
 
@@ -1354,13 +1554,29 @@
             $(".booking-input").css("margin-left",booking_left.toString()+"px");
 
             $(".d-booking-description").focus(function(){
-                    $(this).animate({height:180,borderRadius:32},750);
+                    $(this).animate({height:180,borderRadius:16},750);
                 
                     if($scope.lang == "eng")
                     {
                         $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
                     } else if ($scope.lang == "ch") {
-                        $(this).attr("placeholder","输入您希望从Tiya获得的服务列表以及您要删除的日期。您将在确认预订后收到Tiya发送的电子邮件");
+                        $(this).attr("placeholder","请输入您需要预订的服务项目以及您需要预订的日期。您将会收到一封来自梃雅的电子邮件，以确认您在本次的预订。");
+                        
+                    } else if ($scope.lang == "kor") {
+                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        
+                    }
+                    
+            });
+            
+            $(".booking-description").focus(function(){
+                    $(this).animate({height:180,borderRadius:16},750);
+                
+                    if($scope.lang == "eng")
+                    {
+                        $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+                    } else if ($scope.lang == "ch") {
+                        $(this).attr("placeholder","请输入您需要预订的服务项目以及您需要预订的日期。您将会收到一封来自梃雅的电子邮件，以确认您在本次的预订。");
                         
                     } else if ($scope.lang == "kor") {
                         $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
@@ -1412,6 +1628,23 @@
                     }
 		});
         
+        
+         $(".booking-description").focus(function(){
+                    $(this).animate({height:180,borderRadius:32},750);
+                
+                    if($scope.lang == "eng")
+                    {
+                        $(this).attr("placeholder","Enter a list of services you wish from Tiya and the date you want to drop by. You will receive an email from Tiya upon confirming your booking");
+                    } else if ($scope.lang == "ch") {
+                        $(this).attr("placeholder","请输入您需要预订的服务项目以及您需要预订的日期。您将会收到一封来自梃雅的电子邮件，以确认您在本次的预订。");
+                        
+                    } else if ($scope.lang == "kor") {
+                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        
+                    }
+                    
+            });
+        
     /* #########################################################################
     ############################################################################
     BOOKING SECTION
@@ -1419,17 +1652,17 @@
     ############################################################################
     ##########################################################################*/
     
-    var map_height = $(window).height() * 0.8;
+    $(window).load(function(){
+       var map_height = $(window).height() * 0.8;
         $("#d-map").css("height", map_height+"px");
         
-    $(window).resize(function(){ 
-        var map_height = $(window).height() * 0.8;
-        $("#d-map").css("height", map_height+"px");
+        $(window).resize(function(){ 
+            var map_height = $(window).height() * 0.8;
+            $("#d-map").css("height", map_height+"px");
     });
         
-        
-    $('.jumbotron').paroller();
-    
  
+    });
+  
     
 });

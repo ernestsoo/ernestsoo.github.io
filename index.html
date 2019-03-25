@@ -30,6 +30,8 @@
     
     <!-- Website Font: Raleway -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    
 </head>
 <body ng-app="tiyaWebApp">
 <!--[if lt IE 7]>
@@ -37,6 +39,13 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDum9rA0rV9jbPcYCYek2Pd1cEVT5MWTW8"
+    async defer></script>
+    
+<div id="pre-out" class="preloader">
+    <div class="lds-ripple preloader-ripple"><div></div><div></div></div>
+</div>
+    
 <!-- Our Website Content Goes Here -->
 <div ng-view></div>
  <!-- Google Maps -->
@@ -55,12 +64,9 @@
 <script src="js/main.js"></script>
     
 <!-- Parallax: JQuery -->
-<script src="js/jquery.paroller.min.js"></script>
+<!--<script src="js/jquery.paroller.min.js"></script>-->
     
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDum9rA0rV9jbPcYCYek2Pd1cEVT5MWTW8"
-    async defer></script>
-    
-    
+
 <!-- EmailJs Service -->
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
