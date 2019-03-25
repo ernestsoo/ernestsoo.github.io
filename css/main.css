@@ -1233,7 +1233,8 @@ body
 .service-title {
     color: #FACF69;
     text-decoration: underline;
-    font-size: 38px;
+    font-size: 28px;
+    margin-right: 20px;
 }
 
 .m-service-title {

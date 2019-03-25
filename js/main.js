@@ -570,6 +570,11 @@
             $scope.c2s10_bullet_1 = "Apply for Children age below 12 years old";
             $scope.c2s10_bullet_2 = "Must identify with Passport or Any other Formal Identity Materials";
             $scope.c2s10_price = "RM92";
+            
+            // Cat 2 Sub 11: Lomi-lomi
+            $scope.c2s10_title = "Traditional “LOMI-LOMI” Massage";
+            $scope.c2s10_bullet_1 = " Deep tissue massage using elbow movement";
+            $scope.c2s10_price = "RM138";
         }
         /* ++++++++++++++++++++++++++++++++
         MANDARIN TEXT
@@ -684,6 +689,11 @@
             $scope.c2s10_bullet_1 = "12岁以下的儿童方可申请";
             $scope.c2s10_bullet_2 = "必须出示护照或任何其他身份资料";
             $scope.c2s10_price = "RM92";
+            
+            // Cat 2 Sub 11: Lomi-lomi
+            $scope.c2s10_title ="传统 “喽咪-喽咪” 推油按摩";
+            $scope.c2s10_bullet_1 = "手肘深沉组织按摩";
+            $scope.c2s10_price = "RM138";
         }
         /* ++++++++++++++++++++++++++++++++
         KOREAN TEXT
@@ -802,6 +812,11 @@
             $scope.c2s10_bullet_1 = "12세 미만 아동에 한함";
             $scope.c2s10_bullet_2 = "여권 또는 나이를 증빙할만한 신분증을 제시 필";
             $scope.c2s10_price = "RM92";
+            
+            // Cat 2 Sub 11: Lomi-lomi
+            $scope.c2s10_title ="발리 섬 사람 Lomi-Lomi 마사지";
+            $scope.c2s10_bullet_1 = "팔꿈치 운동을 이용한 깊은 티슈 마사지";
+            $scope.c2s10_price = "RM138";
             
             
         }
@@ -1210,6 +1225,15 @@
         
     })
         
+    $('.link-c-2-s-11').click(function(){
+    
+       if(current_section != '.sec-c-2-s-10')
+       {
+           transition_section(".sec-c-2-s-10"); 
+       }
+      
+        
+    })
     $('.link-gallery').click(function(){
        
         if(current_section != '.section-gallery')
