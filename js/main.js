@@ -125,7 +125,7 @@
                 
             }
 
-            $scope.close_hamburger = function() {
+            $scope.closeasdasdasd_hamburger = function() {
                 if($scope.hamburger)
                 {
                     $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
