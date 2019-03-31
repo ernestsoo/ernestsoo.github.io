@@ -129,7 +129,7 @@
                 
             }
 
-            $scope.closeasdasdasd_hamburger = function() {
+            $scope.close_hamburger = function() {
                 if($scope.hamburger)
                 {
                     $(".hamburger-shadow").animate({marginLeft: "-"+ shadow_width.toString() + "px"});
@@ -576,9 +576,9 @@
             $scope.c2s10_price = "RM92";
             
             // Cat 2 Sub 11: Lomi-lomi
-            $scope.c2s10_title = "Traditional “LOMI-LOMI” Massage";
-            $scope.c2s10_bullet_1 = " Deep tissue massage using elbow movement";
-            $scope.c2s10_price = "RM138";
+            $scope.c2s11_title = "Traditional “LOMI-LOMI” Massage";
+            $scope.c2s11_bullet_1 = " Deep tissue massage using elbow movement";
+            $scope.c2s11_price = "RM138";
         }
         /* ++++++++++++++++++++++++++++++++
         MANDARIN TEXT
@@ -695,9 +695,9 @@
             $scope.c2s10_price = "RM92";
             
             // Cat 2 Sub 11: Lomi-lomi
-            $scope.c2s10_title ="传统 “喽咪-喽咪” 推油按摩";
-            $scope.c2s10_bullet_1 = "手肘深沉组织按摩";
-            $scope.c2s10_price = "RM138";
+            $scope.c2s11_title ="传统 “喽咪-喽咪” 推油按摩";
+            $scope.c2s11_bullet_1 = "手肘深沉组织按摩";
+            $scope.c2s11_price = "RM138";
         }
         /* ++++++++++++++++++++++++++++++++
         KOREAN TEXT
@@ -809,7 +809,7 @@
             $scope.c2s9_bullet_1 = "150여종의 비타민을 함유한 알로에";
             $scope.c2s9_bullet_2 = "화상 통증 완화 및 염증 예방";
             $scope.c2s9_bullet_3 = "피부재생 도움";
-            $scope.c2s9_price = "RM138";
+            $scope.c2s9_price = "RM188";
             
             // Cat 2 Sub 10: Kids Spa
             $scope.c2s10_title = "어린이 스파";
@@ -818,9 +818,9 @@
             $scope.c2s10_price = "RM92";
             
             // Cat 2 Sub 11: Lomi-lomi
-            $scope.c2s10_title ="발리 섬 사람 Lomi-Lomi 마사지";
-            $scope.c2s10_bullet_1 = "팔꿈치 운동을 이용한 깊은 티슈 마사지";
-            $scope.c2s10_price = "RM138";
+            $scope.c2s11_title ="발리 섬 사람 Lomi-Lomi 마사지";
+            $scope.c2s11_bullet_1 = "팔꿈치 운동을 이용한 깊은 티슈 마사지";
+            $scope.c2s11_price = "RM138";
             
             
         }
@@ -1231,9 +1231,9 @@
         
     $('.link-c-2-s-11').click(function(){
     
-       if(current_section != '.sec-c-2-s-10')
+       if(current_section != '.sec-c-2-s-11')
        {
-           transition_section(".sec-c-2-s-10"); 
+           transition_section(".sec-c-2-s-11"); 
        }
       
         
@@ -1650,7 +1650,7 @@
             email_name = $(".booking-name").val();
             
             var variables = {name: email_name, details: email_body, target: email_target}
-            var own_variables = {name: email_name , details: email_body, target: "ernestsoo22@gmail.com"};
+            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com"};
             
             $scope.valid = true;
             $(".m-booking-error p").css("display","none");
