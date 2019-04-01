@@ -468,6 +468,10 @@
             $(".d-booking-email").attr("placeholder","Email");
             $(".d-booking-description").attr("placeholder","Description");
             
+            $(".booking-name").attr("placeholder","Name");
+            $(".booking-email").attr("placeholder","Email");
+            $(".booking-description").attr("placeholder","Description");
+            
             $scope.booking_successful = "Successful Booking！";
             $scope.booking_new = "NEW BOOKING";
             $scope.language = "LANGUAGE";
@@ -602,6 +606,10 @@
             $(".d-booking-email").attr("placeholder","电子邮箱");
             $(".d-booking-description").attr("placeholder","预订说明");
             
+            $(".booking-name").attr("placeholder","姓名");
+            $(".booking-email").attr("placeholder","电子邮箱");
+            $(".booking-description").attr("placeholder","预订说明");
+            
             $scope.booking_successful = "成功预订！";
             $scope.booking_new = "新预订";
             
@@ -720,6 +728,10 @@
             $(".d-booking-name").attr("placeholder","이름");
             $(".d-booking-email").attr("placeholder","이메일");
             $(".d-booking-description").attr("placeholder","예약 설명");
+            
+            $(".booking-name").attr("placeholder","이름");
+            $(".booking-email").attr("placeholder","이메일");
+            $(".booking-description").attr("placeholder","예약 설명");
             
             $scope.booking_successful = "예약 완료!";
             $scope.booking_new = "신규 예약";
