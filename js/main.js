@@ -567,7 +567,7 @@
             $scope.c2s9_bullet_1 = "Aloe vera contains 150 vitamins";
             $scope.c2s9_bullet_2 = "Relieve pain and inflammation";
             $scope.c2s9_bullet_3 = "Help repair damaged skin cells";
-            $scope.c2s9_price = "RM138";
+            $scope.c2s9_price = "RM188";
             
             // Cat 2 Sub 10: Kids Spa
             $scope.c2s10_title = "Kid's Spa";
@@ -686,7 +686,7 @@
             $scope.c2s9_bullet_1 = "芦荟含有150 种维生素";
             $scope.c2s9_bullet_2 = "缓解疼痛和炎症";
             $scope.c2s9_bullet_3 = "帮助修复受损的皮肤细胞";
-            $scope.c2s9_price = "RM138";
+            $scope.c2s9_price = "RM188";
             
             // Cat 2 Sub 10: Kids Spa
             $scope.c2s10_title = "儿童水疗";

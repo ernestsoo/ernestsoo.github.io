@@ -22,6 +22,12 @@ body
     margin-bottom: 20%;
 }
 
+.logo-svg {
+    width: 40% !important;
+}
+.m-logo-svg {
+    width: 30% !important;
+}
 .logo-absolute {
     position: absolute;
     top: 20px;
