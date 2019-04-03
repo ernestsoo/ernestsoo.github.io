@@ -890,11 +890,14 @@
           $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},2000);
           setTimeout(function(){ MOUSE_OVER = false; } , 2000);
           
+         
+          
           $('.logo-absolute').animate({opacity: 0}, 1000);
           $('.social-media-group').animate({opacity: 0}, 1000);
           setTimeout(function(){ 
             $(".logo-absolute").css("display","none");
             $(".social-media-group").css("display","none");
+            $("#services-video").css("display","unset");
           } , 1000);
           
           scrolled = true;
@@ -922,11 +925,15 @@
     })
         
     $(window).resize(function(){
+        
+ 
+        
          $('.logo-absolute').animate({opacity: 0}, 1000);
           $('.social-media-group').animate({opacity: 0}, 1000);
           setTimeout(function(){ 
             $(".logo-absolute").css("display","none");
-            $(".social-media-group").css("display","none");
+            $(".social-media-group").css("display","none"); 
+            $("#services-video").css("display","unset");
           } , 1000);
     })
        
@@ -938,6 +945,8 @@
         {
           $('.home-area').animate({marginTop: "-"+$(window).height().toString()+"px"},1500);
         
+         
+           $("#services-video").css("display","unset");   
           $('.logo-absolute').animate({opacity: 0}, 1000);
           $('.social-media-group').animate({opacity: 0}, 1000);
           setTimeout(function(){ 
@@ -1560,8 +1569,8 @@
             email_target = $(".d-booking-email").val();
             email_name = $(".d-booking-name").val();
             
-            var variables = {name: email_name, details: email_body, target: email_target}
-            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com"};
+            var variables = {name: email_name, details: email_body, target: email_target, email: email_target}
+            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com", email: email_target};
             
             $scope.valid = true;
             $(".booking-error p").css("display","none");
@@ -1661,8 +1670,8 @@
             email_target = $(".booking-email").val();
             email_name = $(".booking-name").val();
             
-            var variables = {name: email_name, details: email_body, target: email_target}
-            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com"};
+            var variables = {name: email_name, details: email_body, target: email_target,  email: email_target}
+            var own_variables = {name: email_name , details: email_body, target: "tiyaspakk@gmail.com",  email: email_targe};
             
             $scope.valid = true;
             $(".m-booking-error p").css("display","none");
@@ -1867,6 +1876,10 @@
         
  
     });
-  
+        
+        
+		
+
+
     
 });
