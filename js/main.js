@@ -714,7 +714,7 @@
             
             $scope.service_title_extra = 8;
             
-            $scope.txt_booking="약속을 잡다";
+            $scope.txt_booking="예약한다";
             $scope.m_txt_booking="약속을 잡다";
             
             //Changes for txt_booking
@@ -726,12 +726,12 @@
             $scope.gallery = "갱도";
             
             $(".d-booking-name").attr("placeholder","이름");
-            $(".d-booking-email").attr("placeholder","이메일");
-            $(".d-booking-description").attr("placeholder","예약 설명");
+            $(".d-booking-email").attr("placeholder","메일주소");
+            $(".d-booking-description").attr("placeholder","예약설명서");
             
             $(".booking-name").attr("placeholder","이름");
-            $(".booking-email").attr("placeholder","이메일");
-            $(".booking-description").attr("placeholder","예약 설명");
+            $(".booking-email").attr("placeholder","메일주소");
+            $(".booking-description").attr("placeholder","예약설명서");
             
             $scope.booking_successful = "예약 완료!";
             $scope.booking_new = "신규 예약";
@@ -739,7 +739,7 @@
             $scope.booking_word = "예매";
             
             
-            $scope.booking_select = "";
+            $scope.booking_select = "예약방법 선택:";
 
             
             $scope.txt_welcome_message="티야 스파 & 리플 렉솔 로지 (Tiya Spa & Reflexology)는 코타 키나발루에서 처음으로 진정한 아시아 마사지를 찾는 사람들에게 다양한 것을 제공합니다. 모든 치료사는 스트레스의 인체를 진정시키기 위해 자신의 민족 와트에서 잘 훈련받습니다.";
@@ -747,20 +747,18 @@
             
             $scope.txt_discover="더 발견하다";
             
-            $scope.cat_1 = "갱도";
+            $scope.cat_1 = "갤러리";
             $scope.cat_2 = "메뉴";
                 $scope.cat_2_sub_1 = "VIP 박 스파";
                 $scope.cat_2_sub_2 = "VIP 온천";
                 $scope.cat_2_sub_3 = "지방산 보르네오 화 환 + 체내 마사지";
                 $scope.cat_2_sub_4 = "'라나 우 (LANAU)'지역 온천탕 마사지 요법";
-            $scope.cat_3 = "按摩";
-            $scope.cat_4 = "产品";
-            $scope.cat_3 = "마사지";
-            $scope.cat_4 = "제품";
+            $scope.cat_3 = "주소";
+          
             
-            $scope.txt_contact = "접촉";
+            $scope.txt_contact = "연락하기";
             
-            $scope.service_start = "출발 가격:";
+            $scope.service_start = "시작가격:";
             $scope.service_book_now = "지금 예약";
             
             // Cat 2 Sub 1
@@ -834,6 +832,9 @@
             $scope.c2s11_bullet_1 = "팔꿈치 운동을 이용한 깊은 티슈 마사지";
             $scope.c2s11_price = "RM138";
             
+            $scope.booking_call = "연락주세요:";
+            $scope.booking_scan = "스캔해주세요:";
+            $scope.booking_enquiries = "예약 시 질문사항";
             
         }
         
@@ -1776,7 +1777,7 @@
                         $(this).attr("placeholder","请输入您需要预订的服务项目以及您需要预订的日期。您将会收到一封来自梃雅的电子邮件，以确认您在本次的预订。");
                         
                     } else if ($scope.lang == "kor") {
-                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        $(this).attr("placeholder","티아에게서 받고 싶은 서비스와 날짜를 선택한 후에 티아에게서 확인 이메일 수령.");
                         
                     }
                     
@@ -1792,7 +1793,7 @@
                         $(this).attr("placeholder","请输入您需要预订的服务项目以及您需要预订的日期。您将会收到一封来自梃雅的电子邮件，以确认您在本次的预订。");
                         
                     } else if ($scope.lang == "kor") {
-                        $(this).attr("placeholder","Tiya에서 원하는 서비스 목록과 삭제할 날짜를 입력하십시오. 예약 확인시 Tiya 이메일을 보내드립니다.");
+                        $(this).attr("placeholder","티아에게서 받고 싶은 서비스와 날짜를 선택한 후에 티아에게서 확인 이메일 수령.");
                         
                     }
                     
