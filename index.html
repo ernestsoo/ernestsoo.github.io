@@ -1,79 +1,102 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <!-- Meta-Information -->
-    <title>Tiya Spa</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="Tiya Spa">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Attiya Spa & Massages</title>
+  <meta name="description" content="For customers to browse services and make a booking.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/flipclock.css">
 
-    <!-- Our Website CSS Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    
-    <!-- Website Font: Raleway -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    
-    
+  <meta name="theme-color" content="#fafafa">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="compiled/flipclock.min.js"></script>
+
+
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
 </head>
-<body ng-app="tiyaWebApp">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDum9rA0rV9jbPcYCYek2Pd1cEVT5MWTW8"
-    async defer></script>
-    
-<div id="pre-out" class="preloader">
-    <div class="lds-ripple preloader-ripple"><div></div><div></div></div>
-</div>
-    
-<!-- Our Website Content Goes Here -->
-<div ng-view></div>
- <!-- Google Maps -->
-    
-    
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
-<!-- Vendor: Javascripts -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <div class="announcement-body ">
+    <img src="img/top-leaf.svg" class="top-leaf" />
+    <img src="img/bottom-leaf.svg" class="bottom-leaf" />
+    <img src="img/logo.svg" class="logo" />
 
-<!-- Vendor: Angular, followed by our custom Javascripts -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
-
-<!-- Our Website Javascripts -->
-<script src="js/main.js"></script>
+    <div class="home-social-media">
+      <img class="home-social-media-item" src="img/facebook.svg"/>
+      <img class="home-social-media-item" src="img/instagram.svg" style="margin-left: 20px;" />
+      <img class="home-social-media-item" src="img/whatsapp.svg" style="margin-left: 20px;"/>
+    </div>
     
-<!-- Parallax: JQuery -->
-<!--<script src="js/jquery.paroller.min.js"></script>-->
-    
+    <div class="content">
+    <p class="coming-soon" style="margin: 0 auto;">Coming Soon.</p>
+    <p class="description center-ball" style="margin-top: 15px;margin-bottom: 15px;">We are opening on the 22th of June 2019 at Milan Square Lot. 10, Ground Floor, Jalan Wan Alwi, 93350 Kuching, Sarawak. Stay Tuned!</p>
+  
 
-<!-- EmailJs Service -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init("user_1J2Jq55nrOHLMGy7n5fLf");
-       })();
-    </script>
+    <div class="countdown-container" style= "margin-top: 2%;">
+      <div class="countdown-hour countdown-item" >
+        <div class="countdown-group-hour vertical-center ">
+            <p class="countdown-value-day countdown-value" id="day"></p>
+            <p class="countdown-text-day countdown-text">DAYS</p>
+        </div>
+      </div>
+      <div class="countdown-minute countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-hour countdown-value" id ="hour">23</p>
+              <p class="countdown-text-hour countdown-text">HOURS</p>
+          </div>
+      </div>
+      <div class="countdown-minute countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-minute countdown-value" id="minute">23</p>
+              <p class="countdown-text-minute countdown-text">MINUTES</p>
+          </div>
+      </div>
+      <div class="countdown-hour countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-second countdown-value" id="second">23</p>
+              <p class="countdown-text-second countdown-text">SECONDS</p>
+          </div>
+      </div>
 
+    </div>
+
+    <p class="description" style="margin-top: 25px;;margin-bottom: 20px;">hp: 011-1092 5881  &nbsp &nbsp &nbsp   email: attiyaspa@gmail.com   </p>
+
+    </div>
+
+
+    <p id="demo" style="display:none"></p>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+	
+  <script src="js/main.js"></script>
+
+  
+<script type="text/javascript" src="js/kinetic.js"></script>
+<script type="text/javascript" src="js/jquery.final-countdown.min.js"></script>
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
+
 </html>
+
