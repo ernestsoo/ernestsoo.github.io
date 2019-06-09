@@ -124,10 +124,10 @@ $(".countdown-text-second").css("margin-left", countdown_text_left_second.toStri
 
 
 } else {
-  $(".countdown-text-day").css("margin-top","50px");
-  $(".countdown-text-hour").css("margin-top","50px");
-  $(".countdown-text-minute").css("margin-top","50px");
-  $(".countdown-text-second").css("margin-top","50px");
+  $(".countdown-text-day").css("margin-top","75px");
+  $(".countdown-text-hour").css("margin-top","75px");
+  $(".countdown-text-minute").css("margin-top","75px");
+  $(".countdown-text-second").css("margin-top","75px");
 }
 
 
@@ -218,10 +218,10 @@ $(".countdown-text-second").css("margin-left", countdown_text_left_second.toStri
 
 
 }else {
-  $(".countdown-text-day").css("margin-top","50px");
-  $(".countdown-text-hour").css("margin-top","50px");
-  $(".countdown-text-minute").css("margin-top","50px");
-  $(".countdown-text-second").css("margin-top","50px");
+  $(".countdown-text-day").css("margin-top","75px");
+  $(".countdown-text-hour").css("margin-top","75px");
+  $(".countdown-text-minute").css("margin-top","75px");
+  $(".countdown-text-second").css("margin-top","75px");
 }
 
 $(".countdown-text-hour").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
