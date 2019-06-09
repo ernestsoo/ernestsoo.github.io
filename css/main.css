@@ -309,10 +309,10 @@ background: linear-gradient(to top, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Fir
     font-size: 12px;
     font-weight: 100;
     line-height: 1;
-    margin:0;
+
     padding:0;
     font-family: 'Raleway' !important;
-    margin-top: 50px !important;
+    margin-top: 50px;
     color: white;
   }
 
@@ -343,12 +343,6 @@ background: linear-gradient(to top, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Fir
     display: inline-block;
   }
   
-  /* Small devices (landscape phones, 576px and up) */
-  @media (max-width: 575px) { 
-    .countdown-text {
-      margin-top: -20px;
-    }
-  }
 
 
 
