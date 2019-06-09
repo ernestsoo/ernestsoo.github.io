@@ -309,9 +309,14 @@ $(".countdown-text-second").css("margin-left", countdown_text_left_second.toStri
 
 if($(window).width() > 399){
   $(".countdown-text-hour").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
-$(".countdown-text-day").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
-$(".countdown-text-minute").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
-$(".countdown-text-second").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
+  $(".countdown-text-day").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
+  $(".countdown-text-minute").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
+  $(".countdown-text-second").css("margin-top", ($(".countdown-value-hour").height()+15)+"px");
+} else {
+  $(".countdown-text-hour").css("margin-top", "50px");
+  $(".countdown-text-day").css("margin-top", "50px");
+  $(".countdown-text-minute").css("margin-top", "50px");
+  $(".countdown-text-second").css("margin-top", "50px");
 }
 
 
