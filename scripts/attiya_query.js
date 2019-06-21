@@ -42,7 +42,10 @@ jQuery(function () {
   });
   
   
-  
+  var m_container_height = $(window).height() *0.65;
+
+  $(".m-container").css("height",m_container_height.toString() + "px");
+  $("#m-map").css("height",m_container_height.toString() + "px");
   
   
   $(".menu-home").click(function(){
@@ -535,10 +538,12 @@ jQuery(function () {
     function center_vertical (container,classname) {
       var top = $(container).height() - $(classname).height();
       top = top / 2;
-      xf
+      
     //  alert($(classname.toString()).height());
       $(classname).css("margin-top",top.toString() + "px");
     }
+
+  
     function center_vertical_x (container,classname) {
       var top = $(container).height() - $(classname).height();
       top = top / 2;
@@ -551,8 +556,10 @@ jQuery(function () {
       top = top / 2;
       top = top / 2;
     //  alert($(classname.toString()).height());
-      $(classname).css("top",top.toString() + "px");
+      $(classname).css("top",(top-50).toString() + "px");
     }
+
+    center_vertical_top(".m-container",".m-email-container");
 
     $(".m-browse-services").click(function(){
       $(".m-home-section").css("display","none");
@@ -720,6 +727,24 @@ jQuery(function () {
     var m_service_display_width = $(window).width() * 0.75;
     $(".m-service-display").css("width",m_service_display_width.toString()+"px");
 
+    // close m service
+    $(".m-service").click(function(){
+      $(".m-service").animate({opacity:0}, 400);
+      setTimeout(function(){
+        $(".m-service").css("display","none");
+      },400)
+    })
+
+    $(".m-booking-button-pop").click(function(){
+      $(".m-fixed-hover").animate({marginLeft: (menu_section_width*2).toString() + "px" });
+
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-booking-section").css("display","block");
+    });
     
     var m_square_dimenstion = m_service_display_width;
 
@@ -735,7 +760,7 @@ jQuery(function () {
   
     $(".display-bottom").css("width", m_square_dimenstion.toString() + "px");
     $(".display-bottom").css("height", (m_square_dimenstion+10).toString() + "px");
-  
+  /*
     if( $(".m-service-display").height() > ($(window).height() - 25) )
     {
       $(".m-service-display").css("margin-top", "25px");
@@ -743,7 +768,9 @@ jQuery(function () {
      // alert("run");
       var temp_top =  ( $(window).height() - $(".m-service-display").height() ) / 2;
       $(".m-service-display").css("margin-top", temp_top.toString()+ "px");
-    }
+    }*/
+
+    $(".m-service-display").css("margin-top", "18px");
 
     //center_vertical_top(".display-bottom",".m-service-content");
     // Manual work..

@@ -29,6 +29,10 @@ body {
   background: white;
 }
 
+.m-service-content {
+  margin-bottom: 100px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -426,12 +430,6 @@ pre {
   color: #000000;
 }
 
-.m-services-title {
-  color: #000000;
-  margin-left: 4%;
-  margin-top: 5%;
-}
-
 
 .locate-us-title {
   color: #000000;
@@ -476,7 +474,29 @@ pre {
   border-radius: 4px;
 }
 
+
+.m-services-title {
+  color: #000000;
+  margin-left: 4%;
+  margin-top: 5%;
+}
+
+.m-booking-title { 
+  color:white;
+  margin-left: 4%;
+  margin-top: 5%;
+}
+
 .option-item {
+  display: inline-block;
+  
+  background: rgba(0,0,0,0.5);
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.m-option-item {
   display: inline-block;
   
   background: rgba(0,0,0,0.5);
@@ -675,6 +695,14 @@ pre {
   position: absolute;
   z-index: 1;
 }
+
+.m-top-leaf {
+  width: 200px;
+  margin-left: -15px;
+  margin-top: -13px;
+  position: absolute;
+  z-index: 11;
+}
 .top-leaf-test {
   width: 400px;
   margin-left: -15px;
@@ -866,6 +894,24 @@ margin-top: -10px;
     
  }
 
+ .m-open-map {
+  /* border: 1px solid black; */
+     /* border: 1px solid black; */
+     color: white;
+     background: rgba(0,0,0,0.65); 
+     padding: 15px 25px;
+     border-radius: 3px;
+     font-size: 16px;
+     font-weight: 400;
+     cursor: pointer;
+     padding-left: 25px;
+     padding-right: 25px;
+     display: table;
+     margin: 0 auto;
+     position: relative;
+    
+ }
+
 .locate-us-button {
   /* border: 1px solid black; */
      /* border: 1px solid black; */
@@ -940,12 +986,13 @@ margin-top: -10px;
    display: table;
    margin: 0 auto;
    margin-top: 45px;
+   z-index: 100;
+
  }
 
  .booking-button-pop:hover {
    background:#F0D2C4;
    color: black;
-
  }
  
 
@@ -959,8 +1006,37 @@ margin-top: -10px;
   margin-top:10px;
   margin-bottom: 10px;
   margin-right: 8px;
-
   display: inline-block;
+}
+
+.m-social-media-option {
+  width: 35px;
+  margin-left: 15px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  display: inline-block;
+}
+.m-container {
+  width:92%;
+  margin-left: 4%;
+
+
+
+  background: rgba(0,0,0,0.5);
+}
+#m-map {
+  width: 92%;
+  margin-left: 4%;
+  height: 60%;
+}
+
+.m-email-container {
+  position: relative;
+}
+
+.m-option-group {
+  margin-left: 4%;
 }
 
 .booking-via {
@@ -1274,4 +1350,12 @@ section {
 }
 .m-services-section, .m-booking-section, .m-locate-us-section {
   display: none;
+}
+
+.m-tap-anywhere {
+  color: white;
+  font-size: 15px;
+  display: table;
+  margin: 0 auto;
+  margin-top: 20px;
 }
