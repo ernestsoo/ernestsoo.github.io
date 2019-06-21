@@ -15,12 +15,18 @@ body {
   font-size: 24px;
   min-height: 100vh;
  /* background: #ffffff;*/
+
+ overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px) {
   body {
     font-size: 20px;
   }
+}
+
+.m-service-display {
+  background: white;
 }
 
 section {
@@ -291,6 +297,7 @@ pre {
   opacity: 0;
   display: none;
   background: rgba(0,0,0,0.75);
+ 
 }
 
 .m-one-service {
@@ -299,7 +306,11 @@ pre {
   left:0;
   top:0;
   opacity: 0;
-  background: rgba(0,0,0,1);
+  background: rgba(0,0,0,1) !important;
+  overflow:auto;
+}
+.m-service {
+  
 }
 .service-display {
   z-index: 10000000;
@@ -320,6 +331,23 @@ pre {
 
   background: url(images/1x/service_1.png);
   background-size: cover;
+
+}
+
+.display-top {
+
+  margin: 0;
+  padding: 0;
+
+  background: url(images/1x/service_1.png);
+  background-size: cover;
+
+
+}
+.display-bottom {
+  background: #2980b9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .display-right {
@@ -352,6 +380,7 @@ pre {
   background: linear-gradient(to bottom, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
 .absolute-menu {
   position: fixed;
   /* Menu list has z-index priority */
@@ -365,6 +394,12 @@ pre {
   width:100px;
   right: 500px;
 
+}
+
+.menu-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
 }
 
 .menu-item {
@@ -670,6 +705,19 @@ margin-top: -10px;
   width: 250px;
   position: absolute;
 }
+
+.m-top-service-leaf {
+  position: absolute;
+width: 150px;
+margin-left: -10px;
+margin-top: -10px;
+}
+
+.m-bottom-service-leaf {
+  width: 150px;
+  position: absolute;
+}
+
 
 .home-presentation {
   position:absolute;
@@ -1017,6 +1065,14 @@ margin-top: -10px;
   font-size: 18px;
   color: #F0D2C4;
 }
+
+.m-service-pop-text {
+  position: absolute;
+  margin-top: -23px;
+  margin-left: 45px;
+  font-size: 15px;
+  color: #F0D2C4;
+}
 .member-icon {
   display: block;
   width: 30px;
@@ -1077,6 +1133,7 @@ section {
 
 .mobile-view {
   z-index: -1 !important;
+  overflow-x: hidden;
 }
 
 .d-bottom-leaf {
@@ -1120,3 +1177,27 @@ section {
 
 }
 
+
+
+.m-fixed-navbar {
+  position: fixed;
+  height: 60px;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  z-index: 10;
+}
+.m-fixed-hover {
+  position: fixed;
+  height: 60px;
+  z-index: 9;
+  background: rgba(0,0,0,0.6);
+}
+.m-menu-item { 
+  width: 35px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 12px;
+}
+.m-services-section, .m-booking-section, .m-locate-us-section {
+  display: none;
+}

@@ -1,382 +1,55 @@
 jQuery(function () {
-    // Map Set Up
 
-    // When the window has finished loading create our google map below
-    google.maps.event.addDomListener(window, 'load', init);
-        
-    function init() {
-        // Basic options for a simple Google Map
-        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-        var mapOptions = {
-            // How zoomed in you want the map to start at (always required)
-            zoom: 11,
+  // Cover entirety of script.
+  function initScript(resize_bool) {
 
-            // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(40.6700, -73.9400), // New York
+  // mobile fixed navbar
+  var fixed_navbar_top = $(window).height()-60;
 
-            // How you would like to style the map. 
-            // This is where you would paste any style found on Snazzy Maps.
-            styles: [{"elementType":"labels","stylers":[{"visibility":"off"},{"color":"#f49f53"}]},{"featureType":"landscape","stylers":[{"color":"#f9ddc5"},{"lightness":-7}]},{"featureType":"road","stylers":[{"color":"#813033"},{"lightness":43}]},{"featureType":"poi.business","stylers":[{"color":"#645c20"},{"lightness":38}]},{"featureType":"water","stylers":[{"color":"#1994bf"},{"saturation":-69},{"gamma":0.99},{"lightness":43}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#f19f53"},{"weight":1.3},{"visibility":"on"},{"lightness":16}]},{"featureType":"poi.business"},{"featureType":"poi.park","stylers":[{"color":"#645c20"},{"lightness":39}]},{"featureType":"poi.school","stylers":[{"color":"#a95521"},{"lightness":35}]},{},{"featureType":"poi.medical","elementType":"geometry.fill","stylers":[{"color":"#813033"},{"lightness":38},{"visibility":"off"}]},{},{},{},{},{},{},{},{},{},{},{},{"elementType":"labels"},{"featureType":"poi.sports_complex","stylers":[{"color":"#9e5916"},{"lightness":32}]},{},{"featureType":"poi.government","stylers":[{"color":"#9e5916"},{"lightness":46}]},{"featureType":"transit.station","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","stylers":[{"color":"#813033"},{"lightness":22}]},{"featureType":"transit","stylers":[{"lightness":38}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#f19f53"},{"lightness":-10}]},{},{},{}]
-        };
+  $(".m-fixed-navbar").css("margin-top",fixed_navbar_top.toString() + "px");
 
-        // Get the HTML DOM element that will contain your map 
-        // We are using a div with id="map" seen below in the <body>
-        var mapElement = document.getElementById('map');
-
-        // Create the Google Map using our element and options defined above
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-        // Let's also add a marker while we're at it
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(40.6700, -73.9400),
-            map: map,
-            title: 'Attiya Spa & Massages'
-        });
-    }
-
-    function center_vertical (container,classname) {
-      var top = $(container).height() - $(classname).height();
-      top = top / 2;
-      top = top / 2;
-    //  alert($(classname.toString()).height());
-      $(classname).css("margin-top",top.toString() + "px");
-    }
-    function center_vertical_x (container,classname) {
-      var top = $(container).height() - $(classname).height();
-      top = top / 2;
-
-    //  alert($(classname.toString()).height());
-      $(classname).css("margin-top",top.toString() + "px");
-    }
-
-    // Mobile Settings.
+  var menu_section_width = ( $(window).width() / 4 ) -10 ;
 
 
-    $(".m-home-section").css("width",$(window).width().toString() + "px");
-    $(".m-home-section").css("min-height",$(window).height().toString() + "px");
+  $(".menu-section").css("width", menu_section_width.toString() + "px");
+  $(".menu-section").css("height","60px");
+  var panelRecord = ".menu-home";
 
-    $(".m-services-section").css("width",$(window).width().toString() + "px");
-    $(".m-services-section").css("min-height",$(window).height().toString() + "px");
-
-    $(".m-booking-section").css("width",$(window).width().toString() + "px");
-    $(".m-booking-section").css("min-height",$(window).height().toString() + "px");
-
-    $(".m-locate-us-section").css("width",$(window).width().toString() + "px");
-    $(".m-locate-us-section").css("min-height",$(window).height().toString() + "px");
-
-    $(".m-home-section").css("background", "#2980b9");
-    $(".m-home-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
-    $(".m-home-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
-
-    $(".m-services-section").css("background", " #CC95C0");
-    $(".m-services-section").css("background","-webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
-    $(".m-services-section").css("background","linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
-
-    $(".m-booking-section").css("background", "#2980b9");
-          $(".m-booking-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
-          $(".m-booking-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
-
-          $(".m-locate-us-section").css("background", " #CC95C0");
-          $(".m-locate-us-section").css("background","-webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
-          $(".m-locate-us-section").css("background","linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
-
-
-
-    center_vertical_x(".booking-container",".whatsapp-container");
-    center_vertical_x(".booking-container",".wechat-container");
-    center_vertical_x(".booking-container",".telephone-container");
-
-    center_vertical_x(".carousel-container",".carousel-arrow-left");
-    center_vertical_x(".carousel-container",".carousel-arrow-right");
-
-    var push_arrow = $(".carousel-container").width() - 30 - 10;
-    $(".carousel-arrow-right").css("margin-left",push_arrow.toString()+"px");
- 
-    var default_option = ".option-email";
-
-    $(".option-email").css("background","rgba(0,0,0,0.70)");
-
-    $(".option-email").click(function(){
-      $(".email-container").css("display","none");
-      $(".whatsapp-container").css("display","none");
-      $(".wechat-container").css("display","none");
-      $(".telephone-container").css("display","none");
-
-      $(".email-container").css("display","block");
-      $(".option-email").css("background","rgba(0,0,0,0.7)");
-      $(default_option).css("background","rgba(0,0,0,0.50)");
-
-      default_option = ".option-email";
-    })
-
-    $(".option-whatsapp").click(function(){
-      $(".email-container").css("display","none");
-      $(".whatsapp-container").css("display","none");
-      $(".wechat-container").css("display","none");
-      $(".telephone-container").css("display","none");
-
-
-      $(".whatsapp-container").css("display","block");
-      $(".option-whatsapp").css("background","rgba(0,0,0,0.7)");
-      $(default_option).css("background","rgba(0,0,0,0.50)");
-
-      default_option = ".option-whatsapp";
-    })
-
-    $(".option-wechat").click(function(){
-      $(".email-container").css("display","none");
-      $(".whatsapp-container").css("display","none");
-      $(".wechat-container").css("display","none");
-      $(".telephone-container").css("display","none");
-
-
-      $(".wechat-container").css("display","block");
-      $(".option-wechat").css("background","rgba(0,0,0,0.7)");
-      $(default_option).css("background","rgba(0,0,0,0.50)");
-
-      default_option = ".option-wechat";
-    })
-
-    $(".option-telephone").click(function(){
-      $(".email-container").css("display","none");
-      $(".whatsapp-container").css("display","none");
-      $(".wechat-container").css("display","none");
-      $(".telephone-container").css("display","none");
-
-
-      $(".telephone-container").css("display","block");
-      $(".option-telephone").css("background","rgba(0,0,0,0.7)");
-      $(default_option).css("background","rgba(0,0,0,0.50)");
-
-      default_option = ".option-telephone";
-    })
-    $(".individual-service").css("width",$(window).width().toString() + "px");
-    $(".individual-service").css("min-height",$(window).height().toString() + "px");
-
-    $(".one-service").css("width",$(window).width().toString() + "px");
-    $(".one-service").css("min-height",$(window).height().toString() + "px");
   
-    $(".m-one-service").css("width",$(window).width().toString() + "px");
-    $(".m-one-service").css("min-height",$(window).height().toString() + "px");
+  $(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
+  $(".m-fixed-hover").css("margin-top",fixed_navbar_top.toString() + "px");
   
-
-
-    $(".carousel-item-2").click(function(){
-
-      center_vertical(".service-display",".service-content");
   
-      $(".one-service").css("display","unset");
-      $(".one-service").animate({opacity: 1},500);
-    });
+  $(".m-1").click(function(){
+    //$(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
+    $(".m-fixed-hover").animate({marginLeft:"0px" });
+  });
 
-    $(".carousel-item-list").click(function(){
-
-      center_vertical(".service-display",".service-content");
+  menu_section_width += 6;
+  $(".m-2").click(function(){
+    //$(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
+    $(".m-fixed-hover").animate({marginLeft: (menu_section_width*1).toString() + "px" });
+  });
   
-      $(".one-service").css("display","unset");
-      $(".one-service").animate({opacity: 1},500);
-    });
-
-
-    var service_width = $(window).width() * 0.80;
- 
-    $(".service-display").css("width", service_width.toString() + "px");
-
-    var service_height = service_width / 2;
-
-    $(".service-display").css("height", service_height.toString() + "px");
-
-    var service_left  = $(window).width() * 0.10;
-
-    $(".service-display").css("margin-left",service_left.toString() + "px");
-
-    var service_top = $(window).height() - parseInt($(".service-display").css("height"));
-
-    service_top = service_top / 2;
-    $(".service-display").css("margin-top",service_top.toString() + "px");
-
-    service_width = (service_width / 2) - 4;
-
-    $(".display-left").css("width",service_width.toString() + "px");
-    $(".display-left").css("height","100%");
-
-    $(".display-right").css("width",service_width.toString() + "px");
-    $(".display-right").css("height","100%");
-
-
-    var left_margin = $(".display-right").width() - $(".bottom-service-leaf").width();
-    var top_margin = $(".display-right").width()- $(".bottom-service-leaf").width();
-
-    left_margin += 20;
-    top_margin += 95;
-
-    $(".bottom-service-leaf").css("margin-left", left_margin.toString() + "px");
-    $(".bottom-service-leaf").css("margin-top", top_margin.toString() + "px");
-
-    
-
-    $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).toString() + "px";
-
-    $(".cancel-service").click(function(){
-      $(".one-service").animate({opacity: 0}, 500);
-      setTimeout(()=>{
-        $(".one-service").css("display","none");
-      },500);
-    });
-
-    $(".booking-button-pop").click(function(){
-
-      $(".individual-service").animate({opacity: 0}, 500);
-      setTimeout(()=>{
-        $(".individual-service").css("display","none");
-      },500);
-      $(".one-service").animate({opacity: 0}, 500);
-      setTimeout(()=>{
-        $(".one-service").css("display","none");
-        panelSnapInstance.snapToPanel(document.getElementsByClassName("book-now-section")[0]);
-      },500);
-
-      
-    })
-
-    $(".back-home").click(function(){
-      $(".individual-service").animate({opacity: 0}, 500);
-      setTimeout(()=>{
-        $(".individual-service").css("display","none");
-      },500);
-    });
-
-    $(".menu-button").click(function(){
-      $(".individual-service").css("display","unset");
-      $(".individual-service").animate({opacity: 1},500);
-    });
-
-    setTimeout(function(){
-      $(".menu-1").animate({marginTop: "0px"},150);
-      $(".menu-1").animate({opacity: "1"},100);
-    },100)
-
-    setTimeout(function(){
-      $(".menu-2").animate({marginTop: "0px"},150);
-      $(".menu-2").animate({opacity: "1"},100);
-    },200)
-    setTimeout(function(){
-      $(".menu-3").animate({marginTop: "0px"},150);
-      $(".menu-3").animate({opacity: "1"},100);
-    },300)
-    setTimeout(function(){
-      $(".menu-4").animate({marginTop: "0px"},150);
-      $(".menu-4").animate({opacity: "1"},100);
-    },400)
-
-    setTimeout(function(){
-      $(".absolute-highlight").animate({left: "0px"});
-
-      $(".icon-scroll").animate({opacity: 1},2500);
-
-
-    },500);
-
-    $(".absolute-menu").css("margin-left",($(window).width() - 50 - $(".absolute-menu").width()).toString() + "px");
-    //$(".logo").css("margin-left",($(window).width() - 100 - $(".logo").width()).toString() + "px");
+  $(".m-3").click(function(){
+    //$(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
+    $(".m-fixed-hover").animate({marginLeft: (menu_section_width*2).toString() + "px" });
+  });
   
-
-    var defaultOptions = {
-          container: document.body,
-          panelSelector: '> section',
-          directionThreshold: 60,
-          delay: 0,
-          duration: 500,
-          easing: function(t) { return t }
-        };
-
-    panelSnapInstance = new PanelSnap(defaultOptions);
-
-
-    /*
-    panelSnapInstance.on('snapStart', function(t){
-
-      alert("start!");
-
-    });
-
-    panelSnapInstance.on('snapStop', function(t){
-      alert("end!");
-
-    });*/
-
-    $("section.services-section").css("background", " #CC95C0");
-          $("section.services-section").css("background","-webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
-          $("section.services-section").css("background","linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
-
-          $("section.book-now-section").css("background", "#2980b9");
-          $("section.book-now-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
-          $("section.book-now-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
-
-          $("section.locate-us-section").css("background", " #CC95C0");
-          $("section.locate-us-section").css("background","-webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
-          $("section.locate-us-section").css("background","linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
-
-    panelSnapInstance.on('activatePanel', function(t){
-      // Able to print the class name of each section.
-      //alert(t.className);
-
-     
-
-      if(t.className == "home-section") {
-          $(".absolute-highlight").animate({top: "30px", width: $(".menu-home").width().toString()}, 200);
-          $(".menu-item").css("color","#ffffff");
-          $(".absolute-highlight").css("border-bottom","1px solid #ffffff");
-     
-        } else if(t.className == "services-section") {
-          //alert("run-service");
-          $(".absolute-highlight").animate({top: "82px", width: $(".menu-services").width().toString()}, 200);
-          $(".menu-item").css("color","#000000");
-          $(".absolute-highlight").css("border-bottom","1px solid #000000");
-          //$("section.services-section").css("background", " #E1C6B5");
-
-
-      
-          $(".icon-scroll").animate({opacity: 0},500);
-
-
-
-
-      } else if(t.className == "book-now-section") {
-          $(".absolute-highlight").animate({top: "135px", width: $(".menu-book").width().toString()}, 200);
-
-     
-          $(".menu-item").css("color","#ffffff");
-          $(".absolute-highlight").css("border-bottom","1px solid #ffffff");
-          //$("section.book-now-section").css("background", "#1C4C63");
-
-       
-
-        
-      } else if(t.className == "locate-us-section") {
-         $(".absolute-highlight").animate({top: "190px", width: $(".menu-locate").width().toString()}, 200);
-     
-         
-         
-          $(".menu-item").css("color","#000000");
-          $(".absolute-highlight").css("border-bottom","1px solid #000000");
-         // $("section.locate-us-section").css("background", " #E1C6B5");
-      }
-
-      selectedMenuItem = t.className;
-
-      
-    });
-
-    $(".absolute-highlight").css("top","30px");    
-    $(".absolute-highlight").css("width", $(".menu-home").width().toString());
-   })
-
-
+  $(".m-4").click(function(){
+    //$(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
+    $(".m-fixed-hover").animate({marginLeft: (menu_section_width*3).toString() + "px" });
+  });
+  
+  
+  
+  
+  
   $(".menu-home").click(function(){
 
     panelSnapInstance.snapToPanel(document.getElementsByClassName("home-section")[0]);
 
+    panelRecord = ".menu-home";
   });
 
 
@@ -384,18 +57,21 @@ jQuery(function () {
 
     panelSnapInstance.snapToPanel(document.getElementsByClassName("services-section")[0]);
 
+    panelRecord = ".menu-services";
   });
 
   $(".menu-book").click(function(){
 
     panelSnapInstance.snapToPanel(document.getElementsByClassName("book-now-section")[0]);
 
+    panelRecord = ".menu-booking";
   });
 
   $(".menu-locate").click(function(){
 
     panelSnapInstance.snapToPanel(document.getElementsByClassName("locate-us-section")[0]);
 
+    panelRecord = ".menu-locate-us";
   });
 
 
@@ -852,4 +528,457 @@ jQuery(function () {
   email_booking_top = email_booking_top / 2;
   $(".email-container").css("margin-top",email_booking_top.toString() + "px");
 
+
+
+
+
+    function center_vertical (container,classname) {
+      var top = $(container).height() - $(classname).height();
+      top = top / 2;
+      xf
+    //  alert($(classname.toString()).height());
+      $(classname).css("margin-top",top.toString() + "px");
+    }
+    function center_vertical_x (container,classname) {
+      var top = $(container).height() - $(classname).height();
+      top = top / 2;
+
+    //  alert($(classname.toString()).height());
+      $(classname).css("margin-top",top.toString() + "px");
+    }
+    function center_vertical_top (container,classname) {
+      var top = $(container).height() - $(classname).height();
+      top = top / 2;
+      top = top / 2;
+    //  alert($(classname.toString()).height());
+      $(classname).css("top",top.toString() + "px");
+    }
+
+
+    // Mobile Settings.
+
+    $(".m-1").click(function(){
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-home-section").css("display","block");
+    })
+    
+    $(".m-2").click(function(){
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-services-section").css("display","block");
+    })
+    
+    $(".m-3").click(function(){
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-booking-section").css("display","block");
+    })
+    
+    $(".m-4").click(function(){
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-locate-us-section").css("display","block");
+    })
+    $(".m-home-section").css("width",$(window).width().toString() + "px");
+    $(".m-home-section").css("min-height",$(window).height().toString() + "px");
+
+    $(".m-services-section").css("width",$(window).width().toString() + "px");
+    $(".m-services-section").css("min-height",$(window).height().toString() + "px");
+
+    $(".m-booking-section").css("width",$(window).width().toString() + "px");
+    $(".m-booking-section").css("min-height",$(window).height().toString() + "px");
+
+    $(".m-locate-us-section").css("width",$(window).width().toString() + "px");
+    $(".m-locate-us-section").css("min-height",$(window).height().toString() + "px");
+
+    $(".m-home-section").css("background", "#2980b9");
+    $(".m-home-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
+    $(".m-home-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
+
+    $(".m-services-section").css("background", " #CC95C0");
+    $(".m-services-section").css("background","-webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
+    $(".m-services-section").css("background","linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
+
+    $(".m-booking-section").css("background", "#2980b9");
+          $(".m-booking-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
+          $(".m-booking-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
+
+          $(".m-locate-us-section").css("background", " #CC95C0");
+          $(".m-locate-us-section").css("background","-webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
+          $(".m-locate-us-section").css("background","linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
+
+
+
+    center_vertical_x(".booking-container",".whatsapp-container");
+    center_vertical_x(".booking-container",".wechat-container");
+    center_vertical_x(".booking-container",".telephone-container");
+
+    center_vertical_x(".carousel-container",".carousel-arrow-left");
+    center_vertical_x(".carousel-container",".carousel-arrow-right");
+
+    var push_arrow = $(".carousel-container").width() - 30 - 10;
+    $(".carousel-arrow-right").css("margin-left",push_arrow.toString()+"px");
+ 
+    var default_option = ".option-email";
+
+    $(".option-email").css("background","rgba(0,0,0,0.70)");
+
+    $(".option-email").click(function(){
+      $(".email-container").css("display","none");
+      $(".whatsapp-container").css("display","none");
+      $(".wechat-container").css("display","none");
+      $(".telephone-container").css("display","none");
+
+      $(".email-container").css("display","block");
+      $(".option-email").css("background","rgba(0,0,0,0.7)");
+      $(default_option).css("background","rgba(0,0,0,0.50)");
+
+      default_option = ".option-email";
+    })
+
+    $(".option-whatsapp").click(function(){
+      $(".email-container").css("display","none");
+      $(".whatsapp-container").css("display","none");
+      $(".wechat-container").css("display","none");
+      $(".telephone-container").css("display","none");
+
+
+      $(".whatsapp-container").css("display","block");
+      $(".option-whatsapp").css("background","rgba(0,0,0,0.7)");
+      $(default_option).css("background","rgba(0,0,0,0.50)");
+
+      default_option = ".option-whatsapp";
+    })
+
+    $(".option-wechat").click(function(){
+      $(".email-container").css("display","none");
+      $(".whatsapp-container").css("display","none");
+      $(".wechat-container").css("display","none");
+      $(".telephone-container").css("display","none");
+
+
+      $(".wechat-container").css("display","block");
+      $(".option-wechat").css("background","rgba(0,0,0,0.7)");
+      $(default_option).css("background","rgba(0,0,0,0.50)");
+
+      default_option = ".option-wechat";
+    })
+
+    $(".option-telephone").click(function(){
+      $(".email-container").css("display","none");
+      $(".whatsapp-container").css("display","none");
+      $(".wechat-container").css("display","none");
+      $(".telephone-container").css("display","none");
+
+
+      $(".telephone-container").css("display","block");
+      $(".option-telephone").css("background","rgba(0,0,0,0.7)");
+      $(default_option).css("background","rgba(0,0,0,0.50)");
+
+      default_option = ".option-telephone";
+    })
+    $(".individual-service").css("width",$(window).width().toString() + "px");
+    $(".individual-service").css("min-height",$(window).height().toString() + "px");
+
+    $(".one-service").css("width",$(window).width().toString() + "px");
+    $(".one-service").css("min-height",$(window).height().toString() + "px");
+  
+    $(".m-one-service").css("width",$(window).width().toString() + "px");
+    $(".m-one-service").css("height",$(window).height().toString() + "px");
+  
+
+    $(".m-carousel-item-list").click(function(){
+      $(".m-service").css("display","unset");
+      $(".m-service").animate({opacity: 1},500);
+    });
+    
+    
+    // Mobile one service settings here.
+    var m_service_display_width = $(window).width() * 0.75;
+    $(".m-service-display").css("width",m_service_display_width.toString()+"px");
+
+    
+    var m_square_dimenstion = m_service_display_width;
+
+    m_service_display_width = m_service_display_width * 2;
+  
+    $(".m-service-display").css("height",m_service_display_width.toString()+"px");
+
+    
+    $(".m-service-display").css("margin-left", ($(window).width()*0.125).toString() + "px");
+    
+    $(".display-top").css("width", m_square_dimenstion.toString() + "px");
+    $(".display-top").css("height", m_square_dimenstion.toString() + "px");
+  
+    $(".display-bottom").css("width", m_square_dimenstion.toString() + "px");
+    $(".display-bottom").css("height", m_square_dimenstion.toString() + "px");
+  
+    if( $(".m-service-display").height() > ($(window).height() - 25) )
+    {
+      $(".m-service-display").css("margin-top", "25px");
+    } else {
+     // alert("run");
+      var temp_top =  ( $(window).height() - $(".m-service-display").height() ) / 2;
+      $(".m-service-display").css("margin-top", temp_top.toString()+ "px");
+    }
+
+    center_vertical_top(".display-bottom",".m-service-content");
+
+    $(".carousel-item-2").click(function(){
+
+      center_vertical(".service-display",".service-content");
+  
+      $(".one-service").css("display","unset");
+      $(".one-service").animate({opacity: 1},500);
+    });
+
+    $(".carousel-item-list").click(function(){
+
+      center_vertical(".service-display",".service-content");
+  
+      $(".one-service").css("display","unset");
+      $(".one-service").animate({opacity: 1},500);
+    });
+
+
+    var service_width = $(window).width() * 0.80;
+ 
+    $(".service-display").css("width", service_width.toString() + "px");
+
+    var service_height = service_width / 2;
+
+    $(".service-display").css("height", service_height.toString() + "px");
+
+    var service_left  = $(window).width() * 0.10;
+
+    $(".service-display").css("margin-left",service_left.toString() + "px");
+
+    var service_top = $(window).height() - parseInt($(".service-display").css("height"));
+
+    service_top = service_top / 2;
+    $(".service-display").css("margin-top",service_top.toString() + "px");
+
+    service_width = (service_width / 2) - 4;
+
+    $(".display-left").css("width",service_width.toString() + "px");
+    $(".display-left").css("height","100%");
+
+    $(".display-right").css("width",service_width.toString() + "px");
+    $(".display-right").css("height","100%");
+
+
+    var left_margin = $(".display-right").width() - $(".bottom-service-leaf").width();
+    var top_margin = $(".display-right").width()- $(".bottom-service-leaf").width();
+
+    left_margin += 20;
+    top_margin += 95;
+
+    $(".bottom-service-leaf").css("margin-left", left_margin.toString() + "px");
+    $(".bottom-service-leaf").css("margin-top", top_margin.toString() + "px");
+
+
+    var m_left_margin = $(".display-bottom").width() - $(".bottom-service-leaf").width();
+    var m_top_margin = $(".display-bottom").width()- $(".m-bottom-service-leaf").width();
+
+    m_left_margin += 20;
+    m_top_margin += 95;
+
+    $(".m-bottom-service-leaf").css("margin-left", m_left_margin.toString() + "px");
+    $(".m-bottom-service-leaf").css("margin-top", m_top_margin.toString() + "px");
+
+    
+    
+
+    $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).toString() + "px";
+
+    $(".cancel-service").click(function(){
+      $(".one-service").animate({opacity: 0}, 500);
+      setTimeout(()=>{
+        $(".one-service").css("display","none");
+      },500);
+    });
+
+    $(".booking-button-pop").click(function(){
+
+      $(".individual-service").animate({opacity: 0}, 500);
+      setTimeout(()=>{
+        $(".individual-service").css("display","none");
+      },500);
+      $(".one-service").animate({opacity: 0}, 500);
+      setTimeout(()=>{
+        $(".one-service").css("display","none");
+        panelSnapInstance.snapToPanel(document.getElementsByClassName("book-now-section")[0]);
+      },500);
+
+      
+    })
+
+    $(".back-home").click(function(){
+      $(".individual-service").animate({opacity: 0}, 500);
+      setTimeout(()=>{
+        $(".individual-service").css("display","none");
+      },500);
+    });
+
+    $(".menu-button").click(function(){
+      $(".individual-service").css("display","unset");
+      $(".individual-service").animate({opacity: 1},500);
+    });
+
+    setTimeout(function(){
+      $(".menu-1").animate({marginTop: "0px"},150);
+      $(".menu-1").animate({opacity: "1"},100);
+    },100)
+
+    setTimeout(function(){
+      $(".menu-2").animate({marginTop: "0px"},150);
+      $(".menu-2").animate({opacity: "1"},100);
+    },200)
+    setTimeout(function(){
+      $(".menu-3").animate({marginTop: "0px"},150);
+      $(".menu-3").animate({opacity: "1"},100);
+    },300)
+    setTimeout(function(){
+      $(".menu-4").animate({marginTop: "0px"},150);
+      $(".menu-4").animate({opacity: "1"},100);
+    },400)
+
+    setTimeout(function(){
+      $(".absolute-highlight").animate({left: "0px"});
+
+      $(".icon-scroll").animate({opacity: 1},2500);
+
+
+    },500);
+
+    $(".absolute-menu").css("margin-left",($(window).width() - 50 - $(".absolute-menu").width()).toString() + "px");
+    //$(".logo").css("margin-left",($(window).width() - 100 - $(".logo").width()).toString() + "px");
+  
+
+    var defaultOptions = {
+          container: document.body,
+          panelSelector: '> section',
+          directionThreshold: 60,
+          delay: 0,
+          duration: 500,
+          easing: function(t) { return t }
+        };
+
+    panelSnapInstance = new PanelSnap(defaultOptions);
+
+
+    /*
+    panelSnapInstance.on('snapStart', function(t){
+
+      alert("start!");
+
+    });
+
+    panelSnapInstance.on('snapStop', function(t){
+      alert("end!");
+
+    });*/
+
+    $("section.services-section").css("background", " #CC95C0");
+          $("section.services-section").css("background","-webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
+          $("section.services-section").css("background","linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0)");
+
+          $("section.book-now-section").css("background", "#2980b9");
+          $("section.book-now-section").css("background", "-webkit-linear-gradient(to bottom, #2c3e50, #2980b9)");
+          $("section.book-now-section").css("background", "linear-gradient(to bottom, #2c3e50, #2980b9");
+
+          $("section.locate-us-section").css("background", " #CC95C0");
+          $("section.locate-us-section").css("background","-webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
+          $("section.locate-us-section").css("background","linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0)");
+
+    panelSnapInstance.on('activatePanel', function(t){
+      // Able to print the class name of each section.
+      //alert(t.className);
+
+     
+
+      if(t.className == "home-section") {
+          $(".absolute-highlight").animate({top: "30px", width: $(".menu-home").width().toString()}, 200);
+          $(".menu-item").css("color","#ffffff");
+          $(".absolute-highlight").css("border-bottom","1px solid #ffffff");
+     
+        } else if(t.className == "services-section") {
+          //alert("run-service");
+          $(".absolute-highlight").animate({top: "82px", width: $(".menu-services").width().toString()}, 200);
+          $(".menu-item").css("color","#000000");
+          $(".absolute-highlight").css("border-bottom","1px solid #000000");
+          //$("section.services-section").css("background", " #E1C6B5");
+
+
+      
+          $(".icon-scroll").animate({opacity: 0},500);
+
+
+
+
+      } else if(t.className == "book-now-section") {
+          $(".absolute-highlight").animate({top: "135px", width: $(".menu-book").width().toString()}, 200);
+
+     
+          $(".menu-item").css("color","#ffffff");
+          $(".absolute-highlight").css("border-bottom","1px solid #ffffff");
+          //$("section.book-now-section").css("background", "#1C4C63");
+
+       
+
+        
+      } else if(t.className == "locate-us-section") {
+         $(".absolute-highlight").animate({top: "190px", width: $(".menu-locate").width().toString()}, 200);
+     
+         
+         
+          $(".menu-item").css("color","#000000");
+          $(".absolute-highlight").css("border-bottom","1px solid #000000");
+         // $("section.locate-us-section").css("background", " #E1C6B5");
+      }
+
+      selectedMenuItem = t.className;
+
+      
+    });
+
+    $(".absolute-highlight").css("top","30px");    
+    $(".absolute-highlight").css("width", $(".menu-home").width().toString());
+
+  }
+
+  
+
+
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+
+    var resize_tracker = false;
+    initScript(false);
+
+    $( window ).resize(function() {
+      resize_tracker = true;
+
+      setTimeout(function(){
+
+      },250);
+      location.reload();
+    });
+});
+
+});
 
