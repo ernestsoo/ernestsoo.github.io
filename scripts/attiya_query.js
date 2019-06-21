@@ -554,6 +554,16 @@ jQuery(function () {
       $(classname).css("top",top.toString() + "px");
     }
 
+    $(".m-browse-services").click(function(){
+      $(".m-home-section").css("display","none");
+      $(".m-services-section").css("display","none");
+      $(".m-booking-section").css("display","none");
+      $(".m-locate-us-section").css("display","none");
+
+      $(".m-services-section").css("display","block");
+
+      $(".m-fixed-hover").animate({marginLeft: (menu_section_width*1).toString() + "px" });
+    });
 
     // Mobile Settings.
 
@@ -724,7 +734,7 @@ jQuery(function () {
     $(".display-top").css("height", m_square_dimenstion.toString() + "px");
   
     $(".display-bottom").css("width", m_square_dimenstion.toString() + "px");
-    $(".display-bottom").css("height", m_square_dimenstion.toString() + "px");
+    $(".display-bottom").css("height", (m_square_dimenstion+10).toString() + "px");
   
     if( $(".m-service-display").height() > ($(window).height() - 25) )
     {
@@ -735,7 +745,13 @@ jQuery(function () {
       $(".m-service-display").css("margin-top", temp_top.toString()+ "px");
     }
 
-    center_vertical_top(".display-bottom",".m-service-content");
+    //center_vertical_top(".display-bottom",".m-service-content");
+    // Manual work..
+
+    var m_service_top = ((($(".display-bottom").height() - $(".m-service-content").height()) / 2 ) / 2) - 22;
+   
+
+    $(".m-service-content").css("margin-top",m_service_top.toString()+ "px");
 
     $(".carousel-item-2").click(function(){
 
@@ -790,11 +806,11 @@ jQuery(function () {
     $(".bottom-service-leaf").css("margin-top", top_margin.toString() + "px");
 
 
-    var m_left_margin = $(".display-bottom").width() - $(".bottom-service-leaf").width();
+    var m_left_margin = $(".display-bottom").width() - $(".m-bottom-service-leaf").width();
     var m_top_margin = $(".display-bottom").width()- $(".m-bottom-service-leaf").width();
 
-    m_left_margin += 20;
-    m_top_margin += 95;
+    m_left_margin += 10;
+    m_top_margin += 55;
 
     $(".m-bottom-service-leaf").css("margin-left", m_left_margin.toString() + "px");
     $(".m-bottom-service-leaf").css("margin-top", m_top_margin.toString() + "px");

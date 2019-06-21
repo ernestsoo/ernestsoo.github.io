@@ -924,7 +924,22 @@ margin-top: -10px;
    display: table;
    margin: 0 auto;
    margin-top: 45px;
-  
+ }
+
+ .m-booking-button-pop {
+  /* border: 1px solid black; */
+   color: black;
+   background: white; 
+   padding: 4px 6px;
+   border-radius: 3px;
+   font-size: 14px;
+   font-weight: 200;
+   cursor: pointer;
+   padding-left: 15px;
+   padding-right: 15px;
+   display: table;
+   margin: 0 auto;
+   margin-top: 45px;
  }
 
  .booking-button-pop:hover {
@@ -1016,9 +1031,18 @@ margin-top: -10px;
   font-size: 22px;
   display: block;
   font-weight: 400;
-
-
 }
+
+.m-service-name {
+  text-align: center;
+  margin: 3px;
+  padding: 0px;
+  color:   #F0D2C4;
+  font-size: 16px;
+  display: block;
+  font-weight: 400;
+}
+
 
 .service-pricing {
   display: block;
@@ -1055,9 +1079,15 @@ margin-top: -10px;
   position: relative;
   margin: 0px;
   padding: 0px;
-
 }
+.m-service-icon {
+  display: block;
+  width: 20px;
 
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
 .service-pop-text {
   position: absolute;
   margin-top: -30px;
@@ -1068,9 +1098,9 @@ margin-top: -10px;
 
 .m-service-pop-text {
   position: absolute;
-  margin-top: -23px;
-  margin-left: 45px;
-  font-size: 15px;
+  margin-top: -18px;
+  margin-left: 25px;
+  font-size: 12px;
   color: #F0D2C4;
 }
 .member-icon {
@@ -1086,6 +1116,20 @@ margin-top: -10px;
   padding: 0px;
 }
 
+.m-member-icon {
+  display: block;
+  width: 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  height: 20px;
+  color: #F0D2C4;
+  border: 1px solid #F0D2C4;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .member-icon p {
   margin: 0;
   padding: 0;
@@ -1094,6 +1138,13 @@ margin-top: -10px;
   font-size: 18px;
 }
 
+.m-member-icon p {
+  margin: 0;
+  padding: 0;
+  margin-left: 3.5px;
+  margin-top: 1.5px;
+  font-size: 11px;
+}
 .non-member-icon {
   width: 30px;
   font-size: 16px;
@@ -1106,13 +1157,36 @@ margin-top: -10px;
   padding: 0px;
 }
 
+.m-non-member-icon {
+  width: 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  height: 20px;
+  color: #F0D2C4;
+  border: 1px solid  #F0D2C4;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .non-member-icon p {
   margin: 0;
   padding: 0;
   margin-left: 7px;
-  margin-top: 1px;
+  margin-top: 2px;
   font-size: 18px;
 }
+
+
+.m-non-member-icon p {
+  margin: 0;
+  padding: 0;
+  margin-left: 4.5px;
+  margin-top: 2px;
+  font-size: 11px;
+}
+
 
 .booking-enquiries {
   color: white;
