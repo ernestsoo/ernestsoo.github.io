@@ -117,7 +117,9 @@ jQuery(function () {
   $(".booking-container").css("height",container_height.toString()+ "px")
   $(".booking-container").css("margin-top","0px");
 
-
+  $(".booking-button").click(function(){
+    alert($(".input-name").val());
+  })
   
 
   
@@ -515,16 +517,25 @@ jQuery(function () {
   $(".input-name").focus(function(){
     $(".name-holder").css("background","url(images/booking_bg.png)");
     $(".name-holder").animate({fontSize: "15px",marginTop:"-52.5px", marginLeft: "20px"}, 250)
+
+    $(".m-name-holder").css("background","url(images/booking_bg.png)");
+    $(".m-name-holder").animate({fontSize: "12px",marginTop:"-32.5px", marginLeft: "12px"}, 250)
   })
 
   $(".input-email").focus(function(){
     $(".email-holder").css("background","url(images/booking_bg.png)");
     $(".email-holder").animate({fontSize: "15px",marginTop:"-52.5px", marginLeft: "20px"}, 250)
+
+    $(".m-email-holder").css("background","url(images/booking_bg.png)");
+    $(".m-email-holder").animate({fontSize: "12px",marginTop:"-32.5px", marginLeft: "12px"}, 250)
   })
 
   $(".input-description").focus(function(){
     $(".description-holder").css("background","url(images/booking_bg.png)");
-    $(".description-holder").animate({fontSize: "15px",marginTop:"-157.5px", marginLeft: "20px"}, 250)
+    $(".description-holder").animate({fontSize: "15px",marginTop:"-157.5px", marginLeft: "20px"}, 250);
+
+    $(".m-description-holder").css("background","url(images/booking_bg.png)");
+    $(".m-description-holder").animate({fontSize: "12px",marginTop:"-157.5px", marginLeft: "12px"}, 250)
   })
 
   var email_booking_top = $(".booking-container").height() - $(".email-container").height();
