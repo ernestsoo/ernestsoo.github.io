@@ -9,7 +9,7 @@ $(document).ready(function () {
     var top_margin = $(window).height() - $(".bottom-leaf").height();
 
     left_margin += 20;
-    top_margin += 15;
+    top_margin -= 10;
 
     $(".bottom-leaf").css("margin-left", left_margin.toString() + "px");
     $(".bottom-leaf").css("margin-top", top_margin.toString() + "px");
@@ -421,7 +421,7 @@ var m_left_margin = $(".display-bottom").width() - $(".m-bottom-service-leaf").w
 var m_top_margin = $(".display-bottom").width()- $(".m-bottom-service-leaf").width();
 
 m_left_margin -= 10;
-m_top_margin -= 45;
+m_top_margin -= 35;
 
 $(".m-bottom-service-leaf").css("margin-left", m_left_margin.toString() + "px");
 $(".m-bottom-service-leaf").css("margin-top", m_top_margin.toString() + "px");
@@ -445,17 +445,29 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
     var m_square_dimenstion = m_service_display_width;
 
     m_service_display_width = m_service_display_width * 2;
+
+    if($(window).width() < 350) {
+      $(".m-service-display").css("min-height",m_service_display_width.toString()+"px");
+    }
   
-    $(".m-service-display").css("min-height",m_service_display_width.toString()+"px");
 
     
     $(".m-service-display").css("margin-left", ($(window).width()*0.05).toString() + "px");
     
-    $(".display-top").css("width", m_square_dimenstion.toString() + "px");
-    $(".display-top").css("height", m_square_dimenstion.toString() + "px");
+    
+    if($(window).width() < 350) {
+      $(".display-top").css("width", m_square_dimenstion.toString() + "px");
+     $(".display-top").css("height", m_square_dimenstion.toString() + "px");
+    } else {
+      $(".display-top").css("min-height", "350px");
+    }
+
+    if($(window).width() < 350) {
   
     $(".display-bottom").css("width", m_square_dimenstion.toString() + "px");
     $(".display-bottom").css("min-height", m_square_dimenstion.toString() + "px");
+
+    }
   
   
       $(".m-service-display").css("margin-top", "15px");
@@ -470,25 +482,66 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
     }
 
 
-    // 1
-    var topa = ($(".display-1").height() - $(".m-service-content-1").height()) - 20;
-    topa = topa/ 2;
 
-    $(".m-service-content-1").css("top",topa.toString() + "px");
 
-     // 2
-    topa = ($(".display-2").height() - $(".m-service-content-2").height()) - 20;
-    topa = topa/ 2;
+     // 1i 
+     topa = $(".m-service-content").width()   -200;
 
-   
-    $(".m-service-content-2").css("top",topa.toString() + "px");
+    // 1bl
 
-     // 3
-     topa = ($(".display-3").height() - $(".m-service-content-3").height()) - 20;
-     topa = topa/ 2;
+
+
+      
+ var leaftop = $(".display-1").height() - 100;
+ var leafleft = $(".display-1").width() - 100;
+  
+ leaftop += 25;
  
+ $(".m-bottom-service-leaf-1").css("top",leaftop.toString()+"px");
+ $(".m-bottom-service-leaf-1").css("left",leafleft.toString()+"px");
+     
+
+
+     // 2ai 
+     topa = $(".m-service-content-2").width()   -200;
+
+
+     
+
+      // 2bl
+
+
+
+      
+ var leaftop = $(".display-2").height() - 100;
+ var leafleft = $(".display-2").width() - 100;
+  
+ leaftop += 45;
+ 
+ $(".m-bottom-service-leaf-2").css("top",leaftop.toString()+"px");
+ $(".m-bottom-service-leaf-2").css("left",leafleft.toString()+"px");
+     
+
+
+     // 3ai 
+     topa = $(".m-service-content-3").width()   -200;
+
+// 3bl
+
+
+
+      
+var leaftop = $(".display-3").height() - 100;
+var leafleft = $(".display-3").width() - 100;
+ 
+leaftop += 30;
+
+$(".m-bottom-service-leaf-3").css("top",leaftop.toString()+"px");
+$(".m-bottom-service-leaf-3").css("left",leafleft.toString()+"px");
     
-     $(".m-service-content-3").css("top",topa.toString() + "px");
+     
+
+ 
 
      // 3c
      topa = ($(".display-3").width() - $(".center-group-3").width()) - 20;
@@ -497,18 +550,45 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
     
      $(".center-group-3").css("margin-left",topa.toString() + "px");
 
-      // 4a
+    // 4a
     topa = ($(".display-4a").height() - $(".m-service-content-4a").height()) - 20;
     topa = topa/ 2;
 
    
-    $(".m-service-content-4a").css("top",topa.toString() + "px");
+    //$(".m-service-content-4a").css("top",topa.toString() + "px");
      // 4b
      topa = ($(".display-4b").height() - $(".m-service-content-4b").height()) - 20;
      topa = topa/ 2;
+
+
+     //$(".m-service-content-4b").css("top",topa.toString() + "px");
+
+     // 4ai 
+
+
+
+
+
+
+
+ // 4bl
+ var leaftop = $(".display-4a").height() - 100;
+ var leafleft = $(".display-4a").width() - 100;
+  
+ leaftop += 30;
  
-    
-     $(".m-service-content-4b").css("top",topa.toString() + "px");
+ $(".m-bottom-service-leaf-4a").css("top",leaftop.toString()+"px");
+ $(".m-bottom-service-leaf-4a").css("left",leafleft.toString()+"px");
+     // 4bl
+     var leaftop = $(".display-4b").height() - 100;
+     var leafleft = $(".display-4b").width() - 100;
+      
+     leaftop += 40;
+     
+     $(".m-bottom-service-leaf-4b").css("top",leaftop.toString()+"px");
+     $(".m-bottom-service-leaf-4b").css("left",leafleft.toString()+"px");
+
+
 
       // 4ac
       topa = ($(".display-4a").width() - $(".center-group-4a").width()) - 20;
@@ -516,6 +596,334 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
       topa = topa* 0.63;
 
       $(".center-group-4a").css("margin-left",topa.toString() + "px");
+
+
+
+
+
+
+
+
+
+
+     // 5ai 
+     topa = $(".m-service-content-5b").width()   -200;
+
+
+   
+
+      // 5bl
+
+
+
+      
+ var leaftop = $(".display-5a").height() - 100;
+ var leafleft = $(".display-5a").width() - 100;
+  
+ leaftop += 30;
+ 
+ $(".m-bottom-service-leaf-5a").css("top",leaftop.toString()+"px");
+ $(".m-bottom-service-leaf-5a").css("left",leafleft.toString()+"px");
+     // 5bl
+     var leaftop = $(".display-5b").height() - 100;
+     var leafleft = $(".display-5b").width() - 100;
+    
+     leaftop += 40;
+     
+     $(".m-bottom-service-leaf-5b").css("top",leaftop.toString()+"px");
+     $(".m-bottom-service-leaf-5b").css("left",leafleft.toString()+"px");
+      // 5ac
+      topa = ($(".display-5a").width() - $(".center-group-5a").width()) - 20;
+      topa = topa/ 2;
+      topa = topa* 0.63;
+
+      $(".center-group-5a").css("margin-left",topa.toString() + "px");
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+           // 6ai 
+     topa = $(".m-service-content-6b").width()   -200;
+
+
+
+
+      // 6bl
+
+
+
+      
+ var leaftop = $(".display-6a").height() - 100;
+ var leafleft = $(".display-6a").width() - 100;
+  
+ leaftop += 30;
+ 
+ $(".m-bottom-service-leaf-6a").css("top",leaftop.toString()+"px");
+ $(".m-bottom-service-leaf-6a").css("left",leafleft.toString()+"px");
+     // 6bl
+     var leaftop = $(".display-6b").height() - 100;
+     var leafleft = $(".display-6b").width() - 100;
+    
+     leaftop += 40;
+     
+     $(".m-bottom-service-leaf-6b").css("top",leaftop.toString()+"px");
+     $(".m-bottom-service-leaf-6b").css("left",leafleft.toString()+"px");
+      // 6ac
+      topa = ($(".display-6a").width() - $(".center-group-6a").width()) - 20;
+      topa = topa/ 2;
+      topa = topa* 0.63;
+
+      $(".center-group-6a").css("margin-left",topa.toString() + "px");
+
+  
+
+
+
+
+
+
+
+
+
+           // 7ai 
+           topa = $(".m-service-content-7b").width()   -200;
+
+
+
+            // 7bl
+      
+      
+      
+            
+       var leaftop = $(".display-7a").height() - 100;
+       var leafleft = $(".display-7a").width() - 100;
+        
+       leaftop += 30;
+       
+       $(".m-bottom-service-leaf-7a").css("top",leaftop.toString()+"px");
+       $(".m-bottom-service-leaf-7a").css("left",leafleft.toString()+"px");
+           // 7bl
+           var leaftop = $(".display-7b").height() - 100;
+           var leafleft = $(".display-7b").width() - 100;
+          
+           leaftop += 40;
+           
+           $(".m-bottom-service-leaf-7b").css("top",leaftop.toString()+"px");
+           $(".m-bottom-service-leaf-7b").css("left",leafleft.toString()+"px");
+            // 7ac
+            topa = ($(".display-7a").width() - $(".center-group-7a").width()) - 20;
+            topa = topa/ 2;
+            topa = topa* 0.63;
+      
+            $(".center-group-7a").css("margin-left",topa.toString() + "px");
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+           // 8ai 
+           topa = $(".m-service-content-8b").width()   -200;
+
+
+  
+      
+            // 8bl
+      
+      
+      
+            
+       var leaftop = $(".display-8a").height() - 100;
+       var leafleft = $(".display-8a").width() - 100;
+        
+       leaftop += 30;
+       
+       $(".m-bottom-service-leaf-8a").css("top",leaftop.toString()+"px");
+       $(".m-bottom-service-leaf-8a").css("left",leafleft.toString()+"px");
+           // 8bl
+           var leaftop = $(".display-8b").height() - 100;
+           var leafleft = $(".display-8b").width() - 100;
+          
+           leaftop += 40;
+           
+           $(".m-bottom-service-leaf-8b").css("top",leaftop.toString()+"px");
+           $(".m-bottom-service-leaf-8b").css("left",leafleft.toString()+"px");
+            // 8ac
+            topa = ($(".display-8a").width() - $(".center-group-8a").width()) - 20;
+            topa = topa/ 2;
+            topa = topa* 0.63;
+      
+            $(".center-group-8a").css("margin-left",topa.toString() + "px");
+      
+
+
+
+
+
+
+
+          
+
+
+
+
+
+         
+           // 9ai 
+           topa = $(".m-service-content-9b").width()   -200;
+
+
+      
+            // 9bl
+      
+      
+      
+            
+       var leaftop = $(".display-9a").height() - 100;
+       var leafleft = $(".display-9a").width() - 100;
+        
+       leaftop += 30;
+       
+       $(".m-bottom-service-leaf-9a").css("top",leaftop.toString()+"px");
+       $(".m-bottom-service-leaf-9a").css("left",leafleft.toString()+"px");
+           // 8bl
+           var leaftop = $(".display-9b").height() - 100;
+           var leafleft = $(".display-9b").width() - 100;
+          
+           leaftop += 40;
+           
+           $(".m-bottom-service-leaf-9b").css("top",leaftop.toString()+"px");
+           $(".m-bottom-service-leaf-9b").css("left",leafleft.toString()+"px");
+            // 8ac
+            topa = ($(".display-9a").width() - $(".center-group-9a").width()) - 20;
+            topa = topa/ 2;
+            topa = topa* 0.63;
+      
+            $(".center-group-9a").css("margin-left",topa.toString() + "px");
+
+
+
+
+            
+      
+        
+      
+
+        
+      
+
+
+             
+           // 10ai 
+           topa = $(".m-service-content-10").width()   -200;
+
+
+        
+      
+            // 10bl
+      
+      
+      
+            
+       var leaftop = $(".display-10").height() - 100;
+       var leafleft = $(".display-10").width() - 100;
+        
+       leaftop += 30;
+       
+       $(".m-bottom-service-leaf-10").css("top",leaftop.toString()+"px");
+       $(".m-bottom-service-leaf-10").css("left",leafleft.toString()+"px");
+
+
+
+
+
+
+              
+           // 10ai 
+           topa = $(".m-service-content-11").width()   -200;
+
+
+      
+      
+
+
+
+     // 11
+     topa = ($(".display-3").height() - $(".m-service-content-11").height()) - 20;
+     topa = topa/ 2;
+ 
+    
+     //$(".m-service-content-11").css("top",topa.toString() + "px");
+
+     // 11c
+     topa = ($(".display-11").width() - $(".center-group-11").width()) - 20;
+     topa = topa/ 2;
+     topa = topa* 0.63;
+
+     if ($(window).width() < 350 ) {
+    //  $(".center-group-11").css("margin-left",topa.toString() + "px");
+
+    }
+
+
+      // 11bl
+
+
+
+      
+      var leaftop = $(".display-11").height() - 100;
+      var leafleft = $(".display-11").width() - 100;
+       
+      leaftop += 30;
+      
+      $(".m-bottom-service-leaf-11").css("top",leaftop.toString()+"px");
+      $(".m-bottom-service-leaf-11").css("left",leafleft.toString()+"px");
+
+
+     
+    
+
+     
+
+
+
+
+
+
+
+
+
     var m_left_margin = $(".display-bottom").width() - $(".m-bottom-service-leaf").width();
     var m_top_margin = $(".display-bottom").width()- $(".m-bottom-service-leaf").width();
 
@@ -525,10 +933,22 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
     $(".m-bottom-service-leaf").css("margin-left", m_left_margin.toString() + "px");
     $(".m-bottom-service-leaf").css("margin-top", m_top_margin.toString() + "px");
 
-    
+    var current_service= ".display-1";
     $(".m-service").click(function(){
       $(".m-service").animate({opacity:0},400);
       setTimeout(function(){
         $(".m-service").css("display","none");
       })
+
+      $(current_service).css("display","none");
     })
+
+    
+ $('.m-indicator').css('margin-left','50%;');
+
+    for(var i = 1; i<12; i++){
+      eval("  $('.display-all').css('display','none');  $('.list-"+i.toString()+"').click(function(){  $('.one-service').animate({opacity: 1}, 500);    setTimeout(function(){$('.m-service').css('display','block'); },500); $('.display-"+i.toString()+"').css('display','block');  topa = $('.m-service-content').width()   -200; var temp = $('.m-service-content-"+i.toString()+"').width()   -200; $('.m-indicator').css('margin-left','50%;'); current_service = '.display-"+i.toString()+"'; })     ");
+    }
+
+           // 4bl
+ 
