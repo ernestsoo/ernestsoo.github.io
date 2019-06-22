@@ -785,9 +785,9 @@ textarea {
 
 .display-bottom-x {
 
-  background:  #CC95C0 !important;
-  background: -webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0) !important;
-  background: linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0) !important;
+  background: #d9a7c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .display-right {

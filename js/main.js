@@ -438,7 +438,7 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
 
  
     // Mobile one service settings here.
-    var m_service_display_width = $(window).width() * 0.75;
+    var m_service_display_width = $(window).width() * 0.90;
     $(".m-service-display").css("width",m_service_display_width.toString()+"px");
 
     
@@ -449,7 +449,7 @@ $(".cancel-service").css("margin-left", ($(".service-display").width() - 60) ).t
     $(".m-service-display").css("min-height",m_service_display_width.toString()+"px");
 
     
-    $(".m-service-display").css("margin-left", ($(window).width()*0.125).toString() + "px");
+    $(".m-service-display").css("margin-left", ($(window).width()*0.05).toString() + "px");
     
     $(".display-top").css("width", m_square_dimenstion.toString() + "px");
     $(".display-top").css("height", m_square_dimenstion.toString() + "px");
