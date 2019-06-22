@@ -1,0 +1,548 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Attiya Spa & Massages</title>
+  <meta name="description" content="For customers to browse services and make a booking.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/flipclock.css">
+
+  <meta name="theme-color" content="#fafafa">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="compiled/flipclock.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div class="announcement-body ">
+    <img src="img/top-leaf.svg" class="top-leaf" />
+    <img src="img/bottom-leaf.svg" class="bottom-leaf" />
+    <img src="img/logo.svg" class="logo" />
+
+    <div class="home-social-media">
+      <img class="home-social-media-item" src="img/facebook.svg" onclick="window.location.href = 'http://www.facebook.com/attiyaspa';"/>
+      <img class="home-social-media-item" src="img/instagram.svg" onclick="window.location.href = 'http://www.instagram.com/attiyaspa';" style="margin-left: 20px;" />
+      <!-- <img class="home-social-media-item" src="img/whatsapp.svg" style="margin-left: 20px;"/> -->
+    </div>
+    
+    <div class="content">
+    <p class="coming-soon" style="margin: 0 auto;">We're Open!</p>
+    <p class="description center-ball" style="margin-top: 15px;margin-bottom: 15px;">We are at your service at Milan Square Lot. 10, Ground Floor, Jalan Wan Alwi, 93350 Kuching, Sarawak.</p>
+    <div class="open-map">Open in Google Maps</div>
+    <p class="description center-ball">Time until Grand Opening:</p>
+
+    <div class="countdown-container" style= "margin-top: 2%;">
+      <div class="countdown-hour countdown-item" >
+        <div class="countdown-group-hour vertical-center ">
+            <p class="countdown-value-day countdown-value" id="day"></p>
+            <p class="countdown-text-day countdown-text">DAYS</p>
+        </div>
+      </div>
+      <div class="countdown-minute countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-hour countdown-value" id ="hour">23</p>
+              <p class="countdown-text-hour countdown-text">HOURS</p>
+          </div>
+      </div>
+      <div class="countdown-minute countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-minute countdown-value" id="minute">23</p>
+              <p class="countdown-text-minute countdown-text">MINUTES</p>
+          </div>
+      </div>
+      <div class="countdown-hour countdown-item" >
+          <div class="countdown-group-hour vertical-center ">
+              <p class="countdown-value-second countdown-value" id="second">23</p>
+              <p class="countdown-text-second countdown-text">SECONDS</p>
+          </div>
+      </div>
+
+    </div>
+
+    <p class="description" style="margin-top: 25px;;margin-bottom: 20px;">hp: 011-1092 5881  &nbsp &nbsp &nbsp   email: attiyaspa@gmail.com   </p>
+
+    </div>
+
+  
+
+
+    <p id="demo" style="display:none"></p>
+  </div>
+
+  <div class="content-2">
+
+    <p class="menu">Services Menu</p>
+
+
+    <div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 7%; display:inline-block">
+          <div class="carousel-image-0-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Foot Massage</p> 
+          <p class="carousel-price">From RM58</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-1-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Kamala Massage</p> 
+          <p class="carousel-price">From RM85</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-2-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Kids Spa</p> 
+          <p class="carousel-price">From RM85</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-3-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Tari Tari</p> 
+          <p class="carousel-price">From RM68</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 7%; display:inline-block; margin-top: 2%">
+          <div class="carousel-image-4-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Aroma Oil Massage</p> 
+          <p class="carousel-price">From RM68</p> 
+      </div>
+      
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-5-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Urut Urut</p> 
+          <p class="carousel-price">From RM80</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-6-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Gara Gara</p> 
+          <p class="carousel-price">From RM109</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 2%; display:inline-block">
+          <div class="carousel-image-7-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Harum Harum</p> 
+          <p class="carousel-price">From RM109</p> 
+      </div>
+      <div class="carousel-item-list" style="width: 20%; margin-left: 7%; display:inline-block; margin-top: 2%;margin-bottom: 25%">
+          <div class="carousel-image-8-list carousel-image carousel-image-center"></div>
+          <p class="carousel-name">Post-Natal Slimming Therapy Massage</p> 
+          <p class="carousel-price">From RM109</p> 
+      </div>
+  </div>
+</div>
+
+
+
+
+ <!-- Individual service view.  For mobile...-->
+ <div class="one-service m-service" style="overflow-y: scroll; max-height: 100%;">
+  <p class="tap">Tap anywhere to go back</p>
+  <div class="m-service-display" style="overflow:hidden; display: block">
+    <div class="display-top">
+
+    </div>
+    <!-- 1: FOOT SPA -->
+    <div class="display-bottom display-1" style="margin-top: -2%;position:relative;overflow:hidden; display:none">
+        <img src="img/top-leaf.svg" class="m-top-service-leaf" />
+        <img src="img/bottom-leaf.svg" class="m-bottom-service-leaf" />
+
+        <div class="service-content m-service-content m-service-content-1" style="z-index: 10; ">
+          <p class="service-title">FOOT SPA</p>
+          <p class="m-service-name">Aroma Oil Foot Massage</p>
+          <p class="m-service-name">Foot Scrub</p>
+        
+          <div class="service-pricing m-service-pricing" >
+            <div class="pricing-left">
+              <div style="margin-left: 15%;">
+                <div style="margin:0 ;"> 
+                  <img class="m-service-icon" src="img/clock.svg" />
+                  <p class="m-service-pop-text">70 mins</p>
+
+                </div>
+                <div style="margin-top:20px;"> 
+                    <div class="m-non-member-icon"><p>N</p></div>
+            
+                    <p class="m-service-pop-text">MYR 68</p>
+
+                  </div>
+                <div style="margin-top:20px;"> 
+                    <div class="m-member-icon"><p>M</p></div>
+                    <p class="m-service-pop-text">MYR 58</p>
+
+                </div>
+                 
+
+                </div>
+            </div>
+            <div class="pricing-right">
+              <div style="margin-left: 25%;">
+                <div style="margin:0 ;"> 
+                    <img class="m-service-icon" src="img/clock.svg" />
+                    <p class="m-service-pop-text">100 mins</p>
+
+                  </div>
+                  <div style="margin-top:20px;"> 
+                      <div class="m-non-member-icon"><p>N</p></div>
+              
+                      <p class="m-service-pop-text">MYR 98</p>
+  
+                    </div>
+                  <div style="margin-top:20px;"> 
+                      <div class="m-member-icon"><p>M</p></div>
+                      <p class="m-service-pop-text">MYR 83</p>
+  
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+  </div>
+
+  <!-- 2: KEMALA FOOT, SHOULDER AND BACK MASSAGE -->
+  <div class="display-bottom display-2" style="margin-top: -2%;position:relative;overflow:hidden ;display: none; ">
+    <img src="img/top-leaf.svg" class="m-top-service-leaf" />
+    <img src="img/bottom-leaf.svg" class="m-bottom-service-leaf" />
+
+   
+
+    
+    <div class="service-content m-service-content m-service-content-2" style="z-index: 10; ">
+      <p class="service-title">KEMALA FOOT, SHOULDER AND BACK MASSAGE</p>
+      
+      <p class="m-service-name">Hot Stone + Aroma Oil Foot Massage,</p>
+      <p class="m-service-name">Shoulder + Back Massage (Dry) & Foot Scrub</p>
+    
+      <div class="service-pricing m-service-pricing" >
+        <div class="pricing-left">
+          <div style="margin-left: 15%;">
+            <div style="margin:0 ;"> 
+              <img class="m-service-icon" src="img/clock.svg" />
+              <p class="m-service-pop-text">90 mins</p>
+
+            </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-non-member-icon"><p>N</p></div>
+        
+                <p class="m-service-pop-text">MYR 100</p>
+
+              </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-member-icon"><p>M</p></div>
+                <p class="m-service-pop-text">MYR 85</p>
+
+            </div>
+             
+
+            </div>
+        </div>
+        <div class="pricing-right">
+          <div style="margin-left: 25%;">
+            <div style="margin:0 ;"> 
+                <img class="m-service-icon" src="img/clock.svg" />
+                <p class="m-service-pop-text">120 mins</p>
+
+              </div>
+              <div style="margin-top:20px;"> 
+                  <div class="m-non-member-icon"><p>N</p></div>
+          
+                  <p class="m-service-pop-text">MYR 125</p>
+
+                </div>
+              <div style="margin-top:20px;"> 
+                  <div class="m-member-icon"><p>M</p></div>
+                  <p class="m-service-pop-text">MYR 106</p>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- 3: KIDS SPA -->
+<div class="display-bottom display-3" style="margin-top: -2%;position:relative;overflow:hidden;display:none">
+  <img src="img/top-leaf.svg" class="m-top-service-leaf" />
+  <img src="img/bottom-leaf.svg" class="m-bottom-service-leaf" />
+
+ 
+
+  
+  <div class="service-content m-service-content m-service-content-3" style="z-index: 10; ">
+    <p class="service-title">KIDS SPA</p>
+    
+    <p class="m-service-name">Gentle Lymphatic Massage</p>
+    <p class="m-service-name">(Below 10 yrs old)</p>
+  
+    <div class="service-pricing m-service-pricing" >
+
+        <div class="center-group-3" style="margin: 0 auto; display: table; margin-left:">
+        <div >
+          <div style="margin-left:0 ;"> 
+            <img style="margin-left:0 ;"class="m-service-icon" src="img/clock.svg" />
+            <p class="m-service-pop-text">60 mins</p>
+
+          </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-non-member-icon"><p>N</p></div>
+      
+              <p class="m-service-pop-text">MYR 59</p>
+
+            </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-member-icon"><p>M</p></div>
+              <p class="m-service-pop-text">MYR 50</p>
+
+          </div>
+           
+
+          </div>
+        </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- 4a: TARI TARI OR THAI MASSAGE-->
+<div class="display-bottom display-4a" style="margin-top: -2%;position:relative;overflow:hidden;max-height: 100% !important; ">
+  <img src="img/top-leaf.svg" class="m-top-service-leaf" />
+
+ 
+
+  
+  <div class="service-content m-service-content m-service-content" style="z-index: 10; margin-top:50px;margin-bottom: 100px; ">
+    <p class="service-title">TARI TARI OR THAI MASSAGE</p>
+    
+    <p class="m-service-name">Pressure Point Massage</p>
+    <p class="m-service-name">Whole Body</p>
+  
+    <div class="service-pricing m-service-pricing" >
+      <div class="pricing-left">
+        <div style="margin-left: 15%;">
+          <div style="margin:0 ;"> 
+            <img class="m-service-icon" src="img/clock.svg" />
+            <p class="m-service-pop-text">60 mins</p>
+
+          </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-non-member-icon"><p>N</p></div>
+      
+              <p class="m-service-pop-text">MYR 80</p>
+
+            </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-member-icon"><p>M</p></div>
+              <p class="m-service-pop-text">MYR 68</p>
+
+          </div>
+           
+
+          </div>
+
+          
+        
+       
+      </div>
+      <div class="pricing-right">
+        <div style="margin-left: 25%;">
+          <div style="margin:0 ;"> 
+              <img class="m-service-icon" src="img/clock.svg" />
+              <p class="m-service-pop-text">90 mins</p>
+
+            </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-non-member-icon"><p>N</p></div>
+        
+                <p class="m-service-pop-text">MYR 110</p>
+
+              </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-member-icon"><p>M</p></div>
+                <p class="m-service-pop-text">MYR 93</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="center-group-4a" style="margin: 0 auto; display: table; margin-top: 25px; margin-bottom: 50px;">
+            <div >
+              <div style="margin-left:0 ;"> 
+                <img style="margin-left:0 ;"class="m-service-icon" src="img/clock.svg" />
+                <p class="m-service-pop-text">120 mins</p>
+    
+              </div>
+              <div style="margin-top:20px;"> 
+                  <div class="m-non-member-icon"><p>N</p></div>
+          
+                  <p class="m-service-pop-text">MYR 130</p>
+    
+                </div>
+              <div style="margin-top:20px;"> 
+                  <div class="m-member-icon"><p>M</p></div>
+                  <p class="m-service-pop-text">MYR 110</p>
+    
+              </div>
+               
+    
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 4b: KEMALA FOOT, SHOULDER AND BACK MASSAGE -->
+<div class="display-bottom-x display-4b" style="margin-top: -2%;position:relative;overflow:hidden ; max-height: 100% !important; " >
+  <img src="img/top-leaf.svg" class="m-top-service-leaf" />
+  <!--<img src="img/bottom-leaf.svg" class="m-bottom-service-leaf" /> -->
+
+ 
+
+  
+  <div class="service-content m-service-content m-service-content-4b" style="z-index: 10; margin-top: 10px;margin-bottom: 150px; ">
+    <p class="service-title" style="color: black">SPA TARI-TARI OR THAI MASSAGE</p>
+    
+    <p class="m-service-name" style="color: black">Body Scrub + Shower & Pressure Point Massage</p>
+    <p class="m-service-name" style="color: black">Whole Body</p>
+  
+    <div class="service-pricing m-service-pricing" >
+      <div class="pricing-left">
+        <div style="margin-left: 15%;">
+          <div style="margin:0 ;"> 
+            <img class="m-service-icon" src="img/clock-black.svg" style="color: black"/>
+            <p class="m-service-pop-text" style="color: black">90 mins</p>
+
+          </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-non-member-icon" style="color: black; border-color: black;"><p>N</p></div>
+      
+              <p class="m-service-pop-text" style="color: black;border-color: black;">MYR 100</p>
+
+            </div>
+          <div style="margin-top:20px;"> 
+              <div class="m-member-icon" style="border-color: black;color: black"><p>M</p></div>
+              <p class="m-service-pop-text"style="color: black">MYR 85</p>
+
+          </div>
+           
+
+          </div>
+      </div>
+      <div class="pricing-right" style="border-color: black;"">
+        <div style="margin-left: 25%;">
+          <div style="margin:0 ;"> 
+              <img class="m-service-icon" src="img/clock-black.svg" style="color: black"/>
+              <p class="m-service-pop-text"style="color: black">120 mins</p>
+
+            </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-non-member-icon"style="color: black;border-color: black;"><p>N</p></div>
+        
+                <p class="m-service-pop-text"style="color: black;">MYR 125</p>
+
+              </div>
+            <div style="margin-top:20px;"> 
+                <div class="m-member-icon"style="color: black;border-color: black;"><p>M</p></div>
+                <p class="m-service-pop-text"style="color: black;border-color: black;">MYR 106</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+<!-- Individual service view.-->
+<div class="one-service d-service">
+  <div class="service-display">
+    <img src="img/cancel.svg" class="cancel-service" />
+    <div class="display-left"></div>
+    <div class="display-right">
+        <img src="img/top-leaf.svg" class="top-service-leaf" />
+        <img src="img/bottom-leaf.svg" class="bottom-service-leaf" />
+
+        <div class="service-content" style="position:relative; ">
+          <p class="service-name">Aroma Oil Foot Massage</p>
+          <p class="service-name">Foot Scrub</p>
+        
+          <div class="service-pricing">
+            <div class="pricing-left">
+              <div style="margin-left: 15%;">
+                <div style="margin:0 ;"> 
+                  <img class="service-icon" src="img/clock.svg" />
+                  <p class="service-pop-text">70 mins</p>
+
+                </div>
+                <div style="margin-top:20px;"> 
+                    <div class="non-member-icon"><p>N</p></div>
+            
+                    <p class="service-pop-text">MYR 68</p>
+
+                  </div>
+                <div style="margin-top:20px;"> 
+                    <div class="member-icon"><p>M</p></div>
+                    <p class="service-pop-text">MYR 58</p>
+
+                </div>
+                 
+
+                </div>
+            </div>
+            <div class="pricing-right">
+              <div style="margin-left: 25%;">
+                <div style="margin:0 ;"> 
+                    <img class="service-icon" src="img/clock.svg" />
+                    <p class="service-pop-text">100 mins</p>
+
+                  </div>
+                  <div style="margin-top:20px;"> 
+                      <div class="non-member-icon"><p>N</p></div>
+              
+                      <p class="service-pop-text">MYR 98</p>
+  
+                    </div>
+                  <div style="margin-top:20px;"> 
+                      <div class="member-icon"><p>M</p></div>
+                      <p class="service-pop-text">MYR 83</p>
+  
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+	
+  <script src="js/main.js"></script>
+
+  
+<script type="text/javascript" src="js/kinetic.js"></script>
+<script type="text/javascript" src="js/jquery.final-countdown.min.js"></script>
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
+
