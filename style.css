@@ -791,13 +791,7 @@ margin-top: -10px;
 
 }
 
-.error-text {
-  font-size: 12px;
-  color:red;
-  display: table;
-  margin: 0 auto;
-  margin-top: 2.5px;
-}
+
 .icon-scroll,
 .icon-scroll:before {
   position: absolute;
@@ -1076,20 +1070,7 @@ margin-top: -10px;
 
   z-index: 0;
 }
-.m-booking-input {
-  background: transparent;
-  border: 1px solid white;
-  border-radius: 6px;
-  padding: 5px 7px;
-  font-size: 12px;
-  color:white;
-  font-family: 'Lato';
-  font-weight: 100;
-  width: 100%;
-  display: block;
 
-  z-index: 0;
-}
 .booking-holder {
   position: absolute;
   color: white; 
@@ -1097,20 +1078,6 @@ margin-top: -10px;
   margin-left: 15px;
   margin-top: -35px;
 
-
-  z-index: 1000;
-  padding-left:4px;
-  padding-right:4px;
-
-  
-}
-
-.m-booking-holder {
-  position: absolute;
-  color: white; 
-  font-size: 15px;
-  margin-left: 10px;
-  margin-top: -23px;
 
   z-index: 1000;
   padding-left:4px;
@@ -1132,20 +1099,6 @@ margin-top: -10px;
 
   
 }
-
-.m-description-holder {
-  position: absolute;
-  color: white; 
-  font-size: 15px;
-  margin-left: 10px;
-  margin-top: -140px;
-
-  z-index: 1000;
-  padding-left:4px;
-  padding-right:4px;
-
-  
-}
 .service-name {
   text-align: center;
   margin: 3px;
@@ -1154,16 +1107,6 @@ margin-top: -10px;
   font-size: 22px;
   display: block;
   font-weight: 400;
-}
-
-.service-title {
-  text-align: center;
-  margin: 3px;
-  padding: 0px;
-  color:   #F0D2C4;
-  font-size: 22px;
-  display: block;
-  font-weight: 600;
 }
 
 .m-service-name {
