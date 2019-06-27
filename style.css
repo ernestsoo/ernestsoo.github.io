@@ -1409,13 +1409,7 @@ section {
 
 
 @media (min-width: 992px) { 
-  .m-serivice {
-    display: none;
-  }
 
-  .d-service {
-    display: block;
-  }
 }
 
 
@@ -1683,4 +1677,8 @@ section {
   display: block;
 
 
+}
+
+.success-icon {
+  width: 50px;
 }

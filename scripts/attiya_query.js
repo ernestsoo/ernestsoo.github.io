@@ -39,6 +39,10 @@ jQuery(function () {
     //$(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
     $(".m-fixed-hover").animate({marginLeft: (menu_section_width*3).toString() + "px" });
   });
+
+  $(".m-browse-services").click(function(){
+    $(".m-fixed-hover").animate({marginLeft: (menu_section_width*1).toString() + "px" });
+  })
   
   
   
@@ -255,27 +259,40 @@ jQuery(function () {
 
 
                         function goRight() {
-                          for(var i =0; i < 5; i ++)
+                          if(carousel_array[2] == 4 )
                           {
-                            carousel_array[i] = carousel_array[i] + 1;
-                          }
 
-                          for(var i =0; i < 5; i ++)
-                          {
-                            carouselTransition(carousel_array[i],".carousel-item-"+i.toString(),".carousel-image-"+i.toString(),".carousel-tint-"+i.toString());
+                          }else{
+                            for(var i =0; i < 5; i ++)
+                            {
+                              carousel_array[i] = carousel_array[i] + 1;
+                            }
+  
+                            for(var i =0; i < 5; i ++)
+                            {
+                              carouselTransition(carousel_array[i],".carousel-item-"+i.toString(),".carousel-image-"+i.toString(),".carousel-tint-"+i.toString());
+                            }
                           }
+                         
                         }
 
                         function goLeft() {
-                          for(var i =0; i < 5; i ++)
-                          {
-                            carousel_array[i] = carousel_array[i] - 1;
-                          }
 
-                          for(var i =0; i < 5; i ++)
+                          if(carousel_array[2] == 0 )
                           {
-                            carouselTransition(carousel_array[i],".carousel-item-"+i.toString(),".carousel-image-"+i.toString(),".carousel-tint-"+i.toString());
+
+                          }else{
+                            for(var i =0; i < 5; i ++)
+                            {
+                              carousel_array[i] = carousel_array[i] - 1;
+                            }
+  
+                            for(var i =0; i < 5; i ++)
+                            {
+                              carouselTransition(carousel_array[i],".carousel-item-"+i.toString(),".carousel-image-"+i.toString(),".carousel-tint-"+i.toString());
+                            }
                           }
+                         
                         }
 
 
@@ -386,7 +403,22 @@ jQuery(function () {
      
      var service_id = "default_service";
      var template_id = "appointment";
-     emailjs.send(service_id, template_id, template_params);
+     emailjs.send(service_id, template_id, template_params)
+     .then(function(){ 
+
+       var booking_success_top = $(".booking-container").height() - $(".booking-success").height();
+       booking_success_top = booking_success_top / 2;
+       
+       $(".booking-success").css("display","block");
+       $(".booking-success").animate({marginTop:booking_success_top.toString() + "px", opacity: 1},400);
+       
+       $(".loading").css("display","none");
+       
+        //myform.find("button").text("Send");
+      }, function(err) {
+        //alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+        //myform.find("button").text("Send");
+      });
     } else {
       // Error Handling
       if(name_empty) {
@@ -403,7 +435,114 @@ jQuery(function () {
       }
     }
   })
-            
+  
+    // ISO Booking Verification 
+    $(".m-booking-button").click(function(){
+
+
+      emailjs.init("user_RjFwWssgemW78toxKi4AN");
+
+
+   
+      $(".m-no-name-error").css("display","none");
+    
+      $(".m-no-email-error").css("display","none");
+    
+      $(".m-no-description-error").css("display","none");
+    
+      $(".m-email-invalid-error").css("display","none");
+ 
+    var error = false;
+
+    var name_empty = false;
+    var email_invalid = false;
+    var email_empty = false;
+    var description_empty = false;
+
+    // Name Empty Check
+    if($(".m-input-name").val() == ""){
+      name_empty = true;
+      error = true;
+    }
+    function isEmail(email) {
+      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      return regex.test(email);
+    }        
+    // Email Empty Check
+    if($(".m-input-email").val() == ""){
+      email_empty = true;
+      error = true;
+    } else {
+      if(!isEmail($(".m-input-email").val())) {
+        email_invalid = true;
+        error = true;
+      }
+    }
+    
+              
+
+
+    // Description Empty Check
+    if($(".m-input-description").val() == ""){
+      description_empty = true;
+      error = true;
+    }
+
+
+
+    if(!error) {
+
+      // loading make up
+
+      $(".m-email-container").css("display","none");
+      $(".m-loading").css("display","table");
+
+      var template_params = {
+        "target": "ernestsoo22@gmail.com",
+        "reference": "12345",
+        "name": "name_value",
+        "email": "ernestsoo22@gmail.com",
+        "description": "description_value"
+     }
+     
+     var service_id = "default_service";
+     var template_id = "appointment";
+
+     emailjs.send(service_id, template_id, template_params)
+     .then(function(){ 
+
+        var booking_success_top = $(".m-booking-container").height() - $(".m-booking-success").height();
+        booking_success_top = booking_success_top / 2;
+        
+        $(".m-booking-success").css("display","block");
+        $(".m-booking-success").animate({marginTop:booking_success_top.toString() + "px", opacity: 1},400);
+        $(".m-booking-success").css("margin-bottom",booking_success_top.toString() + "px");
+        $(".m-loading").css("display","none");
+
+     }, function(err) {
+        //alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+        //myform.find("button").text("Send");
+     });
+      
+
+  
+     
+    } else {
+      // Error Handling
+      if(name_empty) {
+        $(".m-no-name-error").css("display","table");
+      }
+      if(email_empty) {
+        $(".m-no-email-error").css("display","table");
+      }
+      if(description_empty) {
+        $(".m-no-description-error").css("display","table");
+      }
+      if(email_invalid) {
+        $(".m-invalid-email-error").css("display","table");
+      }
+    }
+  })
 
   var carousel_indicator_left = $(".carousel-container").width() - $(".carousel-indicator").width();
   carousel_indicator_left = carousel_indicator_left / 2;
@@ -821,8 +960,7 @@ jQuery(function () {
 
     m_service_display_width = m_service_display_width * 2;
   
-    $(".m-service-display").css("height",m_service_display_width.toString()+"px");
-
+  
     
     $(".m-service-display").css("margin-left", ($(window).width()*0.125).toString() + "px");
     
@@ -856,7 +994,7 @@ jQuery(function () {
 
       center_vertical(".service-display",".service-content");
   
-      $(".one-service").css("display","unset");
+      $(".-service").css("display","unset");
       $(".one-service").animate({opacity: 1},500);
     });
 /*
@@ -1551,11 +1689,14 @@ $(".m-bottom-service-leaf-3").css("left",leafleft.toString()+"px");
     
     $('.m-indicator').css('margin-left','50%;');
 
-    $(".list-1").click(function(){
-      alert("asd");
+    $(".d-list-2").click(function(){
+      alert("ello")
+     $(".one-service").css("display","unset"); $('.one-service').animate({opacity: 1}, 0);    setTimeout(function(){$('.m-service').css('display','block'); },0); $('.display-2').css('display','block');  topa = $('.m-service-content').width()   -200; var temp = $('.m-service-content-2').width()   -200; $('.m-indicator').css('margin-left','50%;'); current_service = '.display-2';
     })
     for(var i = 1; i<12; i++){
       eval("  $('.display-all').css('display','none');  $('.list-"+i.toString()+"').click(function(){  $('.one-service').animate({opacity: 1}, 0);    setTimeout(function(){$('.m-service').css('display','block'); },0); $('.display-"+i.toString()+"').css('display','block');  topa = $('.m-service-content').width()   -200; var temp = $('.m-service-content-"+i.toString()+"').width()   -200; $('.m-indicator').css('margin-left','50%;'); current_service = '.display-"+i.toString()+"'; })     ");
+      eval("  $('.display-all').css('display','none');  $('.d-list-"+i.toString()+"').click(function(){  $('.one-service').animate({opacity: 1}, 0);    setTimeout(function(){$('.m-service').css('display','block'); },0); $('.display-"+i.toString()+"').css('display','block');  topa = $('.m-service-content').width()   -200; var temp = $('.m-service-content-"+i.toString()+"').width()   -200; $('.m-indicator').css('margin-left','50%;'); current_service = '.display-"+i.toString()+"'; })     ");
+      
     }
   }
 
