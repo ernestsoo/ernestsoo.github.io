@@ -17,7 +17,6 @@ jQuery(function () {
 
   
   $(".m-fixed-hover").css("width", menu_section_width.toString() + "px");
-  $(".m-fixed-hover").css("margin-top",fixed_navbar_top.toString() + "px");
   
   
   $(".m-1").click(function(){
@@ -480,9 +479,9 @@ jQuery(function () {
     mobile_presentation_left = mobile_presentation_left / 2;
 
     $(".home-presentation").css("margin-left",mobile_presentation_left.toString() + "px");
-    $(".home-presentation").css("margin-top", "20%");
+    $(".home-presentation").css("margin-top", "22.5%");
 
-    var browse_services_top = $(window).height() * 0.600;
+    var browse_services_top = $(window).height() * 0.63;
     
     $(".m-browse-services").css("top", browse_services_top.toString() + "px");
   }

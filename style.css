@@ -691,7 +691,7 @@ pre {
   margin: 0 auto;
   display: table;
   position: relative;
-  top: 55px;
+  top: 85px;
 
 }
 
@@ -699,6 +699,14 @@ pre {
   width: 400px;
   margin-left: -15px;
   margin-top: -13px;
+  position: absolute;
+  z-index: 1;
+}
+
+
+.m-top-leaf {
+  width: 200px;
+  margin-left: -15px;
   position: absolute;
   z-index: 1;
 }
@@ -717,7 +725,7 @@ pre {
 }
 
 .m-bottom-leaf {
-  width:  250px;
+  width:  200px;
   position: absolute;
   z-index:1;
 }
