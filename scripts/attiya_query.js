@@ -6,7 +6,7 @@ jQuery(function () {
   // mobile fixed navbar
   var fixed_navbar_top = $(window).height()-60;
 
-  $(".m-fixed-navbar").css("margin-top",fixed_navbar_top.toString() + "px");
+ // $(".m-fixed-navbar").css("margin-top",fixed_navbar_top.toString() + "px");
 
   var menu_section_width = ( $(window).width() / 4 ) -10 ;
 
