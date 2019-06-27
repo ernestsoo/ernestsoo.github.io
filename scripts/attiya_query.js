@@ -479,9 +479,9 @@ jQuery(function () {
     mobile_presentation_left = mobile_presentation_left / 2;
 
     $(".home-presentation").css("margin-left",mobile_presentation_left.toString() + "px");
-    $(".home-presentation").css("margin-top", "105px");
+    $(".home-presentation").css("margin-top", "125px");
 
-    var browse_services_top = 120 + ($(window).height() * 0.4);
+    var browse_services_top = 150 + ($(window).height() * 0.4);
     
     $(".m-browse-services").css("top", browse_services_top.toString() + "px");
   }
