@@ -369,6 +369,11 @@ pre {
   background: linear-gradient(to top, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+.display-bottom-x {
+  background: #CC95C0;
+  background: -webkit-linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0);
+  background: linear-gradient(to bottom, #7AA1D2, #DBD4B4, #CC95C0);
+}
 .display-right {
 
   display: inline-block;
