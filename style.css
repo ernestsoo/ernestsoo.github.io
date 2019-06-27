@@ -593,51 +593,63 @@ pre {
 .carousel-image {
   background-size: cover;
 }
+
+
 .carousel-image-0 ,.carousel-image-0-list{
-  background: url(images/1x/service_1.png);
+  background: url(../images/1x/service_1.png);
 
   background-size: cover;
 }
 .carousel-image-1 ,.carousel-image-1-list {
-  background: url(images/1x/service_2.png);
+  background: url(../images/1x/service_2.png);
 
   background-size: cover;
 }
 .carousel-image-2 ,.carousel-image-2-list{
-  background: url(images/1x/service_3.png);
+  background: url(../images/1x/service_3.png);
 
   background-size: cover;
 }
 .carousel-image-3, .carousel-image-3-list {
-  background: url(images/1x/service_4.png);
+  background: url(../images/1x/service_4.png);
 
   background-size: cover;
 }
 .carousel-image-4, .carousel-image-4-list{
-  background: url(images/1x/service_6.png);
+  background: url(../images/1x/service_5.png);
 
   background-size: cover;
 }
 .carousel-image-5, .carousel-image-5-list{
-  background: url(images/1x/service_7.png);
+  background: url(../images/1x/service_6.png);
 
   background-size: cover;
 }
 
 .carousel-image-6, .carousel-image-6-list{
-  background: url(images/1x/service_6.png);
+  background: url(../images/1x/service_7.png);
 
   background-size: cover;
 }
 
 .carousel-image-7, .carousel-image-7-list{
-  background: url(images/1x/service_9.png);
+  background: url(../images/1x/service_8.png);
 
   background-size: cover;
 }
 
 .carousel-image-8, .carousel-image-8-list{
-  background: url(images/1x/service_2.png);
+  background: url(../images/1x/service_9.png);
+
+  background-size: cover;
+}
+.carousel-image-9, .carousel-image-9-list{
+  background: url(../images/1x/service_10.png);
+
+  background-size: cover;
+}
+.carousel-image-10, .carousel-image-10-list{
+  background: url(../images/1x/service_11.png);
 
   background-size: cover;
 }
@@ -1180,6 +1192,7 @@ margin-top: -10px;
 
 }
 
+
 .service-pop-text {
   position: absolute;
   margin-top: -30px;
@@ -1190,11 +1203,24 @@ margin-top: -10px;
 
 .m-service-pop-text {
   position: absolute;
-  margin-top: -23px;
-  margin-left: 45px;
-  font-size: 15px;
+  margin-top: -20px;
+  margin-left: 27px;
+  font-size: 12px;
   color: #F0D2C4;
 }
+.member-icon {
+  display: block;
+  width: 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  height: 30px;
+  color: #F0D2C4;
+  border: 2px solid #F0D2C4;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+
 .m-member-icon {
   display: block;
   width: 20px;
@@ -1265,6 +1291,7 @@ margin-top: -10px;
   margin-top: 2px;
   font-size: 11px;
 }
+
 
 .booking-button-pop {
   /* border: 1px solid black; */
