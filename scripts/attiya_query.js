@@ -429,13 +429,19 @@ jQuery(function () {
       $(".email-container").css("display","none");
       $(".loading").css("display","table");
 
-      var template_params = {
-        "target": "ernestsoo22@gmail.com",
-        "reference": "12345",
-        "name": "name_value",
-        "email": "ernestsoo22@gmail.com",
-        "description": "description_value"
-     }
+      var d_name = $(".input-name").val();
+      var d_email = $(".input-email").val();
+      var d_description = $(".input-description").val();
+
+      var template_params ={
+
+          "target": d_email.toString(),
+          "reference": "12345",
+          "name": d_name.toString(),
+          "email": d_email.toString(),
+          "description": d_description.toString()
+       
+      };
      
      var service_id = "default_service";
      var template_id = "appointment";
@@ -533,14 +539,20 @@ jQuery(function () {
       $(".m-email-container").css("display","none");
       $(".m-loading").css("display","table");
 
+      var m_name = $(".m-input-name").val();
+      var m_email = $(".m-input-email").val();
+      var m_description = $(".m-input-description").val();
+
       var template_params = {
-        "target": "ernestsoo22@gmail.com",
-        "reference": "12345",
-        "name": "name_value",
-        "email": "ernestsoo22@gmail.com",
-        "description": "description_value"
-     }
-     
+   
+          "target": m_email,
+          "reference": "12345",
+          "name": m_name,
+          "email": m_email,
+          "description": m_description
+  
+      } 
+
      var service_id = "default_service";
      var template_id = "appointment";
 
