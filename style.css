@@ -739,7 +739,7 @@ pre {
 .bottom-leaf {
   width:  400px;
   position: absolute;
-  z-index:1;
+  z-index:100;
 }
 
 .m-bottom-leaf {
@@ -896,9 +896,9 @@ margin-top: -10px;
     display: table;
     margin: 0 auto;
     margin-top: 0px;
-    margin-left: 27%;
     position: relative;
     top: -5px;
+    float: right;
 }
 
 .m-browse-services {
@@ -953,7 +953,7 @@ margin-top: -10px;
      display: table;
      margin: 0 auto;
      margin-top: 0px;
-     margin-left: 36%;
+     float: right;
      position: relative;
      top: -5px;
  }
@@ -1351,7 +1351,7 @@ section {
 @media only screen and (min-width : 768px) {
 
     .d-bottom-leaf{
-      display: block;
+      display: unset;
     }
     .mobile-view {
       display: none;
@@ -1675,9 +1675,27 @@ section {
 
 .m-email-container {
   display: block;
-
-
 }
+.m-whatsapp-container {
+  display: none;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.m-wechat-container {
+  display: none;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.m-telephone-container {
+  display: none;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+
 
 .success-icon {
   width: 50px;
